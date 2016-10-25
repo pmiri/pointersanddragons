@@ -1,0 +1,7 @@
+﻿  ItemContainer.cpp
+c:\users\disva\source\repos\comp345game\comp345game\itemcontainer.cpp(42): warning C4018: '<': signed/unsigned mismatch
+  Item.cpp
+  Enhancement.cpp
+  Generating Code...
+c:\users\disva\source\repos\comp345game\comp345game\itemcontainer.cpp(45): warning C4715: 'ItemContainer::getItem': not all control paths return a value
+LINK : fatal error LNK1561: entry point must be defined

@@ -110,6 +110,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Enhancement.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemContainer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Enhancement.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemContainer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
