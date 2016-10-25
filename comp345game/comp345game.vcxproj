@@ -18,6 +18,12 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dice\Dice.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dice\Dice.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{54DB4169-1035-4B14-B8DF-CED5E5763289}</ProjectGuid>
     <RootNamespace>comp345game</RootNamespace>
@@ -109,8 +115,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,0 +1,4 @@
+﻿  Dice.cpp
+c:\users\jacob\documents\github\comp345game\comp345game\dice\dice.cpp(39): warning C4101: 'd': unreferenced local variable
+  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.exe
+  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.pdb (Partial PDB)
