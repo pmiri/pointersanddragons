@@ -116,7 +116,6 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemContainer.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="MapBuilder.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
@@ -126,8 +125,6 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemContainer.cpp" />
     <ClCompile Include="Map.cpp" />
-    <ClCompile Include="MapBuilder.cpp" />
-    <ClCompile Include="MapBuilderDriver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

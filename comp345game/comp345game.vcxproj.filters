@@ -33,9 +33,6 @@
     <ClInclude Include="Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MapBuilder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Map.cpp">
@@ -57,12 +54,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Fighter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MapBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MapBuilderDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
