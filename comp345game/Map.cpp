@@ -12,10 +12,28 @@ int const MAP_LENGTH = 2;
 //! constant for map width
 int const MAP_WIDTH = 2;
 //! map as a 2-dimensional array of chars
-char map[MAP_LENGTH][MAP_WIDTH] = {
-		{ ' ', ' '},
-		{' ', ' '} 
-	};
+char **map;
+
+Map::Map() {
+	delete[] map;
+
+	map = new char*[MAP_WIDTH];
+	for (int i = 0; i < MAP_WIDTH; i++) {
+		map[i] = new char[MAP_LENGTH];
+		for (int j = 0; j < MAP_LENGTH; j++) {
+			map[i][j] = ' ';
+		}
+	}
+}
+
+Map::Map(int width, int height) {
+	//clear exisiting thing
+	delete[] map;
+
+	map = new char*[width];
+	for (int i = 0; i < width; i++)
+		map[i] = new char[height];
+}
 
 //! Implementation of the map verification
 //! @return bool value, true of the map is valid (there is at least one clear path between the mandatory begin and end cell). 

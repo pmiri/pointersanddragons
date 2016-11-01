@@ -18,5 +18,8 @@ public:
 	void setEntrance(int x, int y);
 	void setExit(int x, int y);
 	char getCell(int x, int y);
+
+	Map();
+	Map(int width, int height);
 };
 
