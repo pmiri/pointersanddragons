@@ -1,1 +1,4 @@
-﻿
+﻿  MapBuilder.cpp
+c:\users\pmiri\code\comp345game\comp345game\mapbuilder.cpp(43): warning C4715: 'MapBuilder::buildFromFile': not all control paths return a value
+  comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.exe
+  comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.pdb (Partial PDB)

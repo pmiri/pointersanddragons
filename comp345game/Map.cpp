@@ -8,19 +8,19 @@
 using namespace std;
 
 //! constant for map length
-int const MAP_LENGTH = 2;
+int MAP_LENGTH = 2;
 //! constant for map width
-int const MAP_WIDTH = 2;
+int MAP_WIDTH = 2;
 //! map as a 2-dimensional array of chars
 char **map;
 
 Map::Map() {
 	delete[] map;
 
-	map = new char*[MAP_WIDTH];
-	for (int i = 0; i < MAP_WIDTH; i++) {
-		map[i] = new char[MAP_LENGTH];
-		for (int j = 0; j < MAP_LENGTH; j++) {
+	map = new char*[MAP_LENGTH];
+	for (int i = 0; i < MAP_LENGTH; i++) {
+		map[i] = new char[MAP_WIDTH];
+		for (int j = 0; j < MAP_WIDTH; j++) {
 			map[i][j] = ' ';
 		}
 	}
@@ -29,10 +29,12 @@ Map::Map() {
 Map::Map(int width, int height) {
 	//clear exisiting thing
 	delete[] map;
+	MAP_LENGTH = height;
+	MAP_WIDTH = width;
 
-	map = new char*[width];
-	for (int i = 0; i < width; i++)
-		map[i] = new char[height];
+	map = new char*[height];
+	for (int i = 0; i < height; i++)
+		map[i] = new char[width];
 }
 
 //! Implementation of the map verification

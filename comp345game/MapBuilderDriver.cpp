@@ -8,8 +8,7 @@ int main() {
 	string path = "myFile.txt";
 	Map *map = MapBuilder::buildFromFile(path);
 
-	char x = map->getCell(0, 1);
-	cout << x << endl;
+	cout << map->getCell(2, 2) << endl;
 
 	delete map;
 

@@ -28,13 +28,10 @@ Map *MapBuilder::buildFromFile(string path) {
 		while (getline(myfile, line))
 		{
 			line_array = line.c_str();
-			for (int y = 0; y < width; y++) {
-				map->fillCell(y,currentHeight, line_array[2 * y]);
-				cout << map->getCell(y, currentHeight);
+			for (int i = 0; i < width; i++) {
+				map->fillCell(currentHeight, i, line_array[2 * i]);
 			}
-
-			//do stuff to build map
-			cout << line << endl;
+			currentHeight++;
 		}
 		myfile.close();
 		return map;
