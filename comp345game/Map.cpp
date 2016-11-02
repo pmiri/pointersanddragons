@@ -8,14 +8,34 @@
 using namespace std;
 
 //! constant for map length
-int const MAP_LENGTH = 2;
+int MAP_LENGTH = 2;
 //! constant for map width
-int const MAP_WIDTH = 2;
+int MAP_WIDTH = 2;
 //! map as a 2-dimensional array of chars
-char map[MAP_LENGTH][MAP_WIDTH] = {
-		{ ' ', ' '},
-		{' ', ' '} 
-	};
+char **map;
+
+Map::Map() {
+	delete[] map;
+
+	map = new char*[MAP_LENGTH];
+	for (int i = 0; i < MAP_LENGTH; i++) {
+		map[i] = new char[MAP_WIDTH];
+		for (int j = 0; j < MAP_WIDTH; j++) {
+			map[i][j] = ' ';
+		}
+	}
+}
+
+Map::Map(int width, int height) {
+	//clear exisiting thing
+	delete[] map;
+	MAP_LENGTH = height;
+	MAP_WIDTH = width;
+
+	map = new char*[height];
+	for (int i = 0; i < height; i++)
+		map[i] = new char[width];
+}
 
 //! Implementation of the map verification
 //! @return bool value, true of the map is valid (there is at least one clear path between the mandatory begin and end cell). 
@@ -60,12 +80,12 @@ bool Map::validatePath()
 		current = queue.front();
 
 		// calculate neighbours
-		neighbours[0] = ((int)(current/ MAP_WIDTH) + 1) * MAP_WIDTH + current%MAP_WIDTH; // up
-		neighbours[1] = ((int)(current/MAP_WIDTH) - 1) * MAP_WIDTH + current%MAP_WIDTH; // down
-		neighbours[2] = (int)(current/MAP_WIDTH) * MAP_WIDTH + current%MAP_WIDTH - 1; // left
+		neighbours[0] = ((int)(current / MAP_WIDTH) + 1) * MAP_WIDTH + current%MAP_WIDTH; // up
+		neighbours[1] = ((int)(current / MAP_WIDTH) - 1) * MAP_WIDTH + current%MAP_WIDTH; // down
+		neighbours[2] = (int)(current / MAP_WIDTH) * MAP_WIDTH + current%MAP_WIDTH - 1; // left
 		neighbours[3] = (int)(current / MAP_WIDTH) * MAP_WIDTH + current%MAP_WIDTH + 1; // right
 
-		//edge cases
+																						//edge cases
 		neighbours[0] = neighbours[0] > MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[0];
 		neighbours[1] = neighbours[1] < MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[1];
 		neighbours[2] = neighbours[2] < MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[2];
@@ -135,7 +155,7 @@ void Map::setExit(int x, int y) {
 //! @return : a boolean true if the cell is occupeid false otherwise
 bool Map::isOccupied(int x, int y)
 {
-	if (map[x][y] != ' '){
+	if (map[x][y] != ' ') {
 		return true;
 	}
 	return false;
