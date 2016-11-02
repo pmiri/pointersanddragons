@@ -10,7 +10,7 @@ class MapCreator
 {
 public:
 	Map* buildMap(char rooms[], int width, int length);
-	void saveMap(Map mapToSave);
+	void saveMap(Map mapToSave, std::string filepath, int height, int width);
 	Map* loadMap(std::string filepath);
 
 private:
