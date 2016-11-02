@@ -116,6 +116,9 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemContainer.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapUI.h" />
+    <ClInclude Include="Observable.h" />
+    <ClInclude Include="Observer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
@@ -125,6 +128,9 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemContainer.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapUI.cpp" />
+    <ClCompile Include="Observable.cpp" />
+    <ClCompile Include="Observer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -35,14 +35,14 @@ int Dice::roll(string input) {
 	}
 }
 
-int main() {
-	Dice d;
-	while (true) {
-		cout << "Input dice format xdy[+z]: " << endl;
-		string val;
-		cin >> val;
-		cout << "Dice rolled: " << d.roll(val) << endl;
-		system("pause");
-	}
-	return 0;
-}
+//int main() {
+//	Dice d;
+//	while (true) {
+//		cout << "Input dice format xdy[+z]: " << endl;
+//		string val;
+//		cin >> val;
+//		cout << "Dice rolled: " << d.roll(val) << endl;
+//		system("pause");
+//	}
+//	return 0;
+//}

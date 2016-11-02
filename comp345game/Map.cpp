@@ -4,6 +4,7 @@
 #include "Map.h"
 #include <list>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -124,7 +125,11 @@ bool Map::validatePath()
 //! @param obj: a character value of object that fills the cell
 void Map::fillCell(int x, int y, char obj)
 {
-	map[x][y] = obj;
+	//map[x][y] = obj;
+	char* oc = new char;
+	oc = &map[x][y];
+	*oc = obj;
+	Notify();
 }
 
 //! Implementation of get cell, returns cell at given location
@@ -133,6 +138,16 @@ void Map::fillCell(int x, int y, char obj)
 char Map::getCell(int x, int y)
 {
 	return map[x][y];
+}
+
+int Map::getHeight()
+{
+	return MAP_LENGTH;
+}
+
+int Map::getWidth()
+{
+	return MAP_WIDTH;
 }
 
 //! Implementation of selecting entrance, set any cell to the map's entrance
