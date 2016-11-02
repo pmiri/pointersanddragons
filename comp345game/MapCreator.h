@@ -9,9 +9,9 @@
 class MapCreator
 {
 public:
-	Map buildMap(char rooms[], int width, int length);
+	Map* buildMap(char rooms[], int width, int length);
 	void saveMap(Map mapToSave);
-	Map loadMap(std::string filepath);
+	Map* loadMap(std::string filepath);
 
 private:
 	Map mapInProgress;
