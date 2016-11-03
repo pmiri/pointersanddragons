@@ -10,7 +10,7 @@ void Campaign::addMap(Map map)
 
 void Campaign::addMap(Map map, int index)
 {
-	if (index < mapsInCampaign.size)
+	if (index < mapsInCampaign.size())
 		mapsInCampaign.insert(mapsInCampaign.begin() + index, map);
 	else
 		mapsInCampaign.push_back(map);
@@ -18,7 +18,7 @@ void Campaign::addMap(Map map, int index)
 
 Map Campaign::getMapAt(int index)
 {
-	if (index < mapsInCampaign.size)
+	if (index < mapsInCampaign.size())
 		return mapsInCampaign.at(index);
 }
 

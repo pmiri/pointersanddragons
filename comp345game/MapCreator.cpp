@@ -68,3 +68,45 @@ Map* MapCreator::loadMap(std::string filepath)
 		std::cout << "Error in opening file \n";
 	return nullptr;
 }
+
+void MapCreator::saveCampaign(Campaign campaignToSave)
+{
+	//impossible until height and width are made available on Maps
+}
+
+Campaign* MapCreator::loadCampaign(std::string filepath)
+{
+	std::string currentLine = "";
+	std::ifstream fileToLoad;
+	fileToLoad.open(filepath);
+	if (fileToLoad.is_open())
+	{
+		if (!getline(fileToLoad, currentLine))
+			return nullptr;
+		else
+		{
+			Campaign* campaignFromFile = new Campaign(currentLine);
+			if (!getline(fileToLoad, currentLine))
+				return nullptr;
+			else
+			{
+				int numberOfMaps = atoi(currentLine.c_str());
+				for (int i = 0; i < numberOfMaps; i++)
+				{
+					if (getline(fileToLoad, currentLine))
+					{
+						Map tempMap = *loadMap(currentLine);
+						campaignFromFile->addMap(tempMap);
+					}
+					else
+						return nullptr;
+				}
+			}			
+			fileToLoad.close();
+			return campaignFromFile;
+		}
+	}
+	else
+		std::cout << "Error in opening file \n";
+	return nullptr;
+}

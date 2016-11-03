@@ -1,3 +1,4 @@
-﻿  Campaign.cpp
+﻿  MapCreator.cpp
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(7): warning C4172: returning address of local variable or temporary
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.exe
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.pdb (Partial PDB)
