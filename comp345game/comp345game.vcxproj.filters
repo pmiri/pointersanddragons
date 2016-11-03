@@ -36,6 +36,9 @@
     <ClInclude Include="MapCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Campaign.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Map.cpp">
@@ -63,6 +66,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MapCreatorDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Campaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

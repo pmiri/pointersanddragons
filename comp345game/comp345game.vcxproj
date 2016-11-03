@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Campaign.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
@@ -119,6 +120,7 @@
     <ClInclude Include="MapCreator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Campaign.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Enhancement.cpp" />

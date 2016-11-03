@@ -1,7 +1,6 @@
 #include "MapCreator.h"
 #include <iostream>
 #include <fstream>
-#include <string>
 
 Map* MapCreator::buildMap(char rooms[], int width, int length)
 {
