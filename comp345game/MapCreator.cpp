@@ -7,16 +7,18 @@ Map* MapCreator::buildMap(char rooms[], int width, int length)
 	return &Map();
 }
 
-void MapCreator::saveMap(Map mapToSave, std::string filepath, int width, int height)
+void MapCreator::saveMap(Map mapToSave, std::string filepath)
 {
 	char blankSpace = ' ';
 	std::ofstream fileToWrite;
 	fileToWrite.open(filepath);
+	int width = mapToSave.getWidth();
+	int length = mapToSave.getLength();
 	if (fileToWrite.is_open())
 	{
 		fileToWrite << width << std::endl;
-		fileToWrite << height << std::endl;
-		for (int row = 0; row < height; row++)
+		fileToWrite << length << std::endl;
+		for (int row = 0; row < length; row++)
 		{
 			for (int column = 0; column < width; column++) {
 				fileToWrite << mapToSave.getCell(column, row) << blankSpace;

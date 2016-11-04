@@ -11,7 +11,7 @@ class MapCreator
 {
 public:
 	Map* buildMap(char rooms[], int width, int length);
-	void saveMap(Map mapToSave, std::string filepath, int height, int width);
+	void saveMap(Map mapToSave, std::string filepath);
 	Map* loadMap(std::string filepath);
 	void saveCampaign(Campaign campaignToSave);
 	Campaign* loadCampaign(std::string filepath);

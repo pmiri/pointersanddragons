@@ -135,6 +135,17 @@ char Map::getCell(int x, int y)
 	return map[x][y];
 }
 
+int Map::getWidth()
+{
+	return MAP_WIDTH;
+}
+
+int Map::getLength()
+{
+	return MAP_LENGTH;
+}
+
+
 //! Implementation of selecting entrance, set any cell to the map's entrance
 //! @param x: an integer value of horizontal index of the map's grid
 //! @param y: an integer value of vertical index of the map's grid
