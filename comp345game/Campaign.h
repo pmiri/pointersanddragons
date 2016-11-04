@@ -15,6 +15,7 @@ public:
 	void addMap(Map map, int index);
 	Map getMapAt(int index);
 	void removeMap(int index);
+	int getSize();
 
 	Campaign(std::string campaignName);
 	Campaign(std::vector<Map> maps, std::string campaignName);

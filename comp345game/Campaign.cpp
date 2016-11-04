@@ -27,6 +27,11 @@ void Campaign::removeMap(int index)
 	mapsInCampaign.erase(mapsInCampaign.begin() + index);
 }
 
+int Campaign::getSize()
+{
+	return mapsInCampaign.size();
+}
+
 Campaign::Campaign(std::string campaignName)
 {
 	name = campaignName;

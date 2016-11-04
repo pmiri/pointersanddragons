@@ -13,7 +13,7 @@ public:
 	Map* buildMap(char rooms[], int width, int length);
 	void saveMap(Map mapToSave, std::string filepath);
 	Map* loadMap(std::string filepath);
-	void saveCampaign(Campaign campaignToSave);
+	void saveCampaign(Campaign campaignToSave, std::string filepaths[]);
 	Campaign* loadCampaign(std::string filepath);
 private:
 	Map mapInProgress;

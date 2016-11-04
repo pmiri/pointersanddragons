@@ -4,7 +4,17 @@
 
 Map* MapCreator::buildMap(char rooms[], int width, int length)
 {
-	return &Map();
+	Map* customMap = new Map(width, length);
+	int roomPosition = 0;
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			customMap->fillCell(i, j, rooms[roomPosition]);
+			roomPosition++;
+		}
+	}
+	return customMap;
 }
 
 void MapCreator::saveMap(Map mapToSave, std::string filepath)
@@ -46,11 +56,11 @@ Map* MapCreator::loadMap(std::string filepath)
 			mapWidth = atoi(currentLine.c_str());
 			if (getline(fileToLoad, currentLine))
 				mapHeight = atoi(currentLine.c_str());
-			else 
+			else
 				return nullptr;
 		}
-		else 
-			return nullptr;	
+		else
+			return nullptr;
 
 		Map *mapFromFile = new Map(mapWidth, mapHeight);
 		int row = 0;
@@ -71,9 +81,25 @@ Map* MapCreator::loadMap(std::string filepath)
 	return nullptr;
 }
 
-void MapCreator::saveCampaign(Campaign campaignToSave)
+void MapCreator::saveCampaign(Campaign campaignToSave, std::string filepaths[])
 {
-	//impossible until height and width are made available on Maps
+	std::string currentLine = "";
+	std::ofstream fileToWrite;
+	fileToWrite.open(filepaths[0]);
+	if (fileToWrite.is_open())
+	{
+		fileToWrite << campaignToSave.name << std::endl;
+		int numberOfMaps = campaignToSave.getSize();
+		fileToWrite << numberOfMaps << std::endl;
+		for (int i = 0; i < numberOfMaps; i++)
+		{
+			fileToWrite << filepaths[i + 1] << std::endl;
+			saveMap(campaignToSave.getMapAt(i), filepaths[i + 1]);
+		}
+		fileToWrite.close();
+	}
+	else
+		std::cout << "Error in opening file \n";
 }
 
 Campaign* MapCreator::loadCampaign(std::string filepath)
@@ -103,7 +129,7 @@ Campaign* MapCreator::loadCampaign(std::string filepath)
 					else
 						return nullptr;
 				}
-			}			
+			}
 			fileToLoad.close();
 			return campaignFromFile;
 		}
