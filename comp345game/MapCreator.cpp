@@ -17,6 +17,17 @@ Map* MapCreator::buildMap(char rooms[], int width, int length)
 	return customMap;
 }
 
+Campaign * MapCreator::buildCampaign(Map maps[], int numberOfMaps, std::string name)
+{
+	std::vector<Map> campaignMaps;
+	for (int i = 0; i < numberOfMaps; i++)
+	{
+		campaignMaps.push_back(maps[i]);
+	}
+	Campaign* newCampaign = new Campaign(campaignMaps, name);
+	return nullptr;
+}
+
 void MapCreator::saveMap(Map mapToSave, std::string filepath)
 {
 	char blankSpace = ' ';
