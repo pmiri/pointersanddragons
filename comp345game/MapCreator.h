@@ -10,12 +10,11 @@
 class MapCreator
 {
 public:
-	Map* buildMap(char rooms[], int width, int length);
-	Campaign* buildCampaign(Map maps[], int numberOfMaps, std::string name);
-	void saveMap(Map mapToSave, std::string filepath);
-	Map* loadMap(std::string filepath);
-	void saveCampaign(Campaign campaignToSave, std::string filepaths[]);
-	Campaign* loadCampaign(std::string filepath);
-private:
-	Map mapInProgress;
+	static Map* buildMap(char rooms[], int width, int length);
+	static Campaign* buildCampaign(Map maps[], int numberOfMaps, std::string name);
+	static void saveMap(Map mapToSave, std::string filepath);
+	static Map* loadMap(std::string filepath);
+	static void saveCampaign(Campaign campaignToSave, std::string filepaths[]);
+	static Campaign* loadCampaign(std::string filepath);
+	MapCreator() {};
 };
