@@ -8,6 +8,10 @@ Observable::Observable() {
 Observable::~Observable() {
 	delete _observers;
 }
+list<Observer*> Observable::getObservers()
+{
+	return *_observers;
+}
 void Observable::Attach(Observer* o) {
 	_observers->push_back(o);
 };

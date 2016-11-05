@@ -14,6 +14,7 @@ public:
 	virtual void Notify();
 	Observable();
 	~Observable();
+	list<Observer*> getObservers();
 private:
 	list<Observer*> *_observers;
 };

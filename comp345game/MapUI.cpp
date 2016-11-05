@@ -3,6 +3,7 @@
 //!
 #include "MapUI.h"
 #include "Map.h"
+#include <string>
 #include <iostream>
 #include <stdlib.h>//for clearning console on windows
 using namespace std;
@@ -15,9 +16,15 @@ MapUI::MapUI(Map* m) {
 };
 void MapUI::Update() {
 	PrintMap();
-};
+}
+string MapUI::getMapString()
+{
+	return mapString;
+}
+;
 void MapUI::PrintMap() {
 	system("cls");
+	mapString = "";
 	cout << "Map:" << endl;
 	int mapHeight = _subject->getHeight();
 	int mapWidth = _subject->getWidth();
@@ -25,33 +32,33 @@ void MapUI::PrintMap() {
 		for (int w = 0; w < mapWidth; w++) {//for width
 			char cellContent = _subject->getCell(w, h);
 			if (cellContent == 'W') {
-				cout << "#";
+				mapString += "#";
 				continue;
 			}
 			if (cellContent == 'B' || cellContent == 'E') {
-				cout << "H";
+				mapString += "H";
 				continue;
 			}
 			if (cellContent == 'C') {
-				cout << "I";
+				mapString += "I";
 				continue;
 			}
 			if (cellContent == 'M') {
-				cout << "M";
+				mapString += "M";
 				continue;
 			}
 			if (cellContent == 'T') {
-				cout << "T";
+				mapString += "T";
 				continue;
 			}
 			else {
-				cout << " ";
+				mapString += " ";
 				continue;
 			}
 		}
-		cout << endl;
+		mapString += "\n";
 	}
-	cout << endl << "Press any key to continue";//remove for actual game
+	cout << mapString << endl << "Press any key to continue";//remove for actual game
 };
 
 
@@ -63,7 +70,6 @@ int main() {
 	map->setExit(4, 4);
 
 	map->fillCell(0, 1, 'W');
-	
 	getchar();
 	map->fillCell(0, 2, 'W');
 	getchar();

@@ -9,6 +9,8 @@ public:
 	MapUI(Map* m);
 	void PrintMap();
 	void Update();
+	string getMapString();
 private:
 	Map *_subject;
+	string mapString;
 };

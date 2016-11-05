@@ -1,4 +1,4 @@
-﻿Build started 02/11/2016 4:56:18 PM.
+﻿Build started 05/11/2016 2:29:30 PM.
 Environment at start of build:
 ALLUSERSPROFILE = C:\ProgramData
 ANDROID_NDK_PATH = C:\Program Files\Android\ndk\android-ndk-r12-beta1
@@ -53,10 +53,10 @@ VSIDE = true
 VSLANG = 1033
 VSSDK140Install = C:\Program Files (x86)\Microsoft Visual Studio 14.0\VSSDK\
 windir = C:\WINDOWS
-XTC_IDE = e924010b962643e8bba4bb21efaea0cf
+XTC_IDE = dab921489e734adc9ad017957c3fff81
 
-16:56:18.614     1>Project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" on node 2 (Build target(s)).
-16:56:18.614     1>Initial Properties:
+14:29:30.245     1>Project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" on node 2 (Build target(s)).
+14:29:30.245     1>Initial Properties:
                    _AfterCompileWinFXInternalDependsOn = 
                            PrepareResourcesForSatelliteAssemblies;
                            MergeLocalizationDirectives;
@@ -564,6 +564,7 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    CrtSDKReferenceVersion = 14.0
                    CurrentSolutionConfigurationContents = <SolutionConfiguration>
                    <ProjectConfiguration Project="{54db4169-1035-4b14-b8df-ced5e5763289}" AbsolutePath="C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj">Debug|Win32</ProjectConfiguration>
+                   <ProjectConfiguration Project="{93f49992-d20a-4109-916c-921e7369f10f}" AbsolutePath="C:\Users\Denis\Source\Repos\comp345game\A1NativeUnitTestProject\A1NativeUnitTestProject.vcxproj">Debug|Win32</ProjectConfiguration>
                    </SolutionConfiguration>
                    CustomAfterMicrosoftCommonProps = C:\Program Files (x86)\MSBuild\v14.0\Custom.After.Microsoft.Common.props
                    CustomAfterMicrosoftCommonTargets = C:\Program Files (x86)\MSBuild\v14.0\Custom.After.Microsoft.Common.targets
@@ -1158,8 +1159,8 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    XamlTemporaryAssemblyName = comp345game
                    YieldDuringToolExecution = true
 
-16:56:18.614     1>Building with tools version "14.0".
-16:56:18.615     1>Target "_CheckForInvalidConfigurationAndPlatform: (TargetId:2)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (entry point):
+14:29:30.245     1>Building with tools version "14.0".
+14:29:30.246     1>Target "_CheckForInvalidConfigurationAndPlatform: (TargetId:2)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (entry point):
                    Set Property: _InvalidConfigurationMessageText=The OutputPath property is not set for project 'comp345game.vcxproj'.  Please check to make sure that you have specified a valid combination of Configuration and Platform for this project.  Configuration='Debug'  Platform='Win32'.
                    Set Property: _InvalidConfigurationMessageText=The OutputPath property is not set for project 'comp345game.vcxproj'.  Please check to make sure that you have specified a valid combination of Configuration and Platform for this project.  Configuration='Debug'  Platform='Win32'.  This error may also appear if some other project is trying to follow a project-to-project reference to this project, this project has been unloaded or is not included in the solution, and the referencing project does not build using the same or an equivalent Configuration or Platform.
                    Task "Error" skipped, due to false condition; ( '$(_InvalidConfigurationError)' == 'true' ) was evaluated as ( '' == 'true' ).
@@ -1178,8 +1179,8 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    Task "Error" skipped, due to false condition; ('$(OutDir)' != '' and !HasTrailingSlash('$(OutDir)')) was evaluated as ('C:\Users\Denis\Source\Repos\comp345game\Debug\' != '' and !HasTrailingSlash('C:\Users\Denis\Source\Repos\comp345game\Debug\')).
                    Task "Error" skipped, due to false condition; ('$(BaseIntermediateOutputPath)' != '' and !HasTrailingSlash('$(BaseIntermediateOutputPath)')) was evaluated as ('obj\' != '' and !HasTrailingSlash('obj\')).
                    Task "Error" skipped, due to false condition; ('$(IntermediateOutputPath)' != '' and !HasTrailingSlash('$(IntermediateOutputPath)')) was evaluated as ('Debug\' != '' and !HasTrailingSlash('Debug\')).
-16:56:18.621     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "comp345game.vcxproj".: (TargetId:2)
-16:56:18.621     1>Target "_PrepareForBuild: (TargetId:3)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
+14:29:30.251     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "comp345game.vcxproj".: (TargetId:2)
+14:29:30.251     1>Target "_PrepareForBuild: (TargetId:3)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
                    Set Property: BuildType=Build
                    Set Property: _BuildActionType=Build
                    Task "CreateItem" skipped, due to false condition; ('%(CustomBuild.IncludeFileToTool)'!='') was evaluated as (''!='').
@@ -1187,17 +1188,17 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                        CustomBuildStep=
                            comp345game
                                    Message=Performing Custom Build Step
-16:56:18.622     1>Done building target "_PrepareForBuild" in project "comp345game.vcxproj".: (TargetId:3)
-16:56:18.622     1>Target "_PrepareForReferenceResolution: (TargetId:4)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
+14:29:30.251     1>Done building target "_PrepareForBuild" in project "comp345game.vcxproj".: (TargetId:3)
+14:29:30.251     1>Target "_PrepareForReferenceResolution: (TargetId:4)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
                    Set Property: TargetFrameworkMoniker=
                    Set Property: _FindDependencies=false
                    Set Property: AdditionalExplicitAssemblyReferences=
                    Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
-16:56:18.622     1>Done building target "_PrepareForReferenceResolution" in project "comp345game.vcxproj".: (TargetId:4)
+14:29:30.252     1>Done building target "_PrepareForReferenceResolution" in project "comp345game.vcxproj".: (TargetId:4)
                    Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('Character.cpp;Dice.cpp;Enhancement.cpp;Fighter.cpp;Item.cpp;ItemContainer.cpp;Map.cpp;MapUI.cpp;Observable.cpp;Observer.cpp'!='' and 'false'=='true' and '' != 'false').
-16:56:18.622     1>Target "BeforeResolveReferences: (TargetId:5)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
-16:56:18.622     1>Done building target "BeforeResolveReferences" in project "comp345game.vcxproj".: (TargetId:5)
-16:56:18.622     1>Target "AssignProjectConfiguration: (TargetId:6)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
+14:29:30.252     1>Target "BeforeResolveReferences: (TargetId:5)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
+14:29:30.252     1>Done building target "BeforeResolveReferences" in project "comp345game.vcxproj".: (TargetId:5)
+14:29:30.252     1>Target "AssignProjectConfiguration: (TargetId:6)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
                    Set Property: ShouldUnsetParentConfigurationAndPlatform=true
                    Using "AssignProjectConfiguration" task from assembly "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "AssignProjectConfiguration" (TaskId:4)
@@ -1208,27 +1209,28 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                      Task Parameter:ResolveConfigurationPlatformUsingMappings=False (TaskId:4)
                      Task Parameter:SolutionConfigurationContents=<SolutionConfiguration>
                      <ProjectConfiguration Project="{54db4169-1035-4b14-b8df-ced5e5763289}" AbsolutePath="C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj">Debug|Win32</ProjectConfiguration>
+                     <ProjectConfiguration Project="{93f49992-d20a-4109-916c-921e7369f10f}" AbsolutePath="C:\Users\Denis\Source\Repos\comp345game\A1NativeUnitTestProject\A1NativeUnitTestProject.vcxproj">Debug|Win32</ProjectConfiguration>
                      </SolutionConfiguration> (TaskId:4)
                      Task Parameter:OnlyReferenceAndBuildProjectsEnabledInSolutionConfiguration=True (TaskId:4)
                      Task Parameter:ShouldUnsetParentConfigurationAndPlatform=True (TaskId:4)
                    Done executing task "AssignProjectConfiguration". (TaskId:4)
-16:56:18.623     1>Done building target "AssignProjectConfiguration" in project "comp345game.vcxproj".: (TargetId:6)
+14:29:30.252     1>Done building target "AssignProjectConfiguration" in project "comp345game.vcxproj".: (TargetId:6)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
-16:56:18.623     1>Target "_SplitProjectReferencesByFileExistence: (TargetId:7)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveProjectReferences" depends on it):
+14:29:30.252     1>Target "_SplitProjectReferencesByFileExistence: (TargetId:7)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveProjectReferences" depends on it):
                    Task "ResolveNonMSBuildProjectOutput" skipped, due to false condition; ('$(BuildingInsideVisualStudio)'=='true' and '@(ProjectReferenceWithConfiguration)'!='') was evaluated as ('true'=='true' and ''!='').
-16:56:18.623     1>Done building target "_SplitProjectReferencesByFileExistence" in project "comp345game.vcxproj".: (TargetId:7)
+14:29:30.253     1>Done building target "_SplitProjectReferencesByFileExistence" in project "comp345game.vcxproj".: (TargetId:7)
                    Target "_RemoveNameMetadataFromProjectReferenceItems" skipped, due to false condition; ('@(ProjectReference)'!='') was evaluated as (''!='').
-16:56:18.623     1>Target "ResolveProjectReferences: (TargetId:8)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
+14:29:30.253     1>Target "ResolveProjectReferences: (TargetId:8)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' != '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '14.0' != '10.0' and '' != '').
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' == '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '14.0' == '10.0' and '' != '').
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and 'true' != 'true' and 'true' == 'true' and '' != '').
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingProject)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and 'true' == 'true' and '' != '').
                    Task "Warning" skipped, due to false condition; ('@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceNonexistent)' != '') was evaluated as ('' != '' and '' != '').
-16:56:18.623     1>Done building target "ResolveProjectReferences" in project "comp345game.vcxproj".: (TargetId:8)
+14:29:30.253     1>Done building target "ResolveProjectReferences" in project "comp345game.vcxproj".: (TargetId:8)
                    Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
                    Target "ResolveNativeReferences" skipped, due to false condition; ('@(NativeReference)'!='') was evaluated as (''!='').
                    Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
-16:56:18.624     1>Target "GetFrameworkPaths: (TargetId:9)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.NetFramework.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+14:29:30.253     1>Target "GetFrameworkPaths: (TargetId:9)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.NetFramework.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Added Item(s): _TargetFramework40DirectoryItem=C:\Windows\Microsoft.NET\Framework\v4.0.30319
                    Added Item(s): _TargetFramework35DirectoryItem=C:\Windows\Microsoft.NET\Framework\v3.5
                    Added Item(s): _TargetFramework30DirectoryItem=C:\Windows\Microsoft.NET\Framework\v3.0
@@ -1238,16 +1240,16 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    Set Property: TargetFrameworkDirectory=C:\Windows\Microsoft.NET\Framework\v4.0.30319
                    Set Property: TargetFrameworkSDKDirectory=C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\
                    Added Item(s): _TargetFrameworkSDKDirectoryItem=C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\
-16:56:18.624     1>Done building target "GetFrameworkPaths" in project "comp345game.vcxproj".: (TargetId:9)
+14:29:30.254     1>Done building target "GetFrameworkPaths" in project "comp345game.vcxproj".: (TargetId:9)
                    Target "GetWinFXPath" skipped, due to false condition; (('@(Page)' != '' or '@(ApplicationDefinition)' != '' or '@(Resource)' != '') and ('$(GetWinFXNativePath)' != '' or '$(GetWinFXWoWPath)' != '' )) was evaluated as (('' != '' or '' != '' or '' != '') and ('' != '' or '' != '' )).
-16:56:18.624     1>Target "GetReferenceAssemblyPaths: (TargetId:10)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+14:29:30.254     1>Target "GetReferenceAssemblyPaths: (TargetId:10)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Set Property: TargetFrameworkDirectory=
                    Task "GetReferenceAssemblyPaths" skipped, due to false condition; ('$(TargetFrameworkMoniker)' != '' and ('$(_TargetFrameworkDirectories)' == '' or '$(_FullFrameworkReferenceAssemblyPaths)' == '')) was evaluated as ('' != '' and ('C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '' or 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '')).
                    Set Property: TargetFrameworkDirectory=C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0;;
                    Set Property: TargetFrameworkDirectory=C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0;;;C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral
                    Set Property: RemoveAssemblyFoldersIfNoTargetFramework=true
-16:56:18.624     1>Done building target "GetReferenceAssemblyPaths" in project "comp345game.vcxproj".: (TargetId:10)
-16:56:18.625     1>Target "SetBuildDefaultEnvironmentVariables: (TargetId:11)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Current.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
+14:29:30.254     1>Done building target "GetReferenceAssemblyPaths" in project "comp345game.vcxproj".: (TargetId:10)
+14:29:30.254     1>Target "SetBuildDefaultEnvironmentVariables: (TargetId:11)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Current.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
                    Using "SetEnv" task from assembly "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Build.CppTasks.Common.dll".
                    Task "SetEnv" (TaskId:5)
                      Task Parameter:Name=PATH (TaskId:5)
@@ -1277,9 +1279,9 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                      INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;;;C:\Program Files (x86)\Windows Kits\8.1\Include\um;C:\Program Files (x86)\Windows Kits\8.1\Include\shared;C:\Program Files (x86)\Windows Kits\8.1\Include\winrt;; (TaskId:8)
                      Output Property: INCLUDE=C:\Program Files %28x86%29\Microsoft Visual Studio 14.0\VC\include%3b%3bC:\Program Files %28x86%29\Microsoft Visual Studio 14.0\VC\atlmfc\include%3b%3bC:\Program Files %28x86%29\Windows Kits\10\Include\10.0.10240.0\ucrt%3b%3b%3bC:\Program Files %28x86%29\Windows Kits\8.1\Include\um%3bC:\Program Files %28x86%29\Windows Kits\8.1\Include\shared%3bC:\Program Files %28x86%29\Windows Kits\8.1\Include\winrt%3b%3b (TaskId:8)
                    Done executing task "SetEnv". (TaskId:8)
-16:56:18.626     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "comp345game.vcxproj".: (TargetId:11)
+14:29:30.255     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "comp345game.vcxproj".: (TargetId:11)
                    Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
-16:56:18.626     1>Target "GetResolvedWinMD: (TargetId:12)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
+14:29:30.255     1>Target "GetResolvedWinMD: (TargetId:12)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
                    Added Item(s): 
                        Link=
                            tmp
@@ -1360,8 +1362,8 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                                    TypeLibraryResourceID=1
                                    UACExecutionLevel=AsInvoker
                                    UACUIAccess=false
-16:56:18.627     1>Done building target "GetResolvedWinMD" in project "comp345game.vcxproj".: (TargetId:12)
-16:56:18.627     1>Target "PlatformPrepareForBuild: (TargetId:13)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
+14:29:30.256     1>Done building target "GetResolvedWinMD" in project "comp345game.vcxproj".: (TargetId:12)
+14:29:30.256     1>Target "PlatformPrepareForBuild: (TargetId:13)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
                    Set Property: ConfigurationPlatformExists=true
                    Set Property: _CurrentPlatformToolsetShortName=v140
                    Task "VCMessage" skipped, due to false condition; ('$(_Error64bitToolsNotInstalled)' == 'true') was evaluated as ('' == 'true').
@@ -1369,22 +1371,22 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v100') was evaluated as (''!='true' and 'true' != 'true' and 'v140' == 'v100').
                    Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v90') was evaluated as (''!='true' and 'true' != 'true' and 'v140' == 'v90').
                    Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' != 'v90' and '$(PlatformToolset)' != 'v100' and '$(PlatformToolset)' != 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v140' != 'v90' and 'v140' != 'v100' and 'v140' != 'v110').
-16:56:18.627     1>Done building target "PlatformPrepareForBuild" in project "comp345game.vcxproj".: (TargetId:13)
-16:56:18.627     1>Target "Desktop_PlatformPrepareForBuild: (TargetId:14)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Platforms\Win32\PlatformToolsets\v140\Toolset.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
+14:29:30.256     1>Done building target "PlatformPrepareForBuild" in project "comp345game.vcxproj".: (TargetId:13)
+14:29:30.256     1>Target "Desktop_PlatformPrepareForBuild: (TargetId:14)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Platforms\Win32\PlatformToolsets\v140\Toolset.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
                    Task "VCMessage" skipped, due to false condition; ($(MissingSDKProps) == 'true') was evaluated as ( == 'true').
-16:56:18.627     1>Done building target "Desktop_PlatformPrepareForBuild" in project "comp345game.vcxproj".: (TargetId:14)
+14:29:30.257     1>Done building target "Desktop_PlatformPrepareForBuild" in project "comp345game.vcxproj".: (TargetId:14)
                    Target "GetFrameworkPaths" skipped. Previously built successfully.
                    Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
                    Target "AssignLinkMetadata" skipped, due to false condition; ( '$(SynthesizeLinkMetadata)' == 'true' ) was evaluated as ( '' == 'true' ).
-16:56:18.627     1>Target "SetCABuildNativeEnvironmentVariables: (TargetId:15)" in file "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\CodeAnalysis\Microsoft.CodeAnalysis.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
+14:29:30.257     1>Target "SetCABuildNativeEnvironmentVariables: (TargetId:15)" in file "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\CodeAnalysis\Microsoft.CodeAnalysis.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForBuild" depends on it):
                    Initializing task factory "CodeTaskFactory" from assembly "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Build.Tasks.Core.dll".
                    Using "SetEnvironmentVariable" task from the task factory "Code Task Factory".
                    Task "SetEnvironmentVariable" (TaskId:9)
                      Task Parameter:EnvValue=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\8.1\Include\um;C:\Program Files (x86)\Windows Kits\8.1\Include\shared;C:\Program Files (x86)\Windows Kits\8.1\Include\winrt;; (TaskId:9)
                      Task Parameter:EnvKey=CAExcludePath (TaskId:9)
                    Done executing task "SetEnvironmentVariable". (TaskId:9)
-16:56:18.663     1>Done building target "SetCABuildNativeEnvironmentVariables" in project "comp345game.vcxproj".: (TargetId:15)
-16:56:18.663     1>Target "PrepareForBuild: (TargetId:16)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+14:29:30.265     1>Done building target "SetCABuildNativeEnvironmentVariables" in project "comp345game.vcxproj".: (TargetId:15)
+14:29:30.265     1>Target "PrepareForBuild: (TargetId:16)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Set Property: TargetDir=C:\Users\Denis\Source\Repos\comp345game\Debug\
                    Set Property: LocalDebuggerCommand=C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe
                    Set Property: BuildProjectReferences=false
@@ -1414,25 +1416,25 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                              C:\Users\Denis\Source\Repos\comp345game\Debug\
                              Debug\comp345game.tlog\ (TaskId:11)
                    Done executing task "MakeDir". (TaskId:11)
-16:56:18.670     1>Done building target "PrepareForBuild" in project "comp345game.vcxproj".: (TargetId:16)
+14:29:30.270     1>Done building target "PrepareForBuild" in project "comp345game.vcxproj".: (TargetId:16)
                    Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
                    Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('Character.cpp;Dice.cpp;Enhancement.cpp;Fighter.cpp;Item.cpp;ItemContainer.cpp;Map.cpp;MapUI.cpp;Observable.cpp;Observer.cpp'!='' and 'false'=='true' and '' != 'false').
-16:56:18.670     1>Target "GetInstalledSDKLocations: (TargetId:17)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveSDKReferences" depends on it):
+14:29:30.270     1>Target "GetInstalledSDKLocations: (TargetId:17)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveSDKReferences" depends on it):
                    Task "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '') was evaluated as ('' != '').
                    Task "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '' and '$(SupportWindows81SDKs)' == 'true' and '$(TargetPlatformIdentifierWindows81)' != '' and '$(TargetPlatformVersionWindows81)' != '') was evaluated as ('' != '' and '' == 'true' and '' != '' and '' != '').
                    Task "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '' and '$(SupportWindowsPhone81SDKs)' == 'true' and '$(TargetPlatformIdentifierWindowsPhone81)' != '' and '$(TargetPlatformVersionWindowsPhone81)' != '') was evaluated as ('' != '' and '' == 'true' and '' != '' and '' != '').
-16:56:18.670     1>Done building target "GetInstalledSDKLocations" in project "comp345game.vcxproj".: (TargetId:17)
-16:56:18.670     1>Target "ModifyUnitTestPlatformVersion: (TargetId:18)" in file "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportBefore\Windows.8.1.UT_SDKReference.props" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveSDKReferences" depends on it):
-16:56:18.670     1>Done building target "ModifyUnitTestPlatformVersion" in project "comp345game.vcxproj".: (TargetId:18)
-16:56:18.670     1>Target "ResolveSDKReferences: (TargetId:19)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+14:29:30.270     1>Done building target "GetInstalledSDKLocations" in project "comp345game.vcxproj".: (TargetId:17)
+14:29:30.270     1>Target "ModifyUnitTestPlatformVersion: (TargetId:18)" in file "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportBefore\Windows.8.1.UT_SDKReference.props" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveSDKReferences" depends on it):
+14:29:30.271     1>Done building target "ModifyUnitTestPlatformVersion" in project "comp345game.vcxproj".: (TargetId:18)
+14:29:30.271     1>Target "ResolveSDKReferences: (TargetId:19)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Task "ResolveSDKReference" skipped, due to false condition; ('@(SDKReference)'!='') was evaluated as (''!='').
-16:56:18.671     1>Done building target "ResolveSDKReferences" in project "comp345game.vcxproj".: (TargetId:19)
+14:29:30.271     1>Done building target "ResolveSDKReferences" in project "comp345game.vcxproj".: (TargetId:19)
                    Target "ResolveSDKReferences" skipped. Previously built successfully.
-16:56:18.671     1>Target "ExpandSDKReferences: (TargetId:20)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+14:29:30.271     1>Target "ExpandSDKReferences: (TargetId:20)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Task "GetSDKReferenceFiles" skipped, due to false condition; ('@(ResolvedSDKReference)'!='') was evaluated as (''!='').
-16:56:18.671     1>Done building target "ExpandSDKReferences" in project "comp345game.vcxproj".: (TargetId:20)
+14:29:30.271     1>Done building target "ExpandSDKReferences" in project "comp345game.vcxproj".: (TargetId:20)
                    Target "ResolveNuGetPackageAssets" skipped, due to false condition; ('$(ResolveNuGetPackages)' == 'true' and exists('$(ProjectLockFile)')) was evaluated as ('true' == 'true' and exists('project.lock.json')).
-16:56:18.671     1>Target "ResolveAssemblyReferences: (TargetId:21)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
+14:29:30.271     1>Target "ResolveAssemblyReferences: (TargetId:21)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
                    Added Item(s): 
                        _ReferenceInstalledAssemblyDirectory=
                            C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0
@@ -1441,19 +1443,19 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    Set Property: ResolveAssemblyReferencesSilent=false
                    Set Property: ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch=Warning
                    Task "ResolveAssemblyReference" skipped, due to false condition; ('@(Reference)'!='' or '@(_ResolvedProjectReferencePaths)'!='' or '@(_ExplicitReference)' != '') was evaluated as (''!='' or ''!='' or '' != '').
-16:56:18.671     1>Done building target "ResolveAssemblyReferences" in project "comp345game.vcxproj".: (TargetId:21)
+14:29:30.271     1>Done building target "ResolveAssemblyReferences" in project "comp345game.vcxproj".: (TargetId:21)
                    Target "GenerateBindingRedirects" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true') was evaluated as ('' == 'true' and 'true' == 'true').
                    Target "GenerateBindingRedirectsUpdateAppConfig" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true' and Exists('$(_GenerateBindingRedirectsIntermediateAppConfig)')) was evaluated as ('' == 'true' and 'true' == 'true' and Exists('Debug\comp345game.vcxproj.comp345game.exe.config')).
                    Target "ResolveComReferences" skipped, due to false condition; ('@(COMReference)'!='' or '@(COMFileReference)'!='') was evaluated as (''!='' or ''!='').
-16:56:18.671     1>Target "AfterResolveReferences: (TargetId:22)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
-16:56:18.671     1>Done building target "AfterResolveReferences" in project "comp345game.vcxproj".: (TargetId:22)
+14:29:30.271     1>Target "AfterResolveReferences: (TargetId:22)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ResolveReferences" depends on it):
+14:29:30.271     1>Done building target "AfterResolveReferences" in project "comp345game.vcxproj".: (TargetId:22)
                    Target "ImplicitlyExpandDesignTimeFacades" skipped, due to false condition; ('$(ImplicitlyExpandDesignTimeFacades)' == 'true') was evaluated as ('' == 'true').
                    Target "ResolveTestReferences" skipped, due to false condition; ('@(Shadow)'!='') was evaluated as (''!='').
-16:56:18.671     1>Target "ResolveReferences: (TargetId:23)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
-16:56:18.671     1>Done building target "ResolveReferences" in project "comp345game.vcxproj".: (TargetId:23)
+14:29:30.271     1>Target "ResolveReferences: (TargetId:23)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
+14:29:30.271     1>Done building target "ResolveReferences" in project "comp345game.vcxproj".: (TargetId:23)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "PrepareForBuild" skipped. Previously built successfully.
-16:56:18.671     1>Target "InitializeBuildStatus: (TargetId:24)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
+14:29:30.271     1>Target "InitializeBuildStatus: (TargetId:24)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
                    Using "ReadLinesFromFile" task from assembly "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "ReadLinesFromFile" (TaskId:12)
                      Task Parameter:File=Debug\comp345game.tlog\comp345game.lastbuildstate (TaskId:12)
@@ -1479,68 +1481,68 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                      Task Parameter:Files=Debug\comp345game.tlog\unsuccessfulbuild (TaskId:14)
                      Creating "Debug\comp345game.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified. (TaskId:14)
                    Done executing task "Touch". (TaskId:14)
-16:56:18.680     1>Done building target "InitializeBuildStatus" in project "comp345game.vcxproj".: (TargetId:24)
+14:29:30.281     1>Done building target "InitializeBuildStatus" in project "comp345game.vcxproj".: (TargetId:24)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
                    Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
-16:56:18.680     1>Target "BuildGenerateSourcesTraverse: (TargetId:25)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildGenerateSources" depends on it):
+14:29:30.281     1>Target "BuildGenerateSourcesTraverse: (TargetId:25)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildGenerateSources" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != '' and '' == 'true').
-16:56:18.680     1>Done building target "BuildGenerateSourcesTraverse" in project "comp345game.vcxproj".: (TargetId:25)
+14:29:30.281     1>Done building target "BuildGenerateSourcesTraverse" in project "comp345game.vcxproj".: (TargetId:25)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-16:56:18.680     1>Target "BeforeBuildGenerateSources: (TargetId:26)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-16:56:18.680     1>Done building target "BeforeBuildGenerateSources" in project "comp345game.vcxproj".: (TargetId:26)
-16:56:18.680     1>Target "PreBuildEvent: (TargetId:27)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+14:29:30.281     1>Target "BeforeBuildGenerateSources: (TargetId:26)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+14:29:30.281     1>Done building target "BeforeBuildGenerateSources" in project "comp345game.vcxproj".: (TargetId:26)
+14:29:30.281     1>Target "PreBuildEvent: (TargetId:27)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
                    Task "Message" skipped, due to false condition; ('%(PreBuildEvent.Message)' != '' and '%(PreBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
                    Task "Exec" skipped, due to false condition; ('%(PreBuildEvent.Command)' != '') was evaluated as ('' != '').
-16:56:18.680     1>Done building target "PreBuildEvent" in project "comp345game.vcxproj".: (TargetId:27)
+14:29:30.281     1>Done building target "PreBuildEvent" in project "comp345game.vcxproj".: (TargetId:27)
                    Target "CustomBuild" skipped, due to false condition; ('@(CustomBuild)' != '') was evaluated as ('' != '').
                    Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
                    Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
                    Target "Xsd" skipped, due to false condition; ('@(Xsd)' != '') was evaluated as ('' != '').
-16:56:18.681     1>Target "_Xsd: (TargetId:28)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-16:56:18.681     1>Done building target "_Xsd" in project "comp345game.vcxproj".: (TargetId:28)
-16:56:18.681     1>Target "MakeDirsForMidl: (TargetId:29)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Midl" depends on it):
+14:29:30.282     1>Target "_Xsd: (TargetId:28)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+14:29:30.282     1>Done building target "_Xsd" in project "comp345game.vcxproj".: (TargetId:28)
+14:29:30.282     1>Target "MakeDirsForMidl: (TargetId:29)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Midl" depends on it):
                    Set Property: Midl_OutputDir=
                    Task "Makedir" (TaskId:15)
                    Done executing task "Makedir". (TaskId:15)
-16:56:18.681     1>Done building target "MakeDirsForMidl" in project "comp345game.vcxproj".: (TargetId:29)
+14:29:30.282     1>Done building target "MakeDirsForMidl" in project "comp345game.vcxproj".: (TargetId:29)
                    Target "Midl" skipped, due to false condition; ('@(Midl)' != '') was evaluated as ('' != '').
                    Target "CustomBuild" skipped, due to false condition; ('@(CustomBuild)' != '') was evaluated as ('' != '').
                    Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
                    Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
-16:56:18.681     1>Target "ComputeMIDLGeneratedCompileInputs: (TargetId:30)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Midl" depends on it):
+14:29:30.284     1>Target "ComputeMIDLGeneratedCompileInputs: (TargetId:30)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Midl" depends on it):
                    Set Property: Midl_OutputDir=
-16:56:18.681     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "comp345game.vcxproj".: (TargetId:30)
-16:56:18.681     1>Target "AfterMidl: (TargetId:31)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Midl" depends on it):
-16:56:18.681     1>Done building target "AfterMidl" in project "comp345game.vcxproj".: (TargetId:31)
-16:56:18.681     1>Target "_Midl: (TargetId:32)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-16:56:18.681     1>Done building target "_Midl" in project "comp345game.vcxproj".: (TargetId:32)
-16:56:18.681     1>Target "AfterBuildGenerateSources: (TargetId:33)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-16:56:18.681     1>Done building target "AfterBuildGenerateSources" in project "comp345game.vcxproj".: (TargetId:33)
-16:56:18.681     1>Target "AfterBuildGenerateSourcesEvent: (TargetId:34)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-16:56:18.681     1>Done building target "AfterBuildGenerateSourcesEvent" in project "comp345game.vcxproj".: (TargetId:34)
-16:56:18.681     1>Target "_BuildGenerateSourcesAction: (TargetId:35)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildGenerateSources" depends on it):
-16:56:18.681     1>Done building target "_BuildGenerateSourcesAction" in project "comp345game.vcxproj".: (TargetId:35)
-16:56:18.681     1>Target "BuildGenerateSources: (TargetId:36)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
-16:56:18.681     1>Done building target "BuildGenerateSources" in project "comp345game.vcxproj".: (TargetId:36)
+14:29:30.284     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "comp345game.vcxproj".: (TargetId:30)
+14:29:30.284     1>Target "AfterMidl: (TargetId:31)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Midl" depends on it):
+14:29:30.284     1>Done building target "AfterMidl" in project "comp345game.vcxproj".: (TargetId:31)
+14:29:30.284     1>Target "_Midl: (TargetId:32)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+14:29:30.284     1>Done building target "_Midl" in project "comp345game.vcxproj".: (TargetId:32)
+14:29:30.284     1>Target "AfterBuildGenerateSources: (TargetId:33)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+14:29:30.284     1>Done building target "AfterBuildGenerateSources" in project "comp345game.vcxproj".: (TargetId:33)
+14:29:30.284     1>Target "AfterBuildGenerateSourcesEvent: (TargetId:34)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+14:29:30.284     1>Done building target "AfterBuildGenerateSourcesEvent" in project "comp345game.vcxproj".: (TargetId:34)
+14:29:30.284     1>Target "_BuildGenerateSourcesAction: (TargetId:35)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildGenerateSources" depends on it):
+14:29:30.284     1>Done building target "_BuildGenerateSourcesAction" in project "comp345game.vcxproj".: (TargetId:35)
+14:29:30.284     1>Target "BuildGenerateSources: (TargetId:36)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
+14:29:30.284     1>Done building target "BuildGenerateSources" in project "comp345game.vcxproj".: (TargetId:36)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
                    Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
-16:56:18.681     1>Target "BuildCompileTraverse: (TargetId:37)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildCompile" depends on it):
+14:29:30.284     1>Target "BuildCompileTraverse: (TargetId:37)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildCompile" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != ''  and '' == 'true').
-16:56:18.681     1>Done building target "BuildCompileTraverse" in project "comp345game.vcxproj".: (TargetId:37)
+14:29:30.285     1>Done building target "BuildCompileTraverse" in project "comp345game.vcxproj".: (TargetId:37)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-16:56:18.681     1>Target "BeforeClCompile: (TargetId:38)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
-16:56:18.681     1>Done building target "BeforeClCompile" in project "comp345game.vcxproj".: (TargetId:38)
+14:29:30.285     1>Target "BeforeClCompile: (TargetId:38)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
+14:29:30.285     1>Done building target "BeforeClCompile" in project "comp345game.vcxproj".: (TargetId:38)
                    Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
-16:56:18.681     1>Target "ComputeCLInputPDBName: (TargetId:39)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
-16:56:18.682     1>Done building target "ComputeCLInputPDBName" in project "comp345game.vcxproj".: (TargetId:39)
+14:29:30.285     1>Target "ComputeCLInputPDBName: (TargetId:39)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
+14:29:30.285     1>Done building target "ComputeCLInputPDBName" in project "comp345game.vcxproj".: (TargetId:39)
                    Target "ResolveReferences" skipped. Previously built successfully.
-16:56:18.682     1>Target "ComputeReferenceCLInput: (TargetId:40)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
+14:29:30.285     1>Target "ComputeReferenceCLInput: (TargetId:40)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
                    Task "WriteLinesToFile" skipped, due to false condition; (('@(_ReferenceCopyLocalPaths)'!='') and '$(DesignTimeBuild)' != 'true') was evaluated as ((''!='') and '' != 'true').
                    Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
-16:56:18.682     1>Done building target "ComputeReferenceCLInput" in project "comp345game.vcxproj".: (TargetId:40)
-16:56:18.682     1>Target "WarnCompileDuplicatedFilename: (TargetId:41)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
+14:29:30.285     1>Done building target "ComputeReferenceCLInput" in project "comp345game.vcxproj".: (TargetId:40)
+14:29:30.285     1>Target "WarnCompileDuplicatedFilename: (TargetId:41)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
                    Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Character.cpp' != 'Character.cpp' and 'Debug\' == 'Debug\').
                    Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Dice.cpp' != 'Dice.cpp' and 'Debug\' == 'Debug\').
                    Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Enhancement.cpp' != 'Enhancement.cpp' and 'Debug\' == 'Debug\').
@@ -1551,10 +1553,10 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'MapUI.cpp' != 'MapUI.cpp' and 'Debug\' == 'Debug\').
                    Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Observable.cpp' != 'Observable.cpp' and 'Debug\' == 'Debug\').
                    Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'Observer.cpp' != 'Observer.cpp' and 'Debug\' == 'Debug\').
-16:56:18.686     1>Done building target "WarnCompileDuplicatedFilename" in project "comp345game.vcxproj".: (TargetId:41)
-16:56:18.686     1>Target "FixupCLCompileOptions: (TargetId:42)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
-16:56:18.686     1>Done building target "FixupCLCompileOptions" in project "comp345game.vcxproj".: (TargetId:42)
-16:56:18.686     1>Target "MakeDirsForCl: (TargetId:43)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
+14:29:30.289     1>Done building target "WarnCompileDuplicatedFilename" in project "comp345game.vcxproj".: (TargetId:41)
+14:29:30.289     1>Target "FixupCLCompileOptions: (TargetId:42)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
+14:29:30.290     1>Done building target "FixupCLCompileOptions" in project "comp345game.vcxproj".: (TargetId:42)
+14:29:30.290     1>Target "MakeDirsForCl: (TargetId:43)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
                    Added Item(s): ClDirsToMake=C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug
                    Added Item(s): ClDirsToMake=C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug
                    Added Item(s): ClDirsToMake=C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug
@@ -1573,25 +1575,25 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                            C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug
                            C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug
                            C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug
-16:56:18.687     1>Done building target "MakeDirsForCl" in project "comp345game.vcxproj".: (TargetId:43)
+14:29:30.291     1>Done building target "MakeDirsForCl" in project "comp345game.vcxproj".: (TargetId:43)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "SetBuildDefaultEnvironmentVariables" skipped. Previously built successfully.
                    Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
-16:56:18.687     1>Target "_SelectedFiles: (TargetId:44)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "SelectClCompile" depends on it):
-16:56:18.687     1>Done building target "_SelectedFiles" in project "comp345game.vcxproj".: (TargetId:44)
+14:29:30.291     1>Target "_SelectedFiles: (TargetId:44)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "SelectClCompile" depends on it):
+14:29:30.291     1>Done building target "_SelectedFiles" in project "comp345game.vcxproj".: (TargetId:44)
                    Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
                    Target "ComputeCLInputPDBName" skipped. Previously built successfully.
                    Target "ComputeReferenceCLInput" skipped. Previously built successfully.
                    Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
                    Target "FixupCLCompileOptions" skipped. Previously built successfully.
                    Target "_SelectedFiles" skipped. Previously built successfully.
-16:56:18.687     1>Target "SelectCustomBuild: (TargetId:45)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "SelectClCompile" depends on it):
-16:56:18.687     1>Done building target "SelectCustomBuild" in project "comp345game.vcxproj".: (TargetId:45)
-16:56:18.687     1>Target "SelectClCompile: (TargetId:46)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ClCompile" depends on it):
-16:56:18.689     1>Done building target "SelectClCompile" in project "comp345game.vcxproj".: (TargetId:46)
+14:29:30.291     1>Target "SelectCustomBuild: (TargetId:45)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "SelectClCompile" depends on it):
+14:29:30.291     1>Done building target "SelectCustomBuild" in project "comp345game.vcxproj".: (TargetId:45)
+14:29:30.291     1>Target "SelectClCompile: (TargetId:46)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ClCompile" depends on it):
+14:29:30.291     1>Done building target "SelectClCompile" in project "comp345game.vcxproj".: (TargetId:46)
                    Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
                    Target "ManagedIncrementalBuildPreProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('Character.cpp;Dice.cpp;Enhancement.cpp;Fighter.cpp;Item.cpp;ItemContainer.cpp;Map.cpp;MapUI.cpp;Observable.cpp;Observer.cpp' != '' and 'false' == 'True').
-16:56:18.689     1>Target "ClCompile: (TargetId:47)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
+14:29:30.291     1>Target "ClCompile: (TargetId:47)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
                    Set Property: CLToolArchitecture=Native32Bit
                    Set Property: CLDeleteOutputOnExecute=true
                    Task "Delete" skipped, due to false condition; ('%(ClCompile.DebugInformationFormat)' != '' and '%(ClCompile.DebugInformationFormat)' != 'None' and '%(ClCompile.DebugInformationFormat)' != 'OldStyle' and '%(ClCompile.ProgramDataBaseFileName)' != '' and !Exists(%(ClCompile.ProgramDataBaseFileName))) was evaluated as ('EditAndContinue' != '' and 'EditAndContinue' != 'None' and 'EditAndContinue' != 'OldStyle' and 'Debug\vc140.pdb' != '' and !Exists(Debug\vc140.pdb)).
@@ -2291,51 +2293,51 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                      	C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\MAPUI.OBJ (TaskId:17)
                      	C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\OBSERVABLE.OBJ (TaskId:17)
                      	C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\OBSERVER.OBJ (TaskId:17)
-                     MapUI.cpp will be compiled as C:\Users\Denis\Source\Repos\comp345game\comp345game\MapUI.cpp was modified at 02/11/2016 4:56:15 PM. (TaskId:17)
+                     MapUI.cpp will be compiled as C:\Users\Denis\Source\Repos\comp345game\comp345game\MapUI.cpp was modified at 05/11/2016 2:25:28 PM. (TaskId:17)
                      Environment Variables passed to tool: (TaskId:17)
-                       VS_UNICODE_OUTPUT=1880 (TaskId:17)
+                       VS_UNICODE_OUTPUT=1332 (TaskId:17)
                      C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MapUI.cpp (TaskId:17)
                      Tracking command: (TaskId:17)
-                     C:\Program Files (x86)\MSBuild\14.0\bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\14.0\bin\FileTracker.dll" /i C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug\comp345game.tlog /r C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\MAPUI.CPP /b MSBuildConsole_CancelEvent08c56408519149f5ad760493df6c2cef  /c "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe"  /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MapUI.cpp (TaskId:17)
+                     C:\Program Files (x86)\MSBuild\14.0\bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\14.0\bin\FileTracker.dll" /i C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug\comp345game.tlog /r C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\MAPUI.CPP /b MSBuildConsole_CancelEventd8c1a30e58d343679d7a9ba770196f07  /c "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe"  /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MapUI.cpp (TaskId:17)
                      MapUI.cpp (TaskId:17)
                    Done executing task "CL". (TaskId:17)
-16:56:19.608     1>Done building target "ClCompile" in project "comp345game.vcxproj".: (TargetId:47)
+14:29:31.234     1>Done building target "ClCompile" in project "comp345game.vcxproj".: (TargetId:47)
                    Target "ManagedIncrementalBuildPostProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('Character.cpp;Dice.cpp;Enhancement.cpp;Fighter.cpp;Item.cpp;ItemContainer.cpp;Map.cpp;MapUI.cpp;Observable.cpp;Observer.cpp' != '' and 'false' == 'True').
-16:56:19.608     1>Target "AfterClCompile: (TargetId:48)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
-16:56:19.608     1>Done building target "AfterClCompile" in project "comp345game.vcxproj".: (TargetId:48)
-16:56:19.608     1>Target "_ClCompile: (TargetId:49)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildCompileAction" depends on it):
-16:56:19.608     1>Done building target "_ClCompile" in project "comp345game.vcxproj".: (TargetId:49)
+14:29:31.235     1>Target "AfterClCompile: (TargetId:48)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ClCompile" depends on it):
+14:29:31.235     1>Done building target "AfterClCompile" in project "comp345game.vcxproj".: (TargetId:48)
+14:29:31.235     1>Target "_ClCompile: (TargetId:49)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildCompileAction" depends on it):
+14:29:31.235     1>Done building target "_ClCompile" in project "comp345game.vcxproj".: (TargetId:49)
                    Target "_ResGen" skipped, due to false condition; ('@(EmbeddedResource)'!='') was evaluated as (''!='').
-16:56:19.608     1>Target "BeforeResourceCompile: (TargetId:50)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ResourceCompile" depends on it):
-16:56:19.609     1>Done building target "BeforeResourceCompile" in project "comp345game.vcxproj".: (TargetId:50)
-16:56:19.609     1>Target "MakeDirsForResourceCompile: (TargetId:51)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ResourceCompile" depends on it):
+14:29:31.235     1>Target "BeforeResourceCompile: (TargetId:50)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ResourceCompile" depends on it):
+14:29:31.235     1>Done building target "BeforeResourceCompile" in project "comp345game.vcxproj".: (TargetId:50)
+14:29:31.235     1>Target "MakeDirsForResourceCompile: (TargetId:51)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ResourceCompile" depends on it):
                    Added Item(s): RcDirsToMake=C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug
                    Task "MakeDir" (TaskId:18)
                      Task Parameter:Directories=C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug (TaskId:18)
                    Done executing task "MakeDir". (TaskId:18)
                    Removed Item(s): RcDirsToMake=C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug
-16:56:19.609     1>Done building target "MakeDirsForResourceCompile" in project "comp345game.vcxproj".: (TargetId:51)
+14:29:31.236     1>Done building target "MakeDirsForResourceCompile" in project "comp345game.vcxproj".: (TargetId:51)
                    Target "ResourceCompile" skipped, due to false condition; ('@(ResourceCompile)' != '') was evaluated as ('' != '').
-16:56:19.609     1>Target "AfterResourceCompile: (TargetId:52)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ResourceCompile" depends on it):
-16:56:19.609     1>Done building target "AfterResourceCompile" in project "comp345game.vcxproj".: (TargetId:52)
-16:56:19.609     1>Target "_ResourceCompile: (TargetId:53)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildCompileAction" depends on it):
-16:56:19.609     1>Done building target "_ResourceCompile" in project "comp345game.vcxproj".: (TargetId:53)
+14:29:31.236     1>Target "AfterResourceCompile: (TargetId:52)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_ResourceCompile" depends on it):
+14:29:31.236     1>Done building target "AfterResourceCompile" in project "comp345game.vcxproj".: (TargetId:52)
+14:29:31.236     1>Target "_ResourceCompile: (TargetId:53)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildCompileAction" depends on it):
+14:29:31.236     1>Done building target "_ResourceCompile" in project "comp345game.vcxproj".: (TargetId:53)
                    Target "_ImpLib" skipped, due to false condition; ('$(ImpLibCompiled)' == 'true') was evaluated as ('' == 'true').
                    Target "_Lib" skipped, due to false condition; ('$(LibCompiled)' == 'true') was evaluated as ('' == 'true').
-16:56:19.609     1>Target "AfterBuildCompileEvent: (TargetId:54)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildCompileAction" depends on it):
-16:56:19.609     1>Done building target "AfterBuildCompileEvent" in project "comp345game.vcxproj".: (TargetId:54)
-16:56:19.609     1>Target "_BuildCompileAction: (TargetId:55)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildCompile" depends on it):
-16:56:19.609     1>Done building target "_BuildCompileAction" in project "comp345game.vcxproj".: (TargetId:55)
-16:56:19.609     1>Target "BuildCompile: (TargetId:56)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
-16:56:19.609     1>Done building target "BuildCompile" in project "comp345game.vcxproj".: (TargetId:56)
+14:29:31.236     1>Target "AfterBuildCompileEvent: (TargetId:54)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildCompileAction" depends on it):
+14:29:31.236     1>Done building target "AfterBuildCompileEvent" in project "comp345game.vcxproj".: (TargetId:54)
+14:29:31.236     1>Target "_BuildCompileAction: (TargetId:55)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildCompile" depends on it):
+14:29:31.236     1>Done building target "_BuildCompileAction" in project "comp345game.vcxproj".: (TargetId:55)
+14:29:31.236     1>Target "BuildCompile: (TargetId:56)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
+14:29:31.236     1>Done building target "BuildCompile" in project "comp345game.vcxproj".: (TargetId:56)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
                    Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
-16:56:19.609     1>Target "BuildLinkTraverse: (TargetId:57)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildLink" depends on it):
+14:29:31.236     1>Target "BuildLinkTraverse: (TargetId:57)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildLink" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != ''  and '' == 'true').
-16:56:19.609     1>Done building target "BuildLinkTraverse" in project "comp345game.vcxproj".: (TargetId:57)
+14:29:31.236     1>Done building target "BuildLinkTraverse" in project "comp345game.vcxproj".: (TargetId:57)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-16:56:19.609     1>Target "ComputeLegacyManifestEmbedding: (TargetId:58)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.237     1>Target "ComputeLegacyManifestEmbedding: (TargetId:58)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
                    Added Item(s): 
                        Manifest=
                            temp
@@ -2365,26 +2367,26 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                                    TrackerLogDirectory=Debug\comp345game.tlog\
                                    UpdateFileHashes=false
                                    VerboseOutput=true
-16:56:19.610     1>Done building target "ComputeLegacyManifestEmbedding" in project "comp345game.vcxproj".: (TargetId:58)
-16:56:19.610     1>Target "BeforeLink: (TargetId:59)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
-16:56:19.610     1>Done building target "BeforeLink" in project "comp345game.vcxproj".: (TargetId:59)
-16:56:19.610     1>Target "ComputeRCOutputs: (TargetId:60)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ComputeRCGeneratedLinkInputs" depends on it):
-16:56:19.610     1>Done building target "ComputeRCOutputs" in project "comp345game.vcxproj".: (TargetId:60)
-16:56:19.610     1>Target "ComputeRCGeneratedLinkInputs: (TargetId:61)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
-16:56:19.611     1>Done building target "ComputeRCGeneratedLinkInputs" in project "comp345game.vcxproj".: (TargetId:61)
-16:56:19.611     1>Target "ComputeManifestGeneratedLinkerInputs: (TargetId:62)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
-16:56:19.611     1>Done building target "ComputeManifestGeneratedLinkerInputs" in project "comp345game.vcxproj".: (TargetId:62)
-16:56:19.611     1>Target "ComputeCustomBuildOutput: (TargetId:63)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.238     1>Done building target "ComputeLegacyManifestEmbedding" in project "comp345game.vcxproj".: (TargetId:58)
+14:29:31.238     1>Target "BeforeLink: (TargetId:59)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.238     1>Done building target "BeforeLink" in project "comp345game.vcxproj".: (TargetId:59)
+14:29:31.238     1>Target "ComputeRCOutputs: (TargetId:60)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ComputeRCGeneratedLinkInputs" depends on it):
+14:29:31.238     1>Done building target "ComputeRCOutputs" in project "comp345game.vcxproj".: (TargetId:60)
+14:29:31.238     1>Target "ComputeRCGeneratedLinkInputs: (TargetId:61)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.238     1>Done building target "ComputeRCGeneratedLinkInputs" in project "comp345game.vcxproj".: (TargetId:61)
+14:29:31.238     1>Target "ComputeManifestGeneratedLinkerInputs: (TargetId:62)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.238     1>Done building target "ComputeManifestGeneratedLinkerInputs" in project "comp345game.vcxproj".: (TargetId:62)
+14:29:31.238     1>Target "ComputeCustomBuildOutput: (TargetId:63)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
                    Task "CreateItem" skipped, due to false condition; ('%(CustomBuildDirsToMake.OutputFileToTool)'!='') was evaluated as (''!='').
                    Task "MakeDir" (TaskId:19)
                    Done executing task "MakeDir". (TaskId:19)
-16:56:19.611     1>Done building target "ComputeCustomBuildOutput" in project "comp345game.vcxproj".: (TargetId:63)
+14:29:31.239     1>Done building target "ComputeCustomBuildOutput" in project "comp345game.vcxproj".: (TargetId:63)
                    Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
                    Target "ComputeCLInputPDBName" skipped. Previously built successfully.
                    Target "ComputeReferenceCLInput" skipped. Previously built successfully.
                    Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
                    Target "FixupCLCompileOptions" skipped. Previously built successfully.
-16:56:19.611     1>Target "ComputeCLOutputs: (TargetId:64)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ComputeCLGeneratedLinkInputs" depends on it):
+14:29:31.239     1>Target "ComputeCLOutputs: (TargetId:64)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "ComputeCLGeneratedLinkInputs" depends on it):
                    Added Item(s): 
                        Obj=
                            Debug\Character.obj
@@ -2997,8 +2999,8 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                                    WholeProgramOptimization=false
                                    WinRTNoStdLib=false
                                    XMLDocumentationFileName=Debug\
-16:56:19.620     1>Done building target "ComputeCLOutputs" in project "comp345game.vcxproj".: (TargetId:64)
-16:56:19.620     1>Target "ComputeCLGeneratedLinkInputs: (TargetId:65)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.247     1>Done building target "ComputeCLOutputs" in project "comp345game.vcxproj".: (TargetId:64)
+14:29:31.247     1>Target "ComputeCLGeneratedLinkInputs: (TargetId:65)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
                    Added Item(s): 
                        Link=
                            Debug\Character.obj
@@ -3371,11 +3373,11 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                                    TypeLibraryResourceID=1
                                    UACExecutionLevel=AsInvoker
                                    UACUIAccess=false
-16:56:19.623     1>Done building target "ComputeCLGeneratedLinkInputs" in project "comp345game.vcxproj".: (TargetId:65)
-16:56:19.623     1>Target "ComputeLinkInputsFromProject: (TargetId:66)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
-16:56:19.623     1>Done building target "ComputeLinkInputsFromProject" in project "comp345game.vcxproj".: (TargetId:66)
+14:29:31.250     1>Done building target "ComputeCLGeneratedLinkInputs" in project "comp345game.vcxproj".: (TargetId:65)
+14:29:31.250     1>Target "ComputeLinkInputsFromProject: (TargetId:66)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.250     1>Done building target "ComputeLinkInputsFromProject" in project "comp345game.vcxproj".: (TargetId:66)
                    Target "ComputeReferenceLinkInputs" skipped, due to false condition; (@(ProjectReference) != '') was evaluated as ( != '').
-16:56:19.623     1>Target "ComputeManifestInputsTargets: (TargetId:67)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.250     1>Target "ComputeManifestInputsTargets: (TargetId:67)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
                    Added Item(s): 
                        Manifest=
                            temp
@@ -3406,10 +3408,10 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                                    TrackerLogDirectory=Debug\comp345game.tlog\
                                    UpdateFileHashes=false
                                    VerboseOutput=true
-16:56:19.623     1>Done building target "ComputeManifestInputsTargets" in project "comp345game.vcxproj".: (TargetId:67)
+14:29:31.251     1>Done building target "ComputeManifestInputsTargets" in project "comp345game.vcxproj".: (TargetId:67)
                    Target "ManifestResourceCompile" skipped, due to false condition; ('$(EmbedManifestBy)' == 'LINK' and '@(Manifest)' != '') was evaluated as ('LINK' == 'LINK' and '' != '').
                    Target "AssignWinFXEmbeddedResource" skipped, due to false condition; ('@(WinFXEmbeddedResource)' != '') was evaluated as ('' != '').
-16:56:19.624     1>Target "AssignTargetPaths: (TargetId:68)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareResourceNames" depends on it):
+14:29:31.251     1>Target "AssignTargetPaths: (TargetId:68)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareResourceNames" depends on it):
                    Using "AssignTargetPath" task from assembly "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "AssignTargetPath" (TaskId:20)
                      Task Parameter:RootFolder=C:\Users\Denis\Source\Repos\comp345game\comp345game (TaskId:20)
@@ -3424,9 +3426,9 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                      Task Parameter:RootFolder=C:\Users\Denis\Source\Repos\comp345game\comp345game (TaskId:23)
                    Done executing task "AssignTargetPath". (TaskId:23)
                    Task "AssignTargetPath" skipped, due to false condition; ('@(_DeploymentBaseManifestWithTargetPath)'=='' and '%(None.Extension)'=='.manifest') was evaluated as (''=='' and ''=='.manifest').
-16:56:19.624     1>Done building target "AssignTargetPaths" in project "comp345game.vcxproj".: (TargetId:68)
+14:29:31.251     1>Done building target "AssignTargetPaths" in project "comp345game.vcxproj".: (TargetId:68)
                    Target "AssignTargetPaths" skipped. Previously built successfully.
-16:56:19.624     1>Target "SplitResourcesByCulture: (TargetId:69)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareResourceNames" depends on it):
+14:29:31.251     1>Target "SplitResourcesByCulture: (TargetId:69)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareResourceNames" depends on it):
                    Task "Warning" skipped, due to false condition; ('@(ResxWithNoCulture)'!='') was evaluated as (''!='').
                    Task "Warning" skipped, due to false condition; ('@(ResxWithCulture)'!='') was evaluated as (''!='').
                    Task "Warning" skipped, due to false condition; ('@(NonResxWithCulture)'!='') was evaluated as (''!='').
@@ -3434,13 +3436,13 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    Using "AssignCulture" task from assembly "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "AssignCulture" (TaskId:24)
                    Done executing task "AssignCulture". (TaskId:24)
-16:56:19.628     1>Done building target "SplitResourcesByCulture" in project "comp345game.vcxproj".: (TargetId:69)
+14:29:31.252     1>Done building target "SplitResourcesByCulture" in project "comp345game.vcxproj".: (TargetId:69)
                    Target "CreateManifestResourceNames" skipped, due to false condition; ('@(EmbeddedResource)' != '') was evaluated as ('' != '').
-16:56:19.628     1>Target "CreateCustomManifestResourceNames: (TargetId:70)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareResourceNames" depends on it):
-16:56:19.628     1>Done building target "CreateCustomManifestResourceNames" in project "comp345game.vcxproj".: (TargetId:70)
-16:56:19.628     1>Target "PrepareResourceNames: (TargetId:71)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
-16:56:19.628     1>Done building target "PrepareResourceNames" in project "comp345game.vcxproj".: (TargetId:71)
-16:56:19.628     1>Target "MakeDirsForLink: (TargetId:72)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.252     1>Target "CreateCustomManifestResourceNames: (TargetId:70)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareResourceNames" depends on it):
+14:29:31.252     1>Done building target "CreateCustomManifestResourceNames" in project "comp345game.vcxproj".: (TargetId:70)
+14:29:31.252     1>Target "PrepareResourceNames: (TargetId:71)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.252     1>Done building target "PrepareResourceNames" in project "comp345game.vcxproj".: (TargetId:71)
+14:29:31.252     1>Target "MakeDirsForLink: (TargetId:72)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
                    Set Property: _LinkImportLibrary=C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.lib
                    Added Item(s): _LinkImportLibraryFile=C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.lib
                    Added Item(s): LinkDirsToMake=C:\Users\Denis\Source\Repos\comp345game\Debug
@@ -3462,25 +3464,25 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                            C:\Users\Denis\Source\Repos\comp345game\Debug
                            C:\Users\Denis\Source\Repos\comp345game\Debug\
                    Removed Item(s): _LinkImportLibraryFile=C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.lib
-16:56:19.631     1>Done building target "MakeDirsForLink" in project "comp345game.vcxproj".: (TargetId:72)
-16:56:19.631     1>Target "DoLinkOutputFilesMatch: (TargetId:73)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.255     1>Done building target "MakeDirsForLink" in project "comp345game.vcxproj".: (TargetId:72)
+14:29:31.255     1>Target "DoLinkOutputFilesMatch: (TargetId:73)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
                    Added Item(s): _OutputFileFromLink=C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe
                    Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' == '') was evaluated as ('C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe' == '').
                    Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.FullPath)' != '$([System.IO.Path]::GetFullPath($(TargetPath)))') was evaluated as ('C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe' != '' and 'C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe' != 'C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe').
                    Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Extension)' != '' and '%(_OutputFileFromLink.Extension)' != '$(TargetExt)') was evaluated as ('C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe' != '' and '.exe' != '' and '.exe' != '.exe').
                    Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Filename)' != '' and '%(_OutputFileFromLink.Filename)' != '$(TargetName)') was evaluated as ('C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe' != '' and 'comp345game' != '' and 'comp345game' != 'comp345game').
                    Task "VCMessage" skipped, due to false condition; ('%(Link.MinimumRequiredVersion)' != '' and ('%(Link.Subsystem)' == '' or '%(Link.Subsystem)' == 'NotSet')) was evaluated as ('' != '' and ('' == '' or '' == 'NotSet')).
-16:56:19.632     1>Done building target "DoLinkOutputFilesMatch" in project "comp345game.vcxproj".: (TargetId:73)
-16:56:19.632     1>Target "PreLinkEvent: (TargetId:74)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.256     1>Done building target "DoLinkOutputFilesMatch" in project "comp345game.vcxproj".: (TargetId:73)
+14:29:31.256     1>Target "PreLinkEvent: (TargetId:74)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
                    Task "Message" skipped, due to false condition; ('%(PreLinkEvent.Message)' != '' and '%(PreLinkEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
                    Task "Exec" skipped, due to false condition; ('%(PreLinkEvent.Command)' != '') was evaluated as ('' != '').
-16:56:19.633     1>Done building target "PreLinkEvent" in project "comp345game.vcxproj".: (TargetId:74)
-16:56:19.633     1>Target "ComputeLinkSwitches: (TargetId:75)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Link" depends on it):
+14:29:31.256     1>Done building target "PreLinkEvent" in project "comp345game.vcxproj".: (TargetId:74)
+14:29:31.256     1>Target "ComputeLinkSwitches: (TargetId:75)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Link" depends on it):
                    Set Property: Link_MinimalRebuildFromTracking=true
                    Set Property: LinkToolArchitecture=Native32Bit
                    Set Property: _GenerateWindowsMetadata=
-16:56:19.634     1>Done building target "ComputeLinkSwitches" in project "comp345game.vcxproj".: (TargetId:75)
-16:56:19.634     1>Target "Link: (TargetId:76)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.257     1>Done building target "ComputeLinkSwitches" in project "comp345game.vcxproj".: (TargetId:75)
+14:29:31.257     1>Target "Link: (TargetId:76)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
                    Using "Link" task from assembly "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Build.CppTasks.Common.dll".
                    Task "Link" (TaskId:26)
                      Task Parameter:BuildingInIde=True (TaskId:26)
@@ -4005,15 +4007,17 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                      	C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\MAPUI.OBJ (TaskId:26)
                      	C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\OBSERVABLE.OBJ (TaskId:26)
                      	C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\OBSERVER.OBJ (TaskId:26)
-                     	C:\WINDOWS\SYSTEM32\TZRES.DLL (TaskId:26)
                      	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\VC\LIB\MSVCPRTD.LIB (TaskId:26)
                      	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\VC\LIB\MSVCRTD.LIB (TaskId:26)
                      	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\VC\LIB\OLDNAMES.LIB (TaskId:26)
                      	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\VC\LIB\VCRUNTIMED.LIB (TaskId:26)
                      	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.10240.0\UCRT\X86\UCRTD.LIB (TaskId:26)
-                     Source compilation required: input C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\MAPUI.OBJ is newer than output C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\DEBUG\COMP345GAME.PDB. (TaskId:26)
+                     	C:\PROGRAM FILES (X86)\WINDOWS KITS\8.1\BIN\X86\RC.EXE (TaskId:26)
+                     	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\VC\BIN\CVTRES.EXE (TaskId:26)
+                     	C:\WINDOWS\SYSTEM32\TZRES.DLL (TaskId:26)
+                     Source compilation required: input C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\MAPUI.OBJ is newer than output C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\DEBUG\COMP345GAME.EXE. (TaskId:26)
                      Environment Variables passed to tool: (TaskId:26)
-                       VS_UNICODE_OUTPUT=1880 (TaskId:26)
+                       VS_UNICODE_OUTPUT=1160 (TaskId:26)
                      C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.lib" /MACHINE:X86 Debug\Character.obj
                      Debug\Dice.obj
                      Debug\Enhancement.obj
@@ -4025,7 +4029,7 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                      Debug\Observable.obj
                      Debug\Observer.obj (TaskId:26)
                      Tracking command: (TaskId:26)
-                     C:\Program Files (x86)\MSBuild\14.0\bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\14.0\bin\FileTracker.dll" /i C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug\comp345game.tlog /r "C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\CHARACTER.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\DICE.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\ENHANCEMENT.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\FIGHTER.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\ITEM.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\ITEMCONTAINER.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\MAP.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\MAPUI.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\OBSERVABLE.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\OBSERVER.OBJ" /b MSBuildConsole_CancelEventace521bdf1c945cd94eda4885262be48  /c "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe"  /ERRORREPORT:PROMPT /OUT:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.lib" /MACHINE:X86 Debug\Character.obj
+                     C:\Program Files (x86)\MSBuild\14.0\bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\14.0\bin\FileTracker.dll" /i C:\Users\Denis\Source\Repos\comp345game\comp345game\Debug\comp345game.tlog /r "C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\CHARACTER.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\DICE.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\ENHANCEMENT.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\FIGHTER.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\ITEM.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\ITEMCONTAINER.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\MAP.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\MAPUI.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\OBSERVABLE.OBJ|C:\USERS\DENIS\SOURCE\REPOS\COMP345GAME\COMP345GAME\DEBUG\OBSERVER.OBJ" /b MSBuildConsole_CancelEvent0f08272013994aada3eb1f6962cc2a8b  /c "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe"  /ERRORREPORT:PROMPT /OUT:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.lib" /MACHINE:X86 Debug\Character.obj
                      Debug\Dice.obj
                      Debug\Enhancement.obj
                      Debug\Fighter.obj
@@ -4050,36 +4054,36 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    Task "Message" skipped, due to false condition; (('$(EmbedManifestBy)' != 'LINK' or '$(LegacyManifestEmbedding)' != 'true' or '$(LinkSkippedExecution)' == 'true') and
                                 %(Link.GenerateDebugInformation) == 'Debug') was evaluated as (('LINK' != 'LINK' or '' != 'true' or 'False' == 'true') and
                                 DebugFastLink == 'Debug').
-16:56:19.891     1>Done building target "Link" in project "comp345game.vcxproj".: (TargetId:76)
+14:29:31.527     1>Done building target "Link" in project "comp345game.vcxproj".: (TargetId:76)
                    Target "MetaGenInputsOutputs" skipped, due to false condition; ('$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('false' == 'True').
                    Target "ComputeMetaGenInputs" skipped, due to false condition; ('$(CLRSupport)'!='' and '$(CLRSupport)'!='false') was evaluated as ('false'!='' and 'false'!='false').
                    Target "MetaGen" skipped, due to false condition; ('@(MetaGen)' != '') was evaluated as ('' != '').
-16:56:19.891     1>Target "ComputeLinkImportLibraryOutputsForClean: (TargetId:77)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.527     1>Target "ComputeLinkImportLibraryOutputsForClean: (TargetId:77)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
                    Task "WriteLinesToFile" skipped, due to false condition; ('@(_LinkSecondaryOutput)' != '') was evaluated as ('' != '').
-16:56:19.892     1>Done building target "ComputeLinkImportLibraryOutputsForClean" in project "comp345game.vcxproj".: (TargetId:77)
-16:56:19.892     1>Target "AfterLink: (TargetId:78)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
-16:56:19.892     1>Done building target "AfterLink" in project "comp345game.vcxproj".: (TargetId:78)
-16:56:19.892     1>Target "_Link: (TargetId:79)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
-16:56:19.892     1>Done building target "_Link" in project "comp345game.vcxproj".: (TargetId:79)
-16:56:19.892     1>Target "_ALink: (TargetId:80)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
-16:56:19.892     1>Done building target "_ALink" in project "comp345game.vcxproj".: (TargetId:80)
+14:29:31.528     1>Done building target "ComputeLinkImportLibraryOutputsForClean" in project "comp345game.vcxproj".: (TargetId:77)
+14:29:31.528     1>Target "AfterLink: (TargetId:78)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_Link" depends on it):
+14:29:31.528     1>Done building target "AfterLink" in project "comp345game.vcxproj".: (TargetId:78)
+14:29:31.528     1>Target "_Link: (TargetId:79)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.528     1>Done building target "_Link" in project "comp345game.vcxproj".: (TargetId:79)
+14:29:31.528     1>Target "_ALink: (TargetId:80)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.528     1>Done building target "_ALink" in project "comp345game.vcxproj".: (TargetId:80)
                    Target "ComputeLegacyManifestEmbedding" skipped. Previously built successfully.
-16:56:19.892     1>Target "_Manifest: (TargetId:81)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.528     1>Target "_Manifest: (TargetId:81)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
                    Task "CallTarget" skipped, due to false condition; ('$(LegacyManifestEmbedding)' == 'true') was evaluated as ('' == 'true').
-16:56:19.892     1>Done building target "_Manifest" in project "comp345game.vcxproj".: (TargetId:81)
-16:56:19.892     1>Target "RegisterOutput: (TargetId:82)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.528     1>Done building target "_Manifest" in project "comp345game.vcxproj".: (TargetId:81)
+14:29:31.528     1>Target "RegisterOutput: (TargetId:82)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
                    Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='DynamicLibrary' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'!='true') was evaluated as ('Application'=='DynamicLibrary' and 'false'=='true' and 'false'!='true').
                    Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='DynamicLibrary' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'=='true') was evaluated as ('Application'=='DynamicLibrary' and 'false'=='true' and 'false'=='true').
                    Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='Application' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'!='true') was evaluated as ('Application'=='Application' and 'false'=='true' and 'false'!='true').
                    Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='Application' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'=='true') was evaluated as ('Application'=='Application' and 'false'=='true' and 'false'=='true').
                    Task "VCMessage" skipped, due to false condition; ('$(_RegisterOutputExitCode)' != '' and '$(_RegisterOutputExitCode)' != '0') was evaluated as ('' != '' and '' != '0').
-16:56:19.893     1>Done building target "RegisterOutput" in project "comp345game.vcxproj".: (TargetId:82)
+14:29:31.529     1>Done building target "RegisterOutput" in project "comp345game.vcxproj".: (TargetId:82)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-16:56:19.893     1>Target "ResolvedXDCMake: (TargetId:83)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_XdcMake" depends on it):
+14:29:31.529     1>Target "ResolvedXDCMake: (TargetId:83)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_XdcMake" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.Extension)' == '.vcxproj' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '$(_ClCompileGenerateXMLDocumentationFiles)' == 'true') was evaluated as ('' == '.vcxproj' and '' != '' and '' != '' and '' == 'true').
-16:56:19.893     1>Done building target "ResolvedXDCMake" in project "comp345game.vcxproj".: (TargetId:83)
-16:56:19.893     1>Target "ComputeCLCompileGeneratedXDCFiles: (TargetId:84)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_XdcMake" depends on it):
+14:29:31.529     1>Done building target "ResolvedXDCMake" in project "comp345game.vcxproj".: (TargetId:83)
+14:29:31.529     1>Target "ComputeCLCompileGeneratedXDCFiles: (TargetId:84)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_XdcMake" depends on it):
                    Added Item(s): 
                        XdcMake=
                            temp
@@ -4102,67 +4106,67 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                                    OutputFile=C:\Users\Denis\Source\Repos\comp345game\Debug\comp345game.xml
                                    SuppressStartupBanner=true
                                    TrackerLogDirectory=Debug\comp345game.tlog\
-16:56:19.894     1>Done building target "ComputeCLCompileGeneratedXDCFiles" in project "comp345game.vcxproj".: (TargetId:84)
-16:56:19.894     1>Target "MakeDirsForXdcMake: (TargetId:85)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_XdcMake" depends on it):
+14:29:31.529     1>Done building target "ComputeCLCompileGeneratedXDCFiles" in project "comp345game.vcxproj".: (TargetId:84)
+14:29:31.529     1>Target "MakeDirsForXdcMake: (TargetId:85)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_XdcMake" depends on it):
                    Task "MakeDir" (TaskId:29)
                    Done executing task "MakeDir". (TaskId:29)
-16:56:19.894     1>Done building target "MakeDirsForXdcMake" in project "comp345game.vcxproj".: (TargetId:85)
+14:29:31.530     1>Done building target "MakeDirsForXdcMake" in project "comp345game.vcxproj".: (TargetId:85)
                    Target "XdcMake" skipped, due to false condition; ('@(XdcMake)' != '') was evaluated as ('' != '').
-16:56:19.894     1>Target "_XdcMake: (TargetId:86)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
-16:56:19.894     1>Done building target "_XdcMake" in project "comp345game.vcxproj".: (TargetId:86)
-16:56:19.894     1>Target "ComputeCLCompileGeneratedSbrFiles: (TargetId:87)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BscMake" depends on it):
-16:56:19.894     1>Done building target "ComputeCLCompileGeneratedSbrFiles" in project "comp345game.vcxproj".: (TargetId:87)
-16:56:19.894     1>Target "MakeDirsForBscMake: (TargetId:88)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BscMake" depends on it):
+14:29:31.530     1>Target "_XdcMake: (TargetId:86)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.530     1>Done building target "_XdcMake" in project "comp345game.vcxproj".: (TargetId:86)
+14:29:31.530     1>Target "ComputeCLCompileGeneratedSbrFiles: (TargetId:87)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BscMake" depends on it):
+14:29:31.530     1>Done building target "ComputeCLCompileGeneratedSbrFiles" in project "comp345game.vcxproj".: (TargetId:87)
+14:29:31.530     1>Target "MakeDirsForBscMake: (TargetId:88)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BscMake" depends on it):
                    Task "MakeDir" (TaskId:30)
                    Done executing task "MakeDir". (TaskId:30)
-16:56:19.894     1>Done building target "MakeDirsForBscMake" in project "comp345game.vcxproj".: (TargetId:88)
+14:29:31.530     1>Done building target "MakeDirsForBscMake" in project "comp345game.vcxproj".: (TargetId:88)
                    Target "BscMake" skipped, due to false condition; ('@(BscMake)' != '') was evaluated as ('' != '').
                    Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
-16:56:19.894     1>Target "_BscMake: (TargetId:89)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
-16:56:19.894     1>Done building target "_BscMake" in project "comp345game.vcxproj".: (TargetId:89)
+14:29:31.530     1>Target "_BscMake: (TargetId:89)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.530     1>Done building target "_BscMake" in project "comp345game.vcxproj".: (TargetId:89)
                    Target "RunMergeNativeCodeAnalysis" skipped, due to false condition; ('$(Language)'=='C++' and '$(RunCodeAnalysisOnThisProject)'=='true') was evaluated as ('C++'=='C++' and ''=='true').
                    Target "RunNativeCodeAnalysis" skipped, due to false condition; ('$(Language)'=='C++' and '$(RunCodeAnalysisOnThisProject)'=='true') was evaluated as ('C++'=='C++' and ''=='true').
-16:56:19.894     1>Target "_GenerateSatelliteAssemblyInputs: (TargetId:90)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "CreateSatelliteAssemblies" depends on it):
+14:29:31.530     1>Target "_GenerateSatelliteAssemblyInputs: (TargetId:90)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "CreateSatelliteAssemblies" depends on it):
                    Task "Warning" skipped, due to false condition; ('@(ManifestResourceWithCulture)'!='' and '%(ManifestResourceWithCulture.EmittedForCompatibilityOnly)'=='') was evaluated as (''!='' and ''=='').
                    Task "Warning" skipped, due to false condition; ('@(ManifestNonResxWithCultureOnDisk)'!='' and '%(ManifestNonResxWithCultureOnDisk.EmittedForCompatibilityOnly)'=='') was evaluated as (''!='' and ''=='').
-16:56:19.895     1>Done building target "_GenerateSatelliteAssemblyInputs" in project "comp345game.vcxproj".: (TargetId:90)
+14:29:31.530     1>Done building target "_GenerateSatelliteAssemblyInputs" in project "comp345game.vcxproj".: (TargetId:90)
                    Target "ComputeIntermediateSatelliteAssemblies" skipped, due to false condition; (@(ReferenceSatellitePaths->'%(DestinationSubDirectory)') != '') was evaluated as ( != '').
                    Target "GenerateSatelliteAssemblies" skipped, due to false condition; ('@(_SatelliteAssemblyResourceInputs)' != '') was evaluated as ('' != '').
-16:56:19.895     1>Target "CreateSatelliteAssemblies: (TargetId:91)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
-16:56:19.895     1>Done building target "CreateSatelliteAssemblies" in project "comp345game.vcxproj".: (TargetId:91)
-16:56:19.895     1>Target "_Appverifier: (TargetId:92)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
-16:56:19.895     1>Done building target "_Appverifier" in project "comp345game.vcxproj".: (TargetId:92)
-16:56:19.895     1>Target "_Deploy: (TargetId:93)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
-16:56:19.895     1>Done building target "_Deploy" in project "comp345game.vcxproj".: (TargetId:93)
+14:29:31.530     1>Target "CreateSatelliteAssemblies: (TargetId:91)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.530     1>Done building target "CreateSatelliteAssemblies" in project "comp345game.vcxproj".: (TargetId:91)
+14:29:31.530     1>Target "_Appverifier: (TargetId:92)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.530     1>Done building target "_Appverifier" in project "comp345game.vcxproj".: (TargetId:92)
+14:29:31.530     1>Target "_Deploy: (TargetId:93)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.530     1>Done building target "_Deploy" in project "comp345game.vcxproj".: (TargetId:93)
                    Target "ComputeIntermediateSatelliteAssemblies" skipped, due to false condition; (@(ReferenceSatellitePaths->'%(DestinationSubDirectory)') != '') was evaluated as ( != '').
                    Target "_CopyFilesMarkedCopyLocal" skipped, due to false condition; ('@(ReferenceCopyLocalPaths)' != '') was evaluated as ('' != '').
                    Target "AssignTargetPaths" skipped. Previously built successfully.
                    Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
-16:56:19.895     1>Target "GetCopyToOutputDirectoryXamlAppDefs: (TargetId:94)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Xaml.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "GetCopyToOutputDirectoryItems" depends on it):
+14:29:31.531     1>Target "GetCopyToOutputDirectoryXamlAppDefs: (TargetId:94)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Xaml.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "GetCopyToOutputDirectoryItems" depends on it):
                    Task "AssignTargetPath" (TaskId:31)
                      Task Parameter:RootFolder=C:\Users\Denis\Source\Repos\comp345game\comp345game (TaskId:31)
                    Done executing task "AssignTargetPath". (TaskId:31)
-16:56:19.895     1>Done building target "GetCopyToOutputDirectoryXamlAppDefs" in project "comp345game.vcxproj".: (TargetId:94)
-16:56:19.895     1>Target "GetCopyToOutputDirectoryItems: (TargetId:95)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_CopySourceItemsToOutputDirectory" depends on it):
+14:29:31.531     1>Done building target "GetCopyToOutputDirectoryXamlAppDefs" in project "comp345game.vcxproj".: (TargetId:94)
+14:29:31.531     1>Target "GetCopyToOutputDirectoryItems: (TargetId:95)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_CopySourceItemsToOutputDirectory" depends on it):
                    Set Property: _GCTODIKeepDuplicates=false
                    Set Property: _GCTODIKeepMetadata=CopyToOutputDirectory;TargetPath
                    Task "MSBuild" skipped, due to false condition; ('@(_MSBuildProjectReferenceExistent)' != '' and '$(_GetChildProjectCopyToOutputDirectoryItems)' == 'true' and '%(_MSBuildProjectReferenceExistent.Private)' != 'false' and '$(UseCommonOutputDirectory)' != 'true') was evaluated as ('' != '' and 'true' == 'true' and '' != 'false' and 'false' != 'true').
                    Task "AssignTargetPath" (TaskId:32)
                      Task Parameter:RootFolder=C:\Users\Denis\Source\Repos\comp345game\comp345game (TaskId:32)
                    Done executing task "AssignTargetPath". (TaskId:32)
-16:56:19.896     1>Done building target "GetCopyToOutputDirectoryItems" in project "comp345game.vcxproj".: (TargetId:95)
+14:29:31.531     1>Done building target "GetCopyToOutputDirectoryItems" in project "comp345game.vcxproj".: (TargetId:95)
                    Target "_CopyOutOfDateSourceItemsToOutputDirectory" skipped, due to false condition; ( '@(_SourceItemsToCopyToOutputDirectory)' != '' ) was evaluated as ( '' != '' ).
                    Target "_CopyOutOfDateSourceItemsToOutputDirectoryAlways" skipped, due to false condition; ( '@(_SourceItemsToCopyToOutputDirectoryAlways)' != '' ) was evaluated as ( '' != '' ).
-16:56:19.896     1>Target "_CopySourceItemsToOutputDirectory: (TargetId:96)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
-16:56:19.896     1>Done building target "_CopySourceItemsToOutputDirectory" in project "comp345game.vcxproj".: (TargetId:96)
+14:29:31.532     1>Target "_CopySourceItemsToOutputDirectory: (TargetId:96)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
+14:29:31.532     1>Done building target "_CopySourceItemsToOutputDirectory" in project "comp345game.vcxproj".: (TargetId:96)
                    Target "_CopyAppConfigFile" skipped, due to false condition; ( '@(AppConfigWithTargetPath)' != '' ) was evaluated as ( '' != '' ).
                    Target "_CopyManifestFiles" skipped, due to false condition; ( '$(_DeploymentCopyApplicationManifest)'=='true' or '$(GenerateClickOnceManifests)'=='true' ) was evaluated as ( ''=='true' or ''=='true' ).
-16:56:19.896     1>Target "_CheckForCompileOutputs: (TargetId:97)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
+14:29:31.532     1>Target "_CheckForCompileOutputs: (TargetId:97)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
                    Set Property: _DocumentationFileProduced=false
                    Set Property: _DebugSymbolsProduced=false
-16:56:19.896     1>Done building target "_CheckForCompileOutputs" in project "comp345game.vcxproj".: (TargetId:97)
+14:29:31.532     1>Done building target "_CheckForCompileOutputs" in project "comp345game.vcxproj".: (TargetId:97)
                    Target "_SGenCheckForOutputs" skipped, due to false condition; ('$(_SGenGenerateSerializationAssembliesConfig)' == 'On' or ('@(WebReferenceUrl)'!='' and '$(_SGenGenerateSerializationAssembliesConfig)' == 'Auto')) was evaluated as ('Off' == 'On' or (''!='' and 'Off' == 'Auto')).
-16:56:19.896     1>Target "CopyFilesToOutputDirectory: (TargetId:98)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForRun" depends on it):
+14:29:31.532     1>Target "CopyFilesToOutputDirectory: (TargetId:98)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "PrepareForRun" depends on it):
                    Set Property: CreateHardLinksForCopyFilesToOutputDirectoryIfPossible=false
                    Set Property: CopyBuildOutputToOutputDirectory=true
                    Set Property: CopyOutputSymbolsToOutputDirectory=true
@@ -4176,22 +4180,22 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                    Task "Copy" skipped, due to false condition; ('@(ReferenceComWrappersToCopyLocal)' != '' or '@(ResolvedIsolatedComModules)' != '' or '@(_DeploymentLooseManifestFile)' != '' or '@(NativeReferenceFile)' != '' ) was evaluated as ('' != '' or '' != '' or '' != '' or '' != '' ).
                    Task "Copy" skipped, due to false condition; ('$(SkipCopyWinMDArtifact)' != 'true' and '@(WinMDExpArtifacts)' != '') was evaluated as ('' != 'true' and '' != '').
                    Task "Message" skipped, due to false condition; ('$(SkipCopyWinMDArtifact)' != 'true' and '$(_WindowsMetadataOutputPath)' != '') was evaluated as ('' != 'true' and '' != '').
-16:56:19.897     1>Done building target "CopyFilesToOutputDirectory" in project "comp345game.vcxproj".: (TargetId:98)
-16:56:19.897     1>Target "PrepareForRun: (TargetId:99)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
-16:56:19.897     1>Done building target "PrepareForRun" in project "comp345game.vcxproj".: (TargetId:99)
+14:29:31.532     1>Done building target "CopyFilesToOutputDirectory" in project "comp345game.vcxproj".: (TargetId:98)
+14:29:31.532     1>Target "PrepareForRun: (TargetId:99)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.532     1>Done building target "PrepareForRun" in project "comp345game.vcxproj".: (TargetId:99)
                    Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
-16:56:19.897     1>Target "PostBuildEvent: (TargetId:100)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
+14:29:31.532     1>Target "PostBuildEvent: (TargetId:100)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "_BuildLinkAction" depends on it):
                    Task "Message" skipped, due to false condition; ('%(PostBuildEvent.Message)' != '' and '%(PostBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
                    Task "Exec" skipped, due to false condition; ('%(PostBuildEvent.Command)' != '') was evaluated as ('' != '').
-16:56:19.897     1>Done building target "PostBuildEvent" in project "comp345game.vcxproj".: (TargetId:100)
-16:56:19.897     1>Target "_BuildLinkAction: (TargetId:101)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildLink" depends on it):
-16:56:19.897     1>Done building target "_BuildLinkAction" in project "comp345game.vcxproj".: (TargetId:101)
-16:56:19.897     1>Target "BuildLink: (TargetId:102)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
-16:56:19.897     1>Done building target "BuildLink" in project "comp345game.vcxproj".: (TargetId:102)
+14:29:31.532     1>Done building target "PostBuildEvent" in project "comp345game.vcxproj".: (TargetId:100)
+14:29:31.532     1>Target "_BuildLinkAction: (TargetId:101)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "BuildLink" depends on it):
+14:29:31.533     1>Done building target "_BuildLinkAction" in project "comp345game.vcxproj".: (TargetId:101)
+14:29:31.533     1>Target "BuildLink: (TargetId:102)" in file "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
+14:29:31.533     1>Done building target "BuildLink" in project "comp345game.vcxproj".: (TargetId:102)
                    Target "CreateTfsBuildInfoResource" skipped, due to false condition; ( $(AddBuildInfoToAssembly)==true ) was evaluated as ( false==true ).
-16:56:19.897     1>Target "AfterBuild: (TargetId:103)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
-16:56:19.897     1>Done building target "AfterBuild" in project "comp345game.vcxproj".: (TargetId:103)
-16:56:19.897     1>Target "FinalizeBuildStatus: (TargetId:104)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
+14:29:31.533     1>Target "AfterBuild: (TargetId:103)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
+14:29:31.533     1>Done building target "AfterBuild" in project "comp345game.vcxproj".: (TargetId:103)
+14:29:31.533     1>Target "FinalizeBuildStatus: (TargetId:104)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (target "Build" depends on it):
                    Using "Delete" task from assembly "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "Delete" (TaskId:33)
                      Task Parameter:Files=Debug\comp345game.tlog\unsuccessfulbuild (TaskId:33)
@@ -4201,135 +4205,135 @@ XTC_IDE = e924010b962643e8bba4bb21efaea0cf
                      Task Parameter:Files=Debug\comp345game.tlog\comp345game.lastbuildstate (TaskId:34)
                      Touching "Debug\comp345game.tlog\comp345game.lastbuildstate". (TaskId:34)
                    Done executing task "Touch". (TaskId:34)
-16:56:19.907     1>Done building target "FinalizeBuildStatus" in project "comp345game.vcxproj".: (TargetId:104)
-16:56:19.907     1>Target "Build: (TargetId:105)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (entry point):
-16:56:19.907     1>Done building target "Build" in project "comp345game.vcxproj".: (TargetId:105)
-16:56:19.907     1>Done Building Project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (Build target(s)).
+14:29:31.536     1>Done building target "FinalizeBuildStatus" in project "comp345game.vcxproj".: (TargetId:104)
+14:29:31.536     1>Target "Build: (TargetId:105)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.BuildSteps.Targets" from project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (entry point):
+14:29:31.536     1>Done building target "Build" in project "comp345game.vcxproj".: (TargetId:105)
+14:29:31.536     1>Done Building Project "C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj" (Build target(s)).
 
 Project Performance Summary:
-     1293 ms  C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj   1 calls
-               1293 ms  Build                                      1 calls
+     1291 ms  C:\Users\Denis\Source\Repos\comp345game\comp345game\comp345game.vcxproj   1 calls
+               1291 ms  Build                                      1 calls
 
 Target Performance Summary:
         0 ms  AfterBuildCompileEvent                     1 calls
         0 ms  _CheckForCompileOutputs                    1 calls
         0 ms  _Manifest                                  1 calls
         0 ms  _SelectedFiles                             1 calls
+        0 ms  _PrepareForBuild                           1 calls
         0 ms  PostBuildEvent                             1 calls
         0 ms  _Midl                                      1 calls
         0 ms  SelectCustomBuild                          1 calls
         0 ms  _ClCompile                                 1 calls
-        0 ms  FixupCLCompileOptions                      1 calls
         0 ms  GetReferenceAssemblyPaths                  1 calls
-        0 ms  ModifyUnitTestPlatformVersion              1 calls
         0 ms  CreateCustomManifestResourceNames          1 calls
         0 ms  ResolveAssemblyReferences                  1 calls
         0 ms  BeforeLink                                 1 calls
         0 ms  AfterBuild                                 1 calls
-        0 ms  ComputeManifestInputsTargets               1 calls
-        0 ms  _BuildLinkAction                           1 calls
+        0 ms  ComputeCLInputPDBName                      1 calls
+        0 ms  GetCopyToOutputDirectoryItems              1 calls
+        0 ms  BeforeResourceCompile                      1 calls
         0 ms  AfterMidl                                  1 calls
         0 ms  GetCopyToOutputDirectoryXamlAppDefs        1 calls
+        0 ms  SelectClCompile                            1 calls
         0 ms  ResolveReferences                          1 calls
         0 ms  ComputeManifestGeneratedLinkerInputs       1 calls
-        0 ms  AfterBuildGenerateSources                  1 calls
         0 ms  BuildGenerateSources                       1 calls
         0 ms  _CopySourceItemsToOutputDirectory          1 calls
-        0 ms  GetFrameworkPaths                          1 calls
         0 ms  AfterResourceCompile                       1 calls
         0 ms  _Xsd                                       1 calls
-        0 ms  ComputeCustomBuildOutput                   1 calls
         0 ms  MakeDirsForBscMake                         1 calls
-        0 ms  MakeDirsForResourceCompile                 1 calls
-        0 ms  _Deploy                                    1 calls
+        0 ms  _GenerateSatelliteAssemblyInputs           1 calls
         0 ms  _ResourceCompile                           1 calls
+        0 ms  ComputeLinkInputsFromProject               1 calls
+        0 ms  PreLinkEvent                               1 calls
         0 ms  Build                                      1 calls
-        0 ms  _Link                                      1 calls
         0 ms  BuildLinkTraverse                          1 calls
         0 ms  ComputeRCOutputs                           1 calls
         0 ms  _XdcMake                                   1 calls
         0 ms  CreateSatelliteAssemblies                  1 calls
+        0 ms  CopyFilesToOutputDirectory                 1 calls
         0 ms  ExpandSDKReferences                        1 calls
-        0 ms  BuildCompileTraverse                       1 calls
-        0 ms  ComputeLinkInputsFromProject               1 calls
-        0 ms  _PrepareForReferenceResolution             1 calls
+        0 ms  AfterBuildGenerateSources                  1 calls
+        0 ms  ComputeCLCompileGeneratedXDCFiles          1 calls
+        0 ms  _Link                                      1 calls
+        0 ms  _Deploy                                    1 calls
         0 ms  ComputeMIDLGeneratedCompileInputs          1 calls
-        0 ms  PrepareForRun                              1 calls
-        0 ms  BeforeClCompile                            1 calls
-        0 ms  AfterResolveReferences                     1 calls
-        0 ms  ResolveProjectReferences                   1 calls
-        0 ms  ComputeReferenceCLInput                    1 calls
         0 ms  PreBuildEvent                              1 calls
         0 ms  MakeDirsForMidl                            1 calls
-        0 ms  _BscMake                                   1 calls
-        0 ms  AssignTargetPaths                          1 calls
-        0 ms  _Appverifier                               1 calls
-        0 ms  _BuildGenerateSourcesAction                1 calls
-        0 ms  BuildLink                                  1 calls
-        0 ms  ComputeCLCompileGeneratedSbrFiles          1 calls
-        0 ms  _ALink                                     1 calls
-        0 ms  Desktop_PlatformPrepareForBuild            1 calls
         0 ms  BuildGenerateSourcesTraverse               1 calls
+        0 ms  PrepareForRun                              1 calls
+        0 ms  ComputeReferenceCLInput                    1 calls
+        0 ms  AssignTargetPaths                          1 calls
+        0 ms  BeforeResolveReferences                    1 calls
+        0 ms  AfterResolveReferences                     1 calls
+        0 ms  BeforeClCompile                            1 calls
         0 ms  AfterBuildGenerateSourcesEvent             1 calls
         0 ms  PrepareResourceNames                       1 calls
-        0 ms  BeforeResolveReferences                    1 calls
-        0 ms  _SplitProjectReferencesByFileExistence     1 calls
-        0 ms  BuildCompile                               1 calls
-        0 ms  AfterClCompile                             1 calls
-        0 ms  PlatformPrepareForBuild                    1 calls
-        0 ms  BeforeBuildGenerateSources                 1 calls
         0 ms  AfterLink                                  1 calls
-        0 ms  MakeDirsForXdcMake                         1 calls
-        0 ms  GetInstalledSDKLocations                   1 calls
+        0 ms  _Appverifier                               1 calls
+        0 ms  _BscMake                                   1 calls
+        0 ms  _BuildGenerateSourcesAction                1 calls
+        0 ms  ComputeRCGeneratedLinkInputs               1 calls
+        0 ms  ResolveProjectReferences                   1 calls
+        0 ms  _ALink                                     1 calls
+        0 ms  BeforeBuildGenerateSources                 1 calls
+        0 ms  AfterClCompile                             1 calls
         0 ms  ResolvedXDCMake                            1 calls
+        0 ms  ResolveSDKReferences                       1 calls
+        0 ms  PlatformPrepareForBuild                    1 calls
+        0 ms  BuildCompile                               1 calls
+        0 ms  ComputeCLCompileGeneratedSbrFiles          1 calls
+        0 ms  GetInstalledSDKLocations                   1 calls
         0 ms  _BuildCompileAction                        1 calls
-        1 ms  CopyFilesToOutputDirectory                 1 calls
-        1 ms  RegisterOutput                             1 calls
-        1 ms  ComputeLegacyManifestEmbedding             1 calls
-        1 ms  SetBuildDefaultEnvironmentVariables        1 calls
-        1 ms  ResolveSDKReferences                       1 calls
-        1 ms  DoLinkOutputFilesMatch                     1 calls
-        1 ms  ComputeRCGeneratedLinkInputs               1 calls
-        1 ms  ComputeCLInputPDBName                      1 calls
-        1 ms  _PrepareForBuild                           1 calls
-        1 ms  PreLinkEvent                               1 calls
+        0 ms  AssignProjectConfiguration                 1 calls
+        0 ms  BuildLink                                  1 calls
         1 ms  ComputeLinkSwitches                        1 calls
-        1 ms  GetCopyToOutputDirectoryItems              1 calls
+        1 ms  Desktop_PlatformPrepareForBuild            1 calls
+        1 ms  _SplitProjectReferencesByFileExistence     1 calls
+        1 ms  MakeDirsForXdcMake                         1 calls
+        1 ms  SplitResourcesByCulture                    1 calls
+        1 ms  GetFrameworkPaths                          1 calls
         1 ms  MakeDirsForCl                              1 calls
-        1 ms  ComputeCLCompileGeneratedXDCFiles          1 calls
-        1 ms  SelectClCompile                            1 calls
-        1 ms  _GenerateSatelliteAssemblyInputs           1 calls
-        1 ms  ComputeLinkImportLibraryOutputsForClean    1 calls
         1 ms  GetResolvedWinMD                           1 calls
-        1 ms  AssignProjectConfiguration                 1 calls
-        1 ms  BeforeResourceCompile                      1 calls
+        1 ms  FixupCLCompileOptions                      1 calls
+        1 ms  ComputeLinkImportLibraryOutputsForClean    1 calls
+        1 ms  ComputeManifestInputsTargets               1 calls
+        1 ms  _BuildLinkAction                           1 calls
+        1 ms  MakeDirsForResourceCompile                 1 calls
+        1 ms  SetBuildDefaultEnvironmentVariables        1 calls
+        1 ms  ComputeLegacyManifestEmbedding             1 calls
+        1 ms  RegisterOutput                             1 calls
+        1 ms  ModifyUnitTestPlatformVersion              1 calls
+        1 ms  ComputeCustomBuildOutput                   1 calls
+        1 ms  _PrepareForReferenceResolution             1 calls
+        1 ms  BuildCompileTraverse                       1 calls
+        1 ms  DoLinkOutputFilesMatch                     1 calls
         3 ms  ComputeCLGeneratedLinkInputs               1 calls
         3 ms  MakeDirsForLink                            1 calls
+        3 ms  FinalizeBuildStatus                        1 calls
         4 ms  WarnCompileDuplicatedFilename              1 calls
-        4 ms  SplitResourcesByCulture                    1 calls
-        6 ms  _CheckForInvalidConfigurationAndPlatform   1 calls
-        7 ms  PrepareForBuild                            1 calls
-        9 ms  ComputeCLOutputs                           1 calls
-        9 ms  InitializeBuildStatus                      1 calls
-       10 ms  FinalizeBuildStatus                        1 calls
-       36 ms  SetCABuildNativeEnvironmentVariables       1 calls
-      257 ms  Link                                       1 calls
-      920 ms  ClCompile                                  1 calls
+        5 ms  PrepareForBuild                            1 calls
+        5 ms  _CheckForInvalidConfigurationAndPlatform   1 calls
+        8 ms  SetCABuildNativeEnvironmentVariables       1 calls
+        8 ms  ComputeCLOutputs                           1 calls
+       10 ms  InitializeBuildStatus                      1 calls
+      270 ms  Link                                       1 calls
+      943 ms  ClCompile                                  1 calls
 
 Task Performance Summary:
         0 ms  AssignTargetPath                           6 calls
+        0 ms  SetEnvironmentVariable                     1 calls
+        0 ms  AssignProjectConfiguration                 1 calls
         0 ms  AssignCulture                              1 calls
         0 ms  Message                                    4 calls
+        0 ms  ReadLinesFromFile                          1 calls
+        1 ms  Delete                                     1 calls
         1 ms  SetEnv                                     4 calls
-        1 ms  MakeDir                                    9 calls
-        1 ms  SetEnvironmentVariable                     1 calls
-        1 ms  AssignProjectConfiguration                 1 calls
-        2 ms  WriteLinesToFile                           1 calls
-        2 ms  Delete                                     1 calls
-        4 ms  ReadLinesFromFile                          1 calls
-       10 ms  Touch                                      2 calls
-      253 ms  Link                                       1 calls
-      916 ms  CL                                         1 calls
+        3 ms  MakeDir                                    9 calls
+        5 ms  Touch                                      2 calls
+        6 ms  WriteLinesToFile                           1 calls
+      266 ms  Link                                       1 calls
+      938 ms  CL                                         1 calls
 
 Build succeeded.
 
