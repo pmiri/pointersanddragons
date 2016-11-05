@@ -17,7 +17,7 @@ Map* MapCreator::buildMap(char rooms[], int width, int length)
 	return customMap;
 }
 
-Campaign * MapCreator::buildCampaign(Map maps[], int numberOfMaps, std::string name)
+Campaign *MapCreator::buildCampaign(Map maps[], int numberOfMaps, std::string name)
 {
 	std::vector<Map> campaignMaps;
 	for (int i = 0; i < numberOfMaps; i++)
@@ -25,14 +25,15 @@ Campaign * MapCreator::buildCampaign(Map maps[], int numberOfMaps, std::string n
 		campaignMaps.push_back(maps[i]);
 	}
 	Campaign* newCampaign = new Campaign(campaignMaps, name);
-	return nullptr;
+	return newCampaign;
 }
 
 void MapCreator::saveMap(Map mapToSave, std::string filepath)
 {
 	char blankSpace = ' ';
 	std::ofstream fileToWrite;
-	fileToWrite.open(filepath);
+	fileToWrite.open(filepath, std::ifstream::out | std::ifstream::trunc);
+	fileToWrite.clear();
 	int width = mapToSave.getWidth();
 	int length = mapToSave.getLength();
 	if (fileToWrite.is_open())
@@ -45,7 +46,6 @@ void MapCreator::saveMap(Map mapToSave, std::string filepath)
 				fileToWrite << mapToSave.getCell(column, row) << blankSpace;
 			}
 			fileToWrite << std::endl;
-			row++;
 		}
 		fileToWrite.close();
 	}
@@ -96,7 +96,7 @@ void MapCreator::saveCampaign(Campaign campaignToSave, std::string filepaths[])
 {
 	std::string currentLine = "";
 	std::ofstream fileToWrite;
-	fileToWrite.open(filepaths[0]);
+	fileToWrite.open(filepaths[0], std::ifstream::out | std::ifstream::trunc);
 	if (fileToWrite.is_open())
 	{
 		fileToWrite << campaignToSave.name << std::endl;

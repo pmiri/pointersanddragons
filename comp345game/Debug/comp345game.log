@@ -1,3 +1,4 @@
-﻿  Map.cpp
+﻿  MapCreatorDriver.cpp
+c:\users\disva\source\repos\comp345game\comp345game\mapcreatordriver.cpp(16): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.exe
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.pdb (Partial PDB)
