@@ -53,6 +53,46 @@ void MapCreator::saveMap(Map mapToSave, std::string filepath)
 		std::cout << "Error in opening file \n";
 }
 
+void MapCreator::saveMap(Map mapToSave)
+{
+	char blankSpace = ' ';
+	std::string filePath;
+	std::ofstream fileToWrite;
+	fileToWrite.exceptions(std::ofstream::failbit | std::ofstream::badbit );
+	bool invalidInput = false;
+	do
+	{
+		std::cout << "Where would you like the file saved?" << std::endl;
+		std::cin >> filePath;
+		try {
+			fileToWrite.open(filePath, std::ifstream::out | std::ifstream::trunc);
+			fileToWrite.clear();
+			invalidInput = false;
+		}
+		catch (const std::ofstream::failure& e) {
+			std::cout << "Could not open file\n";
+			invalidInput = true;
+		}		
+	} while (invalidInput);	
+	int width = mapToSave.getWidth();
+	int length = mapToSave.getLength();
+	if (fileToWrite.is_open())
+	{
+		fileToWrite << width << std::endl;
+		fileToWrite << length << std::endl;
+		for (int row = 0; row < length; row++)
+		{
+			for (int column = 0; column < width; column++) {
+				fileToWrite << mapToSave.getCell(column, row) << blankSpace;
+			}
+			fileToWrite << std::endl;
+		}
+		fileToWrite.close();
+	}
+	else
+		std::cout << "Error in opening file \n";
+}
+
 Map* MapCreator::loadMap(std::string filepath)
 {
 	std::string currentLine = "";
@@ -148,4 +188,96 @@ Campaign* MapCreator::loadCampaign(std::string filepath)
 	else
 		std::cout << "Error in opening file \n";
 	return nullptr;
+}
+
+int MapCreator::getLength()
+{
+	int length;
+	std::string userInput = "";
+	bool invalidInput = false;
+	do
+	{
+		std::cout << "How tall should the map be?" << std::endl;
+		std::cin >> userInput;
+		length = atoi(userInput.c_str());
+		if (length < 1 | length > 100)
+		{
+			std::cout << "Let's be reasonable, here!" << std::endl;
+			invalidInput = true;
+		}
+		else
+		{
+			invalidInput = false;
+			std::cout << "The map will be " << length << " tiles tall" << std::endl;
+		}
+	} while (invalidInput);
+	return length;
+}
+
+int MapCreator::getWidth()
+{
+	int width;
+	std::string userInput = "";
+	bool invalidInput = false;
+	do
+	{
+		std::cout << "How wide should the map be?" << std::endl;
+		std::cin >> userInput;
+		width = atoi(userInput.c_str());
+		if (width < 1 | width > 100)
+		{
+			std::cout << "Let's be reasonable, here!" << std::endl;
+			invalidInput = true;
+		}
+		else
+		{
+			invalidInput = false;
+			std::cout << "The map will be " << width << " tiles wide" << std::endl;
+		}
+	} while (invalidInput);
+	return width;
+}
+
+Map * MapCreator::buildMap(int width, int length)
+{
+	Map* customMap = new Map(width, length);
+	std::string userInput = "";
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			bool invalidInput = false;
+			do
+			{
+				std::cout << "Please enter the desired tile for the tile at row " << i << " and column " << j << std::endl;
+				std::cin >> userInput;
+				if (userInput == "X" || userInput == "x" || userInput == "(x)" || userInput == "(X)")
+				{
+					invalidInput = false;
+					customMap->fillCell(i, j, 'X');
+				}
+				else if (userInput == "E" || userInput == "e" || userInput == "(e)" || userInput == "(E)")
+				{
+					invalidInput = false;
+					customMap->fillCell(i, j, 'E');
+				}
+				else if (userInput == "B" || userInput == "b" || userInput == "(b)" || userInput == "(B)")
+				{
+					invalidInput = false;
+					customMap->fillCell(i, j, 'B');
+				}
+				else if (userInput == " ")
+				{
+					invalidInput = false;
+					customMap->fillCell(i, j, ' ');
+				}
+				else
+				{
+					std::cout << "Invalid input. Valid characters are wall (X), empty ( ), begin (B), and end (E)" << std::endl;
+					invalidInput = true;
+				}					
+			} while (invalidInput);
+		}
+	}
+	return customMap;
 }
