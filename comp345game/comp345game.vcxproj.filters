@@ -65,9 +65,6 @@
     <ClCompile Include="MapCreator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MapCreatorDriver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Campaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

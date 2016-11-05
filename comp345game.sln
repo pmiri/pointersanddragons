@@ -5,22 +5,56 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "comp345game", "comp345game\comp345game.vcxproj", "{54DB4169-1035-4B14-B8DF-CED5E5763289}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MapEditorDriver", "MapEditorDriver\MapEditorDriver.vcxproj", "{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54DB4169-1035-4B14-B8DF-CED5E5763289} = {54DB4169-1035-4B14-B8DF-CED5E5763289}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MapEditorTester", "MapEditorTester\MapEditorTester.vcxproj", "{66183CA5-3F61-472F-90EA-4C608223B465}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54DB4169-1035-4B14-B8DF-CED5E5763289} = {54DB4169-1035-4B14-B8DF-CED5E5763289}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Debug|x64.ActiveCfg = Debug|x64
 		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Debug|x64.Build.0 = Debug|x64
 		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Debug|x86.ActiveCfg = Debug|Win32
 		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Debug|x86.Build.0 = Debug|Win32
+		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Release|Any CPU.ActiveCfg = Release|Win32
 		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Release|x64.ActiveCfg = Release|x64
 		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Release|x64.Build.0 = Release|x64
 		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Release|x86.ActiveCfg = Release|Win32
 		{54DB4169-1035-4B14-B8DF-CED5E5763289}.Release|x86.Build.0 = Release|Win32
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Debug|x64.ActiveCfg = Debug|x64
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Debug|x64.Build.0 = Debug|x64
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Debug|x86.ActiveCfg = Debug|Win32
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Debug|x86.Build.0 = Debug|Win32
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Release|Any CPU.ActiveCfg = Release|Win32
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Release|x64.ActiveCfg = Release|x64
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Release|x64.Build.0 = Release|x64
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Release|x86.ActiveCfg = Release|Win32
+		{F11C6DA0-A65E-4BFF-950F-71DD4EE7EF3D}.Release|x86.Build.0 = Release|Win32
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Debug|x64.ActiveCfg = Debug|x64
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Debug|x64.Build.0 = Debug|x64
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Debug|x86.ActiveCfg = Debug|Win32
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Debug|x86.Build.0 = Debug|Win32
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Release|Any CPU.ActiveCfg = Release|Win32
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Release|x64.ActiveCfg = Release|x64
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Release|x64.Build.0 = Release|x64
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Release|x86.ActiveCfg = Release|Win32
+		{66183CA5-3F61-472F-90EA-4C608223B465}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
