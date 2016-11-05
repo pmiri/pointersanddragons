@@ -1,3 +1,6 @@
+//! @file 
+//! @brief Declaration file for the MapUI class  
+//!
 #pragma once
 #include "Map.h"
 #include "Observer.h"

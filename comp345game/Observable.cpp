@@ -1,3 +1,7 @@
+//! @file 
+//! @brief Implementation file for the Observable class  
+//! based on example provided by professor in course material
+//!
 #include "Observable.h"
 #include "Observer.h"
 #include <iostream>

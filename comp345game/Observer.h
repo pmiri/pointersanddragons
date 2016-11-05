@@ -1,3 +1,7 @@
+//! @file 
+//! @brief Implementation file for the Observer class  
+//! based on example provided by professor in course material
+//!
 #pragma once
 #include "Observable.h"
 

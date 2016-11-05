@@ -129,7 +129,7 @@ void Map::fillCell(int x, int y, char obj)
 	char* oc = new char;
 	oc = &map[x][y];
 	*oc = obj;
-	Notify();
+	//Notify();
 }
 
 //! Implementation of get cell, returns cell at given location
