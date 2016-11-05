@@ -76,7 +76,7 @@ int main()
 				break;
 			for (int j = 0; j < 4; j++)
 			{
-				if (baseMap.getCell(i, j) != testMap.getCell(i, j))
+				if (baseMap.getCell(i, j) != fileTestMap.getCell(i, j))
 				{
 					goodCopy = false;
 					break;
