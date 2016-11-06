@@ -10,11 +10,13 @@ namespace MapEditorTester
 	{
 	public:
 		
+		//! test method to test the buildMap() method of MapCreator
+		//! Test Case: A map is made manually and another is made through the MapCreator and the two are compared
 		TEST_METHOD(TestBuildMap)
 		{
 			char charArray[] = { 'W', 'W', 'W', 'W',
 								'W', 'B', ' ', 'W',
-								'W', ' ', 'E', 'W',
+								'W', 'E', ' ', 'W',
 								'W', 'W', 'W', 'W' };
 			Map baseMap = Map(4, 4);
 			for (int i = 0; i < 4; i++)
@@ -65,11 +67,13 @@ namespace MapEditorTester
 			Assert::AreEqual(goodCopy, true);
 		}
 
+		//! test method to test the saveMap() and loadMap() methods of MapCreator
+		//! Test Case: A map is saved, then a new map is made from loading the first, and they are compared
 		TEST_METHOD(TestSaveLoadMap)
 		{
 			char charArray[] = { 'W', 'W', 'W', 'W',
 								'W', 'B', ' ', 'W',
-								'W', ' ', 'E', 'W',
+								'W', 'E', ' ', 'W',
 								'W', 'W', 'W', 'W' };
 			Map testMap = *MapCreator::buildMap(charArray, 4, 4);
 			MapCreator::saveMap(testMap, "test.txt");
@@ -91,11 +95,13 @@ namespace MapEditorTester
 			Assert::AreEqual(goodCopy, true);
 		}
 
+		//! test method to test the buildMap() method of MapCreator
+		//! Test Case: A campaign is made manually and another is made through the MapCreator and the two are compared
 		TEST_METHOD(TestBuildCampaign)
 		{
 			char charArray[] = { 'W', 'W', 'W', 'W',
 								'W', 'B', ' ', 'W',
-								'W', ' ', 'E', 'W',
+								'W', 'E', ' ', 'W',
 								'W', 'W', 'W', 'W' };
 			std::vector<Map> mapVector;
 			bool goodCopy = true;
@@ -127,11 +133,13 @@ namespace MapEditorTester
 			Assert::AreEqual(goodCopy, true);
 		}
 
+		//! test method to test the saveCampaign() and loadCampaign() methods of MapCreator
+		//! Test Case: A campaign is saved, then another is made through loading the first, and they are compared
 		TEST_METHOD(TestSaveLoadCampaign)
 		{
 			char charArray[] = { 'W', 'W', 'W', 'W',
 								'W', 'B', ' ', 'W',
-								'W', ' ', 'E', 'W',
+								'W', 'E', ' ', 'W',
 								'W', 'W', 'W', 'W' };
 			std::vector<Map> mapVector;
 			bool goodCopy = true;

@@ -1,6 +1,4 @@
-﻿  stdafx.cpp
-  unittest1.cpp
-c:\users\disva\source\repos\comp345game\mapeditortester\unittest1.cpp(24): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-     Creating library C:\Users\Disva\Source\Repos\comp345game\Debug\MapEditorTester.lib and object C:\Users\Disva\Source\Repos\comp345game\Debug\MapEditorTester.exp
+﻿  unittest1.cpp
+c:\users\disva\source\repos\comp345game\mapeditortester\unittest1.cpp(26): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
   MapEditorTester.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\MapEditorTester.dll
   MapEditorTester.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\MapEditorTester.pdb (Partial PDB)

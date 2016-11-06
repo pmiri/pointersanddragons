@@ -27,6 +27,11 @@ void Campaign::removeMap(int index)
 	mapsInCampaign.erase(mapsInCampaign.begin() + index);
 }
 
+void Campaign::editMap(Map map, int index)
+{
+	mapsInCampaign.at(index) = map;
+}
+
 int Campaign::getSize()
 {
 	return mapsInCampaign.size();
