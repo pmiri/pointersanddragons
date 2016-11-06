@@ -80,12 +80,12 @@ bool Map::validatePath()
 		current = queue.front();
 
 		// calculate neighbours
-		neighbours[0] = ((int)(current/ MAP_WIDTH) + 1) * MAP_WIDTH + current%MAP_WIDTH; // up
-		neighbours[1] = ((int)(current/MAP_WIDTH) - 1) * MAP_WIDTH + current%MAP_WIDTH; // down
-		neighbours[2] = (int)(current/MAP_WIDTH) * MAP_WIDTH + current%MAP_WIDTH - 1; // left
+		neighbours[0] = ((int)(current / MAP_WIDTH) + 1) * MAP_WIDTH + current%MAP_WIDTH; // up
+		neighbours[1] = ((int)(current / MAP_WIDTH) - 1) * MAP_WIDTH + current%MAP_WIDTH; // down
+		neighbours[2] = (int)(current / MAP_WIDTH) * MAP_WIDTH + current%MAP_WIDTH - 1; // left
 		neighbours[3] = (int)(current / MAP_WIDTH) * MAP_WIDTH + current%MAP_WIDTH + 1; // right
 
-		//edge cases
+																						//edge cases
 		neighbours[0] = neighbours[0] > MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[0];
 		neighbours[1] = neighbours[1] < MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[1];
 		neighbours[2] = neighbours[2] < MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[2];
@@ -166,7 +166,7 @@ void Map::setExit(int x, int y) {
 //! @return : a boolean true if the cell is occupeid false otherwise
 bool Map::isOccupied(int x, int y)
 {
-	if (map[x][y] != ' '){
+	if (map[x][y] != ' ') {
 		return true;
 	}
 	return false;

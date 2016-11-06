@@ -1,12 +1,13 @@
 //! @file 
-//! @brief Implementation file for the Map Creator class  
-//!
+//! @brief Implementation file for the Campaign class  
+//! Campaigns are made of maps, one connecting to the other
+//! Maps are connected to the map before and after them
 #pragma once
 #include "Map.h"
 #include <string>
 #include <vector>
 
-//! Class implementing a game map creator
+//! Class implementing a campaign
 class Campaign
 {
 public:
@@ -15,6 +16,7 @@ public:
 	void addMap(Map map, int index);
 	Map getMapAt(int index);
 	void removeMap(int index);
+	void editMap(Map map, int index);
 	int getSize();
 
 	Campaign(std::string campaignName);
