@@ -35,7 +35,7 @@ int Dice::roll(string input) {
 	}
 }
 
-/*int main() {
+int main() {
 	Dice d;
 	while (true) {
 		cout << "Input dice format xdy[+z]: " << endl;
@@ -45,4 +45,4 @@ int Dice::roll(string input) {
 		system("pause");
 	}
 	return 0;
-}*/
+}

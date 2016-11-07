@@ -76,11 +76,6 @@ bool Character::validateNewCharacter()
 void Character::hit(int damage)
 {
 	currentHitPoints = currentHitPoints - damage;
-	Notify();
-}
-
-int* Character::getAbilityScores() {
-	return abilityScores;
 }
 
 //! Implementation of a getter method for currentHitPoints
@@ -120,7 +115,6 @@ void Character::levelUp(int diceRoll)
 {
 	level++;
 	maxHitPoints = maxHitPoints + diceRoll;
-	Notify();
 }
 
 int Character::attack(int diceRoll)
