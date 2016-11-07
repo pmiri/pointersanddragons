@@ -110,27 +110,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Campaign.h" />
+    <ClInclude Include="CampaignEditor.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CharacterObserver.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemContainer.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapBuilder.h" />
+    <ClInclude Include="MapCreator.h" />
+    <ClInclude Include="MapEditor.h" />
     <ClInclude Include="MapUI.h" />
     <ClInclude Include="Observable.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="Subject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Campaign.cpp" />
+    <ClCompile Include="CampaignEditor.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CharacterObserver.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Enhancement.cpp" />
     <ClCompile Include="Fighter.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemContainer.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapBuilder.cpp" />
+    <ClCompile Include="MapCreator.cpp" />
+    <ClCompile Include="MapEditor.cpp" />
     <ClCompile Include="MapUI.cpp" />
     <ClCompile Include="Observable.cpp" />
     <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="Subject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
