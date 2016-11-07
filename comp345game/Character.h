@@ -4,12 +4,13 @@
 //!
 
 #include <iostream>
+#include "Subject.h"
 using namespace std;
 
 #pragma once
 
 //! Class that implements a character 
-class Character
+class Character : public Subject
 {
 public:
 	Character();
@@ -26,6 +27,7 @@ public:
 	void distributePoints(int);
 	int attack(int);
 	int getArmorClass();
+	int* getAbilityScores();
 protected:
 	int abilityScores[6];
 	int abilityModifiers[6];
@@ -36,4 +38,3 @@ protected:
 
 	string className;
 };
-
