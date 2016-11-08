@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Character.h"
 using namespace std;
 
 Map *MapBuilder::buildFromFile(string path) {
@@ -29,7 +30,15 @@ Map *MapBuilder::buildFromFile(string path) {
 		{
 			line_array = line.c_str();
 			for (int y = 0; y < width; y++) {
-				map->fillCell(y, currentHeight, MapObject(y, currentHeight, line_array[2 * y]));
+				if (line_array[2 * y] == 'P') {
+					//create a character who is a player
+					Character playerCharacter = Character();
+					MapObject characterMapObject = MapObject(y, currentHeight, line_array[2 * y]);
+					characterMapObject.setCharacter(&playerCharacter);
+				}
+				else {
+					map->fillCell(y, currentHeight, MapObject(y, currentHeight, line_array[2 * y]));
+				}
 				cout << map->getCell(y, currentHeight);
 			}
 			currentHeight++;

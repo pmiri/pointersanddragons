@@ -60,16 +60,20 @@ bool MapObject::canMove()
 
 MapObject::MapObject()
 {
+	thisCharacter = nullptr;
 }
 
 MapObject::MapObject(int xCoord, int yCoord)
 {
+	thisCharacter = nullptr;
 	x = xCoord;
 	y = yCoord;
 }
 
+//***CAN ONLY BE USED IF char c is NOT a P or M
 MapObject::MapObject(int xCoord, int yCoord, char c)
 {
+	thisCharacter = nullptr;
 	wallOrOtherChar = c;
 	x = xCoord;
 	y = yCoord;
