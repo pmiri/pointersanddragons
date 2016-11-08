@@ -6,6 +6,7 @@
 
 #include "MapBuilder.h"
 #include "CharacterEditor.h"
+#include "MapUI.h"
 
 using namespace std;
 
@@ -98,6 +99,7 @@ int main() {
 	//Selecting a map and a character from a list of saved ones
 	cout << "Load a Map:" << endl;
 	Map *map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
+	MapUI mapView = MapUI(map);
 	system("CLS");
 	
 	Character *character;
