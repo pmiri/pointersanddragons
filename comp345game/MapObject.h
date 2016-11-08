@@ -5,7 +5,6 @@
 #pragma once
 
 using namespace std;
-#include "Map.h"
 #include "Character.h"
 #include "Item.h"
 #include <vector>
