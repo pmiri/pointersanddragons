@@ -126,7 +126,7 @@ Map* MapCreator::buildMap(char rooms[], int width, int length)
 	{
 		for (int j = 0; j < width; j++)
 		{
-			customMap->fillCell(i, j, rooms[roomPosition]);
+			customMap->fillCell(i, j, MapObject(i,j, rooms[roomPosition]));
 			roomPosition++;
 		}
 	}
@@ -143,7 +143,7 @@ Map * MapCreator::buildMap(int length, int width)
 		{
 			std::cout << "Please input the desired tile for the tile at row " << i << " and column " << j << ".\n";
 			char result = MapCreator::getTile();
-			customMap->fillCell(i, j, result);
+			customMap->fillCell(i, j, MapObject(i, j, result));
 		}
 		if (i < (length - 1))
 		{
@@ -289,7 +289,7 @@ Map* MapCreator::loadMap(std::string filepath)
 		{
 			lineFromFile = currentLine.c_str();
 			for (int column = 0; column < mapWidth; column++) {
-				mapFromFile->fillCell(row, column, lineFromFile[2 * column]);
+				mapFromFile->fillCell(row, column, MapObject(row, column, lineFromFile[2 * column]));
 			}
 			row++;
 		}
@@ -348,7 +348,7 @@ Map *MapCreator::loadMap()
 		{
 			lineFromFile = currentLine.c_str();
 			for (int column = 0; column < mapWidth; column++) {
-				mapFromFile->fillCell(row, column, lineFromFile[2 * column]);
+				mapFromFile->fillCell(row, column, MapObject(row, column, lineFromFile[2 * column]));
 			}
 			row++;
 		}
@@ -380,7 +380,7 @@ Map *MapCreator::editMap(Map mapToEdit)
 		column = MapCreator::getColumn(width);
 		std::cout << "Please input the desired tile for the tile at row " << row << " and column " << column << ".\n";
 		char tile = MapCreator::getTile();
-		mapToEdit.fillCell(row, column, tile);
+		mapToEdit.fillCell(row, column, MapObject(row, column, tile));
 		std::cout << "Would you like to view the map (v)?.\n";
 		std::cin >> userInput;
 		if (userInput == "V" || userInput == "v" || userInput == "(v)" || userInput == "(V)")

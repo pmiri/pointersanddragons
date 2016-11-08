@@ -95,7 +95,7 @@ bool Map::validatePath()
 	//search for entrance
 	for (int i = 0; i < MAP_LENGTH; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
-			if (*(map[i][j].wallOrOtherChar) == Map::BEGIN) {
+			if ((map[i][j].wallOrOtherChar) == Map::BEGIN) {
 				entry_location_x = i;
 				entry_location_y = j;
 				break;
@@ -146,9 +146,9 @@ bool Map::validatePath()
 		for (int k = 0; k < 4; k++) {
 			cout << neighbours[k] << endl;
 			//if can be reached, not already visited, and not wall
-			if (neighbours[k] != -1 && !visited[neighbours[k]] && *(map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar != Map::WALL) {
+			if (neighbours[k] != -1 && !visited[neighbours[k]] && (map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar != Map::WALL) {
 				//if exit found, break out of for and leave while loop
-				if (*(map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar == Map::END) {
+				if ((map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar == Map::END) {
 					delete[] visited;
 					return true;
 				}
@@ -229,7 +229,7 @@ void Map::setExit(int x, int y) {
 //! @return : a boolean true if the cell is occupeid false otherwise
 bool Map::isOccupied(int x, int y)
 {
-	if (*(map[x][y]).wallOrOtherChar != ' ') {
+	if ((map[x][y]).wallOrOtherChar != ' ') {
 		return true;
 	}
 	return false;

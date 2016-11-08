@@ -12,7 +12,7 @@ class MapObject
 {
 public:
 	int x, y;
-	char* wallOrOtherChar;
+	char wallOrOtherChar;
 	char getDisplayChar();
 	void setCharacter(Character* c);
 	void setWallOrOtherChar(char ch);
@@ -23,6 +23,8 @@ public:
 	bool canMove();
 	MapObject();
 	MapObject(int xCoord, int yCoord);
+	MapObject(int xCoord, int yCoord, char c);
+
 private:
 	Character* thisCharacter;
 	std::vector<Item> thisItem;

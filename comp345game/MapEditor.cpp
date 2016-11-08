@@ -68,7 +68,7 @@ void MapEditor::generateMap(string fileName)
 	{
 		for (int column = 0; column < line.length(); column++)
 		{
-			currentMap->fillCell(row, column, line[column]);
+			currentMap->fillCell(row, column, MapObject(row, column, line[column]));
 		}
 		row++;
 	}

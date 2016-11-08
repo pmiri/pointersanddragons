@@ -103,10 +103,6 @@ int main() {
 	cout << "Please Select a Character:" << endl;
 	Character *character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
 	system("CLS");
-	
-	//DEBUG
-	cout << map->getCell(2, 0) << endl;
-	cout << character->getClassName() << endl;
 
 	//TODO: 	Adapting the map elements(opponents, treasure) to the level of the character upon entry
 

@@ -29,7 +29,7 @@ Map *MapBuilder::buildFromFile(string path) {
 		{
 			line_array = line.c_str();
 			for (int y = 0; y < width; y++) {
-				map->fillCell(y, currentHeight, line_array[2 * y]);
+				map->fillCell(y, currentHeight, MapObject(y, currentHeight, line_array[2 * y]));
 				cout << map->getCell(y, currentHeight);
 			}
 			currentHeight++;

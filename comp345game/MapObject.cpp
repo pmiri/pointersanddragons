@@ -11,24 +11,24 @@ char MapObject::getDisplayChar()
 		return 'T';
 	}
 	else
-		return *wallOrOtherChar;
+		return wallOrOtherChar;
 }
 
 void MapObject::setCharacter(Character * c)
 {
 	thisCharacter = c;
-	wallOrOtherChar = nullptr;
+	wallOrOtherChar = NULL;
 }
 
 void MapObject::setWallOrOtherChar(char ch)
 {
-	*wallOrOtherChar = ch;
+	wallOrOtherChar = ch;
 }
 
 void MapObject::setItem(std::vector<Item> i)
 {
 	thisItem = i;
-	wallOrOtherChar = nullptr;
+	wallOrOtherChar = NULL;
 }
 
 void MapObject::setXY(int xCor, int yCor)
@@ -64,6 +64,13 @@ MapObject::MapObject()
 
 MapObject::MapObject(int xCoord, int yCoord)
 {
+	x = xCoord;
+	y = yCoord;
+}
+
+MapObject::MapObject(int xCoord, int yCoord, char c)
+{
+	wallOrOtherChar = c;
 	x = xCoord;
 	y = yCoord;
 }
