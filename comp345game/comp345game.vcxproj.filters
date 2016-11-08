@@ -63,6 +63,9 @@
     <ClInclude Include="MapCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MapObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Map.cpp">
@@ -116,7 +119,11 @@
     <ClCompile Include="MapCreator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="GameMain.cpp">
+=======
+    <ClCompile Include="MapObject.cpp">
+>>>>>>> 533e9321633fad0655753537d0978c29ec73e80b
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

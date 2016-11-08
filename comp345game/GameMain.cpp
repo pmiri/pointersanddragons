@@ -107,7 +107,9 @@ int main() {
 	//TODO: 	Moving the character, square by square on the map
 	
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
-		//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
+	
+	//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
+
 	system("pause");
 	return 0;
 }
