@@ -32,7 +32,7 @@ Map *MapBuilder::buildFromFile(string path) {
 				map->fillCell(y, currentHeight, line_array[2 * y]);
 				cout << map->getCell(y, currentHeight);
 			}
-
+			currentHeight++;
 			//do stuff to build map
 			cout << line << endl;
 		}

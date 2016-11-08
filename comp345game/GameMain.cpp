@@ -94,7 +94,8 @@ int main() {
 	system("pause");
 	
 	system("CLS");
-	//TODO:		Selecting a map and a character from a list of saved ones
+	
+	//Selecting a map and a character from a list of saved ones
 	cout << "Please Select a Map:" << endl;
 	Map *map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
 	system("CLS");
@@ -103,7 +104,8 @@ int main() {
 	Character *character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
 	system("CLS");
 	
-	cout << map->getCell(1, 0) << endl;
+	//DEBUG
+	cout << map->getCell(2, 0) << endl;
 	cout << character->getClassName() << endl;
 
 	//TODO: 	Adapting the map elements(opponents, treasure) to the level of the character upon entry
