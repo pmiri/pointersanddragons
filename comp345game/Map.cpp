@@ -13,16 +13,17 @@ int MAP_LENGTH = 2;
 //! constant for map width
 int MAP_WIDTH = 2;
 //! map as a 2-dimensional array of chars
-char **map;
+MapObject **map;
 
 Map::Map() {
 	delete[] map;
 
-	map = new char*[MAP_LENGTH];
+	map = new MapObject*[MAP_LENGTH];
 	for (int i = 0; i < MAP_LENGTH; i++) {
-		map[i] = new char[MAP_WIDTH];
+		map[i] = new MapObject[MAP_WIDTH];
 		for (int j = 0; j < MAP_WIDTH; j++) {
-			map[i][j] = ' ';
+			map[i][j] = MapObject(i, j);//creates a new empty MapObject
+			map[i][j].setWallOrOtherChar(' ');
 		}
 	}
 }
@@ -33,9 +34,9 @@ Map::Map(int width, int height) {
 	MAP_LENGTH = height;
 	MAP_WIDTH = width;
 
-	map = new char*[height];
+	map = new MapObject*[height];//new char*[height];
 	for (int i = 0; i < height; i++)
-		map[i] = new char[width];
+		map[i] = new MapObject[width];//new char[width];
 }
 
 void Map::moveCharacter(char dir)
@@ -78,8 +79,10 @@ void Map::moveCharacter(char dir)
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
 		return;
 	}
-	fillCell(newXPosition, newYPosition, 'P');
+	fillCell(newXPosition, newYPosition, map[PlayerPositionX][PlayerPositionY]);
 	//DO SOMETHING WITH MapObject
+	//replace with proper object behind it
+	//if this stacks on top of an item, replace it
 }
 
 //! Implementation of the map verification
@@ -92,7 +95,7 @@ bool Map::validatePath()
 	//search for entrance
 	for (int i = 0; i < MAP_LENGTH; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
-			if (map[i][j] == Map::BEGIN) {
+			if (*(map[i][j].wallOrOtherChar) == Map::BEGIN) {
 				entry_location_x = i;
 				entry_location_y = j;
 				break;
@@ -143,9 +146,9 @@ bool Map::validatePath()
 		for (int k = 0; k < 4; k++) {
 			cout << neighbours[k] << endl;
 			//if can be reached, not already visited, and not wall
-			if (neighbours[k] != -1 && !visited[neighbours[k]] && map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH] != Map::WALL) {
+			if (neighbours[k] != -1 && !visited[neighbours[k]] && *(map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar != Map::WALL) {
 				//if exit found, break out of for and leave while loop
-				if (map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH] == Map::END) {
+				if (*(map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar == Map::END) {
 					delete[] visited;
 					return true;
 				}
@@ -167,17 +170,21 @@ bool Map::validatePath()
 //! @param x: an integer value of horizontal index of the map's grid
 //! @param y: an integer value of vertical index of the map's grid
 //! @param obj: a character value of object that fills the cell
-void Map::fillCell(int x, int y, char obj)
+void Map::fillCell(int x, int y, MapObject obj)
 {
 	//map[x][y] = obj;
-	if (obj == 'P') {
+	if (obj.getDisplayChar() == 'P') {
 		PlayerPositionX = x;
 		PlayerPositionY = y;
 	}
-	char* oc = new char;
-	oc = &map[x][y];
-	*oc = obj;
-	//Notify();
+	MapObject* omo = new MapObject;
+	omo = &map[x][y];
+	*omo = obj;
+
+	//char* oc = new char;
+	//oc = &map[x][y];
+	//*oc = obj;
+	Notify();
 }
 
 //! Implementation of get cell, returns cell at given location
@@ -185,7 +192,7 @@ void Map::fillCell(int x, int y, char obj)
 //! @param y: an integer value of vertical index of the map's grid
 char Map::getCell(int x, int y)
 {
-	return map[x][y];
+	return map[x][y].getDisplayChar();
 }
 
 int Map::getHeight()
@@ -202,14 +209,18 @@ int Map::getWidth()
 //! @param x: an integer value of horizontal index of the map's grid
 //! @param y: an integer value of vertical index of the map's grid
 void Map::setEntrance(int x, int y) {
-	fillCell(x, y, Map::BEGIN);
+	MapObject begin = MapObject(x, y);
+	begin.setWallOrOtherChar('B');
+	fillCell(x, y, begin);
 }
 
 //! Implementation of selecting exit, set any cell to the map's exit
 //! @param x: an integer value of horizontal index of the map's grid
 //! @param y: an integer value of vertical index of the map's grid
 void Map::setExit(int x, int y) {
-	fillCell(x, y, Map::END);
+	MapObject end = MapObject(x, y);
+	end.setWallOrOtherChar('E');
+	fillCell(x, y, end);
 }
 
 //! Implementation occupation of a cell, check if a cell is occupied
@@ -218,7 +229,7 @@ void Map::setExit(int x, int y) {
 //! @return : a boolean true if the cell is occupeid false otherwise
 bool Map::isOccupied(int x, int y)
 {
-	if (map[x][y] != ' ') {
+	if (*(map[x][y]).wallOrOtherChar != ' ') {
 		return true;
 	}
 	return false;

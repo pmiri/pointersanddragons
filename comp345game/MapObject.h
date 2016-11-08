@@ -13,12 +13,16 @@ class MapObject
 {
 public:
 	int x, y;
+	char* wallOrOtherChar;
 	char getDisplayChar();
 	void setCharacter(Character* c);
+	void setWallOrOtherChar(char ch);
 	void setItem(std::vector<Item> i);
+	void setXY(int xCor, int yCor);
 	Character* getCharacter();
 	std::vector<Item> getItems();
 	bool canMove();
+	MapObject();
 	MapObject(int xCoord, int yCoord);
 private:
 	Character* thisCharacter;

@@ -8,6 +8,7 @@ using namespace std;
 #include <list>
 #include "Observable.h"
 #include "Observer.h"
+#include "MapObject.h"
 
 //! Class implementing a game map
 class Map : public Observable
@@ -23,7 +24,7 @@ public:
 	static char const END = 'E';
 
 	bool validatePath();
-	void fillCell(int x, int y, char obj);
+	void fillCell(int x, int y, MapObject obj);
 	bool isOccupied(int x, int y);
 	void setEntrance(int x, int y);
 	void setExit(int x, int y);

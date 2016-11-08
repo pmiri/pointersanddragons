@@ -11,17 +11,30 @@ char MapObject::getDisplayChar()
 		return 'T';
 	}
 	else
-		return ' ';
+		return *wallOrOtherChar;
 }
 
 void MapObject::setCharacter(Character * c)
 {
 	thisCharacter = c;
+	wallOrOtherChar = nullptr;
+}
+
+void MapObject::setWallOrOtherChar(char ch)
+{
+	*wallOrOtherChar = ch;
 }
 
 void MapObject::setItem(std::vector<Item> i)
 {
 	thisItem = i;
+	wallOrOtherChar = nullptr;
+}
+
+void MapObject::setXY(int xCor, int yCor)
+{
+	x = xCor;
+	y = yCor;
 }
 
 Character * MapObject::getCharacter()
@@ -40,9 +53,13 @@ bool MapObject::canMove()
 	{
 		if (thisCharacter->isPlayer == 'M')
 			return true;
-	}	
+	}
 	else
 		return false;
+}
+
+MapObject::MapObject()
+{
 }
 
 MapObject::MapObject(int xCoord, int yCoord)
