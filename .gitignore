@@ -107,6 +107,11 @@ artifacts/
 # Chutzpah Test files
 _Chutzpah*
 
+# Phil added this
+*.VC.db
+*.VC.opendb
+
+
 # Visual C++ cache files
 ipch/
 *.aps
