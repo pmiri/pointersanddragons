@@ -85,6 +85,8 @@ int* Character::getAbilityScores() {
 	return abilityScores;
 }
 
+
+
 //! Implementation of a getter method for currentHitPoints
 //! @return int: value of currentHitPoints
 int Character::getHitPoints()

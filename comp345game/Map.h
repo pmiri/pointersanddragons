@@ -29,10 +29,15 @@ public:
 	void setExit(int x, int y);
 	char getCell(int x, int y);
 
+	int PlayerPositionX;
+	int PlayerPositionY;
+
 	int getHeight();
 	int getWidth();
 
 	Map();
 	Map(int width, int height);
+
+	void moveCharacter(char dir);
 };
 

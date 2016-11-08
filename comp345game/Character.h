@@ -29,6 +29,7 @@ public:
 	int attack(int);
 	int getArmorClass();
 	int* getAbilityScores();
+	string moveCharacter(char dir);
 protected:
 	int abilityScores[6];
 	int abilityModifiers[6];

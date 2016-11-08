@@ -38,6 +38,46 @@ Map::Map(int width, int height) {
 		map[i] = new char[width];
 }
 
+void Map::moveCharacter(char dir)
+{
+	int newXPosition = PlayerPositionX;
+	int newYPosition = PlayerPositionY;
+	char targetCellContent = ' ';
+
+	switch (dir) {
+	case 'W':
+		if (PlayerPositionY + 1 < MAP_LENGTH)//valid up move
+		{
+			newYPosition = PlayerPositionY + 1;
+		}
+		break;
+	case 'A':
+		if (PlayerPositionX - 1 >= 0)//valid left move
+		{
+			newXPosition = PlayerPositionX - 1;
+		}
+		break;
+	case 'S':
+		if (PlayerPositionY - 1 >= 0)//valid down move
+		{
+			newYPosition = PlayerPositionY - 1;
+		}
+		break;
+	case 'D':
+		if (PlayerPositionX + 1 < MAP_WIDTH)//valid right move
+		{
+			newXPosition = PlayerPositionX + 1;
+		}
+		break;
+	default:
+		cout << "no move" << endl;
+		break;
+	}
+	char targetCellContent = getCell(newXPosition, newYPosition);
+	if (targetCellContent == 'W' || targetCellContent == 'M')
+		cout << endl << "That move is invalid!" << endl;//the move is invalid
+}
+
 //! Implementation of the map verification
 //! @return bool value, true of the map is valid (there is at least one clear path between the mandatory begin and end cell). 
 bool Map::validatePath()
@@ -126,6 +166,10 @@ bool Map::validatePath()
 void Map::fillCell(int x, int y, char obj)
 {
 	//map[x][y] = obj;
+	if (obj == 'P') {
+		PlayerPositionX = x;
+		PlayerPositionY = y;
+	}
 	char* oc = new char;
 	oc = &map[x][y];
 	*oc = obj;
