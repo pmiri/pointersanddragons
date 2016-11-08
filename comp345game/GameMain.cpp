@@ -96,12 +96,26 @@ int main() {
 	system("CLS");
 	
 	//Selecting a map and a character from a list of saved ones
-	cout << "Please Select a Map:" << endl;
+	cout << "Load a Map:" << endl;
 	Map *map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
 	system("CLS");
 	
-	cout << "Please Select a Character:" << endl;
-	Character *character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
+	Character *character;
+	char in;
+	
+	do {
+		cout << "Character - Load(1) or Create(2):" << endl;
+		in = keyPress();
+		if (in == '1') {
+			cout << "Please pick a file:" << endl;
+			character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
+		}
+		else if (in == '2')
+			character = CharacterEditor::createCharacter();
+		else
+			cout << "Please select the right value";
+	} while (in != '1' && in != '2');
+
 	system("CLS");
 
 	//TODO: 	Adapting the map elements(opponents, treasure) to the level of the character upon entry
