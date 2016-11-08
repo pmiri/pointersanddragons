@@ -43,8 +43,8 @@ void MapUI::PrintMap() {
 				mapString += "E";
 				continue;
 			}
-			if (cellContent == 'C') {
-				mapString += "C";
+			if (cellContent == 'P') {
+				mapString += "P";
 				continue;
 			}
 			if (cellContent == 'M') {
@@ -77,39 +77,19 @@ void MapUI::PrintMap() {
 //	map->setEntrance(0, 0);
 //	map->setExit(4, 4);
 //
-//	map->fillCell(0, 1, 'W');
+//	map->fillCell(0, 1, MapObject(0, 1, 'W'));
 //	getchar();
-//	map->fillCell(0, 2, 'W');
+//	map->fillCell(0, 2, MapObject(0, 2, 'W'));
 //	getchar();
-//	map->fillCell(0, 3, 'W');
+//	map->fillCell(0, 3, MapObject(0, 3, 'W'));
 //	getchar();
-//	map->fillCell(0, 4, 'W');
+//	map->fillCell(0, 4, MapObject(0, 4, 'W'));
 //	getchar();
-//	map->fillCell(1, 4, 'W');
+//	map->fillCell(2, 2, MapObject(2, 2, 'P'));
 //	getchar();
-//	map->fillCell(2, 4, 'W');
+//	map->fillCell(3, 3, MapObject(3, 3, 'M'));
 //	getchar();
-//	map->fillCell(3, 4, 'W');
-//	getchar();
-//	map->fillCell(4, 3, 'W');
-//	getchar();
-//	map->fillCell(4, 2, 'W');
-//	getchar();
-//	map->fillCell(4, 1, 'W');
-//	getchar();
-//	map->fillCell(4, 0, 'W');
-//	getchar();
-//	map->fillCell(3, 0, 'W');
-//	getchar();
-//	map->fillCell(2, 0, 'W');
-//	getchar();
-//	map->fillCell(1, 0, 'W');
-//	getchar();
-//	map->fillCell(2, 2, 'C');
-//	getchar();
-//	map->fillCell(3, 3, 'M');
-//	getchar();
-//	map->fillCell(1, 1, 'T');
+//	map->fillCell(1, 1, MapObject(1, 1, 'T'));
 //
 //	delete map;
 //	delete mapUI;
