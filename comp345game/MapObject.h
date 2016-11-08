@@ -8,18 +8,19 @@ using namespace std;
 #include "Map.h"
 #include "Character.h"
 #include "Item.h"
+#include <vector>
 class MapObject
 {
 public:
 	int x, y;
 	char getDisplayChar();
 	void setCharacter(Character* c);
-	void setItem(Item* i);
+	void setItem(std::vector<Item> i);
 	Character* getCharacter();
-	Item* getItem();
+	std::vector<Item> getItems();
 	bool canMove();
 	MapObject(int xCoord, int yCoord);
 private:
 	Character* thisCharacter;
-	Item* thisItem;
+	std::vector<Item> thisItem;
 };

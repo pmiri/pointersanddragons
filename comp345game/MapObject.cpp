@@ -6,7 +6,7 @@ char MapObject::getDisplayChar()
 	{
 		return thisCharacter->isPlayer;
 	}
-	else if (thisItem != nullptr)
+	else if (thisItem.size() > 1)
 	{
 		return 'T';
 	}
@@ -19,7 +19,7 @@ void MapObject::setCharacter(Character * c)
 	thisCharacter = c;
 }
 
-void MapObject::setItem(Item * i)
+void MapObject::setItem(std::vector<Item> i)
 {
 	thisItem = i;
 }
@@ -29,7 +29,7 @@ Character * MapObject::getCharacter()
 	return thisCharacter;
 }
 
-Item * MapObject::getItem()
+std::vector<Item> MapObject::getItems()
 {
 	return thisItem;
 }

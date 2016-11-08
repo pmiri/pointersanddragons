@@ -303,3 +303,11 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+*.log
+*.idb
+*.exp
+*.pdb
+*.ilk
+*.ilk
+*.pdb
+*.tlog
