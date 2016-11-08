@@ -110,6 +110,7 @@ _Chutzpah*
 # Phil added this
 *.VC.db
 *.VC.opendb
+comp345game.VC.db
 
 
 # Visual C++ cache files
