@@ -123,6 +123,7 @@
     <ClInclude Include="MapBuilder.h" />
     <ClInclude Include="MapCreator.h" />
     <ClInclude Include="MapEditor.h" />
+    <ClInclude Include="MapObject.h" />
     <ClInclude Include="MapUI.h" />
     <ClInclude Include="Observable.h" />
     <ClInclude Include="Observer.h" />
@@ -137,12 +138,14 @@
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Enhancement.cpp" />
     <ClCompile Include="Fighter.cpp" />
+    <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemContainer.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
     <ClCompile Include="MapCreator.cpp" />
     <ClCompile Include="MapEditor.cpp" />
+    <ClCompile Include="MapObject.cpp" />
     <ClCompile Include="MapUI.cpp" />
     <ClCompile Include="Observable.cpp" />
     <ClCompile Include="Observer.cpp" />

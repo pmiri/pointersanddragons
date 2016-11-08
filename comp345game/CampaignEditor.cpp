@@ -65,6 +65,7 @@ Campaign CampaignEditor::getCampaign()
 	return *currentCampaign;
 }
 
+<<<<<<< HEAD
 //int main()
 //{
 //	CampaignEditor* editor = new CampaignEditor("Maps/campaign.txt");
@@ -72,3 +73,14 @@ Campaign CampaignEditor::getCampaign()
 //	system("pause");
 //	return 0;
 //}
+=======
+/*
+int main()
+{
+	CampaignEditor* editor = new CampaignEditor("Maps/campaign.txt");
+	delete editor;
+	system("pause");
+	return 0;
+}
+*/
+>>>>>>> origin/master

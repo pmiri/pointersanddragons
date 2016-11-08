@@ -35,16 +35,24 @@ void MapUI::PrintMap() {
 				mapString += "#";
 				continue;
 			}
-			if (cellContent == 'B' || cellContent == 'E') {
-				mapString += "H";
+			if (cellContent == 'B') {
+				mapString += "B";
+				continue;
+			}
+			if (cellContent == 'E') {
+				mapString += "E";
 				continue;
 			}
 			if (cellContent == 'C') {
-				mapString += "I";
+				mapString += "C";
 				continue;
 			}
 			if (cellContent == 'M') {
 				mapString += "M";
+				continue;
+			}
+			if (cellContent == 'F') {
+				mapString += "F";
 				continue;
 			}
 			if (cellContent == 'T') {

@@ -15,8 +15,9 @@ class Map : public Observable
 public:
 	//! constants for cell objects
 	static char const WALL = 'W';
-	static char const CHARACTER = 'C';
+	static char const CHARACTER = 'P';
 	static char const MONSTER = 'M';
+	static char const FRIENDLY = 'F';
 	static char const TREASURE = 'T';
 	static char const BEGIN = 'B';
 	static char const END = 'E';
@@ -28,10 +29,15 @@ public:
 	void setExit(int x, int y);
 	char getCell(int x, int y);
 
+	int PlayerPositionX;
+	int PlayerPositionY;
+
 	int getHeight();
 	int getWidth();
 
 	Map();
 	Map(int width, int height);
+
+	void moveCharacter(char dir);
 };
 

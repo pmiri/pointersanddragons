@@ -303,3 +303,22 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/
+*.log
+*.idb
+*.exp
+*.pdb
+*.ilk
+*.ilk
+*.pdb
+*.tlog
+A1NativeUnitTestProject/Debug/A1NativeUnitTestProject.log
+*.log
+A1NativeUnitTestProject/Debug/A1NativeUnitTestProject.log
+*.log
+A1NativeUnitTestProject/Debug/A2MapObs.93F49992.tlog/A2MapObserverTestProject.lastbuildstate
+*.log
+A1NativeUnitTestProject/Debug/A1NativeUnitTestProject.log
+*.log
+A1NativeUnitTestProject/Debug/A2MapObs.93F49992.tlog/CL.read.1.tlog
+*.tlog
+Debug
