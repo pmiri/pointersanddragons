@@ -33,40 +33,33 @@ void MapUI::PrintMap() {
 			char cellContent = _subject->getCell(w, h);
 			if (cellContent == 'W') {
 				mapString += "#";
-				continue;
 			}
-			if (cellContent == 'B') {
+			else if (cellContent == 'B') {
 				mapString += "B";
-				continue;
 			}
-			if (cellContent == 'E') {
+			else if (cellContent == 'E') {
 				mapString += "E";
-				continue;
 			}
-			if (cellContent == 'P') {
+			else if (cellContent == 'P') {
 				mapString += "P";
-				continue;
 			}
-			if (cellContent == 'M') {
+			else if (cellContent == 'M') {
 				mapString += "M";
-				continue;
 			}
-			if (cellContent == 'F') {
+			else if (cellContent == 'F') {
 				mapString += "F";
-				continue;
 			}
-			if (cellContent == 'T') {
+			else if (cellContent == 'T') {
 				mapString += "T";
-				continue;
 			}
 			else {
 				mapString += " ";
-				continue;
 			}
+			mapString += " ";
 		}
 		mapString += "\n";
 	}
-	cout << mapString << endl << "Press any key to continue";//remove for actual game
+	cout << mapString << endl;//<< "Press any key to continue";//remove for actual game
 };
 
 

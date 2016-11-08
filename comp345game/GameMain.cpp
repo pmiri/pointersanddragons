@@ -3,6 +3,8 @@
 #include "dirent.h"
 #include <list>
 #include <string>
+#include <iostream>
+#include <stdlib.h>//for clearning console on windows
 
 #include "MapBuilder.h"
 #include "CharacterEditor.h"
@@ -100,6 +102,8 @@ int main() {
 	cout << "Load a Map:" << endl;
 	Map *map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
 	MapUI mapView = MapUI(map);
+	map->Notify();
+	getchar();
 	system("CLS");
 	
 	Character *character;

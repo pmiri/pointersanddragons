@@ -32,9 +32,10 @@ Map *MapBuilder::buildFromFile(string path) {
 			for (int y = 0; y < width; y++) {
 				if (line_array[2 * y] == 'P') {
 					//create a character who is a player
-					Character playerCharacter = Character();
+					Character* playerCharacter = new Character;
 					MapObject characterMapObject = MapObject(y, currentHeight, line_array[2 * y]);
-					characterMapObject.setCharacter(&playerCharacter);
+					characterMapObject.setCharacter(playerCharacter);
+					map->fillCell(y, currentHeight, characterMapObject);
 				}
 				else {
 					map->fillCell(y, currentHeight, MapObject(y, currentHeight, line_array[2 * y]));
