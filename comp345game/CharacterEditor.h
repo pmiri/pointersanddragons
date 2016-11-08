@@ -5,7 +5,8 @@
 class CharacterEditor
 {
 public:
-	static void createCharacter();
-	static void editCharacter();
+	static Character* createCharacter();
+	static Character* editCharacter(Character *ch);
 	static Character *loadCharacter(string path);
+	static void saveCharacterToFile(string path, Character ch);
 };

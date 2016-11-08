@@ -88,6 +88,8 @@ string characterSelection() {
 }
 
 int main() {
+	Character *ch = CharacterEditor::createCharacter();
+	ch = CharacterEditor::editCharacter(ch);
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
 	cout << "Welcome to our stupid game." << endl;
@@ -117,7 +119,7 @@ int main() {
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
 	
 	//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
-
+	
 	system("pause");
 	return 0;
 }
