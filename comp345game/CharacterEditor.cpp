@@ -60,9 +60,3 @@ Character *CharacterEditor::loadCharacter(string path) {
 	}
 
 }
-
-int main() {
-	//Character *ch = CharacterEditor::loadCharacter("C:\\Users\\jacob\\Documents\\dumps\\player.txt");
-
-	return 0;
-};

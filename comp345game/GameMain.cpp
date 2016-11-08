@@ -5,9 +5,12 @@
 #include <string>
 
 #include "MapBuilder.h"
+#include "CharacterEditor.h"
 
 using namespace std;
 
+const string MAPS_PATH = "../maps/";
+const string CHARACTERS_PATH = "../characters/";
 
 inline char keyPress() {
 	int i = _getche();
@@ -21,7 +24,7 @@ string mapSelection() {
 	list<string> maps;
 	DIR *dir;
 	struct dirent *ent;
-	if ((dir = opendir("../maps/")) != NULL) {
+	if ((dir = opendir(MAPS_PATH.c_str())) != NULL) {
 		/* print all the files and directories within directory */
 		int i = -2;
 		while ((ent = readdir(dir)) != NULL) {
@@ -55,7 +58,7 @@ string characterSelection() {
 	list<string> characters;
 	DIR *dir;
 	struct dirent *ent;
-	if ((dir = opendir("../characters/")) != NULL) {
+	if ((dir = opendir(CHARACTERS_PATH.c_str())) != NULL) {
 		/* print all the files and directories within directory */
 		int i = -2;
 		while ((ent = readdir(dir)) != NULL) {
@@ -93,13 +96,16 @@ int main() {
 	system("CLS");
 	//TODO:		Selecting a map and a character from a list of saved ones
 	cout << "Please Select a Map:" << endl;
-	Map *map = MapBuilder::buildFromFile("../map/" + mapSelection());
+	Map *map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
 	system("CLS");
 	
 	cout << "Please Select a Character:" << endl;
-	cout << characterSelection() << endl;
+	Character *character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
 	system("CLS");
 	
+	cout << map->getCell(1, 0) << endl;
+	cout << character->getClassName() << endl;
+
 	//TODO: 	Adapting the map elements(opponents, treasure) to the level of the character upon entry
 
 	//TODO: 	Starting the game by having the player character placed on the starting point
