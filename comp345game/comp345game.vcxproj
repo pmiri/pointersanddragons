@@ -114,6 +114,7 @@
     <ClInclude Include="CampaignEditor.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterObserver.h" />
+    <ClInclude Include="CharacterEditor.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
     <ClInclude Include="Item.h" />
@@ -131,6 +132,7 @@
     <ClCompile Include="Campaign.cpp" />
     <ClCompile Include="CampaignEditor.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CharacterEditor.cpp" />
     <ClCompile Include="CharacterObserver.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Enhancement.cpp" />

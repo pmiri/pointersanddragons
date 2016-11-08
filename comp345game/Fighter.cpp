@@ -13,9 +13,10 @@ public:
 		initAbilityModifiers();
 	}
 
-	Fighter(int str, int dex, int con, int intel, int wis, int cha)
+	Fighter(int str, int dex, int con, int intel, int wis, int cha, char isP)
 	{
 		className = "Fighter";
+		isPlayer = isP;
 		//fighter max hit points is initially 10, then affected by ability modifiers
 		maxHitPoints = 10;
 		initAbilityModifiers();

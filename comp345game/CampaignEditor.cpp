@@ -65,10 +65,10 @@ Campaign CampaignEditor::getCampaign()
 	return *currentCampaign;
 }
 
-int main()
-{
-	CampaignEditor* editor = new CampaignEditor("Maps/campaign.txt");
-	delete editor;
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//	CampaignEditor* editor = new CampaignEditor("Maps/campaign.txt");
+//	delete editor;
+//	system("pause");
+//	return 0;
+//}
