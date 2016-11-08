@@ -15,8 +15,9 @@ class Map : public Observable
 public:
 	//! constants for cell objects
 	static char const WALL = 'W';
-	static char const CHARACTER = 'C';
+	static char const CHARACTER = 'P';
 	static char const MONSTER = 'M';
+	static char const FRIENDLY = 'F';
 	static char const TREASURE = 'T';
 	static char const BEGIN = 'B';
 	static char const END = 'E';

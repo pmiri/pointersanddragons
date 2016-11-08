@@ -10,6 +10,7 @@
 //! Constructor: creates character with random ability scores 
 Character::Character()
 {
+	isPlayer = 'P';
 	//seed random number generator
 	srand(time(0));
 
@@ -44,8 +45,9 @@ Character::Character()
 }
 
 //! Constructor: passes values to each ability score and set hit points to 10
-Character::Character(int str, int dex, int con, int intel, int wis, int cha)
+Character::Character(int str, int dex, int con, int intel, int wis, int cha, char isP)
 {
+	isPlayer = isP;
 	abilityScores[0] = str;
 	abilityScores[1] = dex;
 	abilityScores[2] = con;

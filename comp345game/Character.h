@@ -13,8 +13,9 @@ using namespace std;
 class Character : public Subject
 {
 public:
+	char isPlayer;
 	Character();
-	Character(int, int, int, int, int, int);
+	Character(int, int, int, int, int, int, char);
 	bool validateNewCharacter();
 	void hit(int);
 
