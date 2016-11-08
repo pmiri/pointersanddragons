@@ -822,21 +822,6 @@ char MapCreator::getTile()
 			invalidInput = false;
 			return 'B';
 		}
-		else if (userInput == "M" || userInput == "m" || userInput == "(m)" || userInput == "(M)")
-		{
-			invalidInput = false;
-			return 'M';
-		}
-		else if (userInput == "F" || userInput == "f" || userInput == "(f)" || userInput == "(F)")
-		{
-			invalidInput = false;
-			return 'F';
-		}
-		else if (userInput == "T" || userInput == "t" || userInput == "(t)" || userInput == "(T)")
-		{
-			invalidInput = false;
-			return 'B';
-		}
 		else if (userInput == "_" || userInput == "(_)")
 		{
 			invalidInput = false;
@@ -844,7 +829,7 @@ char MapCreator::getTile()
 		}
 		else
 		{
-			std::cout << "Invalid input. Valid characters are wall (X), empty (_), begin (B), end (E), monster (M), friendly character (F), and treasure(T)." << std::endl;
+			std::cout << "Invalid input. Valid characters are wall (X), empty (_), begin (B), and end (E)" << std::endl;
 			invalidInput = true;
 		}
 	} while (invalidInput);
