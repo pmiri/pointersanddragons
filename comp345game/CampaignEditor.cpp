@@ -65,6 +65,7 @@ Campaign CampaignEditor::getCampaign()
 	return *currentCampaign;
 }
 
+/*
 int main()
 {
 	CampaignEditor* editor = new CampaignEditor("Maps/campaign.txt");
@@ -72,3 +73,4 @@ int main()
 	system("pause");
 	return 0;
 }
+*/
