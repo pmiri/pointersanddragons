@@ -44,6 +44,26 @@ Item Backpack::takeItem(char dir)
 	}
 }
 
+Item Backpack::selectItem(int dir)
+{
+	if (dir > 9 || dir < 0)
+		return Item();
+	else
+		return Items.at(dir);
+}
+
+Item Backpack::takeItem(int dir)
+{
+	if (dir > 9 || dir < 0)
+		return Item();
+	else
+	{
+		Item temp = Items.at(dir);
+		Items.erase(Items.begin() + dir);
+		return temp;
+	}
+}
+
 Item Backpack::replaceItem(Item anItem)
 {
 	Item temp = Item();

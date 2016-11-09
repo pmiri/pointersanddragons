@@ -25,6 +25,8 @@ public:
 	// method to get an item from the item container
 	Item selectItem(char dir);
 	Item takeItem(char dir);
+	Item selectItem(int dir);
+	Item takeItem(int dir);
 	Item replaceItem(Item anItem);
 private:
 	vector<Item> Items;
