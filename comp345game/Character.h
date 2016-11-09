@@ -31,6 +31,7 @@ public:
 	string getClassName();
 	void levelUp(int);
 	void distributePoints(int);
+	int toHit(int);
 	int attack(int);
 	int getArmorClass();
 	int* getAbilityScores();
@@ -38,6 +39,7 @@ public:
 protected:
 	int abilityScores[6];
 	int abilityBonuses[6];
+	int baseAttackBonus;
 	int attackBonus;
 	int damageBonus;
 	int armorClassBonus;

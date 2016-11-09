@@ -177,6 +177,7 @@ string Character::getClassName()
 void Character::levelUp(int diceRoll)
 {
 	level++;
+	baseAttackBonus++;
 	maxHitPoints = maxHitPoints + diceRoll;
 	Notify();
 }
@@ -184,7 +185,7 @@ void Character::levelUp(int diceRoll)
 int Character::attack(int diceRoll)
 {
 	//damage is equal to dice roll + strength modifier
-	return diceRoll + abilityModifiers[0];
+	return diceRoll + abilityModifiers[0] + damageBonus;
 }
 
 //! method to return the sum armor class of the character
@@ -202,4 +203,9 @@ void Character::distributePoints(int points)
 		abilityScores[i]++;
 		points--;
 	}
+}
+
+int Character::toHit(int diceRoll)
+{
+	return (diceRoll + abilityModifiers[0] + attackBonus);
 }
