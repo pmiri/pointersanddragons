@@ -44,31 +44,40 @@ void Map::moveCharacter(char dir)
 	int newXPosition = PlayerPositionX;
 	int newYPosition = PlayerPositionY;
 	char targetCellContent = ' ';
+	bool targetOutOfBounds = false;
 
 	switch (toupper(dir)) {
 	case 'W':
-		if (PlayerPositionY - 1 >= 0)//valid down move
+		if (PlayerPositionY - 1 >= 0)//valid up move
 		{
 			newYPosition = PlayerPositionY - 1;
 		}
+		else
+			targetOutOfBounds = true;
 		break;
 	case 'A':
 		if (PlayerPositionX - 1 >= 0)//valid left move
 		{
 			newXPosition = PlayerPositionX - 1;
 		}
+		else
+			targetOutOfBounds = true;
 		break;
 	case 'S':
-		if (PlayerPositionY + 1 < MAP_LENGTH)//valid up move
+		if (PlayerPositionY + 1 < MAP_LENGTH)//valid down move
 		{
 			newYPosition = PlayerPositionY + 1;
 		}
+		else
+			targetOutOfBounds = true;
 		break;
 	case 'D':
 		if (PlayerPositionX + 1 < MAP_WIDTH)//valid right move
 		{
 			newXPosition = PlayerPositionX + 1;
 		}
+		else
+			targetOutOfBounds = true;
 		break;
 	default:
 		Notify();
@@ -76,7 +85,7 @@ void Map::moveCharacter(char dir)
 		return;//OTHERWISE THE PLAYER GETS SET TO NULL ON AN INVLID KEY
 	}
 	targetCellContent = getCell(newXPosition, newYPosition);
-	if (targetCellContent == 'W' || targetCellContent == 'M') {
+	if ((targetCellContent == 'W' || targetCellContent == 'M') || targetOutOfBounds) {
 		Notify();
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
 		return;

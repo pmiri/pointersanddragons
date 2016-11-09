@@ -104,8 +104,6 @@ int main() {
 	cout << "Load a Map:" << endl;
 	Map *map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
 	MapUI mapView = MapUI(map);
-	map->Notify();
-	getchar();
 	system("CLS");
 	
 	Character *character;
@@ -132,6 +130,8 @@ int main() {
 	Backpack* playerPack = new Backpack();
 	ItemUI itemView = ItemUI(playerInventory, playerPack);
 	system("CLS");
+	map->Notify();
+	cout << "use WASD to move the Player" << endl;
 
 	//TODO: 	Adapting the map elements(opponents, treasure) to the level of the character upon entry
 
@@ -140,13 +140,12 @@ int main() {
 	//TODO: 	Moving the character, square by square on the map
 	while (!gameFinished) {
 		//check inventory
-		//move player
-		cout << "Player char is: " << map->getCell(2, 1);
 		string mapString = mapView.getMapString();
 		in = keyPress();
 		if (in == 'i' | in == 'I')
 			itemView.PrintInventory();
 		map->moveCharacter(in);
+		cout << "use WASD to move the Player" << endl;
 		//ask do action (ends turn)
 	}
 	
