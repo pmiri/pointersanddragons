@@ -140,6 +140,7 @@ int main() {
 		//check inventory
 		//move player
 		cout << "Player char is: " << map->getCell(2, 1);
+		string mapString = mapView.getMapString();
 		in = keyPress();
 		map->moveCharacter(in);
 		//ask do action (ends turn)
