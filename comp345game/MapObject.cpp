@@ -6,7 +6,7 @@ char MapObject::getDisplayChar()
 	{
 		return thisCharacter->isPlayer;
 	}
-	else if (thisItem.size() > 1)
+	else if (thisItem.size() >= 1)
 	{
 		return 'T';
 	}

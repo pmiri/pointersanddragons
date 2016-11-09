@@ -1,6 +1,8 @@
-4
-4
-  B     
-W     P
-W M   W
-    E  
+6
+6
+W W W B W W
+W P     T W
+W         W
+W          
+W   M     W
+W W W E W W

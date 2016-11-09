@@ -140,6 +140,17 @@ void Map::moveCharacter(char dir)
 			cout << "You have not gone back" << endl;
 		return;
 	}
+	if (targetCellContent == 'T') {
+		Notify();
+		cout << endl << "A Treasure chest, would you like to open it? (Y)" << endl;
+		char in = mapKeyPress();
+		if (toupper(in) == 'Y') {
+			cout << "Launch inventory sequence" << endl;
+		}
+		else
+			cout << "You have not opened it" << endl;
+		return;
+	}
 }
 
 //! Implementation of the map verification

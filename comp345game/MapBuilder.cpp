@@ -32,10 +32,26 @@ Map *MapBuilder::buildFromFile(string path) {
 			for (int y = 0; y < width; y++) {
 				if (line_array[2 * y] == 'P') {
 					//create a character who is a player
-					Character* playerCharacter = new Character;
+					Character* playerCharacter = new Character;//TODO pull player character info from map somehow?
 					MapObject characterMapObject = MapObject(y, currentHeight, line_array[2 * y]);
 					characterMapObject.setCharacter(playerCharacter);
 					map->fillCell(y, currentHeight, characterMapObject);
+				}
+				if (line_array[2 * y] == 'M') {
+					//create a character who is a player
+					Character* playerCharacter = new Character;//TODO pull monster character info from map somehow?
+					playerCharacter->isPlayer = 'M';
+					MapObject characterMapObject = MapObject(y, currentHeight, line_array[2 * y]);
+					characterMapObject.setCharacter(playerCharacter);
+					map->fillCell(y, currentHeight, characterMapObject);
+				}
+				else if (line_array[2 * y] == 'T') {
+					//create a character who is a player
+					ItemContainer* items = new ItemContainer;
+					items->addItem(Item());//TODO pull item info from map somehow?
+					MapObject itemMapObject = MapObject(y, currentHeight, line_array[2 * y]);
+					itemMapObject.setItem(items->getItems());
+					map->fillCell(y, currentHeight, itemMapObject);
 				}
 				else {
 					map->fillCell(y, currentHeight, MapObject(y, currentHeight, line_array[2 * y]));
