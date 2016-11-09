@@ -93,9 +93,20 @@ void Map::moveCharacter(char dir)
 		return;//OTHERWISE THE PLAYER GETS SET TO NULL ON AN INVLID KEY
 	}
 	targetCellContent = getCell(newXPosition, newYPosition);
-	if ((targetCellContent == 'W' || targetCellContent == 'M') || targetOutOfBounds) {
+	if (targetCellContent == 'W' || targetOutOfBounds) {
 		Notify();
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
+		return;
+	}
+	if (targetCellContent == 'M') {
+		Notify();
+		cout << endl << "Would you like to fight this monster? (Y)" << endl;
+		char in = mapKeyPress();
+		if (toupper(in) == 'Y') {
+			cout << "Begin Fight sequence" << endl;
+		}
+		else
+			cout << "You have not fought" << endl;
 		return;
 	}
 
