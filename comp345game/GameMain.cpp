@@ -139,6 +139,7 @@ int main() {
 	while (!gameFinished) {
 		//check inventory
 		//move player
+		cout << "Player char is: " << map->getCell(2, 1);
 		in = keyPress();
 		map->moveCharacter(in);
 		//ask do action (ends turn)

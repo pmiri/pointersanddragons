@@ -59,7 +59,7 @@ Item Inventory::replaceItem(Item anItem)
 {
 	for (int i = 0; i < Items.size(); i++)
 	{
-		if (Items.at(i).getType == anItem.getType)
+		if (Items.at(i).getType() == anItem.getType())
 		{
 			Item temp = Items.at(i);
 			Items.erase(Items.begin() + i);
