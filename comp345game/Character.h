@@ -5,6 +5,9 @@
 
 #include <iostream>
 #include "Subject.h"
+#include "Inventory.h"
+#include "Backpack.h"
+#include <vector>
 using namespace std;
 
 #pragma once
@@ -14,11 +17,13 @@ class Character : public Subject
 {
 public:
 	char isPlayer;
+	Inventory wornItems;
+	Backpack carriedItems;
 	Character();
 	Character(int, int, int, int, int, int, char);
 	bool validateNewCharacter();
 	void hit(int);
-
+	void updateBonuses(vector<Enhancement> bonuses);
 	int getHitPoints();
 	int getMaxHitPoints();
 	void initAbilityModifiers();
@@ -29,8 +34,13 @@ public:
 	int attack(int);
 	int getArmorClass();
 	int* getAbilityScores();
+	int* getAdjustedAbilityScores();
 protected:
 	int abilityScores[6];
+	int abilityBonuses[6];
+	int attackBonus;
+	int damageBonus;
+	int armorClassBonus;
 	int abilityModifiers[6];
 	int currentHitPoints;
 	int maxHitPoints;

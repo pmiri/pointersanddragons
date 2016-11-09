@@ -6,7 +6,7 @@
 #ifndef Inventory_h
 #define Inventory_h
 #include <string>
-#include<vector>
+#include <vector>
 using namespace std;
 #include "ItemContainer.h"
 

@@ -81,8 +81,64 @@ void Character::hit(int damage)
 	Notify();
 }
 
+void Character::updateBonuses(vector<Enhancement> bonuses)
+{
+	int numberOfBonuses = bonuses.size();
+	for (int i = 0; i < numberOfBonuses; i++)
+	{
+		string bonusType = bonuses.at(i).getType();
+		if (bonusType == "Strength")
+		{
+			abilityBonuses[0] = bonuses.at(i).getBonus();
+		}
+		else if (bonusType == "Dexterity")
+		{
+			abilityBonuses[1] = bonuses.at(i).getBonus();
+		}
+		else if (bonusType == "Constitution")
+		{
+			abilityBonuses[2] = bonuses.at(i).getBonus();
+		}
+		else if (bonusType == "Intelligence")
+		{
+			abilityBonuses[3] = bonuses.at(i).getBonus();
+		}
+		else if (bonusType == "Wisdom")
+		{
+			abilityBonuses[4] = bonuses.at(i).getBonus();
+		}
+		else if (bonusType == "Charisma")
+		{
+			abilityBonuses[5] = bonuses.at(i).getBonus();
+		}
+		else if (bonusType == "Armor")
+		{
+			armorClassBonus = bonuses.at(i).getBonus();
+		}
+		else if (bonusType == "Attack")
+		{
+			attackBonus = bonuses.at(i).getBonus();
+		}
+		else if (bonusType == "Damage")
+		{
+			damageBonus = bonuses.at(i).getBonus();
+		}
+	}
+}
+
 int* Character::getAbilityScores() {
 	return abilityScores;
+}
+
+int * Character::getAdjustedAbilityScores()
+{
+	int tempScores[6];
+	for (int i = 0; i < 6; i++)
+	{
+		tempScores[i] = abilityScores[i] + abilityBonuses[i];
+	}
+	int* adjustedScores = tempScores;
+	return adjustedScores;
 }
 
 //! Implementation of a getter method for currentHitPoints
@@ -134,7 +190,7 @@ int Character::attack(int diceRoll)
 //! method to return the sum armor class of the character
 int Character::getArmorClass()
 {
-	return armorClass;
+	return armorClass + armorClassBonus;
 }
 
 //! method to randomly distribute points on level up
