@@ -90,6 +90,8 @@ string characterSelection() {
 	return characters.front();
 }
 
+static bool gameFinished = false;
+
 int main() {
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
@@ -121,6 +123,11 @@ int main() {
 		else
 			cout << "Please select the right value";
 	} while (in != '1' && in != '2');
+	//adds the built player to the map
+	Character* playerCharacter = new Character;
+	MapObject characterMapObject = MapObject(map->PlayerPositionX, map->PlayerPositionY);
+	characterMapObject.setCharacter(playerCharacter);
+	map->fillCell(map->PlayerPositionX, map->PlayerPositionY, characterMapObject);
 
 	system("CLS");
 
@@ -129,6 +136,13 @@ int main() {
 	//TODO: 	Starting the game by having the player character placed on the starting point
 	
 	//TODO: 	Moving the character, square by square on the map
+	while (!gameFinished) {
+		//check inventory
+		//move player
+		in = keyPress();
+		map->moveCharacter(in);
+		//ask do action (ends turn)
+	}
 	
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
 	

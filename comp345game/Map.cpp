@@ -45,7 +45,7 @@ void Map::moveCharacter(char dir)
 	int newYPosition = PlayerPositionY;
 	char targetCellContent = ' ';
 
-	switch (dir) {
+	switch (toupper(dir)) {
 	case 'W':
 		if (PlayerPositionY + 1 < MAP_LENGTH)//valid up move
 		{
@@ -79,10 +79,9 @@ void Map::moveCharacter(char dir)
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
 		return;
 	}
-	fillCell(newXPosition, newYPosition, map[PlayerPositionX][PlayerPositionY]);
-	//DO SOMETHING WITH MapObject
-	//replace with proper object behind it
-	//if this stacks on top of an item, replace it
+	map[newXPosition][newYPosition].setCharacter(map[PlayerPositionX][PlayerPositionY].getCharacter());
+	map[PlayerPositionX][PlayerPositionY].setCharacter(nullptr);
+	Notify();
 }
 
 //! Implementation of the map verification
