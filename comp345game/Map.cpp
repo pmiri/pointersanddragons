@@ -47,9 +47,9 @@ void Map::moveCharacter(char dir)
 
 	switch (toupper(dir)) {
 	case 'W':
-		if (PlayerPositionY + 1 < MAP_LENGTH)//valid up move
+		if (PlayerPositionY - 1 >= 0)//valid down move
 		{
-			newYPosition = PlayerPositionY + 1;
+			newYPosition = PlayerPositionY - 1;
 		}
 		break;
 	case 'A':
@@ -59,9 +59,9 @@ void Map::moveCharacter(char dir)
 		}
 		break;
 	case 'S':
-		if (PlayerPositionY - 1 >= 0)//valid down move
+		if (PlayerPositionY + 1 < MAP_LENGTH)//valid up move
 		{
-			newYPosition = PlayerPositionY - 1;
+			newYPosition = PlayerPositionY + 1;
 		}
 		break;
 	case 'D':
@@ -71,16 +71,23 @@ void Map::moveCharacter(char dir)
 		}
 		break;
 	default:
+		Notify();
 		cout << "no move" << endl;
-		break;
+		return;//OTHERWISE THE PLAYER GETS SET TO NULL ON AN INVLID KEY
 	}
 	targetCellContent = getCell(newXPosition, newYPosition);
 	if (targetCellContent == 'W' || targetCellContent == 'M') {
+		Notify();
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
 		return;
 	}
+	//put player character at mapObject of target
 	map[newXPosition][newYPosition].setCharacter(map[PlayerPositionX][PlayerPositionY].getCharacter());
+	//remove player character pointer from previous location
 	map[PlayerPositionX][PlayerPositionY].setCharacter(nullptr);
+	//update player location variables
+	PlayerPositionX = newXPosition;
+	PlayerPositionY = newYPosition;
 	Notify();
 }
 

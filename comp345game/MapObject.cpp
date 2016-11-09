@@ -16,6 +16,10 @@ char MapObject::getDisplayChar()
 
 void MapObject::setCharacter(Character * c)
 {
+	if (c == nullptr) {
+		thisCharacter = new Character;//changes the pointer
+		thisCharacter = NULL;
+	}
 	thisCharacter = c;
 	wallOrOtherChar = NULL;
 }
