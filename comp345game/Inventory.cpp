@@ -55,15 +55,6 @@ vector<Enhancement> Inventory::getBonuses()
 	return vector<Enhancement>();
 }
 
-Item Inventory::selectItem(char dir)
-{
-	int index = (int)dir - '0';
-	if (index > 9 || index < 0)
-		return Item();
-	else
-		return Items.at(index);
-}
-
 Item Inventory::replaceItem(Item anItem)
 {
 	for (int i = 0; i < Items.size(); i++)
