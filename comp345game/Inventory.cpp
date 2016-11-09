@@ -2,10 +2,38 @@
 
 Inventory::Inventory()
 {
+	helmet = Item();
+	Items.push_back(helmet);
+	armor = Item();
+	Items.push_back(armor);
+	shield = Item();
+	Items.push_back(shield);
+	ring = Item();
+	Items.push_back(ring);
+	belt = Item();
+	Items.push_back(belt);
+	boots = Item();
+	Items.push_back(boots);
+	weapon = Item();
+	Items.push_back(weapon);
 }
 
 Inventory::Inventory(vector<Item> items)
 {
+	helmet = Item();
+	Items.push_back(helmet);
+	armor = Item();
+	Items.push_back(armor);
+	shield = Item();
+	Items.push_back(shield);
+	ring = Item();
+	Items.push_back(ring);
+	belt = Item();
+	Items.push_back(belt);
+	boots = Item();
+	Items.push_back(boots);
+	weapon = Item();
+	Items.push_back(weapon);
 	for (int i = 0; i < items.size(); i++)
 	{
 		this->replaceItem(items.at(i)); //ensures no duplicates, right from the start.
@@ -57,16 +85,63 @@ vector<Enhancement> Inventory::getBonuses()
 
 Item Inventory::replaceItem(Item anItem)
 {
-	for (int i = 0; i < Items.size(); i++)
+	string itemType = anItem.getType();
+	if (itemType == "Helmet")
 	{
-		if (Items.at(i).getType == anItem.getType)
-		{
-			Item temp = Items.at(i);
-			Items.erase(Items.begin() + i);
-			Items.insert(Items.begin() + i, anItem);
-			return temp;
-		}
+		Item temp = helmet;
+		helmet = anItem;
+		Items.erase(Items.begin() + 0);
+		Items.insert(Items.begin() + 0, helmet);
+		return temp;
 	}
-	Items.push_back(anItem);
-	return Item();
+	else if (itemType == "Armor")
+	{
+		Item temp = armor;
+		armor = anItem;
+		Items.erase(Items.begin() + 1);
+		Items.insert(Items.begin() + 1, armor);
+		return temp;
+	}
+	else if (itemType == "Shield")
+	{
+		Item temp = shield;
+		shield = anItem;
+		Items.erase(Items.begin() + 2);
+		Items.insert(Items.begin() + 2, shield);
+		return temp;
+	}
+	else if (itemType == "Ring")
+	{
+		Item temp = ring;
+		ring = anItem;
+		Items.erase(Items.begin() + 3);
+		Items.insert(Items.begin() + 3, ring);
+		return temp;
+	}
+	else if (itemType == "Belt")
+	{
+		Item temp = belt;
+		belt = anItem;
+		Items.erase(Items.begin() + 4);
+		Items.insert(Items.begin() + 4, belt);
+		return temp;
+	}
+	else if (itemType == "Boots")
+	{
+		Item temp = boots;
+		boots = anItem;
+		Items.erase(Items.begin() + 5);
+		Items.insert(Items.begin() + 5, boots);
+		return temp;
+	}
+	else if (itemType == "Weapon")
+	{
+		Item temp = weapon;
+		weapon = anItem;
+		Items.erase(Items.begin() + 6);
+		Items.insert(Items.begin() + 6, weapon);
+		return temp;
+	}
+	else
+		return anItem;
 }

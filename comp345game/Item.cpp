@@ -10,6 +10,7 @@
 Item::Item()
 {
 	type = "";
+	name = "";
 	valid = true;
 }
 
@@ -21,6 +22,18 @@ Item::Item(string type_name, vector<Enhancement> influences)
 	// ***todo***: this constructor should verify that an new item of a certain type only 
 	// enhances a character statistic valid for this item type
 	type = type_name;
+	name = "Normal " + type;
+	influence = influences;
+	if (validateItem())
+		valid = true;
+	else
+		valid = false;
+}
+
+Item::Item(string type_name, vector<Enhancement> influences, string itemName)
+{
+	type = type_name;
+	name = itemName;
 	influence = influences;
 	if (validateItem())
 		valid = true;
@@ -106,4 +119,14 @@ bool Item::validateItem()
 	else
 		return false;
 	return true;
+}
+
+string Item::getName()
+{
+	return name;
+}
+
+void Item::setName(string newName)
+{
+	name = newName;
 }

@@ -27,6 +27,7 @@ public:
 	vector<Enhancement> getBonuses();
 	Item replaceItem(Item anItem);
 private:
+	Item helmet, armor, shield, ring, belt, boots, weapon;
 	vector<Item> Items;
 };
 #endif

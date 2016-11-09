@@ -21,13 +21,17 @@ public:
 	Item();
 	// Constructor
 	Item(string type, vector<Enhancement> influences);
+	Item(string type, vector<Enhancement> influences, string name);
 	// method to get the type of the item
 	string getType();
 	// method to get the influences of the item
 	vector<Enhancement> getInfluences();
 	//method to validate an item
 	bool validateItem();
+	string getName();
+	void setName(string newName);
 private:
+	string name;
 	string type;
 	bool valid;
 	vector<Enhancement> influence;

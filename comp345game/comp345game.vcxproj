@@ -121,6 +121,7 @@
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemContainer.h" />
+    <ClInclude Include="ItemUI.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapBuilder.h" />
     <ClInclude Include="MapCreator.h" />
@@ -145,6 +146,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemContainer.cpp" />
+    <ClCompile Include="ItemUI.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
     <ClCompile Include="MapCreator.cpp" />
