@@ -21,7 +21,8 @@ void MapObject::setCharacter(Character * c)
 		thisCharacter = NULL;
 	}
 	thisCharacter = c;
-	wallOrOtherChar = NULL;
+	if(wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
+		wallOrOtherChar = NULL;
 }
 
 void MapObject::setWallOrOtherChar(char ch)
@@ -32,7 +33,8 @@ void MapObject::setWallOrOtherChar(char ch)
 void MapObject::setItem(std::vector<Item> i)
 {
 	thisItem = i;
-	wallOrOtherChar = NULL;
+	if (wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
+		wallOrOtherChar = NULL;
 }
 
 void MapObject::setXY(int xCor, int yCor)
