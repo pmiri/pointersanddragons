@@ -5,8 +5,16 @@
 #include <list>
 #include <iostream>
 #include <algorithm>
+#include <conio.h>
 
 using namespace std;
+
+inline char mapKeyPress() {
+	int i = _getche();
+	char input = static_cast<char>(i);
+	cout << endl;
+	return input;
+}
 
 //! constant for map length
 int MAP_LENGTH = 2;
@@ -90,6 +98,7 @@ void Map::moveCharacter(char dir)
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
 		return;
 	}
+
 	//put player character at mapObject of target
 	map[newXPosition][newYPosition].setCharacter(map[PlayerPositionX][PlayerPositionY].getCharacter());
 	//remove player character pointer from previous location
@@ -98,6 +107,28 @@ void Map::moveCharacter(char dir)
 	PlayerPositionX = newXPosition;
 	PlayerPositionY = newYPosition;
 	Notify();
+	if (targetCellContent == 'E') {
+		Notify();
+		cout << endl << "You are at the Exit, would you like to go to the next map? (Y)" << endl;
+		char in = mapKeyPress();
+		if (toupper(in) == 'Y') {
+			cout << "Place player at B of next map in Campaign" << endl;
+		}
+		else
+			cout << "You have not proceeded" << endl;
+		return;
+	}
+	if (targetCellContent == 'B') {
+		Notify();
+		cout << endl << "You are at the Beginning, would you like to go to the previous map? (Y)" << endl;
+		char in = mapKeyPress();
+		if (toupper(in) == 'Y') {
+			cout << "Place player at E of previous map in Campaign" << endl;
+		}
+		else
+			cout << "You have not gone back" << endl;
+		return;
+	}
 }
 
 //! Implementation of the map verification
