@@ -4,7 +4,6 @@
 #pragma once
 #include "Inventory.h"
 #include "Backpack.h"
-#include "Observer.h"
 
 class ItemUI
 {

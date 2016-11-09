@@ -1,4 +1,5 @@
 #include "ItemUI.h"
+#include <iostream>
 
 ItemUI::ItemUI(Inventory * i, Backpack * b)
 {
@@ -7,6 +8,9 @@ ItemUI::ItemUI(Inventory * i, Backpack * b)
 
 void ItemUI::PrintInventory()
 {
+	system("cls");
+	std::cout << getInventoryString();
+	std::cout << getBackpackString();
 }
 
 string ItemUI::getInventoryString()

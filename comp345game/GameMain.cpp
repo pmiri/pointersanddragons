@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 #include <stdlib.h>//for clearning console on windows
-
+#include "ItemUI.h"
 #include "MapBuilder.h"
 #include "CharacterEditor.h"
 #include "MapUI.h"
@@ -128,7 +128,9 @@ int main() {
 	MapObject characterMapObject = MapObject(map->PlayerPositionX, map->PlayerPositionY);
 	characterMapObject.setCharacter(playerCharacter);
 	map->fillCell(map->PlayerPositionX, map->PlayerPositionY, characterMapObject);
-
+	Inventory* playerInventory = new Inventory();
+	Backpack* playerPack = new Backpack();
+	ItemUI itemView = ItemUI(playerInventory, playerPack);
 	system("CLS");
 
 	//TODO: 	Adapting the map elements(opponents, treasure) to the level of the character upon entry
@@ -142,6 +144,8 @@ int main() {
 		cout << "Player char is: " << map->getCell(2, 1);
 		string mapString = mapView.getMapString();
 		in = keyPress();
+		if (in == 'i' | in == 'I')
+			itemView.PrintInventory();
 		map->moveCharacter(in);
 		//ask do action (ends turn)
 	}
