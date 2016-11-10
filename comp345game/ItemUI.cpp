@@ -52,17 +52,21 @@ string ItemUI::getBackpackString()
 	return backString;
 }
 
-void ItemUI::equipFromBackpack(char dir)
+bool ItemUI::equipFromBackpack(char dir)
 {
 	int index = (int)dir - '0';
 	if (index > back->getItems().size() || index < 0)
+	{
 		std::cout << "No item in slot " << dir << "\n";
+		return false;
+	}
 	else
 	{
 		Item temp = back->takeItem(index);
 		temp = inv->replaceItem(temp);
 		if (temp.validateItem())
 			back->replaceItem(temp);
+		return true;
 	}
 }
 

@@ -18,8 +18,6 @@ public:
 	Inventory();
 	// Constructor
 	Inventory(vector<Item> items);
-	// method to get the items of the container
-	vector<Item> getItems();
 	// method to add an item to the item container
 	void addItem(Item anitem);
 	vector<Enhancement> getBonuses();

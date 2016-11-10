@@ -25,7 +25,7 @@ public:
 
 	bool validatePath();
 	void fillCell(int x, int y, MapObject obj);
-	void PlacePlayer();
+	void PlacePlayer(Character*);
 	bool isOccupied(int x, int y);
 	void setEntrance(int x, int y);
 	void setExit(int x, int y);

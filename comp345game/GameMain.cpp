@@ -132,9 +132,8 @@ int main() {
 	} while (in != '1' && in != '2');
 	//adds the built player to the map
 	Character* playerCharacter = new Character;
-	(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
-	map->PlayerPositionX = map->BeginPositionX;
-	map->PlayerPositionY = map->BeginPositionY;
+	//(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
+	map->PlacePlayer(playerCharacter);
 	Inventory* playerInventory = new Inventory();
 	vector<Enhancement> testEnhancement;
 	Enhancement testArmorClassEnhancement = Enhancement("Armor Class", 4);
@@ -171,9 +170,11 @@ int main() {
 		}
 		if (inventoryMode)
 		{
-			itemView->equipFromBackpack(in);
+			bool validEquip = itemView->equipFromBackpack(in);
 			itemView->PrintInventory();
 			cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
+			if (validEquip)
+				playerCharacter->updateFromInventory();
 		}
 		else
 		{

@@ -283,7 +283,17 @@ void Map::fillCell(int x, int y, MapObject obj)
 	//Notify();
 }
 
-void Map::PlacePlayer() {
+void Map::PlacePlayer(Character* player) {
+	for (int i = 0; i < MAP_LENGTH; i++) {
+		map[i] = new MapObject[MAP_WIDTH];
+		for (int j = 0; j < MAP_WIDTH; j++) {
+			if (map[i][j].getDisplayChar() == 'B') {
+				map[i][j].setCharacter(player);
+				PlayerPositionX = i;
+				PlayerPositionY = j;
+			}
+		}
+	}
 }
 
 //! Implementation of get cell, returns cell at given location

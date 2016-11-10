@@ -81,6 +81,12 @@ void Character::hit(int damage)
 	Notify();
 }
 
+void Character::updateFromInventory()
+{
+	std::vector<Enhancement> currentBonus = wornItems.getBonuses();
+	updateBonuses(currentBonus);
+}
+
 void Character::updateBonuses(vector<Enhancement> bonuses)
 {
 	int numberOfBonuses = bonuses.size();
