@@ -187,6 +187,7 @@ int main() {
 	delete playerCharacter;
 	delete playerInventory;
 	delete playerPack;
+	delete itemView;
 	delete campaign;
 	
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
