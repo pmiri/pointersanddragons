@@ -2,6 +2,12 @@
 #include <iostream>
 #include <sstream>
 
+ItemUI::ItemUI()
+{
+	inv = &Inventory();
+	back = &Backpack();
+}
+
 ItemUI::ItemUI(Inventory * i, Backpack * b)
 {
 	inv = i;
@@ -58,6 +64,24 @@ void ItemUI::equipFromBackpack(char dir)
 		if (temp.validateItem())
 			back->replaceItem(temp);
 	}
+}
+
+void ItemUI::printChestInventory(std::vector<Item> chest)
+{
+	int numberOfItems = chest.size();
+	if (numberOfItems > 0)
+	{
+		std::ostringstream oss;
+		oss << "Items in Chest:\n";
+		for (int i = 0; i < numberOfItems; i++)
+		{
+			oss << "Item #" << i << ": " << chest.at(i).getName() << "\n";
+		}
+		backString = oss.str();
+	}
+	else
+		backString = "No items in chest!\n";
+	std::cout << backString;
 }
 
 void ItemUI::grabFromChest(std::vector<Item> chest, char dir)
