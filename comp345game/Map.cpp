@@ -290,6 +290,7 @@ void Map::PlacePlayer(Character* player) {
 			if (map[i][j].getDisplayChar() == 'B') {
 				map[i][j].setCharacter(player);
 				PlayerPositionX = i;
+
 				PlayerPositionY = j;
 			}
 		}
