@@ -1,0 +1,16 @@
+34
+14
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W
+B                           M                                   T W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W     W
+                                                            W     W
+  W W W W          W W W W     W     W W     W W W W W      W     W
+W   W W W  W     W W   W W     W W   W W   W W W W W        W     W
+W  W     W   W   W     W   W   W W W W W   W                W     W
+W  W     W   W   W     W   W   W   W W W   W       W W W    W     W
+W  W W W W   W   W W W W   W   W     W W   W W W W   W W    W     W
+W W W W W W W    W W W W W W   W       W   W W W W W W W    W     W
+                                                            W T   W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W     W
+E                               M                                 W
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W

@@ -5,8 +5,7 @@
 
 #include <iostream>
 #include "Subject.h"
-#include "Inventory.h"
-#include "Backpack.h"
+#include "ItemUI.h"
 #include <vector>
 using namespace std;
 
@@ -19,6 +18,7 @@ public:
 	char isPlayer;
 	Inventory wornItems;
 	Backpack carriedItems;
+	ItemUI itemManager;
 	Character();
 	Character(int, int, int, int, int, int, char);
 	bool validateNewCharacter();

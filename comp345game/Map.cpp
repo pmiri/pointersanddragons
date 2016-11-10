@@ -144,13 +144,35 @@ void Map::moveCharacter(char dir)
 	}
 	if (targetCellContent == 'T') {
 		Notify();
+		bool openingChest;
 		cout << endl << "A Treasure chest, would you like to open it? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Launch inventory sequence" << endl;
+			cout << "You open the chest." << endl;
+			openingChest = true;
 		}
 		else
+		{
+			openingChest = false;
 			cout << "You have not opened it" << endl;
+		}
+		while (openingChest)
+		{
+			system("cls");
+			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager.printChestInventory(map[PlayerPositionX][PlayerPositionY].getItems());
+			cout << "Use 0-9 to grab items from the chest, c to close it." << endl;
+			in = mapKeyPress();
+			if (in == 'c')
+			{
+				Notify();
+				cout << "You close the chest" << endl;
+				openingChest = false;
+			}
+			else
+			{
+				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager.grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
+			}			
+		}
 		return;
 	}
 }
@@ -243,6 +265,10 @@ bool Map::validatePath()
 void Map::fillCell(int x, int y, MapObject obj)
 {
 	//map[x][y] = obj;
+	if (obj.getDisplayChar() == 'B') {
+		BeginPositionX = x;
+		BeginPositionY = y;
+	}
 	if (obj.getDisplayChar() == 'P') {
 		PlayerPositionX = x;
 		PlayerPositionY = y;
@@ -254,7 +280,10 @@ void Map::fillCell(int x, int y, MapObject obj)
 	//char* oc = new char;
 	//oc = &map[x][y];
 	//*oc = obj;
-	Notify();
+	//Notify();
+}
+
+void Map::PlacePlayer() {
 }
 
 //! Implementation of get cell, returns cell at given location
@@ -263,6 +292,11 @@ void Map::fillCell(int x, int y, MapObject obj)
 char Map::getCell(int x, int y)
 {
 	return map[x][y].getDisplayChar();
+}
+
+MapObject Map::getMapObjectAt(int x, int y)
+{
+	return map[x][y];
 }
 
 int Map::getHeight()
