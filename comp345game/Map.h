@@ -29,7 +29,6 @@ public:
 	void setEntrance(int x, int y);
 	void setExit(int x, int y);
 	char getCell(int x, int y);
-
 	int PlayerPositionX;
 	int PlayerPositionY;
 

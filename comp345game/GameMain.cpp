@@ -138,7 +138,10 @@ int main() {
 	Item testBelt = Item("Belt", testEnhancement, "Belt of Testing");
 	Backpack* playerPack = new Backpack();
 	playerPack->replaceItem(testBelt);
-	ItemUI itemView = ItemUI(playerInventory, playerPack);
+	ItemUI* itemView = new ItemUI(playerInventory, playerPack);
+	playerCharacter->wornItems = *playerInventory;
+	playerCharacter->carriedItems = *playerPack;
+	playerCharacter->itemManager = *itemView;
 	bool inventoryMode = false;
 	system("CLS");
 	map->Notify();
@@ -159,15 +162,15 @@ int main() {
 		}
 		if (inventoryMode)
 		{
-			itemView.equipFromBackpack(in);
-			itemView.PrintInventory();
-			cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;			
+			itemView->equipFromBackpack(in);
+			itemView->PrintInventory();
+			cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
 		}
 		else
 		{
 			map->moveCharacter(in);
 			cout << "use WASD to move the Player" << endl;
-		}		
+		}
 		//ask do action (ends turn)
 	}
 	delete playerCharacter;
