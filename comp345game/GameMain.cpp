@@ -123,7 +123,7 @@ int main() {
 	} while (in != '1' && in != '2');
 	//adds the built player to the map
 	Character* playerCharacter = new Character;
-	(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY))->setCharacter(playerCharacter);
+	(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
 	map->PlayerPositionX = map->BeginPositionX;
 	map->PlayerPositionY = map->BeginPositionY;
 	Inventory* playerInventory = new Inventory();
