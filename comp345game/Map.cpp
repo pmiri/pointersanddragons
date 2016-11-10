@@ -42,9 +42,9 @@ Map::Map(int width, int height) {
 	MAP_LENGTH = height;
 	MAP_WIDTH = width;
 
-	map = new MapObject*[height];//new char*[height];
-	for (int i = 0; i < height; i++)
-		map[i] = new MapObject[width];//new char[width];
+	map = new MapObject*[width];//new char*[height];
+	for (int i = 0; i < width; i++)
+		map[i] = new MapObject[height];//new char[width];
 }
 
 void Map::moveCharacter(char dir)

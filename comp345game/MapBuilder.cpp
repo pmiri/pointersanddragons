@@ -56,11 +56,11 @@ Map *MapBuilder::buildFromFile(string path) {
 				else {
 					map->fillCell(y, currentHeight, MapObject(y, currentHeight, line_array[2 * y]));
 				}
-				cout << map->getCell(y, currentHeight);
+				//cout << map->getCell(y, currentHeight);
 			}
 			currentHeight++;
 			//do stuff to build map
-			cout << line << endl;
+			//cout << line << endl;
 		}
 		myfile.close();
 		return map;
