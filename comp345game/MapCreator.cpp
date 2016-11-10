@@ -199,7 +199,7 @@ void MapCreator::saveMap(Map mapToSave, std::string filepath)
 			for (int column = 0; column < width; column++) {
 				for (int row = 0; row < length; row++)
 				{
-					fileToWrite << mapToSave.getCell(&column, &row) << blankSpace;
+					fileToWrite << mapToSave.getCell(column, row) << blankSpace;
 				}
 				fileToWrite << std::endl;
 			}
@@ -248,7 +248,7 @@ void MapCreator::saveMap(Map mapToSave)
 			for (int column = 0; column < width; column++) {
 				for (int row = 0; row < length; row++)
 				{
-					fileToWrite << mapToSave.getCell(&column, &row) << blankSpace;
+					fileToWrite << mapToSave.getCell(column, row) << blankSpace;
 				}
 				fileToWrite << std::endl;
 			}
@@ -859,7 +859,7 @@ void MapCreator::viewMap(Map map)
 		std::cout << i << " ";
 		for (int j = 0; j < width; j++)
 		{
-			std::cout << map.getCell(&i, &j) << " ";
+			std::cout << map.getCell(i, j) << " ";
 		}
 		std::cout << std::endl;
 	}

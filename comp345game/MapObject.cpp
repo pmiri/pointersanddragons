@@ -21,7 +21,7 @@ void MapObject::setCharacter(Character * c)
 		thisCharacter = NULL;
 	}
 	thisCharacter = c;
-	if(wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
+	if (wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
 		wallOrOtherChar = NULL;
 }
 

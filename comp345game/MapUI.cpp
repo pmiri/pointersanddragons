@@ -30,11 +30,7 @@ void MapUI::PrintMap() {
 	int mapWidth = _subject->getWidth();
 	for (int h = 0; h < mapHeight; h++) {//for height
 		for (int w = 0; w < mapWidth; w++) {//for width
-			int* pw = new int;
-			*pw = w;
-			int* ph = new int;
-			*ph = h;
-			char cellContent = _subject->getCell(pw, ph);
+			char cellContent = _subject->getCell(w, h);
 			if (cellContent == 'W') {
 				mapString += "#";
 			}
