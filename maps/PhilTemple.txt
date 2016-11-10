@@ -1,0 +1,25 @@
+73
+23
+W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W E W W 
+W       W                           M   W                               W                       W                                       W T T T W 
+W       W   M   W W W W W W W W W       W       W W W W W       W W W W W W W W W       W W W W W       W W W W W       W W W W W       W T T T W 
+W                               W               W       W                       W                   M   W       W       W               W T T T W 
+W W W W W W W W W       W       W W W W W W W W W       W W W W W W W W W       W W W W W       W       W       W       W W W W W W W W W T T T W 
+W               W       W                           M   W                       W       W       W       W       W                       W       W 
+W       W       W W W W W W W W W W W W W       W       W       W W W W W W W W W       W W W W W       W       W W W W W W W W W       W       W 
+W       W                               W       W       W               W                       W                       W               W       W 
+W       W W W W W W W W W W W W W       W W W W W       W W W W W       W       W W W W W       W W W W W W W W W       W       W W W W W       W 
+W                       W               W       W               W   M   W               W   M                   W       W                       W 
+W       W W W W W       W W W W W       W       W W W W W       W       W W W W W W W W W       W       W       W       W W W W W W W W W W W W W 
+W               W               W       W       W               W               W               W       W   M   W               W               W 
+W W W W W W W W W W W W W   M   W       W       W       W W W W W W W W W       W       W W W W W       W       W W W W W       W W W W W       W 
+W                       W       W                       W               W       W               W       W               W                       W 
+W       W W W W W       W       W W W W W W W W W       W W W W W       W       W W W W W       W W W W W       W W W W W W W W W W W W W       W 
+W       W               W                       W                       W               W       W       W                               W       W 
+W       W       W W W W W W W W W       W       W W W W W       W W W W W W W W W       W       W       W W W W W W W W W W W W W       W       W 
+W       W                       W       W       W       W       W                       W                               W       W               W 
+W       W W W W W W W W W       W       W       W       W W W W W       W W W W W W W W W       W W W W W W W W W       W       W W W W W W W W W 
+W       W               W       W       W                       W                       W       W               W                 M M M M M M M W 
+W       W       W W W W W       W W W W W       W W W W W       W W W W W W W W W       W W W W W       W   M   W W W W W W W W W M M M W M M M W 
+W       W                                       W                       W                               W                         M M M W M M M W 
+W B W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W W 
