@@ -23,6 +23,7 @@ public:
 	Character(int, int, int, int, int, int, char);
 	bool validateNewCharacter();
 	void hit(int);
+	void updateFromInventory();
 	void updateBonuses(vector<Enhancement> bonuses);
 	int getHitPoints();
 	int getMaxHitPoints();
