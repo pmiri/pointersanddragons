@@ -9,8 +9,13 @@
 #include "MapBuilder.h"
 #include "CharacterEditor.h"
 #include "MapUI.h"
+#include "Campaign.h"
 
 using namespace std;
+
+static bool gameFinished = false;
+Map *map;
+Campaign *campaign;
 
 const string MAPS_PATH = "../maps/";
 const string CHARACTERS_PATH = "../characters/";
@@ -27,6 +32,7 @@ string mapSelection() {
 	list<string> maps;
 	DIR *dir;
 	struct dirent *ent;
+	campaign = new Campaign();
 	if ((dir = opendir(MAPS_PATH.c_str())) != NULL) {
 		/* print all the files and directories within directory */
 		int i = -2;
@@ -37,6 +43,7 @@ string mapSelection() {
 			}
 			printf("[%d] %s\n", i, ent->d_name);
 			maps.push_back(ent->d_name);
+			campaign->addMap(*MapBuilder::buildFromFile(MAPS_PATH + ent->d_name));
 			i++;
 		}
 		closedir(dir);
@@ -90,7 +97,9 @@ string characterSelection() {
 	return characters.front();
 }
 
-static bool gameFinished = false;
+void changeMap(bool next) {
+	*map = next ? campaign->nextMap() : campaign->previousMap();
+}
 
 int main() {
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
@@ -102,7 +111,7 @@ int main() {
 	
 	//Selecting a map and a character from a list of saved ones
 	cout << "Load a Map:" << endl;
-	Map *map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
+	map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
 	MapUI mapView = MapUI(map);
 	system("CLS");
 	
@@ -123,7 +132,7 @@ int main() {
 	} while (in != '1' && in != '2');
 	//adds the built player to the map
 	Character* playerCharacter = new Character;
-	(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY))->setCharacter(playerCharacter);
+	(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
 	map->PlayerPositionX = map->BeginPositionX;
 	map->PlayerPositionY = map->BeginPositionY;
 	Inventory* playerInventory = new Inventory();
@@ -178,6 +187,7 @@ int main() {
 	delete playerCharacter;
 	delete playerInventory;
 	delete playerPack;
+	delete campaign;
 	
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
 	
@@ -186,3 +196,5 @@ int main() {
 	system("pause");
 	return 0;
 }
+
+
