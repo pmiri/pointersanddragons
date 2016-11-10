@@ -156,10 +156,8 @@ int main() {
 		if (in == 'i' | in == 'I')
 		{
 			inventoryMode = !inventoryMode;
-			itemView.PrintInventory();
-			cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
 		}
-		else if (inventoryMode)
+		if (inventoryMode)
 		{
 			itemView.equipFromBackpack(in);
 			itemView.PrintInventory();

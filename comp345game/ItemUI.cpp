@@ -59,3 +59,18 @@ void ItemUI::equipFromBackpack(char dir)
 			back->replaceItem(temp);
 	}
 }
+
+void ItemUI::grabFromChest(std::vector<Item> chest, char dir)
+{
+	int index = (int)dir - '0';
+	if (index > chest.size() || index < 0)
+		std::cout << "No item in slot " << dir << "\n";
+	else
+	{
+		Item temp = chest.at(index);
+		chest.erase(chest.begin() + index);
+		temp = back->replaceItem(temp);
+		if (temp.validateItem())
+			chest.push_back(temp);
+	}
+}

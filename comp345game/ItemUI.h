@@ -13,6 +13,7 @@ public:
 	std::string getInventoryString();
 	std::string getBackpackString();
 	void equipFromBackpack(char dir);
+	void grabFromChest(std::vector<Item> chest, char dir);
 private:
 	Inventory *inv;
 	Backpack *back;
