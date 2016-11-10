@@ -19,7 +19,6 @@ public:
 	// Constructor
 	Backpack(vector<Item> items);
 	// method to get the items of the container
-	vector<Item> getItems();
 	// method to add an item to the item container
 	void addItem(Item anitem);
 	// method to get an item from the item container
@@ -28,8 +27,6 @@ public:
 	Item selectItem(int dir);
 	Item takeItem(int dir);
 	Item replaceItem(Item anItem);
-private:
-	vector<Item> Items;
 };
 #endif
 

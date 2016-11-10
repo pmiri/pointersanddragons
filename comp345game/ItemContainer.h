@@ -26,7 +26,7 @@ public:
 	void addItem(Item anitem);
 	// method to get an item from the item container
 	Item getItem(string itemType);
-private:
+protected:
 	vector<Item> Items;
 };
 #endif

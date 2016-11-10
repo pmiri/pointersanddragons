@@ -127,7 +127,17 @@ int main() {
 	characterMapObject.setCharacter(playerCharacter);
 	map->fillCell(map->PlayerPositionX, map->PlayerPositionY, characterMapObject);
 	Inventory* playerInventory = new Inventory();
+	vector<Enhancement> testEnhancement;
+	Enhancement testArmorClassEnhancement = Enhancement("Armor Class", 4);
+	testEnhancement.push_back(testArmorClassEnhancement);
+	Item testHelm = Item("Helmet", testEnhancement, "Helmet of Testing");
+	playerInventory->replaceItem(testHelm);
+	testEnhancement.pop_back();
+	Enhancement testStrengthEnhancement = Enhancement("Strength", 3);
+	testEnhancement.push_back(testStrengthEnhancement);
+	Item testBelt = Item("Belt", testEnhancement, "Belt of Testing");
 	Backpack* playerPack = new Backpack();
+	playerPack->replaceItem(testBelt);
 	ItemUI itemView = ItemUI(playerInventory, playerPack);
 	system("CLS");
 	map->Notify();
@@ -144,10 +154,16 @@ int main() {
 		in = keyPress();
 		if (in == 'i' | in == 'I')
 			itemView.PrintInventory();
-		map->moveCharacter(in);
+		else
+		{
+			map->moveCharacter(in);			
+		}
 		cout << "use WASD to move the Player" << endl;
 		//ask do action (ends turn)
 	}
+	delete playerCharacter;
+	delete playerInventory;
+	delete playerPack;
 	
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
 	

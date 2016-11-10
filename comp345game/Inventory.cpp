@@ -40,19 +40,9 @@ Inventory::Inventory(vector<Item> items)
 	}
 }
 
-vector<Item> Inventory::getItems()
-{
-	return Items;
-}
-
 void Inventory::addItem(Item anitem)
 {
 	//intentionally left blank: do not use addItem for inventories.
-}
-
-Item Inventory::getItem(string itemType)
-{
-	return ItemContainer::getItem(itemType);
 }
 
 vector<Enhancement> Inventory::getBonuses()

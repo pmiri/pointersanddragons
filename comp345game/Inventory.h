@@ -22,13 +22,10 @@ public:
 	vector<Item> getItems();
 	// method to add an item to the item container
 	void addItem(Item anitem);
-	// method to get an item from the item container
-	Item getItem(string itemType);
 	vector<Enhancement> getBonuses();
 	Item replaceItem(Item anItem);
 private:
 	Item helmet, armor, shield, ring, belt, boots, weapon;
-	vector<Item> Items;
 };
 #endif
 

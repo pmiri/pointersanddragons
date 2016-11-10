@@ -12,11 +12,6 @@ Backpack::Backpack(vector<Item> items)
 	}
 }
 
-vector<Item> Backpack::getItems()
-{
-	return Items;
-}
-
 void Backpack::addItem(Item anitem)
 {
 	//intentionally left blank to prevent over-encumbrance

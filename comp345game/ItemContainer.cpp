@@ -42,4 +42,5 @@ Item ItemContainer::getItem(string itemType)
 	for (int i = 0; i < Items.size(); i++)
 		if (Items[i].getType() == itemType)
 			return Items[i];
+	return Item();
 }
