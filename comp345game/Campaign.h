@@ -14,18 +14,21 @@ public:
 	Campaign();
 	Campaign(int);
 	void addMap(Map);
-	std::string name;
+	string name;
 	void addNewMap(Map map);
 	void addNewMap(Map map, int index);
 	Map getMapAt(int index);
+	Map nextMap();
+	Map previousMap();
 	void removeMap(int index);
 	void editMap(Map map, int index);
 	int getSize();
 
-	Campaign(std::string campaignName);
-	Campaign(std::vector<Map> maps, std::string campaignName);
+	Campaign(string campaignName);
+	Campaign(vector<Map> maps, string campaignName);
 private:
 	Map* mapList;
-	std::vector<Map> mapsInCampaign;
+	vector<Map> mapsInCampaign;
 	int mapCount;
+	int currentMapIndex = 0;
 };

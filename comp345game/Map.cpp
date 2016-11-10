@@ -123,7 +123,8 @@ void Map::moveCharacter(char dir)
 		cout << endl << "You are at the Exit, would you like to go to the next map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Place player at B of next map in Campaign" << endl;
+			//TODO: all my stuff here -@pmiri
+
 		}
 		else
 			cout << "You have not proceeded" << endl;
@@ -134,7 +135,8 @@ void Map::moveCharacter(char dir)
 		cout << endl << "You are at the Beginning, would you like to go to the previous map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Place player at E of previous map in Campaign" << endl;
+			//TODO: all my stuff here -@pmiri
+
 		}
 		else
 			cout << "You have not gone back" << endl;

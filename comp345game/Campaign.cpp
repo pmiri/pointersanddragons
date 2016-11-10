@@ -70,3 +70,11 @@ Campaign::Campaign(std::vector<Map> maps, std::string campaignName)
 	name = campaignName;
 	mapsInCampaign = maps;
 }
+
+Map Campaign::nextMap() {
+	return currentMapIndex == mapCount? getMapAt(currentMapIndex) : getMapAt(++currentMapIndex);
+}
+
+Map Campaign::previousMap() {
+	return currentMapIndex == 0 ? getMapAt(currentMapIndex) : getMapAt(--currentMapIndex);
+}
