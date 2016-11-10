@@ -21,10 +21,10 @@ int MAP_LENGTH = 2;
 //! constant for map width
 int MAP_WIDTH = 2;
 //! map as a 2-dimensional array of chars
-MapObject **map;
+
 
 Map::Map() {
-	delete[] map;
+	//delete[] map;
 
 	map = new MapObject*[MAP_LENGTH];
 	for (int i = 0; i < MAP_LENGTH; i++) {
@@ -285,7 +285,7 @@ void Map::fillCell(int x, int y, MapObject obj)
 
 void Map::PlacePlayer(Character* player) {
 	for (int i = 0; i < MAP_LENGTH; i++) {
-		map[i] = new MapObject[MAP_WIDTH];
+		//map[i] = new MapObject[MAP_WIDTH];
 		for (int j = 0; j < MAP_WIDTH; j++) {
 			if (map[i][j].getDisplayChar() == 'B') {
 				map[i][j].setCharacter(player);

@@ -24,6 +24,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Backpack.cpp" />
     <ClCompile Include="ItemUI.cpp" />
+    <ClCompile Include="ItemBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Campaign.h" />
@@ -47,5 +48,6 @@
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Backpack.h" />
     <ClInclude Include="ItemUI.h" />
+    <ClInclude Include="ItemBuilder.h" />
   </ItemGroup>
 </Project>

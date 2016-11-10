@@ -30,6 +30,7 @@ public:
 	bool validateItem();
 	string getName();
 	void setName(string newName);
+	static bool validateType(string itemType);
 private:
 	string name;
 	string type;

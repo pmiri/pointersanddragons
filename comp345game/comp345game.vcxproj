@@ -120,6 +120,7 @@
     <ClInclude Include="Enhancement.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemBuilder.h" />
     <ClInclude Include="ItemContainer.h" />
     <ClInclude Include="ItemUI.h" />
     <ClInclude Include="Map.h" />
@@ -145,6 +146,7 @@
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemBuilder.cpp" />
     <ClCompile Include="ItemContainer.cpp" />
     <ClCompile Include="ItemUI.cpp" />
     <ClCompile Include="Map.cpp" />

@@ -44,7 +44,7 @@ public:
 
 	Map();
 	Map(int width, int height);
-
+	MapObject **map;
 	void moveCharacter(char dir);
 };
 

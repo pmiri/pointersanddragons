@@ -130,3 +130,13 @@ void Item::setName(string newName)
 {
 	name = newName;
 }
+
+bool Item::validateType(string itemType)
+{
+	if (itemType == "Helmet" || itemType == "Armor" || itemType == "Shield" || itemType == "Ring" || itemType == "Belt" || itemType == "Boots" || itemType == "Weapon")
+	{
+		return true;
+	}
+	else
+		return false;
+}

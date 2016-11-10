@@ -15,17 +15,17 @@ public:
 	Campaign(int);
 	void addMap(Map);
 	string name;
-	void addNewMap(Map map);
-	void addNewMap(Map map, int index);
-	Map getMapAt(int index);
+	void addNewMap(Map);
+	void addNewMap(Map, int);
+	Map getMapAt(int);
 	Map nextMap();
 	Map previousMap();
-	void removeMap(int index);
-	void editMap(Map map, int index);
+	void removeMap(int);
+	void editMap(Map, int);
 	int getSize();
 
-	Campaign(string campaignName);
-	Campaign(vector<Map> maps, string campaignName);
+	Campaign(string);
+	Campaign(vector<Map>, string);
 private:
 	Map* mapList;
 	vector<Map> mapsInCampaign;
