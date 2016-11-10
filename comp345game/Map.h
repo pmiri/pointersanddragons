@@ -29,7 +29,7 @@ public:
 	bool isOccupied(int x, int y);
 	void setEntrance(int x, int y);
 	void setExit(int x, int y);
-	char getCell(int x, int y);
+	char getCell(int* x, int* y);
 
 	MapObject getMapObjectAt(int x, int y);
 

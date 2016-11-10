@@ -92,7 +92,7 @@ void Map::moveCharacter(char dir)
 		cout << "no move" << endl;
 		return;//OTHERWISE THE PLAYER GETS SET TO NULL ON AN INVLID KEY
 	}
-	targetCellContent = getCell(newXPosition, newYPosition);
+	targetCellContent = getCell(&newXPosition, &newYPosition);
 	if (targetCellContent == 'W' || targetOutOfBounds) {
 		Notify();
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
@@ -299,9 +299,10 @@ void Map::PlacePlayer(Character* player) {
 //! Implementation of get cell, returns cell at given location
 //! @param x: an integer value of horizontal index of the map's grid
 //! @param y: an integer value of vertical index of the map's grid
-char Map::getCell(int x, int y)
+char Map::getCell(int* x, int* y)
 {
-	return map[x][y].getDisplayChar();
+	char mme = map[*x][*y].getDisplayChar();
+	return mme;
 }
 
 MapObject Map::getMapObjectAt(int x, int y)
