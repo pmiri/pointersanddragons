@@ -32,7 +32,7 @@ string mapSelection() {
 	list<string> maps;
 	DIR *dir;
 	struct dirent *ent;
-	campaign = new Campaign();
+	campaign = new Campaign(3);
 	if ((dir = opendir(MAPS_PATH.c_str())) != NULL) {
 		/* print all the files and directories within directory */
 		int i = -2;
