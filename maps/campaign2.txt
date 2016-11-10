@@ -1,22 +1,10 @@
-20
-20
-W W W W W W W W W W W W W W W W W W W W
-W           W                         W
-W                       M           T W
-W  M                                  W
-W                 W                   W
-W             W W W W W W W       W W W
-W             W           W       W
-W             W           W       W 
-W         M   W           W     W W
-W             W W W W W   W       W
-W                   T W   W       W
-W W W         W W W W W   W   M     W
-W             W           W           W
-W             W           W           W
-W             W             W         W
-W         W W W               W       W
-W             W                 W     W
-W             W                   W   W
-W             W                   W   W
-W W W B W W W W                   W E W
+13
+8
+W W W W W W W W W W W W W
+W M     W M     W M     W
+W   W   W   W   W   W   W
+W   W   W   W   W   W   W
+W   W   W   W   W   W   W
+W   W   W   W   W   W   W
+W   W T     W T     W T W
+W B W W W W W W W W W E W 

@@ -25,13 +25,19 @@ public:
 
 	bool validatePath();
 	void fillCell(int x, int y, MapObject obj);
+	void PlacePlayer();
 	bool isOccupied(int x, int y);
 	void setEntrance(int x, int y);
 	void setExit(int x, int y);
 	char getCell(int x, int y);
 
+	MapObject getMapObjectAt(int x, int y);
+
 	int PlayerPositionX;
 	int PlayerPositionY;
+
+	int BeginPositionX;
+	int BeginPositionY;
 
 	int getHeight();
 	int getWidth();

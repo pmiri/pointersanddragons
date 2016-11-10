@@ -241,6 +241,10 @@ bool Map::validatePath()
 void Map::fillCell(int x, int y, MapObject obj)
 {
 	//map[x][y] = obj;
+	if (obj.getDisplayChar() == 'B') {
+		BeginPositionX = x;
+		BeginPositionY = y;
+	}
 	if (obj.getDisplayChar() == 'P') {
 		PlayerPositionX = x;
 		PlayerPositionY = y;
@@ -252,7 +256,10 @@ void Map::fillCell(int x, int y, MapObject obj)
 	//char* oc = new char;
 	//oc = &map[x][y];
 	//*oc = obj;
-	Notify();
+	//Notify();
+}
+
+void Map::PlacePlayer() {
 }
 
 //! Implementation of get cell, returns cell at given location
@@ -261,6 +268,11 @@ void Map::fillCell(int x, int y, MapObject obj)
 char Map::getCell(int x, int y)
 {
 	return map[x][y].getDisplayChar();
+}
+
+MapObject Map::getMapObjectAt(int x, int y)
+{
+	return map[x][y];
 }
 
 int Map::getHeight()

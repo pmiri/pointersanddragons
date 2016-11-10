@@ -123,9 +123,9 @@ int main() {
 	} while (in != '1' && in != '2');
 	//adds the built player to the map
 	Character* playerCharacter = new Character;
-	MapObject characterMapObject = MapObject(map->PlayerPositionX, map->PlayerPositionY);
-	characterMapObject.setCharacter(playerCharacter);
-	map->fillCell(map->PlayerPositionX, map->PlayerPositionY, characterMapObject);
+	(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY))->setCharacter(playerCharacter);
+	map->PlayerPositionX = map->BeginPositionX;
+	map->PlayerPositionY = map->BeginPositionY;
 	Inventory* playerInventory = new Inventory();
 	vector<Enhancement> testEnhancement;
 	Enhancement testArmorClassEnhancement = Enhancement("Armor Class", 4);
