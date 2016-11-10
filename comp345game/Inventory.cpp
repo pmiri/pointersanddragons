@@ -135,3 +135,65 @@ Item Inventory::replaceItem(Item anItem)
 	else
 		return anItem;
 }
+
+Item Inventory::unequip(std::string itemType)
+{
+	if (itemType == "Helmet")
+	{
+		Item temp = helmet;
+		helmet = Item();
+		Items.erase(Items.begin() + 0);
+		Items.insert(Items.begin() + 0, helmet);
+		return temp;
+	}
+	else if (itemType == "Armor")
+	{
+		Item temp = armor;
+		armor = Item();
+		Items.erase(Items.begin() + 1);
+		Items.insert(Items.begin() + 1, armor);
+		return temp;
+	}
+	else if (itemType == "Shield")
+	{
+		Item temp = shield;
+		shield = Item();
+		Items.erase(Items.begin() + 2);
+		Items.insert(Items.begin() + 2, shield);
+		return temp;
+	}
+	else if (itemType == "Ring")
+	{
+		Item temp = ring;
+		ring = Item();
+		Items.erase(Items.begin() + 3);
+		Items.insert(Items.begin() + 3, ring);
+		return temp;
+	}
+	else if (itemType == "Belt")
+	{
+		Item temp = belt;
+		belt = Item();
+		Items.erase(Items.begin() + 4);
+		Items.insert(Items.begin() + 4, belt);
+		return temp;
+	}
+	else if (itemType == "Boots")
+	{
+		Item temp = boots;
+		boots = Item();
+		Items.erase(Items.begin() + 5);
+		Items.insert(Items.begin() + 5, boots);
+		return temp;
+	}
+	else if (itemType == "Weapon")
+	{
+		Item temp = weapon;
+		weapon = Item();
+		Items.erase(Items.begin() + 6);
+		Items.insert(Items.begin() + 6, weapon);
+		return temp;
+	}
+	else
+		return Item();
+}

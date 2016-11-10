@@ -173,7 +173,7 @@ int main() {
 		}
 		if (inventoryMode)
 		{
-			bool validEquip = itemView->equipFromBackpack(in);
+			bool validEquip = itemView->organizeItems(in);
 			itemView->PrintInventory();
 			cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
 			if (validEquip)

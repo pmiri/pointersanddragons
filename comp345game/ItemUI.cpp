@@ -52,6 +52,57 @@ string ItemUI::getBackpackString()
 	return backString;
 }
 
+bool ItemUI::organizeItems(char dir)
+{
+	int index = (int)dir - '0';
+	if (index > 0 && index < 10)
+	{
+		return equipFromBackpack(dir);
+	}
+	else
+	{
+		return unequip(dir);
+	}
+}
+
+bool ItemUI::unequip(char dir)
+{
+	string itemType = "";
+	switch (dir)
+	{
+	case 'H': itemType = "Helmet";
+		break;
+	case 'A': itemType = "Armor";
+		break;
+	case 'S': itemType = "Shield";
+		break;
+	case 'R': itemType = "Ring";
+		break;
+	case 'B': itemType = "Belt";
+		break;
+	case 'O': itemType = "Boots";
+		break;
+	case 'W': itemType = "Weapon";
+		break;
+	}
+	Item temp = inv->unequip(itemType);
+	if (temp.validateItem())
+	{
+		bool goodAdd = addToPack(temp);
+		if (goodAdd)
+		{
+			return true;
+		}
+		else
+		{
+			inv->replaceItem(temp);
+			return false;
+		}
+	}
+	else
+		return false;
+}
+
 bool ItemUI::equipFromBackpack(char dir)
 {
 	int index = (int)dir - '0';
@@ -97,8 +148,26 @@ void ItemUI::grabFromChest(std::vector<Item> chest, char dir)
 	{
 		Item temp = chest.at(index);
 		chest.erase(chest.begin() + index);
-		temp = back->replaceItem(temp);
-		if (temp.validateItem())
-			chest.push_back(temp);
+		bool goodAdd = addToPack(temp);
+		if(!goodAdd)
+			if (temp.validateItem())
+				chest.push_back(temp);
+	}
+}
+
+bool ItemUI::addToPack(Item i)
+{
+	if (back->getItems().size() > 9)
+	{
+		std::cout << "Backpack is full!";
+		return false;
+	}
+	else if (!i.validateItem())
+	{
+		return false;
+	}
+	else
+	{
+		back->replaceItem(i);
 	}
 }

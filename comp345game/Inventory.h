@@ -22,6 +22,7 @@ public:
 	void addItem(Item anitem);
 	vector<Enhancement> getBonuses();
 	Item replaceItem(Item anItem);
+	Item unequip(std::string itemType);
 private:
 	Item helmet, armor, shield, ring, belt, boots, weapon;
 };
