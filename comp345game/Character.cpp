@@ -83,7 +83,7 @@ void Character::hit(int damage)
 
 void Character::updateFromInventory()
 {
-	std::vector<Enhancement> currentBonus = wornItems.getBonuses();
+	std::vector<Enhancement> currentBonus = wornItems->getBonuses();
 	updateBonuses(currentBonus);
 }
 

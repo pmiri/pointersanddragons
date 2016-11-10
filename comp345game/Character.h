@@ -16,9 +16,9 @@ class Character : public Subject
 {
 public:
 	char isPlayer;
-	Inventory wornItems;
-	Backpack carriedItems;
-	ItemUI itemManager;
+	Inventory* wornItems;
+	Backpack* carriedItems;
+	ItemUI* itemManager;
 	Character();
 	Character(int, int, int, int, int, int, char);
 	bool validateNewCharacter();

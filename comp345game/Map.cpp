@@ -159,7 +159,7 @@ void Map::moveCharacter(char dir)
 		while (openingChest)
 		{
 			system("cls");
-			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager.printChestInventory(map[PlayerPositionX][PlayerPositionY].getItems());
+			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->printChestInventory(map[PlayerPositionX][PlayerPositionY].getItems());
 			cout << "Use 0-9 to grab items from the chest, c to close it." << endl;
 			in = mapKeyPress();
 			if (in == 'c')
@@ -170,7 +170,7 @@ void Map::moveCharacter(char dir)
 			}
 			else
 			{
-				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager.grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
+				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
 			}			
 		}
 		return;

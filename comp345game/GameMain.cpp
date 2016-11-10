@@ -150,9 +150,9 @@ int main() {
 	Backpack* playerPack = new Backpack();
 	playerPack->replaceItem(testBelt);
 	ItemUI* itemView = new ItemUI(playerInventory, playerPack);
-	playerCharacter->wornItems = *playerInventory;
-	playerCharacter->carriedItems = *playerPack;
-	playerCharacter->itemManager = *itemView;
+	playerCharacter->wornItems = playerInventory;
+	playerCharacter->carriedItems = playerPack;
+	playerCharacter->itemManager = itemView;
 	bool inventoryMode = false;
 	system("CLS");
 	map->Notify();
@@ -173,7 +173,8 @@ int main() {
 		}
 		if (inventoryMode)
 		{
-			bool validEquip = itemView->organizeItems(in);
+			system("cls");
+			bool validEquip = itemView->organizeItems(in);			
 			itemView->PrintInventory();
 			cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
 			if (validEquip)

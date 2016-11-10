@@ -16,7 +16,6 @@ ItemUI::ItemUI(Inventory * i, Backpack * b)
 
 void ItemUI::PrintInventory()
 {
-	system("cls");
 	std::cout << getInventoryString();
 	std::cout << getBackpackString();
 }
@@ -55,7 +54,7 @@ string ItemUI::getBackpackString()
 bool ItemUI::organizeItems(char dir)
 {
 	int index = (int)dir - '0';
-	if (index > 0 && index < 10)
+	if (index >= 0 && index < 10)
 	{
 		return equipFromBackpack(dir);
 	}

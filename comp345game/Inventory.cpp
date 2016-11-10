@@ -54,7 +54,7 @@ vector<Enhancement> Inventory::getBonuses()
 		for (int j = 0; j < tempEnhancements.size(); j++)
 		{
 			bool unique = true;
-			for (int k = 0; k < Items.size(); k++)
+			for (int k = 0; k < totalEnhancements.size(); k++)
 			{
 				if (totalEnhancements.at(k).getType() == tempEnhancements.at(j).getType())
 				{
