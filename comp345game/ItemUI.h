@@ -12,6 +12,7 @@ public:
 	void PrintInventory();
 	std::string getInventoryString();
 	std::string getBackpackString();
+	void equipFromBackpack(char dir);
 private:
 	Inventory *inv;
 	Backpack *back;

@@ -139,6 +139,7 @@ int main() {
 	Backpack* playerPack = new Backpack();
 	playerPack->replaceItem(testBelt);
 	ItemUI itemView = ItemUI(playerInventory, playerPack);
+	bool inventoryMode = false;
 	system("CLS");
 	map->Notify();
 	cout << "use WASD to move the Player" << endl;
@@ -153,12 +154,22 @@ int main() {
 		string mapString = mapView.getMapString();
 		in = keyPress();
 		if (in == 'i' | in == 'I')
+		{
+			inventoryMode = !inventoryMode;
 			itemView.PrintInventory();
+			cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
+		}
+		else if (inventoryMode)
+		{
+			itemView.equipFromBackpack(in);
+			itemView.PrintInventory();
+			cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;			
+		}
 		else
 		{
-			map->moveCharacter(in);			
-		}
-		cout << "use WASD to move the Player" << endl;
+			map->moveCharacter(in);
+			cout << "use WASD to move the Player" << endl;
+		}		
 		//ask do action (ends turn)
 	}
 	delete playerCharacter;
