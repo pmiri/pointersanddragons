@@ -43,7 +43,10 @@ string mapSelection() {
 			}
 			printf("[%d] %s\n", i, ent->d_name);
 			maps.push_back(ent->d_name);
-			campaign->addMap(*MapBuilder::buildFromFile(MAPS_PATH + ent->d_name));
+			string name = ent->d_name;
+			if (name.find("campaign") != std::string::npos) {
+				campaign->addMap(*MapBuilder::buildFromFile(MAPS_PATH + ent->d_name));
+			}
 			i++;
 		}
 		closedir(dir);
