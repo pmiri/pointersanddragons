@@ -123,8 +123,7 @@ void Map::moveCharacter(char dir)
 		cout << endl << "You are at the Exit, would you like to go to the next map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			//TODO: all my stuff here -@pmiri
-
+			cout << "Place player at B of next map in Campaign" << endl;
 		}
 		else
 			cout << "You have not proceeded" << endl;
@@ -135,8 +134,7 @@ void Map::moveCharacter(char dir)
 		cout << endl << "You are at the Beginning, would you like to go to the previous map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			//TODO: all my stuff here -@pmiri
-
+			cout << "Place player at E of previous map in Campaign" << endl;
 		}
 		else
 			cout << "You have not gone back" << endl;
@@ -144,35 +142,13 @@ void Map::moveCharacter(char dir)
 	}
 	if (targetCellContent == 'T') {
 		Notify();
-		bool openingChest;
 		cout << endl << "A Treasure chest, would you like to open it? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "You open the chest." << endl;
-			openingChest = true;
+			cout << "Launch inventory sequence" << endl;
 		}
 		else
-		{
-			openingChest = false;
 			cout << "You have not opened it" << endl;
-		}
-		while (openingChest)
-		{
-			system("cls");
-			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->printChestInventory(map[PlayerPositionX][PlayerPositionY].getItems());
-			cout << "Use 0-9 to grab items from the chest, c to close it." << endl;
-			in = mapKeyPress();
-			if (in == 'c')
-			{
-				Notify();
-				cout << "You close the chest" << endl;
-				openingChest = false;
-			}
-			else
-			{
-				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
-			}			
-		}
 		return;
 	}
 }
@@ -265,28 +241,22 @@ bool Map::validatePath()
 void Map::fillCell(int x, int y, MapObject obj)
 {
 	//map[x][y] = obj;
-	if (obj.getDisplayChar() == 'B') {
-		BeginPositionX = x;
-		BeginPositionY = y;
-	}
 	if (obj.getDisplayChar() == 'P') {
 		PlayerPositionX = x;
 		PlayerPositionY = y;
 	}
-	MapObject* omo = new MapObject;
-	omo = &map[x][y];
+	MapObject* omo = &map[x][y];
 	*omo = obj;
 
 	//char* oc = new char;
 	//oc = &map[x][y];
 	//*oc = obj;
-	//Notify();
+	Notify();
 }
 
 void Map::PlacePlayer(Character* player) {
-	for (int i = 0; i < MAP_LENGTH; i++) {
-		//map[i] = new MapObject[MAP_WIDTH];
-		for (int j = 0; j < MAP_WIDTH; j++) {
+	for (int i = 0; i < getHeight(); i++) {
+		for (int j = 0; j < getWidth(); j++) {
 			if (map[i][j].getDisplayChar() == 'B') {
 				map[i][j].setCharacter(player);
 				PlayerPositionX = i;
