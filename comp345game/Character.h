@@ -25,14 +25,20 @@ public:
 	void hit(int);
 	void updateFromInventory();
 	void updateBonuses(vector<Enhancement> bonuses);
-	int getHitPoints();
-	int getMaxHitPoints();
+	
 	void initAbilityModifiers();
-	int getLevel();
-	string getClassName();
+	
+	
 	void levelUp(int);
 	void distributePoints(int);
 	int toHit(int);
+
+	void displayStats();
+	//Player stats
+	string getClassName();
+	int getHitPoints();
+	int getMaxHitPoints();
+	int getLevel();
 	int attack(int);
 	int getArmorClass();
 	int* getAbilityScores();
