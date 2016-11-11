@@ -140,3 +140,45 @@ bool Item::validateType(string itemType)
 	else
 		return false;
 }
+
+bool Item::validateEnhancementType(string itemType, string enhanceType)
+{
+	if (itemType == "Helmet")
+	{
+		if ((enhanceType != "Intelligence") && (enhanceType != "Wisdom") && (enhanceType != "Armor Class"))
+			return false;
+	}
+	else if (itemType == "Armor")
+	{
+		if (enhanceType != "Armor Class")
+			return false;
+	}
+	else if (itemType == "Shield")
+	{
+		if (enhanceType != "Armor Class")
+			return false;
+	}
+	else if (itemType == "Ring")
+	{
+		if (enhanceType != "Strength" && enhanceType != "Wisdom" && enhanceType != "Charisma"  && enhanceType != "Constitution" && enhanceType != "Armor Class")
+			return false;
+	}
+	else if (itemType == "Belt")
+	{
+		if (enhanceType != "Constitution" && enhanceType != "Strength")
+			return false;
+	}
+	else if (itemType == "Boots")
+	{
+		if (enhanceType != "Dexterity" && enhanceType != "Armor Class")
+			return false;
+	}
+	else if (itemType == "Weapon")
+	{
+		if (enhanceType != "Attack" && enhanceType != "Damage")
+			return false;
+	}
+	else
+		return false;
+	return true;
+}

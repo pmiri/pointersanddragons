@@ -31,6 +31,7 @@ public:
 	string getName();
 	void setName(string newName);
 	static bool validateType(string itemType);
+	static bool validateEnhancementType(string itemType, string enhanceType);
 private:
 	string name;
 	string type;

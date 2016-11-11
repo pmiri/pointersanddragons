@@ -24,14 +24,14 @@ Item ItemBuilder::buildItem()
 	std::cout << "Item name is " << itemName << " and the type is " << itemType;
 	while (addingMore)
 	{
+		string enhanceType;
 		do
 		{
-			std::cout << "Please state the type\n";
-			std::cin >> itemType;
-			invalidInput = !Item::validateType(itemType);
-			if (invalidInput)
+			std::cout << "Please state the enhancement type\n";
+			std::cin >> enhanceType;
+			if (Item::validateEnhancementType(itemType, enhanceType))
 			{
-				std::cout << itemType << " is not a valid item type.\n";
+				std::cout << enhanceType << " is not a valid enhancement type.\n";
 			}
 		} while (invalidInput);
 	}
