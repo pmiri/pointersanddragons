@@ -141,15 +141,38 @@ void Map::moveCharacter(char dir)
 			cout << "You have not gone back" << endl;
 		return;
 	}
+
 	if (targetCellContent == 'T') {
 		Notify();
+		bool openingChest;
 		cout << endl << "A Treasure chest, would you like to open it? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Launch inventory sequence" << endl;
+			cout << "You open the chest." << endl;
+			openingChest = true;
 		}
 		else
+		{
+			openingChest = false;
 			cout << "You have not opened it" << endl;
+		}
+		while (openingChest)
+		{
+			system("cls");
+			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->printChestInventory(map[PlayerPositionX][PlayerPositionY].getItems());
+			cout << "Use 0-9 to grab items from the chest, c to close it." << endl;
+			in = mapKeyPress();
+			if (in == 'c')
+			{
+				Notify();
+				cout << "You close the chest" << endl;
+				openingChest = false;
+			}
+			else
+			{
+				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
+			}
+		}
 		return;
 	}
 }

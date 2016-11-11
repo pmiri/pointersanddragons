@@ -9,7 +9,7 @@
 class ItemBuilder
 {
 public:
-	Item buildItem();
-	Item loadItem(std::string filepath);
-	void saveItem(std::string filepath, Item i);
+	static Item buildItem();
+	static Item loadItem(std::string filepath);
+	static void saveItem(std::string filepath, Item i);
 };
