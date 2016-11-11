@@ -69,19 +69,19 @@ bool ItemUI::unequip(char dir)
 	string itemType = "";
 	switch (dir)
 	{
-	case 'H': itemType = "Helmet";
+	case 'h': itemType = "Helmet";
 		break;
-	case 'A': itemType = "Armor";
+	case 'a': itemType = "Armor";
 		break;
-	case 'S': itemType = "Shield";
+	case 's': itemType = "Shield";
 		break;
-	case 'R': itemType = "Ring";
+	case 'r': itemType = "Ring";
 		break;
-	case 'B': itemType = "Belt";
+	case 'b': itemType = "Belt";
 		break;
-	case 'O': itemType = "Boots";
+	case 'o': itemType = "Boots";
 		break;
-	case 'W': itemType = "Weapon";
+	case 'w': itemType = "Weapon";
 		break;
 	}
 	Item temp = inv->unequip(itemType);
