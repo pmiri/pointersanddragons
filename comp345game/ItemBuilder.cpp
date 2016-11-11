@@ -22,16 +22,29 @@ Item ItemBuilder::buildItem()
 	int numOfEnhance = 0;
 	bool addingMore = true;
 	std::cout << "Item name is " << itemName << " and the type is " << itemType;
+	string enhanceType;
+	int enhanceBonus = 0;
 	while (addingMore)
 	{
-		string enhanceType;
 		do
 		{
 			std::cout << "Please state the enhancement type\n";
 			std::cin >> enhanceType;
-			if (Item::validateEnhancementType(itemType, enhanceType))
+			invalidInput = !Item::validateEnhancementType(itemType, enhanceType);
+			if (invalidInput)
 			{
-				std::cout << enhanceType << " is not a valid enhancement type.\n";
+				std::cout << enhanceType << " is not a valid enhancement type for" << itemType << ".\n";
+			}
+		} while (invalidInput);
+		invalidInput = false;
+		do
+		{
+			std::cout << "Please state the enhancement bonus\n";
+			std::cin >> enhanceType;
+			enhanceBonus = atoi(enhanceType.c_str());
+			if (enhanceBonus < 0 || enhanceBonus > 5)
+			{
+				std::cout << enhanceBonus << " is not between 0 and 5.\n";
 			}
 		} while (invalidInput);
 	}
