@@ -143,7 +143,7 @@ int main() {
 	else
 	{
 		cout << endl;
-		cout << "Welcome to our stupid game." << endl;
+		cout << "Welcome to our game!" << endl;
 		system("pause");
 
 		system("CLS");
