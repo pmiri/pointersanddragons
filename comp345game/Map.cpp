@@ -120,11 +120,20 @@ void Map::moveCharacter(char dir)
 	PlayerPositionY = newYPosition;
 	Notify();
 	if (targetCellContent == 'E') {
+
 		Notify();
 		cout << endl << "You are at the Exit, would you like to go to the next map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			nextMap = 1;
+			map[BeginPositionX][BeginPositionY].setCharacter(map[PlayerPositionX][PlayerPositionY].getCharacter());
+			map[PlayerPositionX][PlayerPositionY].setCharacter(nullptr);
+			Character *p = map[BeginPositionX][BeginPositionY].getCharacter();
+			p->levelUp(1);
+			PlayerPositionX = BeginPositionX;
+			PlayerPositionY = BeginPositionY;
+			Notify();
+			cout << "Level up!" << endl;
+			//nextMap = 1;
 		}
 		else
 			cout << "You have not proceeded" << endl;
@@ -268,6 +277,10 @@ void Map::fillCell(int x, int y, MapObject obj)
 	if (obj.getDisplayChar() == 'P') {
 		PlayerPositionX = x;
 		PlayerPositionY = y;
+	}
+	if (obj.getDisplayChar() == 'B') {
+		BeginPositionX = x;
+		BeginPositionY = y;
 	}
 	MapObject* omo = &map[x][y];
 	*omo = obj;
