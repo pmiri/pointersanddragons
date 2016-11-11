@@ -188,10 +188,16 @@ int main() {
 		//ask do action (ends turn)
 
 		//head to next map if prompted
-		if (map->getNextMap == -1)
+		if (map->getNextMap() == -1)
+		{
 			changeMap(false);
-		else if (map->getNextMap == 1)
+			map->PlacePlayer(playerCharacter);
+		}
+		else if (map->getNextMap() == 1)
+		{
 			changeMap(true);
+			map->PlacePlayer(playerCharacter);
+		}
 	}
 	delete playerCharacter;
 	delete playerInventory;
