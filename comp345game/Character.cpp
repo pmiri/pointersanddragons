@@ -5,6 +5,7 @@
 #include "Character.h"
 #include <stdlib.h>
 #include <time.h>
+#include <string>
 #include<iostream>
 
 //! Constructor: creates character with random ability scores 
@@ -214,4 +215,24 @@ void Character::distributePoints(int points)
 int Character::toHit(int diceRoll)
 {
 	return (diceRoll + abilityModifiers[0] + attackBonus);
+}
+
+void Character::displayStats() {
+	string abilityNames[] = { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" };
+
+	printf("Level %d Fighter\n", getLevel());// , getClassName());
+	printf("HP: %d/%d\n\n", getHitPoints(), getMaxHitPoints());
+	
+	int *abilities = getAbilityScores();
+	int *adjusted = getAbilityScores();
+	
+	printf("AC: %d\n", adjusted[6] == NULL ? 0 : adjusted[6]);
+	printf("Attack Bonus: %d\n", adjusted[7]);
+	printf("Damage: %d\n\n", adjusted[8]);
+
+	for (int i = 0; i < 6; i++) {
+		printf("%s: %d (+%d)\n", abilityNames[i].c_str(), abilities[i], adjusted[i] - abilities[i]);
+	}
+
+	
 }

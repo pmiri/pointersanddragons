@@ -190,6 +190,7 @@ int main() {
 		playerCharacter->carriedItems = playerPack;
 		playerCharacter->itemManager = itemView;
 		bool inventoryMode = false;
+		bool playerMode = false;
 		system("CLS");
 		map->Notify();
 		cout << "use WASD to move the Player" << endl;
@@ -207,6 +208,9 @@ int main() {
 			{
 				inventoryMode = !inventoryMode;
 			}
+			else if (in == 'p' || in == 'P') {
+				playerMode = !playerMode;
+			}
 			if (inventoryMode)
 			{
 				system("cls");
@@ -215,6 +219,10 @@ int main() {
 				cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
 				if (validEquip)
 					playerCharacter->updateFromInventory();
+			}
+			else if (playerMode) {
+				system("cls");
+				playerCharacter->displayStats();
 			}
 			else
 			{
