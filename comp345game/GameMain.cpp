@@ -186,6 +186,12 @@ int main() {
 			cout << "use WASD to move the Player" << endl;
 		}
 		//ask do action (ends turn)
+
+		//head to next map if prompted
+		if (map->getNextMap == -1)
+			changeMap(false);
+		else if (map->getNextMap == 1)
+			changeMap(true);
 	}
 	delete playerCharacter;
 	delete playerInventory;

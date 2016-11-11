@@ -25,7 +25,7 @@ int MAP_WIDTH = 2;
 
 Map::Map() {
 	//delete[] map;
-
+	nextMap = 0;
 	map = new MapObject*[MAP_LENGTH];
 	for (int i = 0; i < MAP_LENGTH; i++) {
 		map[i] = new MapObject[MAP_WIDTH];
@@ -37,6 +37,7 @@ Map::Map() {
 }
 
 Map::Map(int width, int height) {
+	nextMap = 0;
 	//clear exisiting thing
 	delete[] map;
 	MAP_LENGTH = height;
@@ -123,7 +124,7 @@ void Map::moveCharacter(char dir)
 		cout << endl << "You are at the Exit, would you like to go to the next map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Place player at B of next map in Campaign" << endl;
+			nextMap = 1;
 		}
 		else
 			cout << "You have not proceeded" << endl;
@@ -134,7 +135,7 @@ void Map::moveCharacter(char dir)
 		cout << endl << "You are at the Beginning, would you like to go to the previous map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Place player at E of previous map in Campaign" << endl;
+			nextMap = -1;
 		}
 		else
 			cout << "You have not gone back" << endl;
@@ -317,6 +318,11 @@ bool Map::isOccupied(int x, int y)
 		return true;
 	}
 	return false;
+}
+
+int Map::getNextMap()
+{
+	return nextMap;
 }
 
 //int main() {
