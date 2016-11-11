@@ -10,6 +10,7 @@
 #include "CharacterEditor.h"
 #include "MapUI.h"
 #include "Campaign.h"
+#include "MapCreator.h"
 #include "ItemBuilder.h"
 
 using namespace std;
@@ -138,7 +139,7 @@ int main() {
 	}
 	else if (in == 'm')
 	{
-
+		MapCreator::runMenu();
 	}
 	else
 	{
