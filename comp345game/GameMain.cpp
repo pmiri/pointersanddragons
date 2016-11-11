@@ -113,23 +113,43 @@ int main() {
 	in = keyPress();
 	if (in == 'i')
 	{
-		cout << "Welcome to the item editor! Would you like to create an item, or load an item?" << endl;
+		cout << "Welcome to the Item Editor Program! Would you like to create an item, or load an item?" << endl;
 		cout << "Press c to create, l to load." << endl;
 		in = keyPress();
 		if (in == 'c')
 		{
-			ItemBuilder::buildItem();
+			Item builtItem = ItemBuilder::buildItem();
+			cout << "Would you like to save?" << endl;
+			string input;
+			cin >> input;
+			if (input == "yes" || input == "y")
+			{
+				string filePath;
+				cout << "What is the filename you would like to save to?" << endl;
+				cin >> filePath;
+				ItemBuilder::saveItem(filePath, builtItem);
+			}
 		}
 		else if (in == 'l')
 		{
 			string filePath;
 			cout << "What is the filename of the item you want to load?" << endl;
 			cin >> filePath;
-			ItemBuilder::loadItem(filePath);
+			Item loadedItem = ItemBuilder::loadItem(filePath);
+			loadedItem = ItemBuilder::editItem(loadedItem);
+			cout << "Would you like to save?" << endl;
+			string input;
+			cin >> input;
+			if (input == "yes" || input == "y")
+			{
+				cout << "What is the filename you would like to save to?" << endl;
+				cin >> filePath;
+				ItemBuilder::saveItem(filePath, loadedItem);
+			}
 		}
 		else
 		{
-			cout << "I didn't undstand that! Would you like to try again?" << endl;
+			cout << "I didn't understand that! Would you like to try again?" << endl;
 			cout << "Press q to quit" << endl;
 			in = keyPress();
 			if (in == 'q')
