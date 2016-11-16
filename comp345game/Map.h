@@ -7,7 +7,6 @@
 using namespace std;
 #include <list>
 #include "Observable.h"
-#include "Observer.h"
 #include "MapObject.h"
 
 //! Class implementing a game map

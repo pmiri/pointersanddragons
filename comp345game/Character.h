@@ -4,6 +4,7 @@
 //!
 
 #include <iostream>
+#include "CharacterStrategy.h"
 #include "Subject.h"
 #include "ItemUI.h"
 #include <vector>
@@ -19,6 +20,7 @@ public:
 	Inventory* wornItems;
 	Backpack* carriedItems;
 	ItemUI* itemManager;
+	//CharacterStrategy strategy;
 	Character();
 	Character(int, int, int, int, int, int, char);
 	bool validateNewCharacter();
@@ -58,3 +60,10 @@ protected:
 
 	string className;
 };
+
+////#include "MapUI.h";
+//class CharacterStrategy {
+//public:
+//	CharacterStrategy::CharacterStrategy();
+//	virtual void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP);
+//};

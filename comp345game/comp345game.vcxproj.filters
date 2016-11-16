@@ -25,6 +25,8 @@
     <ClCompile Include="Backpack.cpp" />
     <ClCompile Include="ItemUI.cpp" />
     <ClCompile Include="ItemBuilder.cpp" />
+    <ClCompile Include="CharacterStrategy.cpp" />
+    <ClCompile Include="HumanPlayerStrategy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Campaign.h" />
@@ -49,5 +51,7 @@
     <ClInclude Include="Backpack.h" />
     <ClInclude Include="ItemUI.h" />
     <ClInclude Include="ItemBuilder.h" />
+    <ClInclude Include="CharacterStrategy.h" />
+    <ClInclude Include="HumanPlayerStrategy.h" />
   </ItemGroup>
 </Project>

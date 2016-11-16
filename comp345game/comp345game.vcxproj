@@ -116,8 +116,10 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterObserver.h" />
     <ClInclude Include="CharacterEditor.h" />
+    <ClInclude Include="CharacterStrategy.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
+    <ClInclude Include="HumanPlayerStrategy.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemBuilder.h" />
@@ -140,10 +142,12 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CharacterEditor.cpp" />
     <ClCompile Include="CharacterObserver.cpp" />
+    <ClCompile Include="CharacterStrategy.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Enhancement.cpp" />
     <ClCompile Include="Fighter.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="HumanPlayerStrategy.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemBuilder.cpp" />
