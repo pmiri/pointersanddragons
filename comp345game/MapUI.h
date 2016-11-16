@@ -16,9 +16,10 @@ private:
 	Map *_subject;
 	string mapString;
 };
+
 class CharacterStrategy {
 public:
 	CharacterStrategy::CharacterStrategy();
-	virtual void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP);
+	virtual void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP) = 0;
 };
 
