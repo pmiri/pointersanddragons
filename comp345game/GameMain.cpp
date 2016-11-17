@@ -224,13 +224,15 @@ int main() {
 
 		//TODO: 	Moving the character, square by square on the map
 
+		int* turnCount = new int;
 		while (!gameFinished) {
-			int* turnCount = new int(6);
+			*turnCount = 6;
 			while (*turnCount > 0) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount);
 				cout << *turnCount << " turns left";
 			}
 			//TODO monster turn
+			*turnCount = 6;
 			map->moveMonsters();
 			//TODO NPC turn
 		}

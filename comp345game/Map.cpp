@@ -192,21 +192,50 @@ void Map::moveMonsters()
 	for (int i = 0; i < MAP_LENGTH; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
 			if ((map[i][j].getCharacter()) != nullptr && (map[i][j].getCharacter()->isPlayer) == 'M') {//means it is a monster
-				//MONSTER FOUND
-				int newMXPosition = 0;
-				int newMYPosition = 0;
-				char targetCellContent = getCell(newMXPosition, newMYPosition);
-				if ((targetCellContent == 'M' || targetCellContent == 'W') || targetCellContent == 'P') {
-					cout << "No Monster Move";
-					continue;
-				}
-				map[newMXPosition][newMYPosition].setCharacter(map[i][j].getCharacter());
-				//remove player character pointer from previous location
-				map[i][j].setCharacter(nullptr);
-				Notify();
+				moveMonster(getMapObjectAt(i,j));
 			}
 		}
 	}
+}
+
+void Map::moveMonster(MapObject monsterMapObject) {
+	int newMXPosition = 0;
+	int newMYPosition = 0;
+	char targetCellContent = ' ';
+	int distanceBetweenX = abs(monsterMapObject.x - PlayerPositionX);
+	int distanceBetweenY = abs(monsterMapObject.y - PlayerPositionY);
+	if (distanceBetweenX >= distanceBetweenY) {
+		//move along X
+		if (monsterMapObject.x >= PlayerPositionX) {//move left
+			newMXPosition = monsterMapObject.x - 1;
+			newMYPosition = monsterMapObject.y;
+		}
+		else {//move right
+			newMXPosition = monsterMapObject.x + 1;
+			newMYPosition = monsterMapObject.y;
+		}
+	}
+	else {
+		//move along Y
+		if (monsterMapObject.y >= PlayerPositionY) {//move up
+			newMXPosition = monsterMapObject.x;
+			newMYPosition = monsterMapObject.y - 1;
+		}
+		else {//move right
+			newMXPosition = monsterMapObject.x;
+			newMYPosition = monsterMapObject.y + 1;
+		}
+	}
+	targetCellContent = getCell(newMXPosition, newMYPosition);
+	if ((targetCellContent == 'M' || targetCellContent == 'W') || targetCellContent == 'P') {
+		cout << "No Monster Move";
+	}
+	else {
+		map[newMXPosition][newMYPosition].setCharacter(monsterMapObject.getCharacter());
+		//remove player character pointer from previous location
+		map[monsterMapObject.x][monsterMapObject.y].setCharacter(nullptr);
+	}
+	Notify();
 }
 
 //! Implementation of the map verification

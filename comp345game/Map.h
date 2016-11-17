@@ -49,5 +49,6 @@ public:
 
 	void moveCharacter(char dir);
 	void moveMonsters();
+	void moveMonster(MapObject monsterMapObject);
 };
 
