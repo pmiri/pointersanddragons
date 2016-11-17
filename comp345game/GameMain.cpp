@@ -12,6 +12,7 @@
 #include "Campaign.h"
 #include "MapCreator.h"
 #include "ItemBuilder.h"
+#include "HumanPlayerStrategy.h"
 
 using namespace std;
 
@@ -210,6 +211,7 @@ int main() {
 		playerCharacter->wornItems = playerInventory;
 		playerCharacter->carriedItems = playerPack;
 		playerCharacter->itemManager = itemView;
+		playerCharacter->strategy = new HumanPlayerStrategy();
 		bool inventoryMode = false;
 		bool playerMode = false;
 		system("CLS");
@@ -221,6 +223,10 @@ int main() {
 		//TODO: 	Starting the game by having the player character placed on the starting point
 
 		//TODO: 	Moving the character, square by square on the map
+
+		while (!gameFinished) {
+			playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter);
+		}
 		//while (!gameFinished) {
 		//	//check inventory
 		//	string mapString = mapView.getMapString();
