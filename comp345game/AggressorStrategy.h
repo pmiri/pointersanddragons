@@ -2,9 +2,9 @@
 using namespace std;
 #include "MapUI.h"
 
-class HumanPlayerStrategy : public CharacterStrategy
+class AggressorStrategy : public CharacterStrategy
 {
 public:
-	HumanPlayerStrategy::HumanPlayerStrategy();
+	AggressorStrategy::AggressorStrategy();
 	void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns, MapObject* monsterMapObj);
 };

@@ -225,15 +225,27 @@ int main() {
 		//TODO: 	Moving the character, square by square on the map
 
 		int* turnCount = new int;
+		list<MapObject> gameMonsterList;
 		while (!gameFinished) {
+			
 			*turnCount = 6;
 			while (*turnCount > 0) {
-				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount);
-				cout << *turnCount << " turns left";
+				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
+				cout << *turnCount << " player turns left";
 			}
 			//TODO monster turn
 			*turnCount = 6;
-			map->moveMonsters();
+			while (*turnCount > 0) {
+				gameMonsterList = list<MapObject>();
+				gameMonsterList = map->getListOfMonsterObjs();
+				for each (MapObject monObj in gameMonsterList)
+				{
+					monObj.getCharacter()->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, &monObj);
+				}
+				*turnCount = *turnCount - 1;
+				cout << *turnCount << " monster turns left";
+			}
+
 			//TODO NPC turn
 		}
 

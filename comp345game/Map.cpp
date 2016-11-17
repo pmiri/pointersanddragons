@@ -186,16 +186,18 @@ void Map::moveCharacter(char dir)
 	}
 }
 
-void Map::moveMonsters()
+list<MapObject> Map::getListOfMonsterObjs()
 {
+	list<MapObject> monsterList = list<MapObject>();
 	//search for entrance
 	for (int i = 0; i < MAP_LENGTH; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
 			if ((map[i][j].getCharacter()) != nullptr && (map[i][j].getCharacter()->isPlayer) == 'M') {//means it is a monster
-				moveMonster(getMapObjectAt(i,j));
+				monsterList.push_back(getMapObjectAt(i, j));
 			}
 		}
 	}
+	return monsterList;
 }
 
 void Map::moveMonster(MapObject monsterMapObject) {
@@ -227,8 +229,12 @@ void Map::moveMonster(MapObject monsterMapObject) {
 		}
 	}
 	targetCellContent = getCell(newMXPosition, newMYPosition);
-	if ((targetCellContent == 'M' || targetCellContent == 'W') || targetCellContent == 'P') {
-		cout << "No Monster Move";
+	if (targetCellContent == 'M' || targetCellContent == 'W') {
+		//nothing
+	}
+	//TODO else if the target cell is a player, start up fighting
+	else if (targetCellContent == 'P') {
+		cout << "A Monster is attacking!" << endl << "Start Fight Sequence" << endl;//player.Fight(monster); ?
 	}
 	else {
 		map[newMXPosition][newMYPosition].setCharacter(monsterMapObject.getCharacter());

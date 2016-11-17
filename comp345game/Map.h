@@ -48,7 +48,7 @@ public:
 	int nextMap;
 
 	void moveCharacter(char dir);
-	void moveMonsters();
+	list<MapObject> getListOfMonsterObjs();
 	void moveMonster(MapObject monsterMapObject);
 };
 

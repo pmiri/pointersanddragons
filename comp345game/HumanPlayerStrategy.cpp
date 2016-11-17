@@ -13,7 +13,7 @@ inline char playerStrategyKeyPress() {
 	return psinput;
 }
 
-void HumanPlayerStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns) {
+void HumanPlayerStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns, MapObject* monsterMapObj) {
 	//set up
 	bool sinventoryMode = false;
 	bool splayerMode = false;
