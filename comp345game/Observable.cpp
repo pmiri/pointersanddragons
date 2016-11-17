@@ -27,3 +27,8 @@ void Observable::Notify() {
 	for (; i != _observers->end(); ++i)
 		(*i)->Update();
 };
+void Observable::Notify(string s) {
+	list<Observer *>::iterator i = _observers->begin();
+	for (; i != _observers->end(); ++i)
+		(*i)->Update(s);
+};

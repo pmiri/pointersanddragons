@@ -13,6 +13,7 @@ class Observer {
 public:
 	~Observer();
 	virtual void Update() = 0;
+	virtual void Update(string s) = 0;
 protected:
 	Observer();
 };

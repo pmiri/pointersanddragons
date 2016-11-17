@@ -16,6 +16,7 @@ public:
 	virtual void Attach(Observer* o);
 	virtual void Detach(Observer* o);
 	virtual void Notify();
+	virtual void Notify(string s);
 	Observable();
 	~Observable();
 	list<Observer*> getObservers();

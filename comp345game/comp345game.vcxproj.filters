@@ -73,6 +73,9 @@
     <ClCompile Include="Subject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Backpack.h">
@@ -139,6 +142,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="Subject.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLogger.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

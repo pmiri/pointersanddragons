@@ -106,6 +106,7 @@ void changeMap(bool next) {
 	*map = next ? campaign->nextMap() : campaign->previousMap();
 }
 
+/*
 int main() {
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
@@ -279,3 +280,4 @@ int main() {
 }
 
 
+*/

@@ -118,6 +118,7 @@
     <ClInclude Include="CharacterEditor.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
+    <ClInclude Include="GameLogger.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemBuilder.h" />
@@ -143,6 +144,7 @@
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Enhancement.cpp" />
     <ClCompile Include="Fighter.cpp" />
+    <ClCompile Include="GameLogger.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />

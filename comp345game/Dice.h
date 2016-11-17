@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Dice
+class Dice : public Observable
 {
 	public:
 		static int roll(string input);
