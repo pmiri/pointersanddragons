@@ -1,4 +1,5 @@
 #pragma once
+using namespace std;
 #include "MapUI.h"
 
 class HumanPlayerStrategy : public CharacterStrategy

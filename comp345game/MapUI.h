@@ -2,7 +2,9 @@
 //! @brief Declaration file for the MapUI class  
 //!
 #pragma once
+using namespace std;
 #include "Map.h"
+
 
 class MapUI : public Observer
 {
