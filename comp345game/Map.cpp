@@ -186,6 +186,29 @@ void Map::moveCharacter(char dir)
 	}
 }
 
+void Map::moveMonsters()
+{
+	//search for entrance
+	for (int i = 0; i < MAP_LENGTH; i++) {
+		for (int j = 0; j < MAP_WIDTH; j++) {
+			if ((map[i][j].getCharacter()) != nullptr && (map[i][j].getCharacter()->isPlayer) == 'M') {//means it is a monster
+				//MONSTER FOUND
+				int newMXPosition = 0;
+				int newMYPosition = 0;
+				char targetCellContent = getCell(newMXPosition, newMYPosition);
+				if ((targetCellContent == 'M' || targetCellContent == 'W') || targetCellContent == 'P') {
+					cout << "No Monster Move";
+					continue;
+				}
+				map[newMXPosition][newMYPosition].setCharacter(map[i][j].getCharacter());
+				//remove player character pointer from previous location
+				map[i][j].setCharacter(nullptr);
+				Notify();
+			}
+		}
+	}
+}
+
 //! Implementation of the map verification
 //! @return bool value, true of the map is valid (there is at least one clear path between the mandatory begin and end cell). 
 bool Map::validatePath()

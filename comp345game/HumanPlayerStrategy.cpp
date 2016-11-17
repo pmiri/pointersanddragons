@@ -13,7 +13,7 @@ inline char playerStrategyKeyPress() {
 	return psinput;
 }
 
-void HumanPlayerStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP) {
+void HumanPlayerStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns) {
 	//set up
 	bool sinventoryMode = false;
 	bool splayerMode = false;
@@ -45,6 +45,7 @@ void HumanPlayerStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemVie
 	{
 		mapP->moveCharacter(in);
 		cout << "use WASD to move the Player" << endl;
+		*turns = *turns -1;
 	}
 	//ask do action (ends turn)
 };

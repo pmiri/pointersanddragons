@@ -22,6 +22,6 @@ private:
 class CharacterStrategy {
 public:
 	CharacterStrategy::CharacterStrategy();
-	virtual void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP) = 0;
+	virtual void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns) = 0;
 };
 

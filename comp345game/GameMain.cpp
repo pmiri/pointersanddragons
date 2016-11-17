@@ -225,39 +225,17 @@ int main() {
 		//TODO: 	Moving the character, square by square on the map
 
 		while (!gameFinished) {
-			playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter);
+			int* turnCount = new int(6);
+			while (*turnCount > 0) {
+				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount);
+				cout << *turnCount << " turns left";
+			}
+			//TODO monster turn
+			map->moveMonsters();
+			//TODO NPC turn
 		}
-		//while (!gameFinished) {
-		//	//check inventory
-		//	string mapString = mapView.getMapString();
-		//	in = keyPress();
-		//	if (in == 'i' | in == 'I')
-		//	{
-		//		inventoryMode = !inventoryMode;
-		//	}
-		//	else if (in == 'p' || in == 'P') {
-		//		playerMode = !playerMode;
-		//	}
-		//	if (inventoryMode)
-		//	{
-		//		system("cls");
-		//		bool validEquip = itemView->organizeItems(in);
-		//		itemView->PrintInventory();
-		//		cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
-		//		if (validEquip)
-		//			playerCharacter->updateFromInventory();
-		//	}
-		//	else if (playerMode) {
-		//		system("cls");
-		//		playerCharacter->displayStats();
-		//	}
-		//	else
-		//	{
-		//		map->moveCharacter(in);
-		//		cout << "use WASD to move the Player" << endl;
-		//	}
-		//	//ask do action (ends turn)
 
+		//TODO redo how map change works
 		//	//head to next map if prompted
 		//	if (map->getNextMap() == -1)
 		//	{

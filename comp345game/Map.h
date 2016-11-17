@@ -48,5 +48,6 @@ public:
 	int nextMap;
 
 	void moveCharacter(char dir);
+	void moveMonsters();
 };
 
