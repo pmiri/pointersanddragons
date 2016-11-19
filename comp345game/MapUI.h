@@ -2,8 +2,9 @@
 //! @brief Declaration file for the MapUI class  
 //!
 #pragma once
+using namespace std;
 #include "Map.h"
-#include "Observer.h"
+
 
 class MapUI : public Observer
 {
@@ -17,3 +18,10 @@ private:
 	Map *_subject;
 	string mapString;
 };
+
+class CharacterStrategy {
+public:
+	CharacterStrategy::CharacterStrategy();
+	virtual void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns, MapObject* monsterMapObj) = 0;
+};
+

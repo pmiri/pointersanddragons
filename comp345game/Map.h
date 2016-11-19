@@ -7,7 +7,6 @@
 using namespace std;
 #include <list>
 #include "Observable.h"
-#include "Observer.h"
 #include "MapObject.h"
 
 //! Class implementing a game map
@@ -49,5 +48,7 @@ public:
 	int nextMap;
 
 	void moveCharacter(char dir);
+	list<MapObject> getListOfMonsterObjs();
+	void moveMonster(MapObject monsterMapObject);
 };
 

@@ -2,7 +2,6 @@
 //! @brief Implementation file for the MapUI class 
 //!
 #include "MapUI.h"
-#include "Map.h"
 #include <string>
 #include <iostream>
 #include <stdlib.h>//for clearning console on windows

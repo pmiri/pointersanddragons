@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include "Character.h"
+#include "AggressorStrategy.h"
 using namespace std;
 
 Map *MapBuilder::buildFromFile(string path) {
@@ -39,10 +40,11 @@ Map *MapBuilder::buildFromFile(string path) {
 				}
 				if (line_array[2 * y] == 'M') {
 					//create a character who is a player
-					Character* playerCharacter = new Character;//TODO pull monster character info from map somehow?
-					playerCharacter->isPlayer = 'M';
+					Character* monsterCharacter = new Character;//TODO pull monster character info from map somehow?
+					monsterCharacter->isPlayer = 'M';
+					monsterCharacter->strategy = new AggressorStrategy;
 					MapObject characterMapObject = MapObject(y, currentHeight, line_array[2 * y]);
-					characterMapObject.setCharacter(playerCharacter);
+					characterMapObject.setCharacter(monsterCharacter);
 					map->fillCell(y, currentHeight, characterMapObject);
 				}
 				else if (line_array[2 * y] == 'T') {
