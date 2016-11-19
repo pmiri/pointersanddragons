@@ -192,8 +192,8 @@ list<MapObject> Map::getListOfMonsterObjs()
 	//search for entrance
 	for (int i = 0; i < MAP_LENGTH; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
-			if ((map[i][j].getCharacter()) != nullptr && (map[i][j].getCharacter()->isPlayer) == 'M') {//means it is a monster
-				monsterList.push_back(getMapObjectAt(i, j));
+			if ((map[j][i].getCharacter()) != nullptr && (map[j][i].getCharacter()->isPlayer) == 'M') {//means it is a monster
+				monsterList.push_back(getMapObjectAt(j, i));
 			}
 		}
 	}
