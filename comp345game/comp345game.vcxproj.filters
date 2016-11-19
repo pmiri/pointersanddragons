@@ -1,59 +1,153 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Campaign.cpp" />
-    <ClCompile Include="CampaignEditor.cpp" />
-    <ClCompile Include="Character.cpp" />
-    <ClCompile Include="CharacterEditor.cpp" />
-    <ClCompile Include="CharacterObserver.cpp" />
-    <ClCompile Include="Dice.cpp" />
-    <ClCompile Include="Enhancement.cpp" />
-    <ClCompile Include="Fighter.cpp" />
-    <ClCompile Include="GameMain.cpp" />
-    <ClCompile Include="Item.cpp" />
-    <ClCompile Include="ItemContainer.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="MapBuilder.cpp" />
-    <ClCompile Include="MapCreator.cpp" />
-    <ClCompile Include="MapEditor.cpp" />
-    <ClCompile Include="MapObject.cpp" />
-    <ClCompile Include="MapUI.cpp" />
-    <ClCompile Include="Observable.cpp" />
-    <ClCompile Include="Observer.cpp" />
-    <ClCompile Include="Subject.cpp" />
-    <ClCompile Include="Inventory.cpp" />
-    <ClCompile Include="Backpack.cpp" />
-    <ClCompile Include="ItemUI.cpp" />
-    <ClCompile Include="ItemBuilder.cpp" />
-    <ClCompile Include="CharacterStrategy.cpp" />
-    <ClCompile Include="HumanPlayerStrategy.cpp" />
-    <ClCompile Include="AggressorStrategy.cpp" />
+    <ClCompile Include="Backpack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Campaign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CampaignEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterObserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Enhancement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fighter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MapUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Observable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Observer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Campaign.h" />
-    <ClInclude Include="CampaignEditor.h" />
-    <ClInclude Include="Character.h" />
-    <ClInclude Include="CharacterObserver.h" />
-    <ClInclude Include="CharacterEditor.h" />
-    <ClInclude Include="Dice.h" />
-    <ClInclude Include="Enhancement.h" />
-    <ClInclude Include="Item.h" />
-    <ClInclude Include="ItemContainer.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="MapBuilder.h" />
-    <ClInclude Include="MapCreator.h" />
-    <ClInclude Include="MapEditor.h" />
-    <ClInclude Include="MapObject.h" />
-    <ClInclude Include="MapUI.h" />
-    <ClInclude Include="Observable.h" />
-    <ClInclude Include="Observer.h" />
-    <ClInclude Include="Subject.h" />
-    <ClInclude Include="Inventory.h" />
-    <ClInclude Include="Backpack.h" />
-    <ClInclude Include="ItemUI.h" />
-    <ClInclude Include="ItemBuilder.h" />
-    <ClInclude Include="CharacterStrategy.h" />
-    <ClInclude Include="HumanPlayerStrategy.h" />
-    <ClInclude Include="AggressorStrategy.h" />
+    <ClInclude Include="Backpack.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Campaign.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CampaignEditor.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterEditor.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterObserver.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dice.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enhancement.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBuilder.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemContainer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemUI.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MapBuilder.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCreator.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MapEditor.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUI.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Observable.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{ebd23aba-7e8c-492a-a4e6-44190cf8c851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{7eaa3714-6eab-429b-a997-42cd85af50d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
