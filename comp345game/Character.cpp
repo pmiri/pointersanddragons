@@ -64,6 +64,29 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 	level = 1;
 }
 
+Character::Character(int str, int dex, int con, int intel, int wis, int cha, int lvl)
+{
+	isPlayer = 'P';
+	abilityScores[0] = str;
+	abilityScores[1] = dex;
+	abilityScores[2] = con;
+	abilityScores[3] = intel;
+	abilityScores[4] = wis;
+	abilityScores[5] = cha;
+	maxHitPoints = 10;
+	initAbilityModifiers();
+	currentHitPoints = maxHitPoints;
+	level = 1;
+	int levelsToGo = lvl - level;
+	while (levelsToGo > 0)
+	{
+		Dice hitDice = Dice();
+		int healthRoll = hitDice.roll("1d10");
+		levelUp(healthRoll);
+		levelsToGo--;
+	}
+}
+
 //! Implementation of the verification of a newly created Character
 //! @return bool value, true of the character is valid (stats should be in the 3-18 range for a new character), false if invalid. 
 bool Character::validateNewCharacter()
