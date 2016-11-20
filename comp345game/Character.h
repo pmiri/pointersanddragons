@@ -25,6 +25,7 @@ public:
 	Character(int, int, int, int, int, int, int);
 	bool validateNewCharacter();
 	void hit(int);
+
 	void updateFromInventory();
 	void updateBonuses(vector<Enhancement> bonuses);
 	
@@ -34,13 +35,14 @@ public:
 	void levelUp(int);
 	void distributePoints(int);
 	int toHit(int);
-
+	std::vector<int> toHit();
 	void displayStats();
 	//Player stats
 	string getClassName();
 	int getHitPoints();
 	int getMaxHitPoints();
 	int getLevel();
+	
 	int attack(int);
 	int getArmorClass();
 	int* getAbilityScores();
@@ -57,7 +59,7 @@ protected:
 	int maxHitPoints;
 	int armorClass;
 	int level;
-
+	int attacks;
 	string className;
 };
 

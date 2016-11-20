@@ -190,8 +190,7 @@ void Character::initAbilityModifiers()
 	{
 		abilityModifiers[i] = floor(abilityScores[i] / 2) - 5;
 	}
-
-	maxHitPoints = maxHitPoints + abilityModifiers[2];
+	armorClass = 10 + abilityModifiers[1];
 }
 
 int Character::getLevel()
@@ -208,7 +207,8 @@ void Character::levelUp(int diceRoll)
 {
 	level++;
 	baseAttackBonus++;
-	maxHitPoints = maxHitPoints + diceRoll;
+	attacks = 1 + ((baseAttackBonus - 5) / 5);
+	maxHitPoints = maxHitPoints + diceRoll + abilityModifiers[2];
 	Notify();
 }
 
@@ -238,6 +238,17 @@ void Character::distributePoints(int points)
 int Character::toHit(int diceRoll)
 {
 	return (diceRoll + abilityModifiers[0] + attackBonus);
+}
+
+std::vector<int> Character::toHit()
+{
+	std::vector<int> attackResults;
+	Dice attackRoll = Dice();
+	for (int i = 0; i < attacks; i++)
+	{
+		attackResults.push_back(attackRoll.roll("1d20") + abilityModifiers[0] + attackBonus - (i * 5));
+	}
+	return attackResults;
 }
 
 void Character::displayStats() {
