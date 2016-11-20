@@ -128,7 +128,8 @@ void Map::moveCharacter(char dir)
 			map[BeginPositionX][BeginPositionY].setCharacter(map[PlayerPositionX][PlayerPositionY].getCharacter());
 			map[PlayerPositionX][PlayerPositionY].setCharacter(nullptr);
 			Character *p = map[BeginPositionX][BeginPositionY].getCharacter();
-			p->levelUp(1);
+			Dice healthDice = Dice();
+			p->levelUp(healthDice.roll("1d10"));
 			PlayerPositionX = BeginPositionX;
 			PlayerPositionY = BeginPositionY;
 			Notify();
