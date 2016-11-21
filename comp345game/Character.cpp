@@ -81,7 +81,7 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, int
 	while (levelsToGo > 0)
 	{
 		Dice hitDice = Dice();
-		int healthRoll = hitDice.roll("1d10");
+		int healthRoll = hitDice.roll("1d10[+0]");
 		levelUp(healthRoll);
 		levelsToGo--;
 	}
@@ -246,7 +246,7 @@ std::vector<int> Character::toHit()
 	Dice attackRoll = Dice();
 	for (int i = 0; i < attacks; i++)
 	{
-		attackResults.push_back(attackRoll.roll("1d20") + abilityModifiers[0] + attackBonus - (i * 5));
+		attackResults.push_back(attackRoll.roll("1d20[+0]") + abilityModifiers[0] + attackBonus - (i * 5));
 	}
 	return attackResults;
 }
