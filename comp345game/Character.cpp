@@ -40,8 +40,8 @@ Character::Character()
 	//default hit points is 10
 	maxHitPoints = 10;
 	initAbilityModifiers();
-	currentHitPoints = maxHitPoints;
-
+	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	baseAttackBonus = 1;
 	level = 1;
 }
 
@@ -59,8 +59,8 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 	//default hit points is 10 but is affected by ability modifiers.
 	maxHitPoints = 10;
 	initAbilityModifiers();
-	currentHitPoints = maxHitPoints;
-
+	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	baseAttackBonus = 1;
 	level = 1;
 }
 
@@ -75,7 +75,8 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, int
 	abilityScores[5] = cha;
 	maxHitPoints = 10;
 	initAbilityModifiers();
-	currentHitPoints = maxHitPoints;
+	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	baseAttackBonus = 1;
 	level = 1;
 	int levelsToGo = lvl - level;
 	while (levelsToGo > 0)
