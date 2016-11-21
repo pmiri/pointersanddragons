@@ -1,5 +1,9 @@
 #include "BullyBuilder.h"
 
+BullyBuilder::BullyBuilder()
+{
+}
+
 void BullyBuilder::sortAttributes(std::vector<int>* stats)
 {
 	int str, dex, con, intel, wis, cha;

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "CharacterBuilder.h"
+#include "BullyBuilder.h"
+#include "CharacterCreator.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace CharacterBuilderTester
@@ -9,9 +10,17 @@ namespace CharacterBuilderTester
 	{
 	public:
 		
-		TEST_METHOD(BullyBuilder)
+		TEST_METHOD(BullyBuilderTest)
 		{
-			// TODO: Your test code here
+			BullyBuilder* bulBuild = new BullyBuilder();
+			CharacterCreator charCreator;
+			charCreator.setCharacterBuilder(bulBuild);
+			charCreator.createCharacter(1);
+			Character testChar = *charCreator.getCharacter();
+			Assert::AreEqual(testChar.getLevel(), 1);
+			bool goodstats = false;
+			int* stats = testChar.getAbilityScores();
+			int test = *(stats + 1);
 		}
 
 	};
