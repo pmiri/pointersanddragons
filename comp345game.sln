@@ -8,6 +8,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharacterBuilderTester", "CharacterBuilderTester\CharacterBuilderTester.vcxproj", "{9E0DDE88-672A-49CD-9C97-BA1AD526FB39}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Driver", "Driver\Driver.vcxproj", "{372AFB8B-F791-4B1A-A2C9-31B27F549072}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54DB4169-1035-4B14-B8DF-CED5E5763289} = {54DB4169-1035-4B14-B8DF-CED5E5763289}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

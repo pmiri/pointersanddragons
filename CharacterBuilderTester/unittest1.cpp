@@ -17,7 +17,7 @@ namespace CharacterBuilderTester
 			charCreator.setCharacterBuilder(bulBuild);
 			charCreator.createCharacter(1);
 			Character testChar = *charCreator.getCharacter();
-			Assert::AreEqual(testChar.getLevel(), 1);
+			//Assert::AreEqual(testChar.getLevel(), 1);
 			bool goodstats = false;
 			int* stats = testChar.getAbilityScores();
 			int test = *(stats + 1);
