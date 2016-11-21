@@ -2,7 +2,7 @@
 
 void CharacterBuilder::buildCharacter(int level)
 {
-	std::vector<int> *stats;
+	std::vector<int> *stats = new std::vector<int>();
 	*stats = rollStats();
 	sortAttributes(stats);
 	builtCharacter = new Character(stats->at(0), stats->at(1), stats->at(2), stats->at(3), stats->at(4), stats->at(5), level);
