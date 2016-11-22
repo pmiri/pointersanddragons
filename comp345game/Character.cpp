@@ -238,7 +238,7 @@ void Character::distributePoints(int points)
 
 int Character::toHit(int diceRoll)
 {
-	return (diceRoll + abilityModifiers[0] + attackBonus);
+	return (diceRoll + abilityModifiers[0] + baseAttackBonus);
 }
 
 std::vector<int> Character::toHit()
@@ -247,7 +247,7 @@ std::vector<int> Character::toHit()
 	Dice attackRoll = Dice();
 	for (int i = 0; i < attacks; i++)
 	{
-		attackResults.push_back(attackRoll.roll("1d20[+0]") + abilityModifiers[0] + attackBonus - (i * 5));
+		attackResults.push_back(attackRoll.roll("1d20[+0]") + abilityModifiers[0] + baseAttackBonus - (i * 5));
 	}
 	return attackResults;
 }
