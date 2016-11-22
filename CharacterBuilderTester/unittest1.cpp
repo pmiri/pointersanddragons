@@ -1,3 +1,7 @@
+//! @file 
+//! @brief File containing the Test Class and the Test Methods
+//!
+
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "BullyBuilder.h"
@@ -8,11 +12,13 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace CharacterBuilderTester
 {		
+	//!Test class to test the CharacterBuilder
 	TEST_CLASS(UnitTest1)
 	{
 	public:
 		
-		TEST_METHOD(BullyBuilderTest) //tests a characterCreator using a bullyBuilder
+		//!Test for the bullyBuilder, checks level and stats
+		TEST_METHOD(BullyBuilderTest)
 		{
 			BullyBuilder* bulBuild = new BullyBuilder();
 			CharacterCreator charCreator;
@@ -45,6 +51,7 @@ namespace CharacterBuilderTester
 			Assert::AreEqual(true, goodstats);
 		}
 
+		//!Test for the nimbleBuilder, checks level and stats
 		TEST_METHOD(NimbleBuilderTest) //tests a characterCreator using a nimbleBuilder
 		{
 			NimbleBuilder* nimBuild = new NimbleBuilder();
@@ -78,6 +85,7 @@ namespace CharacterBuilderTester
 			Assert::AreEqual(true, goodstats);
 		}
 
+		//!Test for the tankBuilder, checks level and stats
 		TEST_METHOD(TankBuilderTest) //tests a characterCreator using a tankBuilder
 		{
 			TankBuilder* tankBuild = new TankBuilder();
@@ -111,6 +119,7 @@ namespace CharacterBuilderTester
 			Assert::AreEqual(true, goodstats);
 		}
 
+		//!Test for a high level character, checks level, stats, and attack bonus
 		TEST_METHOD(HighLevelTest) //tests a characterCreator making a high level fighter
 		{
 			BullyBuilder* bulBuild = new BullyBuilder();
