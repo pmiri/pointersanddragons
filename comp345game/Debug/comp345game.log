@@ -1,6 +1,10 @@
-﻿  Character.cpp
+﻿  Map.cpp
+  CharacterBuilder.cpp
+  Character.cpp
 c:\users\disva\source\repos\comp345game\comp345game\character.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 c:\users\disva\source\repos\comp345game\comp345game\character.cpp(192): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  BullyBuilder.cpp
+  Generating Code...
 c:\users\disva\source\repos\comp345game\comp345game\character.cpp(172): warning C4172: returning address of local variable or temporary: tempScores
 Fighter.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.lib
