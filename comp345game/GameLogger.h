@@ -1,24 +1,25 @@
 #pragma once
-#include "Map.h"
-#include "Observer.h"
-#include "Dice.h"
+#include "Loggable.h"
+#include <string>
+#include <fstream>
 
-class GameLogger: public Observer
+class GameLogger: public Logger
 {
 public:
-	GameLogger();
-	GameLogger(Map* m);
-	GameLogger(Dice* d);
-	// GameLogger(GAME MAIN?);
-	GameLogger(Character* c);
-	void Update(string s);
+	GameLogger(string path = "");
+	GameLogger(Loggable* loggable, string path = "");
+	void Log(string s);
 	void activate();
 	void deactivate();
+
+	string getPath();
 
 	~GameLogger();
 
 private:
 	bool activated = true;
-	Observable *_subject;
+	Loggable *_subject;
+	ofstream file;
+	string file_path;
 };
 

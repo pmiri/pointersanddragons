@@ -4,6 +4,7 @@
 //!
 
 #include <iostream>
+#include "Loggable.h"
 #include "Subject.h"
 #include "ItemUI.h"
 #include <vector>
@@ -12,7 +13,7 @@ using namespace std;
 #pragma once
 
 //! Class that implements a character 
-class Character : public Subject
+class Character: public Observable, public Loggable
 {
 public:
 	char isPlayer;

@@ -79,6 +79,7 @@ bool Character::validateNewCharacter()
 void Character::hit(int damage)
 {
 	currentHitPoints = currentHitPoints - damage;
+	Report("Player takes " + to_string(damage) + " damage!");
 	Notify();
 }
 
@@ -183,6 +184,7 @@ string Character::getClassName()
 
 void Character::levelUp(int diceRoll)
 {
+	Report("Player levels up!");
 	level++;
 	baseAttackBonus++;
 	maxHitPoints = maxHitPoints + diceRoll;
@@ -192,7 +194,9 @@ void Character::levelUp(int diceRoll)
 int Character::attack(int diceRoll)
 {
 	//damage is equal to dice roll + strength modifier
-	return diceRoll + abilityModifiers[0] + damageBonus;
+	int attack = diceRoll + abilityModifiers[0] + damageBonus;
+	Report("Player attacks and deals " + to_string(attack) + " damage!");
+	return attack;
 }
 
 //! method to return the sum armor class of the character
@@ -233,6 +237,4 @@ void Character::displayStats() {
 	for (int i = 0; i < 6; i++) {
 		printf("%s: %d (+%d)\n", abilityNames[i].c_str(), abilities[i], adjusted[i] - abilities[i]);
 	}
-
-	
 }

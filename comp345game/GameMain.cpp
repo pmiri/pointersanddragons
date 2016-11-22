@@ -12,6 +12,7 @@
 #include "Campaign.h"
 #include "MapCreator.h"
 #include "ItemBuilder.h"
+#include "GameLogger.h"
 
 using namespace std;
 
@@ -108,6 +109,8 @@ void changeMap(bool next) {
 
 /*
 int main() {
+	GameLogger* logger = new GameLogger();
+
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
 	cout << "Press I to enter the item editor, M to open the Map/Campaign eidtor, and anything else to play.\n";
@@ -265,6 +268,7 @@ int main() {
 				map->PlacePlayer(playerCharacter);
 			}
 		}
+		delete logger;
 		delete playerCharacter;
 		delete playerInventory;
 		delete playerPack;
@@ -278,6 +282,4 @@ int main() {
 	system("pause");
 	return 0;
 }
-
-
 */

@@ -70,10 +70,13 @@
     <ClCompile Include="Observer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Subject.cpp">
+    <ClCompile Include="GameLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameLogger.cpp">
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Loggable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -141,10 +144,13 @@
     <ClInclude Include="Observer.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Subject.h">
+    <ClInclude Include="GameLogger.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="GameLogger.h">
+    <ClInclude Include="Logger.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Loggable.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
