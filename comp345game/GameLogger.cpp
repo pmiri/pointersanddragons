@@ -4,7 +4,6 @@
 #include <ctime>
 
 // For main
-#include "Character.h"
 #include "Dice.h"
 
 using namespace std;
@@ -25,6 +24,9 @@ GameLogger::GameLogger(string path)
 		ss << "log-" << buffer << ".txt";
 		file_path = ss.str();
 	}
+	else {
+		file_path = path;
+	}
 }
 
 GameLogger::GameLogger(Loggable* m, string path) {
@@ -44,6 +46,9 @@ GameLogger::GameLogger(Loggable* m, string path) {
 		std::stringstream ss;
 		ss << "log-" << buffer << ".txt";
 		file_path = ss.str();
+	}
+	else {
+		file_path = path;
 	}
 }
 
@@ -76,22 +81,21 @@ GameLogger::~GameLogger()
 
 int main() {
 	GameLogger* logger = new GameLogger();
-	Character* player = new Character();
 
-	system("pause");
 	cout << "GAME LOGGER TEST MAIN" << endl;
 	system("pause");
 
+
+	logger->Log("Starting Tests");
+
+	logger->Log("Creating Dice");
 	Dice* d = new Dice();
 	d->Connect(logger);
-	//xdy[+z]
 	d->roll("2d6[+1]");
-	player->Connect(logger);
 
-	player->attack(10);
+	logger->Log("Closing Tests");
 	
 	delete d;
-	delete player;
 	delete logger;
 
 

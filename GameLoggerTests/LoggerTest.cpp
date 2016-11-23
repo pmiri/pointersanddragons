@@ -3,12 +3,15 @@
 
 #include <string>
 
-#include "../comp345game/GameLogger.h"
 #include "../comp345game/Dice.h"
-#include "../comp345game/GameLogger.cpp"
+#include "../comp345game/GameLogger.h"
+#include "../comp345game/Loggable.cpp"
 #include "../comp345game/Dice.cpp"
+#include "../comp345game/Logger.cpp"
+#include "../comp345game/GameLogger.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
 
 namespace GameLoggerTests
 {		
@@ -16,6 +19,10 @@ namespace GameLoggerTests
 	{
 	public:
 		
+		/** Test to see if:
+		* File properly opens
+		* Logger properly logged dice roll from the Observer implementation
+		**/
 		TEST_METHOD(LogDiceTest)
 		{
 			GameLogger* logger = new GameLogger();
@@ -36,10 +43,14 @@ namespace GameLoggerTests
 			delete d;
 		}
 
+		/** Test to see if:
+		* File properly opens
+		* Logger properly logged test message directly logged from the Logger
+		**/
 		TEST_METHOD(LogFileTest)
 		{
 			string message = "TEST MESSAGE";
-			GameLogger* logger = new GameLogger();
+			GameLogger* logger = new GameLogger("testFile");
 			logger->Log(message);
 
 			ifstream file;

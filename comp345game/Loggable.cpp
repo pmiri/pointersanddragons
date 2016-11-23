@@ -1,5 +1,4 @@
 #include "Loggable.h"
-#include "Loggable.h"
 #include "Logger.h"
 #include <iostream>
 

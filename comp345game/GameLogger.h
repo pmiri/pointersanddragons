@@ -1,4 +1,5 @@
 #pragma once
+#include "Logger.h"
 #include "Loggable.h"
 #include <string>
 #include <fstream>
