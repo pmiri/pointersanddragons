@@ -135,6 +135,7 @@
     <ClInclude Include="MapEditor.h" />
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="MapUI.h" />
+    <ClInclude Include="MonsterBuilder.h" />
     <ClInclude Include="NimbleBuilder.h" />
     <ClInclude Include="Observable.h" />
     <ClInclude Include="Observer.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="MapEditor.cpp" />
     <ClCompile Include="MapObject.cpp" />
     <ClCompile Include="MapUI.cpp" />
+    <ClCompile Include="MonsterBuilder.cpp" />
     <ClCompile Include="NimbleBuilder.cpp" />
     <ClCompile Include="Observable.cpp" />
     <ClCompile Include="Observer.cpp" />

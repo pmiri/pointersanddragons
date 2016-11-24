@@ -94,6 +94,9 @@
     <ClCompile Include="TankBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MonsterBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Backpack.h">
@@ -184,6 +187,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="CharacterCreator.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterBuilder.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
