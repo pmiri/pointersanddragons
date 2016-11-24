@@ -8,6 +8,7 @@ using namespace std;
 #include <list>
 #include "Observable.h"
 #include "MapObject.h"
+#include "Dice.h"
 
 //! Class implementing a game map
 class Map : public Observable

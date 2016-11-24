@@ -40,8 +40,8 @@ Character::Character()
 	//default hit points is 10
 	maxHitPoints = 10;
 	initAbilityModifiers();
-	currentHitPoints = maxHitPoints;
-
+	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	baseAttackBonus = 1;
 	level = 1;
 }
 
@@ -59,9 +59,33 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 	//default hit points is 10 but is affected by ability modifiers.
 	maxHitPoints = 10;
 	initAbilityModifiers();
-	currentHitPoints = maxHitPoints;
-
+	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	baseAttackBonus = 1;
 	level = 1;
+}
+
+Character::Character(int str, int dex, int con, int intel, int wis, int cha, int lvl)
+{
+	isPlayer = 'P';
+	abilityScores[0] = str;
+	abilityScores[1] = dex;
+	abilityScores[2] = con;
+	abilityScores[3] = intel;
+	abilityScores[4] = wis;
+	abilityScores[5] = cha;
+	maxHitPoints = 10;
+	initAbilityModifiers();
+	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	baseAttackBonus = 1;
+	level = 1;
+	int levelsToGo = lvl - level;
+	while (levelsToGo > 0)
+	{
+		Dice hitDice = Dice();
+		int healthRoll = hitDice.roll("1d10[+0]");
+		levelUp(healthRoll);
+		levelsToGo--;
+	}
 }
 
 //! Implementation of the verification of a newly created Character
@@ -167,8 +191,7 @@ void Character::initAbilityModifiers()
 	{
 		abilityModifiers[i] = floor(abilityScores[i] / 2) - 5;
 	}
-
-	maxHitPoints = maxHitPoints + abilityModifiers[2];
+	armorClass = 10 + abilityModifiers[1];
 }
 
 int Character::getLevel()
@@ -185,7 +208,8 @@ void Character::levelUp(int diceRoll)
 {
 	level++;
 	baseAttackBonus++;
-	maxHitPoints = maxHitPoints + diceRoll;
+	attacks = 1 + ((baseAttackBonus - 5) / 5);
+	maxHitPoints = maxHitPoints + diceRoll + abilityModifiers[2];
 	Notify();
 }
 
@@ -214,7 +238,18 @@ void Character::distributePoints(int points)
 
 int Character::toHit(int diceRoll)
 {
-	return (diceRoll + abilityModifiers[0] + attackBonus);
+	return (diceRoll + abilityModifiers[0] + baseAttackBonus + attackBonus);
+}
+
+std::vector<int> Character::toHit()
+{
+	std::vector<int> attackResults;
+	Dice attackRoll = Dice();
+	for (int i = 0; i < attacks; i++)
+	{
+		attackResults.push_back(attackRoll.roll("1d20[+0]") + abilityModifiers[0] + baseAttackBonus + attackBonus- (i * 5));
+	}
+	return attackResults;
 }
 
 void Character::displayStats() {
