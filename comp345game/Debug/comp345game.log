@@ -1,4 +1,6 @@
-﻿  HumanPlayerStrategy.cpp
-c:\users\disva\source\repos\comp345game\comp345game\humanplayerstrategy.cpp(25): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+﻿  Character.cpp
+c:\users\disva\source\repos\comp345game\comp345game\character.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\disva\source\repos\comp345game\comp345game\character.cpp(211): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\disva\source\repos\comp345game\comp345game\character.cpp(190): warning C4172: returning address of local variable or temporary: tempScores
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.exe
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.pdb (Partial PDB)

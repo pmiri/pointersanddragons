@@ -25,7 +25,10 @@ Character::Character()
 	abilityScores[3] = 3;
 	abilityScores[4] = 3;
 	abilityScores[5] = 3;
-
+	for (int i = 0; i < 6; i++)
+	{
+		abilityBonuses[i] = 0;
+	}
 	while (abilityPool != 0)
 	{
 		int i = rand() % 6;
@@ -40,7 +43,7 @@ Character::Character()
 	//default hit points is 10
 	maxHitPoints = 10;
 	initAbilityModifiers();
-	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	currentHitPoints = maxHitPoints;
 	baseAttackBonus = 1;
 	level = 1;
 }
@@ -55,11 +58,14 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 	abilityScores[3] = intel;
 	abilityScores[4] = wis;
 	abilityScores[5] = cha;
-
+	for (int i = 0; i < 6; i++)
+	{
+		abilityBonuses[i] = 0;
+	}
 	//default hit points is 10 but is affected by ability modifiers.
 	maxHitPoints = 10;
 	initAbilityModifiers();
-	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	currentHitPoints = maxHitPoints;
 	baseAttackBonus = 1;
 	level = 1;
 }
@@ -73,9 +79,13 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, int
 	abilityScores[3] = intel;
 	abilityScores[4] = wis;
 	abilityScores[5] = cha;
+	for (int i = 0; i < 6; i++)
+	{
+		abilityBonuses[i] = 0;
+	}
 	maxHitPoints = 10;
 	initAbilityModifiers();
-	currentHitPoints = maxHitPoints + abilityModifiers[2];
+	currentHitPoints = maxHitPoints;
 	baseAttackBonus = 1;
 	level = 1;
 	int levelsToGo = lvl - level;
@@ -110,11 +120,19 @@ void Character::updateFromInventory()
 {
 	std::vector<Enhancement> currentBonus = wornItems->getBonuses();
 	updateBonuses(currentBonus);
+	initAbilityModifiers();
 }
 
 void Character::updateBonuses(vector<Enhancement> bonuses)
 {
 	int numberOfBonuses = bonuses.size();
+	for (int i = 0; i < 6; i++)
+	{
+		abilityBonuses[i] = 0;
+	}
+	armorClassBonus = 0;
+	attackBonus = 0;
+	damageBonus = 0;
 	for (int i = 0; i < numberOfBonuses; i++)
 	{
 		string bonusType = bonuses.at(i).getType();
@@ -142,7 +160,7 @@ void Character::updateBonuses(vector<Enhancement> bonuses)
 		{
 			abilityBonuses[5] = bonuses.at(i).getBonus();
 		}
-		else if (bonusType == "Armor")
+		else if (bonusType == "Armor Class")
 		{
 			armorClassBonus = bonuses.at(i).getBonus();
 		}
@@ -187,10 +205,14 @@ int Character::getMaxHitPoints()
 //! Implementation of initializing ability modifiers and their effects: https://www.dandwiki.com/wiki/MSRD:Ability_Scores
 void Character::initAbilityModifiers()
 {
+	maxHitPoints = maxHitPoints - (abilityModifiers[2] * level);
 	for (int i = 0; i < 6; i++)
 	{
-		abilityModifiers[i] = floor(abilityScores[i] / 2) - 5;
+		abilityModifiers[i] = floor((abilityScores[i] + abilityBonuses[i]) / 2) - 5;
 	}
+	maxHitPoints = maxHitPoints + (abilityModifiers[2] * level);
+	if (currentHitPoints > maxHitPoints)
+		currentHitPoints = maxHitPoints;
 	armorClass = 10 + abilityModifiers[1];
 }
 
@@ -258,18 +280,13 @@ void Character::displayStats() {
 	printf("Level %d Fighter\n", getLevel());// , getClassName());
 	printf("HP: %d/%d\n\n", getHitPoints(), getMaxHitPoints());
 	
-	int *abilities = getAbilityScores();
-	int *adjusted = getAbilityScores();
-	
-	printf("AC: %d\n", adjusted[6] == NULL ? 0 : adjusted[6]);
-	printf("Attack Bonus: %d\n", adjusted[7]);
-	printf("Damage: %d\n\n", adjusted[8]);
+	printf("AC: %d (+%d)\n", getArmorClass(), armorClassBonus);
+	printf("Attack Bonus: %d (+%d)\n", toHit(0), attackBonus);
+	printf("Damage Bonus: %d (+%d)\n\n", attack(0), damageBonus);
 
 	for (int i = 0; i < 6; i++) {
-		printf("%s: %d (+%d)\n", abilityNames[i].c_str(), abilities[i], adjusted[i] - abilities[i]);
-	}
-
-	
+		printf("%s: %d [+%d] (+%d)\n", abilityNames[i].c_str(), (abilityScores[i] + abilityBonuses[i]), abilityModifiers[i], abilityBonuses[i]);
+	}	
 }
 
 //CharacterStrategy::CharacterStrategy() {
