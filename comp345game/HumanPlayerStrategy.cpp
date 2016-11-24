@@ -4,6 +4,8 @@
 #include <conio.h>
 
 HumanPlayerStrategy::HumanPlayerStrategy() {
+	sinventoryMode = false;
+	splayerMode = false;
 }
 
 inline char playerStrategyKeyPress() {
@@ -15,8 +17,7 @@ inline char playerStrategyKeyPress() {
 
 void HumanPlayerStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns, MapObject* monsterMapObj) {
 	//set up
-	bool sinventoryMode = false;
-	bool splayerMode = false;
+	bool validMove = true;
 
 	//check inventory
 	string smapString = mapViewP->getMapString();
@@ -24,9 +25,11 @@ void HumanPlayerStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemVie
 	if (in == 'i' | in == 'I')
 	{
 		sinventoryMode = !sinventoryMode;
+		validMove = false;
 	}
 	else if (in == 'p' || in == 'P') {
 		splayerMode = !splayerMode;
+		validMove = false;
 	}
 	if (sinventoryMode)
 	{
@@ -43,9 +46,10 @@ void HumanPlayerStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemVie
 	}
 	else
 	{
-		mapP->moveCharacter(in);
+		bool goodMove = mapP->moveCharacter(in);
 		cout << "use WASD to move the Player" << endl;
-		*turns = *turns -1;
+		if(validMove && goodMove)
+			*turns = *turns -1;
 	}
 	//ask do action (ends turn)
 };

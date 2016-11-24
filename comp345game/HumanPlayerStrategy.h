@@ -7,4 +7,7 @@ class HumanPlayerStrategy : public CharacterStrategy
 public:
 	HumanPlayerStrategy::HumanPlayerStrategy();
 	void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns, MapObject* monsterMapObj);
+private:
+	bool sinventoryMode;
+	bool splayerMode;
 };

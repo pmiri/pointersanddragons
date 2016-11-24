@@ -48,7 +48,7 @@ Map::Map(int width, int height) {
 		map[i] = new MapObject[height];//new char[width];
 }
 
-void Map::moveCharacter(char dir)
+bool Map::moveCharacter(char dir)
 {
 	int newXPosition = PlayerPositionX;
 	int newYPosition = PlayerPositionY;
@@ -91,13 +91,13 @@ void Map::moveCharacter(char dir)
 	default:
 		Notify();
 		cout << "no move" << endl;
-		return;//OTHERWISE THE PLAYER GETS SET TO NULL ON AN INVLID KEY
+		return false;//OTHERWISE THE PLAYER GETS SET TO NULL ON AN INVLID KEY
 	}
 	targetCellContent = getCell(newXPosition, newYPosition);
 	if (targetCellContent == 'W' || targetOutOfBounds) {
 		Notify();
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
-		return;
+		return false;
 	}
 	if (targetCellContent == 'M') {
 		Notify();
@@ -108,7 +108,7 @@ void Map::moveCharacter(char dir)
 		}
 		else
 			cout << "You have not fought" << endl;
-		return;
+		return false;
 	}
 
 	//put player character at mapObject of target
@@ -138,7 +138,7 @@ void Map::moveCharacter(char dir)
 		}
 		else
 			cout << "You have not proceeded" << endl;
-		return;
+		return true;
 	}
 	if (targetCellContent == 'B') {
 		Notify();
@@ -149,7 +149,7 @@ void Map::moveCharacter(char dir)
 		}
 		else
 			cout << "You have not gone back" << endl;
-		return;
+		return true;
 	}
 
 	if (targetCellContent == 'T') {
@@ -183,8 +183,9 @@ void Map::moveCharacter(char dir)
 				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
 			}
 		}
-		return;
+		return true;
 	}
+	return true;
 }
 
 list<MapObject> Map::getListOfMonsterObjs()
