@@ -301,17 +301,32 @@ void Character::fight(Character* opponent)
 	//HANDLES ALL FIGHT LOGIC
 	int damageOnOpponent = 0;
 	//mutliply by number of attacks
-	Dice attackDice = Dice();
-	for (int attNum = 1; attNum <= attacks; attNum++) {
-		string rollString = "1d10[+" + attackBonus + ']';//not sure how to use all of these bonuses
-		damageOnOpponent += attack(attackDice.roll(rollString));
+	std::vector<int> attackResults = toHit();
+	int numAttacks = attackResults.size();
+	int enemyAC = opponent->getArmorClass();
+	for (int i = 0; i < numAttacks; i++)
+	{
+		if (attackResults.at(i) < enemyAC)
+		{
+			attackResults.erase(attackResults.begin() + i);
+		}
 	}
-
-	//handle defense of opponent
-	damageOnOpponent -= opponent->armorClass;
-
+	numAttacks = attackResults.size();
+	if (numAttacks < 1)
+	{
+		cout << damageOnOpponent << "All attacks missed!" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < numAttacks; i++)
+		{
+			Dice damageDie = Dice();
+			int damageRoll = damageDie.roll("1d6[+0]");
+			damageOnOpponent += attack(damageRoll);
+		}
+	}
 	opponent->setHitPoints(opponent->getHitPoints() - damageOnOpponent);
-	cout << damageOnOpponent << "Damage was done to the Opponent!" << endl;
+	cout << damageOnOpponent << " damage was done to the Opponent!" << endl;
 	if (opponent->getHitPoints() <= 0) {
 		cout << "The Opponent has been defeated!" << endl;
 		//handle destory monster
