@@ -47,6 +47,9 @@ public:
 	int getArmorClass();
 	int* getAbilityScores();
 	int* getAdjustedAbilityScores();
+
+	void fight(Character opponent);
+
 protected:
 	int abilityScores[6];
 	int abilityBonuses[6];
