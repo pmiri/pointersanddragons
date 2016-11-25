@@ -23,6 +23,7 @@ public:
 	CharacterStrategy* strategy;//INCLUDED VIA CharacterStrategy.cpp 
 	Character();
 	Character(int, int, int, int, int, int, char);
+	Character(int, int, int, int, int, int, char, int);
 	Character(int, int, int, int, int, int, int);
 	bool validateNewCharacter();
 	void hit(int);
