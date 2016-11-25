@@ -181,7 +181,7 @@ int main() {
 		system("CLS");
 
 		Character *character;
-
+		character->Connect(logger);
 
 		do {
 			cout << "Character - Load(1) or Create(2):" << endl;
@@ -277,7 +277,10 @@ int main() {
 	
 	//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
 	
+	logger->Log("Log Over");
 	system("pause");
+
+	delete logger;
 	return 0;
 }
 
