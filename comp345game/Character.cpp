@@ -8,6 +8,8 @@
 #include <string>
 #include<iostream>
 
+class MapObject;//forward declaration to help compilation
+
 //! Constructor: creates character with random ability scores 
 Character::Character()
 {
@@ -197,6 +199,11 @@ int Character::getHitPoints()
 	return currentHitPoints;
 }
 
+void Character::setHitPoints(int newHitPoints)
+{
+	currentHitPoints = newHitPoints;
+}
+
 int Character::getMaxHitPoints()
 {
 	return maxHitPoints;
@@ -289,11 +296,26 @@ void Character::displayStats() {
 	}	
 }
 
-void Character::fight(Character opponent)
+void Character::fight(Character* opponent)
 {
 	//HANDLES ALL FIGHT LOGIC
+	int damageOnOpponent = 0;
+	//mutliply by number of attacks
+	Dice attackDice = Dice();
+	for (int attNum = 1; attNum <= attacks; attNum++) {
+		string rollString = "1d10[+" + attackBonus + ']';//not sure how to use all of these bonuses
+		damageOnOpponent += attack(attackDice.roll(rollString));
+	}
 
+	//handle defense of opponent
+	damageOnOpponent -= opponent->armorClass;
 
-
+	opponent->setHitPoints(opponent->getHitPoints() - damageOnOpponent);
+	cout << damageOnOpponent << "Damage was done to the Opponent!" << endl;
+	if (opponent->getHitPoints() <= 0) {
+		cout << "The Opponent has been defeated!" << endl;
+		//handle destory monster
+		//probably a method of map that will remove it
+	}
 
 }
