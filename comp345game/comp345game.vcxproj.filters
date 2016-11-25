@@ -97,6 +97,7 @@
     <ClCompile Include="MonsterBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Backpack.h">
@@ -190,6 +191,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="MonsterBuilder.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoader.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
