@@ -40,6 +40,7 @@ public:
 	//Player stats
 	string getClassName();
 	int getHitPoints();
+	void setHitPoints(int newHitPoints);
 	int getMaxHitPoints();
 	int getLevel();
 	
@@ -47,6 +48,9 @@ public:
 	int getArmorClass();
 	int* getAbilityScores();
 	int* getAdjustedAbilityScores();
+
+	void fight(Character* opponent);
+
 protected:
 	int abilityScores[6];
 	int abilityBonuses[6];
@@ -54,10 +58,10 @@ protected:
 	int attackBonus;
 	int damageBonus;
 	int armorClassBonus;
+	int armorClass;
 	int abilityModifiers[6];
 	int currentHitPoints;
 	int maxHitPoints;
-	int armorClass;
 	int level;
 	int attacks;
 	string className;
