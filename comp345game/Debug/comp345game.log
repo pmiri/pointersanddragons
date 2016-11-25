@@ -1,13 +1,13 @@
 ﻿  MapCreator.cpp
 c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(240): warning C4101: 'e': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(329): warning C4101: 'e': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(467): warning C4101: 'e': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(555): warning C4101: 'e': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(676): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(700): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(724): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(403): warning C4172: returning address of local variable or temporary: mapToEdit
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(663): warning C4172: returning address of local variable or temporary: campaignToEdit
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(855): warning C4715: 'MapCreator::getTile': not all control paths return a value
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(330): warning C4101: 'e': unreferenced local variable
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(468): warning C4101: 'e': unreferenced local variable
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(556): warning C4101: 'e': unreferenced local variable
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(677): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(701): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(725): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(404): warning C4172: returning address of local variable or temporary: mapToEdit
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(664): warning C4172: returning address of local variable or temporary: campaignToEdit
+c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(856): warning C4715: 'MapCreator::getTile': not all control paths return a value
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.exe
   comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.pdb (Partial PDB)

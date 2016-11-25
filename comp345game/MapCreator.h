@@ -7,6 +7,7 @@
 #include "Campaign.h"
 #include <string>
 #include "FileLoader.h"
+#include "MapBuilder.h"
 
 //! Class implementing a game map creator
 class MapCreator

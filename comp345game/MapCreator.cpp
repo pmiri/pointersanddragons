@@ -18,7 +18,7 @@ void MapCreator::runMenu()
 			std::cin >> userInput;
 			if (userInput == "(m)" || userInput == "m" || userInput == "M" || userInput == "(M)")
 			{
-				Map loadedMap = *loadMap(FileLoader::mapSelection());
+				Map loadedMap = *MapBuilder::buildFromFile(FileLoader::mapSelection());
 				std::cout << "Here is the loaded map!" << std::endl;
 				MapCreator::viewMap(loadedMap);
 				Map editedMap = *MapCreator::editMap(loadedMap);
@@ -139,15 +139,15 @@ Map * MapCreator::buildMap(int length, int width)
 {
 	Map* customMap = new Map(width, length);
 	std::string userInput = "";
-	for (int i = 0; i < length; i++)
+	for (int currentRow = 0; currentRow < length; currentRow++)
 	{
-		for (int j = 0; j < width; j++)
+		for (int currentColumn = 0; currentColumn < width; currentColumn++)
 		{
-			std::cout << "Please input the desired tile for the tile at row " << i << " and column " << j << ".\n";
+			std::cout << "Please input the desired tile for the tile at row " << currentRow << " and column " << currentColumn << ".\n";
 			char result = MapCreator::getTile();
-			customMap->fillCell(i, j, MapObject(i, j, result));
+			customMap->fillCell(currentColumn, currentRow, MapObject(currentColumn, currentRow, result));
 		}
-		if (i < (length - 1))
+		if (currentRow < (length - 1))
 		{
 			std::cout << "Would you like to view the map (v)?.\n";
 			std::cin >> userInput;
@@ -268,10 +268,11 @@ void MapCreator::saveMap(Map mapToSave)
 
 Map* MapCreator::loadMap(std::string filepath)
 {
+	const string MAPS_PATH = "../maps/";
 	std::string currentLine = "";
 	std::ifstream fileToLoad;
 	int mapWidth, mapHeight;
-	fileToLoad.open(filepath);
+	fileToLoad.open(MAPS_PATH + filepath);
 	if (fileToLoad.is_open())
 	{
 		//get width and height, check if the lines exist
@@ -856,14 +857,14 @@ char MapCreator::getTile()
 
 void MapCreator::viewMap(Map map)
 {
-	int length = map.getHeight();
+	int height = map.getHeight();
 	int width = map.getWidth();
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < height; i++)
 	{
 		std::cout << i << " ";
 		for (int j = 0; j < width; j++)
 		{
-			std::cout << map.getCell(i, j) << " ";
+			std::cout << map.getCell(j, i) << " ";
 		}
 		std::cout << std::endl;
 	}

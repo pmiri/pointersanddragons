@@ -7,11 +7,12 @@
 using namespace std;
 
 Map *MapBuilder::buildFromFile(string path) {
+	const string MAPS_PATH = "../maps/";
 	string line = "";
 	ifstream myfile;
 	int width;
 	int height;
-	myfile.open(path);
+	myfile.open(MAPS_PATH + path);
 	if (myfile.is_open())
 	{
 		//get width
