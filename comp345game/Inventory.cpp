@@ -70,7 +70,7 @@ vector<Enhancement> Inventory::getBonuses()
 				totalEnhancements.push_back(tempEnhancements.at(j));
 		}
 	}
-	return vector<Enhancement>();
+	return totalEnhancements;
 }
 
 Item Inventory::replaceItem(Item anItem)

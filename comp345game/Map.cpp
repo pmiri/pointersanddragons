@@ -48,7 +48,7 @@ Map::Map(int width, int height) {
 		map[i] = new MapObject[height];//new char[width];
 }
 
-void Map::moveCharacter(char dir)
+bool Map::moveCharacter(char dir)
 {
 	int newXPosition = PlayerPositionX;
 	int newYPosition = PlayerPositionY;
@@ -96,14 +96,14 @@ void Map::moveCharacter(char dir)
 	default:
 		Notify();
 		cout << "no move" << endl;
-		return;//OTHERWISE THE PLAYER GETS SET TO NULL ON AN INVLID KEY
+		return false;//OTHERWISE THE PLAYER GETS SET TO NULL ON AN INVLID KEY
 	}
 	targetCellContent = getCell(newXPosition, newYPosition);
 	if (targetCellContent == 'W' || targetOutOfBounds) {
 		Notify();
 		Report("Invalid move");
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
-		return;
+		return false;
 	}
 	Report(report);
 
@@ -112,11 +112,12 @@ void Map::moveCharacter(char dir)
 		cout << endl << "Would you like to fight this monster? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Begin Fight sequence" << endl;
+			//cout << "Begin Fight sequence" << endl;
+			(getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter())->fight(getMapObjectAt(newXPosition, newYPosition).getCharacter());
 		}
 		else
 			cout << "You have not fought" << endl;
-		return;
+		return false;
 	}
 
 	//put player character at mapObject of target
@@ -136,7 +137,8 @@ void Map::moveCharacter(char dir)
 			map[BeginPositionX][BeginPositionY].setCharacter(map[PlayerPositionX][PlayerPositionY].getCharacter());
 			map[PlayerPositionX][PlayerPositionY].setCharacter(nullptr);
 			Character *p = map[BeginPositionX][BeginPositionY].getCharacter();
-			p->levelUp(1);
+			Dice healthDice = Dice();
+			p->levelUp(healthDice.roll("1d10[+0"));
 			PlayerPositionX = BeginPositionX;
 			PlayerPositionY = BeginPositionY;
 			Notify();
@@ -146,7 +148,7 @@ void Map::moveCharacter(char dir)
 		}
 		else
 			cout << "You have not proceeded" << endl;
-		return;
+		return true;
 	}
 	if (targetCellContent == 'B') {
 		Notify();
@@ -158,7 +160,7 @@ void Map::moveCharacter(char dir)
 		}
 		else
 			cout << "You have not gone back" << endl;
-		return;
+		return true;
 	}
 
 	if (targetCellContent == 'T') {
@@ -192,8 +194,9 @@ void Map::moveCharacter(char dir)
 				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
 			}
 		}
-		return;
+		return true;
 	}
+	return true;
 }
 
 list<MapObject> Map::getListOfMonsterObjs()

@@ -7,6 +7,7 @@ using namespace std;
 #include "Loggable.h"
 #include "Subject.h"
 #include "ItemUI.h"
+#include "Dice.h"
 #include <vector>
 
 class CharacterStrategy;//forward declaration to help compilation
@@ -22,8 +23,10 @@ public:
 	CharacterStrategy* strategy;//INCLUDED VIA CharacterStrategy.cpp 
 	Character();
 	Character(int, int, int, int, int, int, char);
+	Character(int, int, int, int, int, int, int);
 	bool validateNewCharacter();
 	void hit(int);
+
 	void updateFromInventory();
 	void updateBonuses(vector<Enhancement> bonuses);
 	
@@ -33,17 +36,22 @@ public:
 	void levelUp(int);
 	void distributePoints(int);
 	int toHit(int);
-
+	std::vector<int> toHit();
 	void displayStats();
 	//Player stats
 	string getClassName();
 	int getHitPoints();
+	void setHitPoints(int newHitPoints);
 	int getMaxHitPoints();
 	int getLevel();
+	
 	int attack(int);
 	int getArmorClass();
 	int* getAbilityScores();
 	int* getAdjustedAbilityScores();
+
+	void fight(Character* opponent);
+
 protected:
 	int abilityScores[6];
 	int abilityBonuses[6];
@@ -51,12 +59,12 @@ protected:
 	int attackBonus;
 	int damageBonus;
 	int armorClassBonus;
+	int armorClass;
 	int abilityModifiers[6];
 	int currentHitPoints;
 	int maxHitPoints;
-	int armorClass;
 	int level;
-
+	int attacks;
 	string className;
 };
 

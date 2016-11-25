@@ -215,6 +215,7 @@ int main() {
 		playerCharacter->carriedItems = playerPack;
 		playerCharacter->itemManager = itemView;
 		playerCharacter->strategy = new HumanPlayerStrategy();
+		playerCharacter->updateFromInventory();
 		bool inventoryMode = false;
 		bool playerMode = false;
 		system("CLS");

@@ -10,6 +10,7 @@ using namespace std;
 #include "Loggable.h"
 #include "Observer.h"
 #include "MapObject.h"
+#include "Dice.h"
 
 //! Class implementing a game map
 class Map : public Observable, public Loggable
@@ -49,7 +50,7 @@ public:
 	MapObject **map;
 	int nextMap;
 
-	void moveCharacter(char dir);
+	bool moveCharacter(char dir);
 	list<MapObject> getListOfMonsterObjs();
 	void moveMonster(MapObject monsterMapObject);
 };

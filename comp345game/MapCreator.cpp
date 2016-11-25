@@ -6,6 +6,8 @@ void MapCreator::runMenu()
 {
 	std::string userInput = "";
 	bool running = true;
+	const string MAPS_PATH = "../maps/";
+	const string CHARACTERS_PATH = "../characters/";
 	while (running)
 	{
 		std::cout << "Welcome to the Map and Campaign Creating and Editing Tool!" << std::endl << "Would you like to load a map or camapign (l), create a new one (n), or quit (q)?" << std::endl;
@@ -16,7 +18,7 @@ void MapCreator::runMenu()
 			std::cin >> userInput;
 			if (userInput == "(m)" || userInput == "m" || userInput == "M" || userInput == "(M)")
 			{
-				Map loadedMap = *MapCreator::loadMap();
+				Map loadedMap = *loadMap(FileLoader::mapSelection());
 				std::cout << "Here is the loaded map!" << std::endl;
 				MapCreator::viewMap(loadedMap);
 				Map editedMap = *MapCreator::editMap(loadedMap);
@@ -184,11 +186,12 @@ Campaign * MapCreator::buildCampaign(int numberOfMaps, std::string name)
 
 void MapCreator::saveMap(Map mapToSave, std::string filepath)
 {
+	const string MAPS_PATH = "../maps/";
 	if (mapToSave.validatePath())
 	{
 		char blankSpace = ' ';
 		std::ofstream fileToWrite;
-		fileToWrite.open(filepath, std::ifstream::out | std::ifstream::trunc);
+		fileToWrite.open((MAPS_PATH + filepath), std::ifstream::out | std::ifstream::trunc);
 		fileToWrite.clear();
 		int width = mapToSave.getWidth();
 		int length = mapToSave.getHeight();
@@ -217,6 +220,7 @@ void MapCreator::saveMap(Map mapToSave, std::string filepath)
 
 void MapCreator::saveMap(Map mapToSave)
 {
+	const string MAPS_PATH = "../maps/";
 	if (mapToSave.validatePath())
 	{
 		char blankSpace = ' ';
@@ -229,7 +233,7 @@ void MapCreator::saveMap(Map mapToSave)
 			std::cout << "Where would you like the file saved?" << std::endl;
 			std::cin >> filePath;
 			try {
-				fileToWrite.open(filePath, std::ifstream::out | std::ifstream::trunc);
+				fileToWrite.open((MAPS_PATH + filePath), std::ifstream::out | std::ifstream::trunc);
 				fileToWrite.clear();
 				invalidInput = false;
 			}

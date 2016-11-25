@@ -8,6 +8,8 @@
 #include <string>
 #include<iostream>
 
+class MapObject;//forward declaration to help compilation
+
 //! Constructor: creates character with random ability scores 
 Character::Character()
 {
@@ -25,7 +27,10 @@ Character::Character()
 	abilityScores[3] = 3;
 	abilityScores[4] = 3;
 	abilityScores[5] = 3;
-
+	for (int i = 0; i < 6; i++)
+	{
+		abilityBonuses[i] = 0;
+	}
 	while (abilityPool != 0)
 	{
 		int i = rand() % 6;
@@ -41,7 +46,7 @@ Character::Character()
 	maxHitPoints = 10;
 	initAbilityModifiers();
 	currentHitPoints = maxHitPoints;
-
+	baseAttackBonus = 1;
 	level = 1;
 }
 
@@ -55,13 +60,44 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 	abilityScores[3] = intel;
 	abilityScores[4] = wis;
 	abilityScores[5] = cha;
-
+	for (int i = 0; i < 6; i++)
+	{
+		abilityBonuses[i] = 0;
+	}
 	//default hit points is 10 but is affected by ability modifiers.
 	maxHitPoints = 10;
 	initAbilityModifiers();
 	currentHitPoints = maxHitPoints;
-
+	baseAttackBonus = 1;
 	level = 1;
+}
+
+Character::Character(int str, int dex, int con, int intel, int wis, int cha, int lvl)
+{
+	isPlayer = 'P';
+	abilityScores[0] = str;
+	abilityScores[1] = dex;
+	abilityScores[2] = con;
+	abilityScores[3] = intel;
+	abilityScores[4] = wis;
+	abilityScores[5] = cha;
+	for (int i = 0; i < 6; i++)
+	{
+		abilityBonuses[i] = 0;
+	}
+	maxHitPoints = 10;
+	initAbilityModifiers();
+	currentHitPoints = maxHitPoints;
+	baseAttackBonus = 1;
+	level = 1;
+	int levelsToGo = lvl - level;
+	while (levelsToGo > 0)
+	{
+		Dice hitDice = Dice();
+		int healthRoll = hitDice.roll("1d10[+0]");
+		levelUp(healthRoll);
+		levelsToGo--;
+	}
 }
 
 //! Implementation of the verification of a newly created Character
@@ -87,11 +123,19 @@ void Character::updateFromInventory()
 {
 	std::vector<Enhancement> currentBonus = wornItems->getBonuses();
 	updateBonuses(currentBonus);
+	initAbilityModifiers();
 }
 
 void Character::updateBonuses(vector<Enhancement> bonuses)
 {
 	int numberOfBonuses = bonuses.size();
+	for (int i = 0; i < 6; i++)
+	{
+		abilityBonuses[i] = 0;
+	}
+	armorClassBonus = 0;
+	attackBonus = 0;
+	damageBonus = 0;
 	for (int i = 0; i < numberOfBonuses; i++)
 	{
 		string bonusType = bonuses.at(i).getType();
@@ -119,7 +163,7 @@ void Character::updateBonuses(vector<Enhancement> bonuses)
 		{
 			abilityBonuses[5] = bonuses.at(i).getBonus();
 		}
-		else if (bonusType == "Armor")
+		else if (bonusType == "Armor Class")
 		{
 			armorClassBonus = bonuses.at(i).getBonus();
 		}
@@ -156,6 +200,11 @@ int Character::getHitPoints()
 	return currentHitPoints;
 }
 
+void Character::setHitPoints(int newHitPoints)
+{
+	currentHitPoints = newHitPoints;
+}
+
 int Character::getMaxHitPoints()
 {
 	return maxHitPoints;
@@ -164,12 +213,15 @@ int Character::getMaxHitPoints()
 //! Implementation of initializing ability modifiers and their effects: https://www.dandwiki.com/wiki/MSRD:Ability_Scores
 void Character::initAbilityModifiers()
 {
+	maxHitPoints = maxHitPoints - (abilityModifiers[2] * level);
 	for (int i = 0; i < 6; i++)
 	{
-		abilityModifiers[i] = floor(abilityScores[i] / 2) - 5;
+		abilityModifiers[i] = floor((abilityScores[i] + abilityBonuses[i]) / 2) - 5;
 	}
-
-	maxHitPoints = maxHitPoints + abilityModifiers[2];
+	maxHitPoints = maxHitPoints + (abilityModifiers[2] * level);
+	if (currentHitPoints > maxHitPoints)
+		currentHitPoints = maxHitPoints;
+	armorClass = 10 + abilityModifiers[1];
 }
 
 int Character::getLevel()
@@ -187,7 +239,8 @@ void Character::levelUp(int diceRoll)
 	Report("Player levels up!");
 	level++;
 	baseAttackBonus++;
-	maxHitPoints = maxHitPoints + diceRoll;
+	attacks = 1 + ((baseAttackBonus - 5) / 5);
+	maxHitPoints = maxHitPoints + diceRoll + abilityModifiers[2];
 	Notify();
 }
 
@@ -218,7 +271,18 @@ void Character::distributePoints(int points)
 
 int Character::toHit(int diceRoll)
 {
-	return (diceRoll + abilityModifiers[0] + attackBonus);
+	return (diceRoll + abilityModifiers[0] + baseAttackBonus + attackBonus);
+}
+
+std::vector<int> Character::toHit()
+{
+	std::vector<int> attackResults;
+	Dice attackRoll = Dice();
+	for (int i = 0; i < attacks; i++)
+	{
+		attackResults.push_back(attackRoll.roll("1d20[+0]") + abilityModifiers[0] + baseAttackBonus + attackBonus- (i * 5));
+	}
+	return attackResults;
 }
 
 void Character::displayStats() {
@@ -227,20 +291,53 @@ void Character::displayStats() {
 	printf("Level %d Fighter\n", getLevel());// , getClassName());
 	printf("HP: %d/%d\n\n", getHitPoints(), getMaxHitPoints());
 	
-	int *abilities = getAbilityScores();
-	int *adjusted = getAbilityScores();
-	
-	printf("AC: %d\n", adjusted[6] == NULL ? 0 : adjusted[6]);
-	printf("Attack Bonus: %d\n", adjusted[7]);
-	printf("Damage: %d\n\n", adjusted[8]);
+	printf("AC: %d (+%d)\n", getArmorClass(), armorClassBonus);
+	printf("Attack Bonus: %d (+%d)\n", toHit(0), attackBonus);
+	printf("Damage Bonus: %d (+%d)\n\n", attack(0), damageBonus);
 
 	for (int i = 0; i < 6; i++) {
-		printf("%s: %d (+%d)\n", abilityNames[i].c_str(), abilities[i], adjusted[i] - abilities[i]);
-	}
+		printf("%s: %d [+%d] (+%d)\n", abilityNames[i].c_str(), (abilityScores[i] + abilityBonuses[i]), abilityModifiers[i], abilityBonuses[i]);
+	}	
 }
 
-//CharacterStrategy::CharacterStrategy() {
-//}
-//void CharacterStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP) {
-//	//will be overwritten by each child strategy
-//};
+void Character::fight(Character* opponent)
+{
+	//HANDLES ALL FIGHT LOGIC
+	int damageOnOpponent = 0;
+	//mutliply by number of attacks
+	std::vector<int> attackResults = toHit();
+	int numAttacks = attackResults.size();
+	int enemyAC = opponent->getArmorClass();
+	for (int i = 0; i < numAttacks; i++)
+	{
+		if (attackResults.at(i) < enemyAC)
+		{
+			attackResults.erase(attackResults.begin() + i);
+		}
+	}
+	numAttacks = attackResults.size();
+	if (numAttacks < 1)
+	{
+		cout << damageOnOpponent << "All attacks missed!" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < numAttacks; i++)
+		{
+			Dice damageDie = Dice();
+			int damageRoll = damageDie.roll("1d6[+0]");
+			damageOnOpponent += attack(damageRoll);
+		}
+	}
+	opponent->setHitPoints(opponent->getHitPoints() - damageOnOpponent);
+	cout << damageOnOpponent << " damage was done to the Opponent!" << endl;
+	if (opponent->getHitPoints() <= 0) {
+		cout << "The Opponent has been defeated!" << endl;
+		//handle destory monster
+		//probably a method of map that will remove it
+	}
+
+	cout << "fight done!";
+	getchar();
+
+}
