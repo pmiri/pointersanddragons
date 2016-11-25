@@ -79,7 +79,7 @@ Character *CharacterEditor::editCharacter(Character *ch) {
 Character *CharacterEditor::loadCharacter(string path) {
 	string line = "";
 	ifstream myfile;
-	int str, dex, con, intel, wis, cha;
+	int str, dex, con, intel, wis, cha, level;
 	char isP;
 	myfile.open(path);
 	if (myfile.is_open())
@@ -87,6 +87,8 @@ Character *CharacterEditor::loadCharacter(string path) {
 		if (getline(myfile, line))
 			isP = *(line.c_str());
 		else return nullptr;
+		if (getline(myfile, line))
+			level = atoi(line.c_str());
 		if (getline(myfile, line))
 			str = atoi(line.c_str());
 		else return nullptr;
@@ -107,12 +109,12 @@ Character *CharacterEditor::loadCharacter(string path) {
 		else return nullptr;
 		myfile.close();
 
-		if (isP == 'F') {
-			Character *character = new Fighter(str, dex, con, intel, wis, cha, isP);
+		if (isP == 'P') {
+			Character *character = new Fighter(str, dex, con, intel, wis, cha, isP, level);
 			return character;
 		}
 		else {
-			Character *character = new Character(str, dex, con, intel, wis, cha, isP);
+			Character *character = new Character(str, dex, con, intel, wis, cha, isP, level);
 			return character;
 		}
 	}
@@ -129,6 +131,7 @@ void CharacterEditor::saveCharacterToFile(string path, Character ch) {
 	int *abilityScores = ch.getAbilityScores();
 	myfile.open(path);
 	myfile << ch.isPlayer << endl;
+	myfile << ch.getLevel() << endl;
 	myfile << abilityScores[0] << endl;
 	myfile << abilityScores[1] << endl;
 	myfile << abilityScores[2] << endl;

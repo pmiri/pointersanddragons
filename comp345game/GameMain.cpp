@@ -110,6 +110,7 @@ void changeMap(bool next) {
 
 int main() {
 	GameLogger* logger = new GameLogger();
+	logger->Log("Log created");
 
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
@@ -179,8 +180,8 @@ int main() {
 		MapUI mapView = MapUI::MapUI(map);
 		system("CLS");
 
-		Character *character = new Character;
-
+		Character *character;
+		character->Connect(logger);
 
 		do {
 			cout << "Character - Load(1) or Create(2):" << endl;
@@ -276,7 +277,10 @@ int main() {
 	
 	//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
 	
+	logger->Log("Log Over");
 	system("pause");
+
+	delete logger;
 	return 0;
 }
 
