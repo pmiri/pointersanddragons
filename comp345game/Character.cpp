@@ -7,8 +7,16 @@
 #include <time.h>
 #include <string>
 #include<iostream>
+#include <conio.h>
 
 class MapObject;//forward declaration to help compilation
+
+inline char characterKeyPress() {
+	int i = _getche();
+	char input = static_cast<char>(i);
+	cout << endl;
+	return input;
+}
 
 //! Constructor: creates character with random ability scores 
 Character::Character()
@@ -337,7 +345,7 @@ void Character::fight(Character* opponent)
 		//probably a method of map that will remove it
 	}
 
-	cout << "fight done!";
-	getchar();
+	cout << "fight done!" << endl << "Press any key to continue";
+	characterKeyPress();
 
 }

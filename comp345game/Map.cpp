@@ -248,6 +248,7 @@ void Map::moveMonster(MapObject monsterMapObject) {
 	//TODO else if the target cell is a player, start up fighting
 	else if (targetCellContent == 'P') {
 		cout << "A Monster is attacking!" << endl << "Start Fight Sequence" << endl;//player.Fight(monster); ?
+		monsterMapObject.getCharacter()->fight(getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter());
 	}
 	else {
 		map[newMXPosition][newMYPosition].setCharacter(monsterMapObject.getCharacter());
