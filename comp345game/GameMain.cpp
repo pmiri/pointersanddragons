@@ -110,6 +110,7 @@ void changeMap(bool next) {
 
 int main() {
 	GameLogger* logger = new GameLogger();
+	logger->Log("Log created");
 
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
