@@ -50,5 +50,7 @@ public:
 	int nextMap;
 
 	void moveCharacter(char dir);
+	list<MapObject> getListOfMonsterObjs();
+	void moveMonster(MapObject monsterMapObject);
 };
 

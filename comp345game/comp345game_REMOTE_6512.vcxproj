@@ -120,15 +120,12 @@
     <ClInclude Include="CharacterStrategy.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
-    <ClInclude Include="GameLogger.h" />
     <ClInclude Include="HumanPlayerStrategy.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemBuilder.h" />
     <ClInclude Include="ItemContainer.h" />
     <ClInclude Include="ItemUI.h" />
-    <ClInclude Include="Loggable.h" />
-    <ClInclude Include="Logger.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapBuilder.h" />
     <ClInclude Include="MapCreator.h" />
@@ -151,7 +148,6 @@
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Enhancement.cpp" />
     <ClCompile Include="Fighter.cpp" />
-    <ClCompile Include="GameLogger.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="HumanPlayerStrategy.cpp" />
     <ClCompile Include="Inventory.cpp" />
@@ -159,8 +155,6 @@
     <ClCompile Include="ItemBuilder.cpp" />
     <ClCompile Include="ItemContainer.cpp" />
     <ClCompile Include="ItemUI.cpp" />
-    <ClCompile Include="Loggable.cpp" />
-    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapBuilder.cpp" />
     <ClCompile Include="MapCreator.cpp" />
@@ -169,6 +163,7 @@
     <ClCompile Include="MapUI.cpp" />
     <ClCompile Include="Observable.cpp" />
     <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="Subject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -78,7 +78,7 @@ GameLogger::~GameLogger()
 {
 }
 
-
+/*
 int main() {
 	GameLogger* logger = new GameLogger();
 
@@ -101,3 +101,4 @@ int main() {
 
 	return 0;
 }
+*/

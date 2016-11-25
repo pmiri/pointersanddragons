@@ -238,3 +238,9 @@ void Character::displayStats() {
 		printf("%s: %d (+%d)\n", abilityNames[i].c_str(), abilities[i], adjusted[i] - abilities[i]);
 	}
 }
+
+//CharacterStrategy::CharacterStrategy() {
+//}
+//void CharacterStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP) {
+//	//will be overwritten by each child strategy
+//};

@@ -12,6 +12,7 @@
 #include "Campaign.h"
 #include "MapCreator.h"
 #include "ItemBuilder.h"
+#include "HumanPlayerStrategy.h"
 #include "GameLogger.h"
 
 using namespace std;
@@ -107,7 +108,6 @@ void changeMap(bool next) {
 	*map = next ? campaign->nextMap() : campaign->previousMap();
 }
 
-/*
 int main() {
 	GameLogger* logger = new GameLogger();
 
@@ -176,7 +176,7 @@ int main() {
 		//Selecting a map and a character from a list of saved ones
 		cout << "Load a Map:" << endl;
 		map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
-		MapUI mapView = MapUI(map);
+		MapUI mapView = MapUI::MapUI(map);
 		system("CLS");
 
 		Character *character;
@@ -214,6 +214,7 @@ int main() {
 		playerCharacter->wornItems = playerInventory;
 		playerCharacter->carriedItems = playerPack;
 		playerCharacter->itemManager = itemView;
+		playerCharacter->strategy = new HumanPlayerStrategy();
 		bool inventoryMode = false;
 		bool playerMode = false;
 		system("CLS");
@@ -225,50 +226,45 @@ int main() {
 		//TODO: 	Starting the game by having the player character placed on the starting point
 
 		//TODO: 	Moving the character, square by square on the map
-		while (!gameFinished) {
-			//check inventory
-			string mapString = mapView.getMapString();
-			in = keyPress();
-			if (in == 'i' | in == 'I')
-			{
-				inventoryMode = !inventoryMode;
-			}
-			else if (in == 'p' || in == 'P') {
-				playerMode = !playerMode;
-			}
-			if (inventoryMode)
-			{
-				system("cls");
-				bool validEquip = itemView->organizeItems(in);
-				itemView->PrintInventory();
-				cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
-				if (validEquip)
-					playerCharacter->updateFromInventory();
-			}
-			else if (playerMode) {
-				system("cls");
-				playerCharacter->displayStats();
-			}
-			else
-			{
-				map->moveCharacter(in);
-				cout << "use WASD to move the Player" << endl;
-			}
-			//ask do action (ends turn)
 
-			//head to next map if prompted
-			if (map->getNextMap() == -1)
-			{
-				changeMap(false);
-				map->PlacePlayer(playerCharacter);
+		int* turnCount = new int;
+		list<MapObject> gameMonsterList;
+		while (!gameFinished) {
+			
+			*turnCount = 6;
+			while (*turnCount > 0) {
+				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
+				cout << *turnCount << " player turns left";
 			}
-			else if (map->getNextMap() == 1)
-			{
-				changeMap(true);
-				map->PlacePlayer(playerCharacter);
+			//TODO monster turn
+			*turnCount = 6;
+			while (*turnCount > 0) {
+				gameMonsterList = list<MapObject>();
+				gameMonsterList = map->getListOfMonsterObjs();
+				for each (MapObject monObj in gameMonsterList)
+				{
+					monObj.getCharacter()->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, &monObj);
+				}
+				*turnCount = *turnCount - 1;
+				cout << *turnCount << " monster turns left";
 			}
+
+			//TODO NPC turn
 		}
-		delete logger;
+
+		//TODO redo how map change works
+		//	//head to next map if prompted
+		//	if (map->getNextMap() == -1)
+		//	{
+		//		changeMap(false);
+		//		map->PlacePlayer(playerCharacter);
+		//	}
+		//	else if (map->getNextMap() == 1)
+		//	{
+		//		changeMap(true);
+		//		map->PlacePlayer(playerCharacter);
+		//	}
+		//}
 		delete playerCharacter;
 		delete playerInventory;
 		delete playerPack;
@@ -282,4 +278,4 @@ int main() {
 	system("pause");
 	return 0;
 }
-*/
+

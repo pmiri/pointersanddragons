@@ -1,2 +1,0 @@
-Rolled a 9
-Player attacks and deals 9 damage!

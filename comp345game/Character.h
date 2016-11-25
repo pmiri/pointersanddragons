@@ -2,15 +2,14 @@
 //! @file 
 //! @brief Header file for the Character class  
 //!
-
+using namespace std;
 #include <iostream>
 #include "Loggable.h"
 #include "Subject.h"
 #include "ItemUI.h"
 #include <vector>
-using namespace std;
 
-#pragma once
+class CharacterStrategy;//forward declaration to help compilation
 
 //! Class that implements a character 
 class Character: public Observable, public Loggable
@@ -20,6 +19,7 @@ public:
 	Inventory* wornItems;
 	Backpack* carriedItems;
 	ItemUI* itemManager;
+	CharacterStrategy* strategy;//INCLUDED VIA CharacterStrategy.cpp 
 	Character();
 	Character(int, int, int, int, int, int, char);
 	bool validateNewCharacter();
@@ -59,3 +59,10 @@ protected:
 
 	string className;
 };
+
+////#include "MapUI.h";
+//class CharacterStrategy {
+//public:
+//	CharacterStrategy::CharacterStrategy();
+//	virtual void doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP);
+//};

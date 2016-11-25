@@ -120,8 +120,11 @@
     <ClInclude Include="CharacterStrategy.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
+<<<<<<< HEAD
     <ClInclude Include="GameLogger.h" />
+=======
     <ClInclude Include="HumanPlayerStrategy.h" />
+>>>>>>> refs/remotes/origin/master
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemBuilder.h" />
@@ -137,7 +140,6 @@
     <ClInclude Include="MapUI.h" />
     <ClInclude Include="Observable.h" />
     <ClInclude Include="Observer.h" />
-    <ClInclude Include="Subject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AggressorStrategy.cpp" />
