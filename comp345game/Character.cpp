@@ -7,8 +7,16 @@
 #include <time.h>
 #include <string>
 #include<iostream>
+#include <conio.h>
 
 class MapObject;//forward declaration to help compilation
+
+inline char characterKeyPress() {
+	int i = _getche();
+	char input = static_cast<char>(i);
+	cout << endl;
+	return input;
+}
 
 //! Constructor: creates character with random ability scores 
 Character::Character()
@@ -115,6 +123,7 @@ bool Character::validateNewCharacter()
 void Character::hit(int damage)
 {
 	currentHitPoints = currentHitPoints - damage;
+	Report("Player takes " + to_string(damage) + " damage!");
 	Notify();
 }
 
@@ -235,6 +244,7 @@ string Character::getClassName()
 
 void Character::levelUp(int diceRoll)
 {
+	Report("Player levels up!");
 	level++;
 	baseAttackBonus++;
 	attacks = 1 + ((baseAttackBonus - 5) / 5);
@@ -245,7 +255,9 @@ void Character::levelUp(int diceRoll)
 int Character::attack(int diceRoll)
 {
 	//damage is equal to dice roll + strength modifier
-	return diceRoll + abilityModifiers[0] + damageBonus;
+	int attack = diceRoll + abilityModifiers[0] + damageBonus;
+	Report("Player attacks and deals " + to_string(attack) + " damage!");
+	return attack;
 }
 
 //! method to return the sum armor class of the character
@@ -332,5 +344,8 @@ void Character::fight(Character* opponent)
 		//handle destory monster
 		//probably a method of map that will remove it
 	}
+
+	cout << "fight done!" << endl << "Press any key to continue";
+	characterKeyPress();
 
 }

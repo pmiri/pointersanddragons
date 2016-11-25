@@ -54,9 +54,11 @@ bool Map::moveCharacter(char dir)
 	int newYPosition = PlayerPositionY;
 	char targetCellContent = ' ';
 	bool targetOutOfBounds = false;
+	string report;
 
 	switch (toupper(dir)) {
 	case 'W':
+		report = "Player moves up";
 		if (PlayerPositionY - 1 >= 0)//valid up move
 		{
 			newYPosition = PlayerPositionY - 1;
@@ -65,6 +67,7 @@ bool Map::moveCharacter(char dir)
 			targetOutOfBounds = true;
 		break;
 	case 'A':
+		report = "Player moves left";
 		if (PlayerPositionX - 1 >= 0)//valid left move
 		{
 			newXPosition = PlayerPositionX - 1;
@@ -73,6 +76,7 @@ bool Map::moveCharacter(char dir)
 			targetOutOfBounds = true;
 		break;
 	case 'S':
+		report = ("Player moves down");
 		if (PlayerPositionY + 1 < MAP_LENGTH)//valid down move
 		{
 			newYPosition = PlayerPositionY + 1;
@@ -81,6 +85,7 @@ bool Map::moveCharacter(char dir)
 			targetOutOfBounds = true;
 		break;
 	case 'D':
+		report = "Player moves right";
 		if (PlayerPositionX + 1 < MAP_WIDTH)//valid right move
 		{
 			newXPosition = PlayerPositionX + 1;
@@ -96,15 +101,19 @@ bool Map::moveCharacter(char dir)
 	targetCellContent = getCell(newXPosition, newYPosition);
 	if (targetCellContent == 'W' || targetOutOfBounds) {
 		Notify();
+		Report("Invalid move");
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
 		return false;
 	}
+	Report(report);
+
 	if (targetCellContent == 'M') {
 		Notify();
 		cout << endl << "Would you like to fight this monster? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Begin Fight sequence" << endl;
+			//cout << "Begin Fight sequence" << endl;
+			(getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter())->fight(getMapObjectAt(newXPosition, newYPosition).getCharacter());
 		}
 		else
 			cout << "You have not fought" << endl;
@@ -134,6 +143,7 @@ bool Map::moveCharacter(char dir)
 			PlayerPositionY = BeginPositionY;
 			Notify();
 			cout << "Level up!" << endl;
+			Report("Exited current map");
 			//nextMap = 1;
 		}
 		else
@@ -142,6 +152,7 @@ bool Map::moveCharacter(char dir)
 	}
 	if (targetCellContent == 'B') {
 		Notify();
+		Report("Enters map");
 		cout << endl << "You are at the Beginning, would you like to go to the previous map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
@@ -237,6 +248,7 @@ void Map::moveMonster(MapObject monsterMapObject) {
 	//TODO else if the target cell is a player, start up fighting
 	else if (targetCellContent == 'P') {
 		cout << "A Monster is attacking!" << endl << "Start Fight Sequence" << endl;//player.Fight(monster); ?
+		monsterMapObject.getCharacter()->fight(getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter());
 	}
 	else {
 		map[newMXPosition][newMYPosition].setCharacter(monsterMapObject.getCharacter());

@@ -112,20 +112,19 @@
   <ItemGroup>
     <ClInclude Include="AggressorStrategy.h" />
     <ClInclude Include="Backpack.h" />
-    <ClInclude Include="BullyBuilder.h" />
     <ClInclude Include="Campaign.h" />
     <ClInclude Include="CampaignEditor.h" />
     <ClInclude Include="Character.h" />
-    <ClInclude Include="CharacterBuilder.h" />
-    <ClInclude Include="CharacterCreator.h" />
     <ClInclude Include="CharacterObserver.h" />
     <ClInclude Include="CharacterEditor.h" />
     <ClInclude Include="CharacterStrategy.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
-    <ClInclude Include="FileLoader.h" />
+<<<<<<< HEAD
     <ClInclude Include="GameLogger.h" />
+=======
     <ClInclude Include="HumanPlayerStrategy.h" />
+>>>>>>> refs/remotes/origin/master
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemBuilder.h" />
@@ -139,28 +138,21 @@
     <ClInclude Include="MapEditor.h" />
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="MapUI.h" />
-    <ClInclude Include="MonsterBuilder.h" />
-    <ClInclude Include="NimbleBuilder.h" />
     <ClInclude Include="Observable.h" />
     <ClInclude Include="Observer.h" />
-    <ClInclude Include="Subject.h" />
-    <ClInclude Include="TankBuilder.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AggressorStrategy.cpp" />
     <ClCompile Include="Backpack.cpp" />
-    <ClCompile Include="BullyBuilder.cpp" />
     <ClCompile Include="Campaign.cpp" />
     <ClCompile Include="CampaignEditor.cpp" />
     <ClCompile Include="Character.cpp" />
-    <ClCompile Include="CharacterBuilder.cpp" />
     <ClCompile Include="CharacterEditor.cpp" />
     <ClCompile Include="CharacterObserver.cpp" />
     <ClCompile Include="CharacterStrategy.cpp" />
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Enhancement.cpp" />
     <ClCompile Include="Fighter.cpp" />
-    <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="GameLogger.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="HumanPlayerStrategy.cpp" />
@@ -177,12 +169,8 @@
     <ClCompile Include="MapEditor.cpp" />
     <ClCompile Include="MapObject.cpp" />
     <ClCompile Include="MapUI.cpp" />
-    <ClCompile Include="MonsterBuilder.cpp" />
-    <ClCompile Include="NimbleBuilder.cpp" />
     <ClCompile Include="Observable.cpp" />
     <ClCompile Include="Observer.cpp" />
-    <ClCompile Include="Subject.cpp" />
-    <ClCompile Include="TankBuilder.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

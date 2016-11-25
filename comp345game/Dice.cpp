@@ -1,3 +1,4 @@
+#include <ostream>
 #include "dice.h"
 
 
@@ -17,15 +18,19 @@ int Dice::roll(string input) {
 					total += rand() % diceSize + 1;
 				}
 				total += addNum;
+				string s = "Rolled a " + std::to_string(total);
+				Report(s);
 				return total;
 			}
 			else
 			{
+				Report("Incorrect format");
 				return -1;
 			}
 		}
 		else
 		{
+			Report("Incorrect format");
 			return -1;
 		}
 	}

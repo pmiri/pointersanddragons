@@ -4,6 +4,7 @@
 //!
 using namespace std;
 #include <iostream>
+#include "Loggable.h"
 #include "Subject.h"
 #include "ItemUI.h"
 #include "Dice.h"
@@ -12,7 +13,7 @@ using namespace std;
 class CharacterStrategy;//forward declaration to help compilation
 
 //! Class that implements a character 
-class Character : public Subject
+class Character: public Observable, public Loggable
 {
 public:
 	char isPlayer;

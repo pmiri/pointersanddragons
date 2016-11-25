@@ -13,6 +13,7 @@
 #include "MapCreator.h"
 #include "ItemBuilder.h"
 #include "HumanPlayerStrategy.h"
+#include "GameLogger.h"
 
 using namespace std;
 
@@ -108,6 +109,9 @@ void changeMap(bool next) {
 }
 
 int main() {
+	GameLogger* logger = new GameLogger();
+	logger->Log("Log created");
+
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
 	cout << "Press I to enter the item editor, M to open the Map/Campaign eidtor, and anything else to play.\n";
@@ -276,5 +280,4 @@ int main() {
 	system("pause");
 	return 0;
 }
-
 

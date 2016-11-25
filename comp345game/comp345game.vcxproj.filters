@@ -70,7 +70,13 @@
     <ClCompile Include="Observer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Subject.cpp">
+    <ClCompile Include="GameLogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Loggable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AggressorStrategy.cpp">
@@ -97,7 +103,12 @@
     <ClCompile Include="MonsterBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FileLoader.cpp" />
+    <ClCompile Include="FileLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Backpack.h">
@@ -163,7 +174,13 @@
     <ClInclude Include="Observer.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Subject.h">
+    <ClInclude Include="GameLogger.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Loggable.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="HumanPlayerStrategy.h">
@@ -194,6 +211,9 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="FileLoader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

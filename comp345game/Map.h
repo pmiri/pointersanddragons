@@ -7,11 +7,13 @@
 using namespace std;
 #include <list>
 #include "Observable.h"
+#include "Loggable.h"
+#include "Observer.h"
 #include "MapObject.h"
 #include "Dice.h"
 
 //! Class implementing a game map
-class Map : public Observable
+class Map : public Observable, public Loggable
 {
 public:
 	//! constants for cell objects

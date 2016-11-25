@@ -1,10 +1,12 @@
 #pragma once
+
+#include "Loggable.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
-class Dice
+class Dice : public Loggable
 {
 	public:
-		static int roll(string input);
+		int roll(string input);
 };
