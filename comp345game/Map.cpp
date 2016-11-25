@@ -104,7 +104,8 @@ bool Map::moveCharacter(char dir)
 		cout << endl << "Would you like to fight this monster? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			cout << "Begin Fight sequence" << endl;
+			//cout << "Begin Fight sequence" << endl;
+			(getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter())->fight(getMapObjectAt(newXPosition, newYPosition).getCharacter());
 		}
 		else
 			cout << "You have not fought" << endl;

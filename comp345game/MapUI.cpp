@@ -51,12 +51,13 @@ void MapUI::PrintMap() {
 						ItemContainer droppedTreasure = ItemContainer(monster->carriedItems->getItems());
 						_subject->getMapObjectAt(w, h).setItem(droppedTreasure.getItems());
 						_subject->getMapObjectAt(w, h).setCharacter(NULL);//there might be a problem here
+						mapString += "T";
 					}
+					mapString += " ";
 				}
 				else {
-					//yo?
+					mapString += "M";
 				}
-				mapString += "M";
 			}
 			else if (cellContent == 'F') {
 				mapString += "F";

@@ -333,4 +333,7 @@ void Character::fight(Character* opponent)
 		//probably a method of map that will remove it
 	}
 
+	cout << "fight done!";
+	getchar();
+
 }
