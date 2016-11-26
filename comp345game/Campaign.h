@@ -13,22 +13,19 @@ class Campaign
 public:
 	Campaign();
 	Campaign(int);
-	void addMap(Map);
 	string name;
-	void addNewMap(Map);
-	void addNewMap(Map, int);
-	Map getMapAt(int);
-	Map nextMap();
-	Map previousMap();
+	void addMap(Map*);
+	void addMap(Map*, int);
+	Map* getMapAt(int);
+	Map* nextMap();
+	Map* previousMap();
 	void removeMap(int);
-	void editMap(Map, int);
+	void editMap(Map*, int);
 	int getSize();
 
 	Campaign(string);
-	Campaign(vector<Map>, string);
+	Campaign(vector<Map*>, string);
 private:
-	Map* mapList;
-	vector<Map> mapsInCampaign;
-	int mapCount;
+	vector<Map*> mapsInCampaign;
 	int currentMapIndex = 0;
 };

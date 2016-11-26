@@ -54,7 +54,7 @@ Campaign CampaignEditor::generateCampaign(string fileName)
 	{
 		MapEditor* me = new MapEditor(line);
 		if (me->validMapFile(line))
-			currentCampaign->addMap(me->getCurrentMap());
+			currentCampaign->addMap(&(me->getCurrentMap()));
 		delete me;
 	}
 	return *currentCampaign;

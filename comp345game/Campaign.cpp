@@ -8,30 +8,23 @@ using namespace std;
 
 Campaign::Campaign()
 {
-	mapCount = 0;
 }
 
 Campaign::Campaign(int campaignSize)
 {
-	mapList = new Map[campaignSize];
-	mapCount = 0;
 }
 
-void Campaign::addMap(Map m)
+void Campaign::addMap(Map* map)
 {
-	mapList[mapCount] = m;
-	mapCount++;
-}
-
-void Campaign::addNewMap(Map map)
-{
+	mapsInCampaign.push_back(map);
+	/*Map validator no longer works fyi @pmiri
 	if (map.validatePath())
 		mapsInCampaign.push_back(map);
 	else
-		std::cout << "Invalid map";
+		std::cout << "Invalid map";*/
 }
 
-void Campaign::addNewMap(Map map, int index)
+void Campaign::addMap(Map* map, int index)
 {
 	if (index < mapsInCampaign.size())
 		mapsInCampaign.insert(mapsInCampaign.begin() + index, map);
@@ -39,7 +32,7 @@ void Campaign::addNewMap(Map map, int index)
 		mapsInCampaign.push_back(map);
 }
 
-Map Campaign::getMapAt(int index)
+Map* Campaign::getMapAt(int index)
 {
 	if (index < mapsInCampaign.size())
 		return mapsInCampaign.at(index);
@@ -50,7 +43,7 @@ void Campaign::removeMap(int index)
 	mapsInCampaign.erase(mapsInCampaign.begin() + index);
 }
 
-void Campaign::editMap(Map map, int index)
+void Campaign::editMap(Map* map, int index)
 {
 	mapsInCampaign.at(index) = map;
 }
@@ -65,16 +58,16 @@ Campaign::Campaign(std::string campaignName)
 	name = campaignName;
 }
 
-Campaign::Campaign(std::vector<Map> maps, std::string campaignName)
+Campaign::Campaign(std::vector<Map*> maps, std::string campaignName)
 {
 	name = campaignName;
 	mapsInCampaign = maps;
 }
 
-Map Campaign::nextMap() {
-	return currentMapIndex == mapCount? getMapAt(currentMapIndex) : getMapAt(++currentMapIndex);
+Map* Campaign::nextMap() {
+	return currentMapIndex == mapsInCampaign.size()? getMapAt(currentMapIndex) : getMapAt(++currentMapIndex);
 }
 
-Map Campaign::previousMap() {
+Map* Campaign::previousMap() {
 	return currentMapIndex == 0 ? getMapAt(currentMapIndex) : getMapAt(--currentMapIndex);
 }

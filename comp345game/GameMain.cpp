@@ -49,7 +49,9 @@ string mapSelection() {
 			maps.push_back(ent->d_name);
 			string name = ent->d_name;
 			if (name.find("campaign") != std::string::npos) {
-				campaign->addMap(*MapBuilder::buildFromFile(MAPS_PATH + ent->d_name));
+				
+				Map* currentMap = MapBuilder::buildFromFile(MAPS_PATH + ent->d_name);
+				campaign->addMap(currentMap);
 			}
 			i++;
 		}
@@ -105,7 +107,7 @@ string characterSelection() {
 }
 
 void changeMap(bool next) {
-	*map = next ? campaign->nextMap() : campaign->previousMap();
+	map = next ? campaign->nextMap() : campaign->previousMap();
 }
 
 int main() {
@@ -242,7 +244,7 @@ int main() {
 			while (*turnCount > 0) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
 				if (map->mapFinished) {
-					map = &(campaign->nextMap());
+					map = campaign->nextMap();
 					newMap = true;
 					break;
 				}
