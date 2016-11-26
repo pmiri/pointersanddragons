@@ -108,71 +108,72 @@ void changeMap(bool next) {
 	*map = next ? campaign->nextMap() : campaign->previousMap();
 }
 
+void ItemMenu() {
+	cout << "Welcome to the Item Editor Program! Would you like to create an item, or load an item?" << endl;
+	cout << "Press c to create, l to load." << endl;
+
+	Item item;
+	string filePath;
+	switch (keyPress()) {
+	case 'c':
+		item = ItemBuilder::buildItem();
+		cout << "Would you like to save? (y)" << endl;
+		if (keyPress() == 'y')
+		{
+			cout << "What is the filename you would like to save to?" << endl;
+			cin >> filePath;
+			ItemBuilder::saveItem(filePath, item);
+		}
+		break;
+	case 'l':
+		cout << "What is the filename of the item you want to load?" << endl;
+		cin >> filePath;
+		item = ItemBuilder::loadItem(filePath);
+		item = ItemBuilder::editItem(item);
+		cout << "Would you like to save?" << endl;
+		if (keyPress() == 'y')
+		{
+			cout << "What is the filename you would like to save to?" << endl;
+			cin >> filePath;
+			ItemBuilder::saveItem(filePath, item);
+		}
+		break;
+	default:
+		break;
+	}
+}
+
 int main() {
+	Character* playerCharacter;
+	Inventory* playerInventory;
+	vector<Enhancement> testEnhancement;
+	Enhancement testArmorClassEnhancement;
+	Item testHelm;
+	Enhancement testStrengthEnhancement;
+	Item testBelt;
+	Backpack* playerPack;
+	ItemUI* itemView;
+
 	GameLogger* logger = new GameLogger();
 	logger->Log("Log created");
 
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
-	cout << "Press I to enter the item editor, M to open the Map/Campaign eidtor, and anything else to play.\n";
+	cout << "Press I to enter the Item editor, M to open the Map/Campaign editor, and anything else to play.\n";
 	char in;
-	in = keyPress();
-	if (in == 'i')
-	{
-		cout << "Welcome to the Item Editor Program! Would you like to create an item, or load an item?" << endl;
-		cout << "Press c to create, l to load." << endl;
-		in = keyPress();
-		if (in == 'c')
-		{
-			Item builtItem = ItemBuilder::buildItem();
-			cout << "Would you like to save?" << endl;
-			string input;
-			cin >> input;
-			if (input == "yes" || input == "y")
-			{
-				string filePath;
-				cout << "What is the filename you would like to save to?" << endl;
-				cin >> filePath;
-				ItemBuilder::saveItem(filePath, builtItem);
-			}
-		}
-		else if (in == 'l')
-		{
-			string filePath;
-			cout << "What is the filename of the item you want to load?" << endl;
-			cin >> filePath;
-			Item loadedItem = ItemBuilder::loadItem(filePath);
-			loadedItem = ItemBuilder::editItem(loadedItem);
-			cout << "Would you like to save?" << endl;
-			string input;
-			cin >> input;
-			if (input == "yes" || input == "y")
-			{
-				cout << "What is the filename you would like to save to?" << endl;
-				cin >> filePath;
-				ItemBuilder::saveItem(filePath, loadedItem);
-			}
-		}
-		else
-		{
-			cout << "I didn't understand that! Would you like to try again?" << endl;
-			cout << "Press q to quit" << endl;
-			in = keyPress();
-			if (in == 'q')
-				return 0;
-		}		
-	}
-	else if (in == 'm')
-	{
+	switch (keyPress()) {
+	case 'i':
+		logger->Log("Item Menu opened.");
+		ItemMenu();
+		break;
+	case 'm':
+		logger->Log("Map Creator opened.");
 		MapCreator::runMenu();
-	}
-	else
-	{
-		cout << endl;
+		break;
+	default:
+		system("CLS");
 		cout << "Welcome to our game!" << endl;
 		system("pause");
-
-		system("CLS");
 
 		//Selecting a map and a character from a list of saved ones
 		cout << "Load a Map:" << endl;
@@ -182,44 +183,47 @@ int main() {
 
 		Character *character = new Character;
 
+		bool selected = false;
 		do {
 			cout << "Character - Load(1) or Create(2):" << endl;
-			in = keyPress();
-			if (in == '1') {
+			switch (keyPress()) {
+			case '1':
 				cout << "Please pick a file:" << endl;
 				character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
-			}
-			else if (in == '2')
+				selected = true;
+				break;
+			case '2':
 				character = CharacterEditor::createCharacter();
-			else
+				selected = true;
+				break;
+			default:
 				cout << "Please select the right value";
-		} while (in != '1' && in != '2');
+				break;
+			}
+		} while (!selected);
+
 		//adds the built player to the map
-		Character* playerCharacter = character;
+		playerCharacter = character;
 		playerCharacter->Connect(logger);
-		//(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
 		map->PlacePlayer(playerCharacter);
 		map->setAllMonsters();
-		Inventory* playerInventory = new Inventory();
-		vector<Enhancement> testEnhancement;
-		Enhancement testArmorClassEnhancement = Enhancement("Armor Class", 4);
-		testEnhancement.push_back(testArmorClassEnhancement);
-		Item testHelm = Item("Helmet", testEnhancement, "Helmet of Testing");
-		playerInventory->replaceItem(testHelm);
-		testEnhancement.pop_back();
-		Enhancement testStrengthEnhancement = Enhancement("Strength", 3);
-		testEnhancement.push_back(testStrengthEnhancement);
-		Item testBelt = Item("Belt", testEnhancement, "Belt of Testing");
-		Backpack* playerPack = new Backpack();
-		playerPack->replaceItem(testBelt);
-		ItemUI* itemView = new ItemUI(playerInventory, playerPack);
+
+		playerInventory = new Inventory();
+
+		playerPack = new Backpack();
+		itemView = new ItemUI(playerInventory, playerPack);
+
 		playerCharacter->wornItems = playerInventory;
 		playerCharacter->carriedItems = playerPack;
 		playerCharacter->itemManager = itemView;
 		playerCharacter->strategy = new HumanPlayerStrategy();
 		playerCharacter->updateFromInventory();
+
+		playerInventory = new Inventory();
+
 		bool inventoryMode = false;
 		bool playerMode = false;
+
 		system("CLS");
 		map->Notify();
 		cout << "use WASD to move the Player" << endl;
@@ -233,7 +237,7 @@ int main() {
 		int* turnCount = new int;
 		list<MapObject> gameMonsterList;
 		while (!gameFinished) {
-			
+
 			*turnCount = 6;
 			while (*turnCount > 0) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
@@ -267,29 +271,20 @@ int main() {
 		//GAME END STATE
 		cout << "The player has died!" << endl << "GAME OVER!" << endl;
 
-		//TODO redo how map change works
-		//	//head to next map if prompted
-		//	if (map->getNextMap() == -1)
-		//	{
-		//		changeMap(false);
-		//		map->PlacePlayer(playerCharacter);
-		//	}
-		//	else if (map->getNextMap() == 1)
-		//	{
-		//		changeMap(true);
-		//		map->PlacePlayer(playerCharacter);
-		//	}
-		//}
 		delete playerCharacter;
 		delete playerInventory;
 		delete playerPack;
 		delete itemView;
 		delete campaign;
-	}	
+
+		break;
+	}
+
+
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
-	
+
 	//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
-	
+
 	logger->Log("Log Over");
 	system("pause");
 
