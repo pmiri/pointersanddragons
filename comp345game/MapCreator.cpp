@@ -18,9 +18,9 @@ void MapCreator::runMenu()
 			std::cin >> userInput;
 			if (userInput == "(m)" || userInput == "m" || userInput == "M" || userInput == "(M)")
 			{
-				Map loadedMap = *MapBuilder::buildFromFile(FileLoader::mapSelection());
+				Map* loadedMap = MapBuilder::buildFromFile(FileLoader::mapSelection());
 				std::cout << "Here is the loaded map!" << std::endl;
-				MapCreator::viewMap(loadedMap);
+				MapCreator::viewMap(*loadedMap);
 				Map editedMap = *MapCreator::editMap(loadedMap);
 				std::cout << "Would you like to save the edited map (y) or not (n)?" << std::endl;
 				std::cin >> userInput;
@@ -371,12 +371,12 @@ Map *MapCreator::loadMap()
 	return nullptr;
 }
 
-Map *MapCreator::editMap(Map mapToEdit)
+Map *MapCreator::editMap(Map* mapToEdit)
 {
 	bool running = true;
 	int length, width;
-	length = mapToEdit.getHeight();
-	width = mapToEdit.getWidth();
+	length = mapToEdit->getHeight();
+	width = mapToEdit->getWidth();
 	int row, column;
 	std::string userInput;
 	while (running)
@@ -385,13 +385,13 @@ Map *MapCreator::editMap(Map mapToEdit)
 		column = MapCreator::getColumn(width);
 		std::cout << "Please input the desired tile for the tile at row " << row << " and column " << column << ".\n";
 		char tile = MapCreator::getTile();
-		mapToEdit.fillCell(row, column, MapObject(row, column, tile));
+		mapToEdit->fillCell(column, row, MapObject(column, row, tile));
 		std::cout << "Would you like to view the map (v)?.\n";
 		std::cin >> userInput;
 		if (userInput == "V" || userInput == "v" || userInput == "(v)" || userInput == "(V)")
 		{
 			std::cout << "Here is the map so far!\n";
-			MapCreator::viewMap(mapToEdit);
+			MapCreator::viewMap(*mapToEdit);
 		}
 		std::cout << "Are you finished editing? (Press y or q to stop editing).\n";
 		std::cin >> userInput;
@@ -401,7 +401,7 @@ Map *MapCreator::editMap(Map mapToEdit)
 			running = false;
 		}
 	}
-	return &mapToEdit;
+	return mapToEdit;
 }
 
 void MapCreator::saveCampaign(Campaign campaignToSave, std::string filepaths[])
@@ -647,7 +647,7 @@ Campaign * MapCreator::editCampaign(Campaign campaignToEdit)
 		else if (userInput == "(m)" || userInput == "(M)" || userInput == "m" || userInput == "M")
 		{
 			int index = MapCreator::getMapIndex(campaignToEdit.getSize());
-			campaignToEdit.editMap(*MapCreator::editMap(campaignToEdit.getMapAt(index)), index);
+			campaignToEdit.editMap(*MapCreator::editMap(&campaignToEdit.getMapAt(index)), index);
 		}
 		else
 		{
@@ -812,10 +812,10 @@ char MapCreator::getTile()
 	do
 	{
 		std::cin >> userInput;
-		if (userInput == "X" || userInput == "x" || userInput == "(x)" || userInput == "(X)")
+		if (userInput == "W" || userInput == "w" || userInput == "(w)" || userInput == "(W)")
 		{
 			invalidInput = false;
-			return 'X';
+			return 'W';
 		}
 		else if (userInput == "E" || userInput == "e" || userInput == "(e)" || userInput == "(E)")
 		{
@@ -849,7 +849,7 @@ char MapCreator::getTile()
 		}
 		else
 		{
-			std::cout << "Invalid input. Valid characters are wall (X), empty (_), begin (B), end (E), monster (M), friendly character (F), and treasure(T)." << std::endl;
+			std::cout << "Invalid input. Valid characters are wall (W), empty (_), begin (B), end (E), monster (M), friendly character (F), and treasure(T)." << std::endl;
 			invalidInput = true;
 		}
 	} while (invalidInput);

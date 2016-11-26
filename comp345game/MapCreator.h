@@ -22,7 +22,7 @@ public:
 	static void saveMap(Map mapToSave);
 	static Map* loadMap(std::string filepath);
 	static Map* loadMap();
-	static Map* editMap(Map maptoEdit);
+	static Map* editMap(Map* maptoEdit);
 	static void saveCampaign(Campaign campaignToSave, std::string filepaths[]);
 	static void saveCampaign(Campaign campaignToSave);
 	static Campaign* loadCampaign(std::string filepath);
