@@ -192,6 +192,12 @@ int main() {
 		//Selecting a map and a character from a list of saved ones
 		cout << "Load a Map:" << endl;
 		map = MapBuilder::buildFromFile(mapSelection());
+		while (!map->validatePath()) {
+			system("CLS");
+			cout << map->path + " is an invalid map, please select another:" << endl;
+			cout << "Load a Map:" << endl;
+			map = MapBuilder::buildFromFile(mapSelection());
+		}
 		MapUI mapView = MapUI::MapUI(map);
 		system("CLS");
 
@@ -309,8 +315,6 @@ int main() {
 
 
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
-
-	//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
 
 	logger->Log("Log Over");
 	system("pause");
