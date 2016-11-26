@@ -109,6 +109,16 @@ void changeMap(bool next) {
 }
 
 int main() {
+	Character* playerCharacter;
+	Inventory* playerInventory;
+	vector<Enhancement> testEnhancement;
+	Enhancement testArmorClassEnhancement;
+	Item testHelm;
+	Enhancement testStrengthEnhancement;
+	Item testBelt;
+	Backpack* playerPack;
+	ItemUI* itemView;
+
 	GameLogger* logger = new GameLogger();
 	logger->Log("Log created");
 
@@ -194,32 +204,30 @@ int main() {
 			else
 				cout << "Please select the right value";
 		} while (in != '1' && in != '2');
+
 		//adds the built player to the map
-		Character* playerCharacter = character;
+		playerCharacter = character;
 		playerCharacter->Connect(logger);
 		//(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
 		map->PlacePlayer(playerCharacter);
 		map->setAllMonsters();
-		Inventory* playerInventory = new Inventory();
-		vector<Enhancement> testEnhancement;
-		Enhancement testArmorClassEnhancement = Enhancement("Armor Class", 4);
-		testEnhancement.push_back(testArmorClassEnhancement);
-		Item testHelm = Item("Helmet", testEnhancement, "Helmet of Testing");
-		playerInventory->replaceItem(testHelm);
-		testEnhancement.pop_back();
-		Enhancement testStrengthEnhancement = Enhancement("Strength", 3);
-		testEnhancement.push_back(testStrengthEnhancement);
-		Item testBelt = Item("Belt", testEnhancement, "Belt of Testing");
-		Backpack* playerPack = new Backpack();
-		playerPack->replaceItem(testBelt);
-		ItemUI* itemView = new ItemUI(playerInventory, playerPack);
+
+		playerInventory = new Inventory();
+		
+		playerPack = new Backpack();
+		itemView = new ItemUI(playerInventory, playerPack);
+
 		playerCharacter->wornItems = playerInventory;
 		playerCharacter->carriedItems = playerPack;
 		playerCharacter->itemManager = itemView;
 		playerCharacter->strategy = new HumanPlayerStrategy();
 		playerCharacter->updateFromInventory();
+
+		playerInventory = new Inventory();
+
 		bool inventoryMode = false;
 		bool playerMode = false;
+
 		system("CLS");
 		map->Notify();
 		cout << "use WASD to move the Player" << endl;
@@ -255,19 +263,6 @@ int main() {
 			//TODO NPC turn
 		}
 
-		//TODO redo how map change works
-		//	//head to next map if prompted
-		//	if (map->getNextMap() == -1)
-		//	{
-		//		changeMap(false);
-		//		map->PlacePlayer(playerCharacter);
-		//	}
-		//	else if (map->getNextMap() == 1)
-		//	{
-		//		changeMap(true);
-		//		map->PlacePlayer(playerCharacter);
-		//	}
-		//}
 		delete playerCharacter;
 		delete playerInventory;
 		delete playerPack;
