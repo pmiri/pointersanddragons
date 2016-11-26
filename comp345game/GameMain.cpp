@@ -292,13 +292,11 @@ int main() {
 
 			//check if player is dead and end game
 			if (playerCharacter->getHitPoints() <= 0) {
+				cout << "The player has died!" << endl << "GAME OVER!" << endl;
 				gameFinished = true;
 				break;
 			}
 		}
-
-		//GAME END STATE
-		cout << "The player has died!" << endl << "GAME OVER!" << endl;
 
 		delete playerCharacter;
 		delete playerInventory;
