@@ -19,7 +19,7 @@ public:
 	static Campaign* buildCampaign(Map maps[], int numberOfMaps, std::string name);
 	static Campaign* buildCampaign(int numberOfMaps, std::string name);
 	static void saveMap(Map mapToSave, std::string filepath);
-	static void saveMap(Map mapToSave);
+	static void saveMap(Map *mapToSave);
 	static Map* loadMap(std::string filepath);
 	static Map* loadMap();
 	static Map* editMap(Map* maptoEdit);

@@ -21,12 +21,12 @@ void MapCreator::runMenu()
 				Map* loadedMap = MapBuilder::buildFromFile(FileLoader::mapSelection());
 				std::cout << "Here is the loaded map!" << std::endl;
 				MapCreator::viewMap(loadedMap);
-				Map editedMap = *MapCreator::editMap(loadedMap);
+				MapCreator::editMap(loadedMap);
 				std::cout << "Would you like to save the edited map (y) or not (n)?" << std::endl;
 				std::cin >> userInput;
 				if (userInput == "(y)" || userInput == "y" || userInput == "Y" || userInput == "(Y)")
 				{
-					MapCreator::saveMap(editedMap);
+					MapCreator::saveMap(loadedMap);
 				}
 				else
 				{
@@ -75,7 +75,7 @@ void MapCreator::runMenu()
 				std::cin >> userInput;
 				if (userInput == "(y)" || userInput == "y" || userInput == "Y" || userInput == "(Y)")
 				{
-					MapCreator::saveMap(*customMap);
+					MapCreator::saveMap(customMap);
 				}
 				else
 				{
@@ -218,10 +218,10 @@ void MapCreator::saveMap(Map mapToSave, std::string filepath)
 	}
 }
 
-void MapCreator::saveMap(Map mapToSave)
+void MapCreator::saveMap(Map *mapToSave)
 {
 	const string MAPS_PATH = "../maps/";
-	if (mapToSave.validatePath())
+	if (mapToSave->validatePath())
 	{
 		char blankSpace = ' ';
 		std::string filePath;
@@ -242,8 +242,8 @@ void MapCreator::saveMap(Map mapToSave)
 				invalidInput = true;
 			}
 		} while (invalidInput);
-		int width = mapToSave.getWidth();
-		int length = mapToSave.getHeight();
+		int width = mapToSave->getWidth();
+		int length = mapToSave->getHeight();
 		if (fileToWrite.is_open())
 		{
 			fileToWrite << width << std::endl;
@@ -252,7 +252,7 @@ void MapCreator::saveMap(Map mapToSave)
 			for (int row = 0; row < length; row++) {
 				for (int column = 0; column < width; column++)
 				{
-					fileToWrite << mapToSave.getCell(column, row) << blankSpace;
+					fileToWrite << mapToSave->getCell(column, row) << blankSpace;
 				}
 				fileToWrite << std::endl;
 			}

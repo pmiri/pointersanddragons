@@ -320,7 +320,7 @@ bool Map::validatePath()
 
 		// for each neighbouring tile
 		for (int k = 0; k < 4; k++) {
-			cout << neighbours[k] << endl;
+			//cout << neighbours[k] << endl;
 			//if can be reached, not already visited, and not wall
 			if (neighbours[k] != -1 && !visited[neighbours[k]] && (map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar != Map::WALL) {
 				//if exit found, break out of for and leave while loop
