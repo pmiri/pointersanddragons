@@ -108,6 +108,41 @@ void changeMap(bool next) {
 	*map = next ? campaign->nextMap() : campaign->previousMap();
 }
 
+void ItemMenu() {
+	cout << "Welcome to the Item Editor Program! Would you like to create an item, or load an item?" << endl;
+	cout << "Press c to create, l to load." << endl;
+
+	Item item;
+	string filePath;
+	switch (keyPress()) {
+	case 'c':
+		item = ItemBuilder::buildItem();
+		cout << "Would you like to save? (y)" << endl;
+		if (keyPress() == 'y')
+		{
+			cout << "What is the filename you would like to save to?" << endl;
+			cin >> filePath;
+			ItemBuilder::saveItem(filePath, item);
+		}
+		break;
+	case 'l':
+		cout << "What is the filename of the item you want to load?" << endl;
+		cin >> filePath;
+		item = ItemBuilder::loadItem(filePath);
+		item = ItemBuilder::editItem(item);
+		cout << "Would you like to save?" << endl;
+		if (keyPress() == 'y')
+		{
+			cout << "What is the filename you would like to save to?" << endl;
+			cin >> filePath;
+			ItemBuilder::saveItem(filePath, item);
+		}
+		break;
+	default:
+		break;
+	}
+}
+
 int main() {
 	Character* playerCharacter;
 	Inventory* playerInventory;
@@ -124,65 +159,21 @@ int main() {
 
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
-	cout << "Press I to enter the item editor, M to open the Map/Campaign eidtor, and anything else to play.\n";
+	cout << "Press I to enter the Item editor, M to open the Map/Campaign editor, and anything else to play.\n";
 	char in;
-	in = keyPress();
-	if (in == 'i')
-	{
-		cout << "Welcome to the Item Editor Program! Would you like to create an item, or load an item?" << endl;
-		cout << "Press c to create, l to load." << endl;
-		in = keyPress();
-		if (in == 'c')
-		{
-			Item builtItem = ItemBuilder::buildItem();
-			cout << "Would you like to save?" << endl;
-			string input;
-			cin >> input;
-			if (input == "yes" || input == "y")
-			{
-				string filePath;
-				cout << "What is the filename you would like to save to?" << endl;
-				cin >> filePath;
-				ItemBuilder::saveItem(filePath, builtItem);
-			}
-		}
-		else if (in == 'l')
-		{
-			string filePath;
-			cout << "What is the filename of the item you want to load?" << endl;
-			cin >> filePath;
-			Item loadedItem = ItemBuilder::loadItem(filePath);
-			loadedItem = ItemBuilder::editItem(loadedItem);
-			cout << "Would you like to save?" << endl;
-			string input;
-			cin >> input;
-			if (input == "yes" || input == "y")
-			{
-				cout << "What is the filename you would like to save to?" << endl;
-				cin >> filePath;
-				ItemBuilder::saveItem(filePath, loadedItem);
-			}
-		}
-		else
-		{
-			cout << "I didn't understand that! Would you like to try again?" << endl;
-			cout << "Press q to quit" << endl;
-			in = keyPress();
-			if (in == 'q')
-				return 0;
-		}		
-	}
-	else if (in == 'm')
-	{
+	switch (keyPress()) {
+	case 'i':
+		logger->Log("Item Menu opened.");
+		ItemMenu();
+		break;
+	case 'm':
+		logger->Log("Map Creator opened.");
 		MapCreator::runMenu();
-	}
-	else
-	{
-		cout << endl;
+		break;
+	default:
+		system("CLS");
 		cout << "Welcome to our game!" << endl;
 		system("pause");
-
-		system("CLS");
 
 		//Selecting a map and a character from a list of saved ones
 		cout << "Load a Map:" << endl;
@@ -213,7 +204,7 @@ int main() {
 		map->setAllMonsters();
 
 		playerInventory = new Inventory();
-		
+
 		playerPack = new Backpack();
 		itemView = new ItemUI(playerInventory, playerPack);
 
@@ -241,7 +232,7 @@ int main() {
 		int* turnCount = new int;
 		list<MapObject> gameMonsterList;
 		while (!gameFinished) {
-			
+
 			*turnCount = 6;
 			while (*turnCount > 0) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
@@ -268,11 +259,15 @@ int main() {
 		delete playerPack;
 		delete itemView;
 		delete campaign;
-	}	
+
+		break;
+	}
+
+
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
-	
+
 	//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
-	
+
 	logger->Log("Log Over");
 	system("pause");
 
