@@ -246,12 +246,16 @@ int main() {
 			playerCharacter->hasAttacked = false;
 			bool viewingI = false;
 			bool viewingP = false;
+
+
 			while (*turnCount > 0 && !playerCharacter->hasAttacked) {
-				//Take in User input
-				//if non-movement, execute and skip rest
-				char i = keyPress();
 				bool svalidEquip = false;
-				
+
+				//Take in User input
+				char i = keyPress();
+
+				//switch for all possible key presses
+				//if non-movement, execute and skip rest
 				switch (i) {
 				case 'i':
 					if (!viewingI) {
@@ -291,17 +295,11 @@ int main() {
 					cout << *turnCount << " player turns left";
 					break;
 				}
-				switch (map->mapSwitch) {
-				case 1:
+
+				//If some change in map is necessary
+				if (abs(map->mapSwitch) == 1) {
 					newMap = true;
-					nextMapPath = map->next;
-					break;
-				case -1:
-					newMap = true;
-					nextMapPath = map->prev;
-					break;
-				default:
-					break;
+					nextMapPath = map->mapSwitch == 1? map->next: map->prev;
 				}
 			}
 
