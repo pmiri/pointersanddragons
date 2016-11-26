@@ -35,6 +35,6 @@ public:
 	static int getColumn(int maxCol);
 	static int getMapIndex(int maxIndex);
 	static char getTile();
-	static void viewMap(Map map);
+	static void viewMap(Map *map);
 	MapCreator() {};
 };

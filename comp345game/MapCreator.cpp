@@ -20,7 +20,7 @@ void MapCreator::runMenu()
 			{
 				Map* loadedMap = MapBuilder::buildFromFile(FileLoader::mapSelection());
 				std::cout << "Here is the loaded map!" << std::endl;
-				MapCreator::viewMap(*loadedMap);
+				MapCreator::viewMap(loadedMap);
 				Map editedMap = *MapCreator::editMap(loadedMap);
 				std::cout << "Would you like to save the edited map (y) or not (n)?" << std::endl;
 				std::cin >> userInput;
@@ -68,14 +68,14 @@ void MapCreator::runMenu()
 				int width;
 				length = MapCreator::getHeight();
 				width = MapCreator::getWidth();
-				Map customMap = *MapCreator::buildMap(length, width);
+				Map *customMap = MapCreator::buildMap(length, width);
 				std::cout << "Here is the finished map!" << std::endl;
 				MapCreator::viewMap(customMap);
 				std::cout << "Would you like to save the map (y) or not (n)?" << std::endl;
 				std::cin >> userInput;
 				if (userInput == "(y)" || userInput == "y" || userInput == "Y" || userInput == "(Y)")
 				{
-					MapCreator::saveMap(customMap);
+					MapCreator::saveMap(*customMap);
 				}
 				else
 				{
@@ -154,7 +154,7 @@ Map * MapCreator::buildMap(int length, int width)
 			if (userInput == "V" || userInput == "v" || userInput == "(v)" || userInput == "(V)")
 			{
 				std::cout << "Here is the map so far!\n";
-				MapCreator::viewMap(*customMap);
+				MapCreator::viewMap(customMap);
 			}
 		}
 	}
@@ -249,8 +249,8 @@ void MapCreator::saveMap(Map mapToSave)
 			fileToWrite << width << std::endl;
 			fileToWrite << length << std::endl;
 
-			for (int column = 0; column < width; column++) {
-				for (int row = 0; row < length; row++)
+			for (int row = 0; row < length; row++) {
+				for (int column = 0; column < width; column++)
 				{
 					fileToWrite << mapToSave.getCell(column, row) << blankSpace;
 				}
@@ -391,7 +391,7 @@ Map *MapCreator::editMap(Map* mapToEdit)
 		if (userInput == "V" || userInput == "v" || userInput == "(v)" || userInput == "(V)")
 		{
 			std::cout << "Here is the map so far!\n";
-			MapCreator::viewMap(*mapToEdit);
+			MapCreator::viewMap(mapToEdit);
 		}
 		std::cout << "Are you finished editing? (Press y or q to stop editing).\n";
 		std::cin >> userInput;
@@ -627,7 +627,7 @@ Campaign * MapCreator::editCampaign(Campaign campaignToEdit)
 				std::cout << "Please select a map to view.\n";
 				int index = MapCreator::getMapIndex(campaignToEdit.getSize());
 				std::cout << "Here is map #" << index << "!\n";
-				MapCreator::viewMap(campaignToEdit.getMapAt(index));
+				MapCreator::viewMap(&campaignToEdit.getMapAt(index));
 			}
 			else if (userInput == "(r)" || userInput == "(R)" || userInput == "r" || userInput == "R")
 			{
@@ -855,16 +855,16 @@ char MapCreator::getTile()
 	} while (invalidInput);
 }
 
-void MapCreator::viewMap(Map map)
+void MapCreator::viewMap(Map *map)
 {
-	int height = map.getHeight();
-	int width = map.getWidth();
+	int height = map->getHeight();
+	int width = map->getWidth();
 	for (int i = 0; i < height; i++)
 	{
 		std::cout << i << " ";
 		for (int j = 0; j < width; j++)
 		{
-			std::cout << map.getCell(j, i) << " ";
+			std::cout << map->getCell(j, i) << " ";
 		}
 		std::cout << std::endl;
 	}
