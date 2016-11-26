@@ -247,13 +247,25 @@ int main() {
 				for each (MapObject monObj in gameMonsterList)
 				{
 					monObj.getCharacter()->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, &monObj);
+					//check if player is dead and end game
+					if (playerCharacter->getHitPoints() <= 0) {
+						gameFinished = true;
+					}
 				}
 				*turnCount = *turnCount - 1;
 				cout << *turnCount << " monster turns left";
 			}
 
 			//TODO NPC turn
+
+			//check if player is dead and end game
+			if (playerCharacter->getHitPoints() <= 0) {
+				gameFinished = true;
+			}
 		}
+
+		//GAME END STATE
+		cout << "The player has died!" << endl << "GAME OVER!" << endl;
 
 		//TODO redo how map change works
 		//	//head to next map if prompted
