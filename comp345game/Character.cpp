@@ -352,7 +352,10 @@ void Character::displayStats() {
 
 void Character::fight(Character* opponent)
 {
-	level;
+	string opString = "MONSTER";
+	if(opponent->isPlayer == 'P')
+		opString = "PLAYER";
+
 	//HANDLES ALL FIGHT LOGIC
 	int damageOnOpponent = 0;
 	//mutliply by number of attacks
@@ -381,14 +384,14 @@ void Character::fight(Character* opponent)
 		}
 	}
 	opponent->setHitPoints(opponent->getHitPoints() - damageOnOpponent);
-	cout << damageOnOpponent << " damage was done to the Opponent!" << endl;
+	cout << damageOnOpponent << " damage was done to the " + opString + "!" << endl;
 	if (opponent->getHitPoints() <= 0) {
-		cout << "The Opponent has been defeated!" << endl;
+		cout << "The " + opString + " has been defeated!" << endl;
 		//handle destory monster
 		//probably a method of map that will remove it
 	}
 
-	cout << "fight done!" << endl << "Press any key to continue";
+	cout << "FIGHT OVER!" << endl << "Press any key to continue";
 	characterKeyPress();
 
 }
