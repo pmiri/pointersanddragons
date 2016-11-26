@@ -238,7 +238,8 @@ int main() {
 		//GAME MAIN
 		while (!gameFinished) {
 			newMap = false;
-			string nextMapPath;
+			string nextMapPath = map->path;
+			int nextOrPrev = 0;
 
 			*turnCount = 6;
 			while (*turnCount > 0) {
@@ -259,10 +260,14 @@ int main() {
 			}
 
 			if (newMap) {
-				system("CLS");
-				if (nextMapPath == "") {
+				//Moving forward and no maps left
+				if (nextMapPath == "" && nextOrPrev == 1) {
 					cout << "YOU WIN" << endl;
 					gameFinished = true;
+					continue;
+				}
+				else if (nextMapPath == "" && nextOrPrev == -1) {
+					cout << "You are at the start" << endl;
 					continue;
 				}
 				map = MapBuilder::buildFromFile(MAPS_PATH + nextMapPath);

@@ -31,6 +31,7 @@ Map *MapBuilder::buildFromFile(string path) {
 		Map *map = new Map(width, height);
 		map->prev = prev;
 		map->next = next;
+		map->path = path;
 
 		int currentHeight = 0;
 		const char *line_array;
