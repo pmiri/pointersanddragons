@@ -254,6 +254,7 @@ int main() {
 					//check if player is dead and end game
 					if (playerCharacter->getHitPoints() <= 0) {
 						gameFinished = true;
+						break;
 					}
 				}
 				*turnCount = *turnCount - 1;
@@ -265,6 +266,7 @@ int main() {
 			//check if player is dead and end game
 			if (playerCharacter->getHitPoints() <= 0) {
 				gameFinished = true;
+				break;
 			}
 		}
 
