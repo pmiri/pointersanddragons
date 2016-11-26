@@ -140,6 +140,24 @@ void ItemMenu() {
 	}
 }
 
+Character* CharacterSelect() {
+	do {
+		cout << "Character - Load(1) or Create(2):" << endl;
+		switch (keyPress()) {
+		case '1':
+			cout << "Please pick a file:" << endl;
+			return CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
+			break;
+		case '2':
+			return CharacterEditor::createCharacter();
+			break;
+		default:
+			cout << "Please select the right value";
+			break;
+		}
+	} while (true);
+}
+
 int main() {
 	Character* playerCharacter;
 	Inventory* playerInventory;
@@ -181,23 +199,7 @@ int main() {
 		Character *character = new Character;
 
 		bool selected = false;
-		do {
-			cout << "Character - Load(1) or Create(2):" << endl;
-			switch (keyPress()) {
-			case '1':
-				cout << "Please pick a file:" << endl;
-				character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
-				selected = true;
-				break;
-			case '2':
-				character = CharacterEditor::createCharacter();
-				selected = true;
-				break;
-			default:
-				cout << "Please select the right value";
-				break;
-			}
-		} while (!selected);
+		character = CharacterSelect();
 
 		//adds the built player to the map
 		playerCharacter = character;
@@ -224,12 +226,6 @@ int main() {
 		system("CLS");
 		map->Notify();
 		cout << "use WASD to move the Player" << endl;
-
-		//TODO: 	Adapting the map elements(opponents, treasure) to the level of the character upon entry
-
-		//TODO: 	Starting the game by having the player character placed on the starting point
-
-		//TODO: 	Moving the character, square by square on the map
 
 		int* turnCount = new int;
 		list<MapObject> gameMonsterList;
@@ -275,7 +271,6 @@ int main() {
 				continue;
 			}
 
-			//TODO monster turn
 			*turnCount = 6;
 			while (*turnCount > 0) {
 				gameMonsterList = list<MapObject>();
