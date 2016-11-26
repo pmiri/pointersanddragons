@@ -6,6 +6,7 @@
 AggressorStrategy::AggressorStrategy() {
 }
 
-void AggressorStrategy::doStrategy(Map* mapP, MapUI* mapViewP, ItemUI* itemViewP, Character* thisCharacterP, int* turns, MapObject* monsterMapObj) {
-	mapP->moveMonster(*monsterMapObj);
+void AggressorStrategy::doStrategy(char in, Map* mapP, int* turns, MapObject* monsterMapObj) {
+	if (monsterMapObj != NULL)
+		mapP->moveMonster(*monsterMapObj);
 };

@@ -244,9 +244,53 @@ int main() {
 
 			*turnCount = 6;
 			playerCharacter->hasAttacked = false;
+			bool viewingI = false;
+			bool viewingP = false;
 			while (*turnCount > 0 && !playerCharacter->hasAttacked) {
-				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
-				cout << *turnCount << " player turns left";
+				//Take in User input
+				//if non-movement, execute and skip rest
+				char i = keyPress();
+				bool svalidEquip = false;
+				
+				switch (i) {
+				case 'i':
+					if (!viewingI) {
+						viewingP = false;
+						system("cls");
+						svalidEquip = itemView->organizeItems(i);
+						itemView->PrintInventory();
+						cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
+						if (svalidEquip)
+							playerCharacter->updateFromInventory();
+					}
+					else {
+						system("cls");
+						map->Notify();
+					}
+					viewingI = !viewingI;
+					break;
+				case 'p':
+					if (!viewingP) {
+						viewingI = false;
+						system("cls");
+						playerCharacter->displayStats();
+					}
+					else {
+						system("cls");
+						map->Notify();
+					}
+					viewingP = !viewingP;
+					break;
+				case 'w':
+				case 'a':
+				case 's':
+				case 'd':
+					if (viewingP || viewingI)
+						break;
+					playerCharacter->strategy->doStrategy(i, map, turnCount, nullptr);
+					cout << *turnCount << " player turns left";
+					break;
+				}
 				switch (map->mapSwitch) {
 				case 1:
 					newMap = true;
@@ -292,7 +336,7 @@ int main() {
 				for each (MapObject monObj in gameMonsterList)
 				{
 					if (!monObj.getCharacter()->hasAttacked)//only continue if it hasn't already attacked
-						monObj.getCharacter()->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, &monObj);
+						monObj.getCharacter()->strategy->doStrategy(' ', map, turnCount, &monObj);
 					//check if player is dead and end game
 					if (playerCharacter->getHitPoints() <= 0) {
 						gameFinished = true;

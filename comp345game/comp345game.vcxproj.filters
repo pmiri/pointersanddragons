@@ -189,9 +189,6 @@
     <ClInclude Include="AggressorStrategy.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="CharacterStrategy.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="CharacterBuilder.h">
       <Filter>Headers</Filter>
     </ClInclude>

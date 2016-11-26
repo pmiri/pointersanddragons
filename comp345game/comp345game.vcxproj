@@ -120,7 +120,6 @@
     <ClInclude Include="CharacterCreator.h" />
     <ClInclude Include="CharacterObserver.h" />
     <ClInclude Include="CharacterEditor.h" />
-    <ClInclude Include="CharacterStrategy.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Enhancement.h" />
     <ClInclude Include="FileLoader.h" />
