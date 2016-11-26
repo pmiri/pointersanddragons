@@ -183,23 +183,28 @@ int main() {
 
 		Character *character = new Character;
 
+		bool selected = false;
 		do {
 			cout << "Character - Load(1) or Create(2):" << endl;
-			in = keyPress();
-			if (in == '1') {
+			switch (keyPress()) {
+			case '1':
 				cout << "Please pick a file:" << endl;
 				character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
-			}
-			else if (in == '2')
+				selected = true;
+				break;
+			case '2':
 				character = CharacterEditor::createCharacter();
-			else
+				selected = true;
+				break;
+			default:
 				cout << "Please select the right value";
-		} while (in != '1' && in != '2');
+				break;
+			}
+		} while (!selected);
 
 		//adds the built player to the map
 		playerCharacter = character;
 		playerCharacter->Connect(logger);
-		//(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
 		map->PlacePlayer(playerCharacter);
 		map->setAllMonsters();
 
