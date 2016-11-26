@@ -180,8 +180,8 @@ int main() {
 		MapUI mapView = MapUI::MapUI(map);
 		system("CLS");
 
-		Character *character;
-		
+		Character *character = new Character;
+		character->Connect(logger);
 
 		do {
 			cout << "Character - Load(1) or Create(2):" << endl;
@@ -199,7 +199,8 @@ int main() {
 				cout << "Please select the right value";
 		} while (in != '1' && in != '2');
 		//adds the built player to the map
-		Character* playerCharacter = new Character;
+		Character* playerCharacter = character;
+		playerCharacter->Connect(logger);
 		//(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
 		map->PlacePlayer(playerCharacter);
 		Inventory* playerInventory = new Inventory();

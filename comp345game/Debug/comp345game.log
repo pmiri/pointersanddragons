@@ -1,6 +1,21 @@
-﻿  Campaign.cpp
-c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(36): warning C4018: '<': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(44): warning C4018: '<': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(46): warning C4715: 'Campaign::getMapAt': not all control paths return a value
+﻿  MapBuilder.cpp
+  Map.cpp
+  GameMain.cpp
+  Fighter.cpp
+  CharacterEditor.cpp
+  Generating Code...
+c:\users\pmiri\code\comp345game\comp345game\charactereditor.cpp(77): warning C4715: 'CharacterEditor::editCharacter': not all control paths return a value
+c:\users\pmiri\code\comp345game\comp345game\charactereditor.cpp(38): warning C4715: 'CharacterEditor::createCharacter': not all control paths return a value
+c:\users\pmiri\code\comp345game\comp345game\mapbuilder.cpp(75): warning C4715: 'MapBuilder::buildFromFile': not all control paths return a value
+  Skipping... (no relevant changes detected)
+  MapUI.cpp
+  MapEditor.cpp
+  MapCreator.cpp
+  HumanPlayerStrategy.cpp
+  FileLoader.cpp
+  CharacterStrategy.cpp
+  CampaignEditor.cpp
+  Campaign.cpp
+  AggressorStrategy.cpp
   comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.exe
   comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.pdb (Partial PDB)

@@ -23,7 +23,7 @@ Character *CharacterEditor::createCharacter() {//(int str, int dex, int con, int
 		cin >> cha;
 
 		//only possible character type is fighter
-		char isP = 'F';
+		char isP = 'P';//changed from F
 		Character *ch = new Fighter(str, dex, con, intel, wis, cha, isP);
 		valid = ch->validateNewCharacter();
 

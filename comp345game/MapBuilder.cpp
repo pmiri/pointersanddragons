@@ -34,9 +34,9 @@ Map *MapBuilder::buildFromFile(string path) {
 			for (int y = 0; y < width; y++) {
 				if (line_array[2 * y] == 'P') {
 					//create a character who is a player
-					Character* playerCharacter = new Character;//TODO pull player character info from map somehow?
+					//Character* playerCharacter = new Character;//TODO pull player character info from map somehow?
 					MapObject characterMapObject = MapObject(y, currentHeight, line_array[2 * y]);
-					characterMapObject.setCharacter(playerCharacter);
+					//characterMapObject.setCharacter(playerCharacter);
 					map->fillCell(y, currentHeight, characterMapObject);
 				}
 				if (line_array[2 * y] == 'M') {
