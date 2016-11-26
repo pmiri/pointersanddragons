@@ -243,7 +243,8 @@ int main() {
 			int nextOrPrev = 0;
 
 			*turnCount = 6;
-			while (*turnCount > 0) {
+			playerCharacter->hasAttacked = false;
+			while (*turnCount > 0 && !playerCharacter->hasAttacked) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
 				cout << *turnCount << " player turns left";
 				switch (map->mapSwitch) {
@@ -277,13 +278,21 @@ int main() {
 				continue;
 			}
 
+			//Monster turn
 			*turnCount = 6;
+			gameMonsterList = list<MapObject>();
+			gameMonsterList = map->getListOfMonsterObjs();
+			for each (MapObject monObj in gameMonsterList)
+			{
+				monObj.getCharacter()->hasAttacked = false;//reset at start of monster turn
+			}
 			while (*turnCount > 0) {
 				gameMonsterList = list<MapObject>();
 				gameMonsterList = map->getListOfMonsterObjs();
 				for each (MapObject monObj in gameMonsterList)
 				{
-					monObj.getCharacter()->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, &monObj);
+					if (!monObj.getCharacter()->hasAttacked)//only continue if it hasn't already attacked
+						monObj.getCharacter()->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, &monObj);
 					//check if player is dead and end game
 					if (playerCharacter->getHitPoints() <= 0) {
 						gameFinished = true;
