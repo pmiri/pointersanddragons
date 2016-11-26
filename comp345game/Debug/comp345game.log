@@ -1,75 +1,108 @@
-﻿  TankBuilder.cpp
-  Subject.cpp
-  Observer.cpp
-  Observable.cpp
-  NimbleBuilder.cpp
-  MonsterBuilder.cpp
-  MapUI.cpp
-  MapObject.cpp
-  MapEditor.cpp
-c:\users\pmiri\code\comp345game\comp345game\mapeditor.cpp(45): warning C4018: '>': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\mapeditor.cpp(69): warning C4018: '<': signed/unsigned mismatch
-  MapCreator.cpp
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(240): warning C4101: 'e': unreferenced local variable
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(330): warning C4101: 'e': unreferenced local variable
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(468): warning C4101: 'e': unreferenced local variable
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(556): warning C4101: 'e': unreferenced local variable
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(677): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(701): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(725): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-  MapBuilder.cpp
-  Map.cpp
-  Logger.cpp
-  Loggable.cpp
-  ItemUI.cpp
-c:\users\pmiri\code\comp345game\comp345game\itemui.cpp(108): warning C4018: '>': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\itemui.cpp(144): warning C4018: '>': signed/unsigned mismatch
-  ItemContainer.cpp
-c:\users\pmiri\code\comp345game\comp345game\itemcontainer.cpp(42): warning C4018: '<': signed/unsigned mismatch
-  ItemBuilder.cpp
-c:\users\pmiri\code\comp345game\comp345game\itembuilder.cpp(193): warning C4018: '>': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\itembuilder.cpp(212): warning C4018: '>': signed/unsigned mismatch
-  Item.cpp
-  Inventory.cpp
-c:\users\pmiri\code\comp345game\comp345game\inventory.cpp(37): warning C4018: '<': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\inventory.cpp(51): warning C4018: '<': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\inventory.cpp(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\inventory.cpp(57): warning C4018: '<': signed/unsigned mismatch
-  HumanPlayerStrategy.cpp
-c:\users\pmiri\code\comp345game\comp345game\humanplayerstrategy.cpp(25): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-  Generating Code...
-c:\users\pmiri\code\comp345game\comp345game\itemui.cpp(172): warning C4715: 'ItemUI::addToPack': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\mapbuilder.cpp(75): warning C4715: 'MapBuilder::buildFromFile': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(404): warning C4172: returning address of local variable or temporary: mapToEdit
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(664): warning C4172: returning address of local variable or temporary: campaignToEdit
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(856): warning C4715: 'MapCreator::getTile': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\mapobject.cpp(65): warning C4715: 'MapObject::canMove': not all control paths return a value
-  Compiling...
-  GameMain.cpp
-  GameLogger.cpp
-  FileLoader.cpp
+﻿  GameMain.cpp
   Fighter.cpp
-  Enhancement.cpp
-  Dice.cpp
-  CharacterStrategy.cpp
-  CharacterObserver.cpp
-  CharacterEditor.cpp
-  CharacterBuilder.cpp
-  Character.cpp
-c:\users\pmiri\code\comp345game\comp345game\character.cpp(26): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\pmiri\code\comp345game\comp345game\character.cpp(255): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  CampaignEditor.cpp
   Campaign.cpp
 c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(29): warning C4018: '<': signed/unsigned mismatch
 c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(37): warning C4018: '<': signed/unsigned mismatch
-  BullyBuilder.cpp
-  Backpack.cpp
-c:\users\pmiri\code\comp345game\comp345game\backpack.cpp(9): warning C4018: '<': signed/unsigned mismatch
-  AggressorStrategy.cpp
+c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(48): error C2679: binary '=': no operator found which takes a right-hand operand of type 'Map *' (or there is no acceptable conversion)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(1043): note: could be 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::operator =(_Elem)'
+          with
+          [
+              _Elem=char
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(1038): note: or       'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::operator =(const _Elem *)'
+          with
+          [
+              _Elem=char
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(1022): note: or       'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::operator =(const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &)'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(983): note: or       'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::operator =(std::initializer_list<_Elem>)'
+          with
+          [
+              _Elem=char
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(925): note: or       'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::operator =(std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&) noexcept(<expr>)'
+  c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(48): note: while trying to match the argument list '(std::basic_string<char,std::char_traits<char>,std::allocator<char>>, Map *)'
   Generating Code...
-c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(39): warning C4715: 'Campaign::getMapAt': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\character.cpp(229): warning C4172: returning address of local variable or temporary: tempScores
-c:\users\pmiri\code\comp345game\comp345game\charactereditor.cpp(38): warning C4715: 'CharacterEditor::createCharacter': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\charactereditor.cpp(77): warning C4715: 'CharacterEditor::editCharacter': not all control paths return a value
-  comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.exe
-  comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.pdb (Partial PDB)
+  Compiling...
+  MapCreator.cpp
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(44): error C2819: type 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' does not have an overloaded member 'operator ->'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(44): note: did you intend to use '.' instead?
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(44): error C2039: 'getHeight': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(44): error C2039: 'getWidth': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(97): error C2819: type 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' does not have an overloaded member 'operator ->'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(97): note: did you intend to use '.' instead?
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(97): error C2039: 'getHeight': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(97): error C2039: 'getWidth': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(171): error C2664: 'Campaign::Campaign(Campaign &&)': cannot convert argument 1 from 'std::vector<Map *,std::allocator<_Ty>>' to 'std::vector<std::string,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Map *
+          ]
+          and
+          [
+              _Ty=std::string
+          ]
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(171): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(183): error C2664: 'Campaign::Campaign(Campaign &&)': cannot convert argument 1 from 'std::vector<Map *,std::allocator<_Ty>>' to 'std::vector<std::string,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Map *
+          ]
+          and
+          [
+              _Ty=std::string
+          ]
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(183): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(412): error C2819: type 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' does not have an overloaded member 'operator ->'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(412): note: did you intend to use '.' instead?
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(412): error C2039: 'validatePath': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(431): error C2100: illegal indirection
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(446): error C2819: type 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' does not have an overloaded member 'operator ->'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(446): note: did you intend to use '.' instead?
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(446): error C2039: 'validatePath': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(483): error C2100: illegal indirection
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(515): error C2664: 'void Campaign::addMap(std::string,int)': cannot convert argument 1 from 'Map *' to 'std::string'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(515): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(525): error C2819: type 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' does not have an overloaded member 'operator ->'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(525): note: did you intend to use '.' instead?
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(525): error C2039: 'validatePath': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(574): error C2664: 'void Campaign::addMap(std::string,int)': cannot convert argument 1 from 'Map *' to 'std::string'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(574): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(584): error C2819: type 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' does not have an overloaded member 'operator ->'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(584): note: did you intend to use '.' instead?
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(584): error C2039: 'validatePath': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(622): error C2664: 'void Campaign::addMap(std::string,int)': cannot convert argument 1 from 'Map *' to 'std::string'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(622): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(630): error C2100: illegal indirection
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(637): error C2819: type 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' does not have an overloaded member 'operator ->'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(637): note: did you intend to use '.' instead?
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(637): error C2039: 'getHeight': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(637): error C2039: 'getWidth': is not a member of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(650): error C2100: illegal indirection
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(677): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(701): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(725): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
+  FileLoader.cpp
+c:\users\pmiri\code\comp345game\comp345game\fileloader.cpp(23): error C2664: 'void Campaign::addMap(std::string,int)': cannot convert argument 1 from 'Map *' to 'std::string'
+  c:\users\pmiri\code\comp345game\comp345game\fileloader.cpp(23): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+  CampaignEditor.cpp
+c:\users\pmiri\code\comp345game\comp345game\campaigneditor.cpp(57): error C2664: 'void Campaign::addMap(std::string,int)': cannot convert argument 1 from 'Map *' to 'std::string'
+  c:\users\pmiri\code\comp345game\comp345game\campaigneditor.cpp(57): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+  Generating Code...

@@ -50,8 +50,7 @@ string mapSelection() {
 			string name = ent->d_name;
 			if (name.find("campaign") != std::string::npos) {
 				
-				Map* currentMap = MapBuilder::buildFromFile(MAPS_PATH + ent->d_name);
-				campaign->addMap(currentMap);
+				campaign->addMap(ent->d_name);
 			}
 			i++;
 		}
@@ -107,7 +106,7 @@ string characterSelection() {
 }
 
 void changeMap(bool next) {
-	map = next ? campaign->nextMap() : campaign->previousMap();
+	map = next ? MapBuilder::buildFromFile(MAPS_PATH + campaign->nextMap()) : MapBuilder::buildFromFile(MAPS_PATH + campaign->previousMap());
 }
 
 int main() {
@@ -179,7 +178,7 @@ int main() {
 		//Selecting a map and a character from a list of saved ones
 		cout << "Load a Map:" << endl;
 		map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
-		MapUI mapView = MapUI::MapUI(map);
+		MapUI mapView = MapUI(map);
 		system("CLS");
 
 		Character *character = new Character;
@@ -244,7 +243,14 @@ int main() {
 			while (*turnCount > 0) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
 				if (map->mapFinished) {
-					map = campaign->nextMap();
+					//map->Detach(&mapView);
+					map = MapBuilder::buildFromFile(MAPS_PATH + campaign->nextMap());
+					MapUI newUI = MapUI(map);
+					mapView = newUI;
+					//map->PlacePlayer(playerCharacter);
+					//set all monsters
+					system("CLS");
+					map->Notify();
 					newMap = true;
 					break;
 				}

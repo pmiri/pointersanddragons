@@ -14,18 +14,19 @@ public:
 	Campaign();
 	Campaign(int);
 	string name;
-	void addMap(Map*);
-	void addMap(Map*, int);
-	Map* getMapAt(int);
-	Map* nextMap();
-	Map* previousMap();
+	void addMap(string);
+	void addMap(string, int);
+	Map* buildMapFrom(int);
+	string getMapAt(int);
+	string nextMap();
+	string previousMap();
 	void removeMap(int);
 	void editMap(Map*, int);
 	int getSize();
 
 	Campaign(string);
-	Campaign(vector<Map*>, string);
+	Campaign(vector<string>, string);
 private:
-	vector<Map*> mapsInCampaign;
+	vector<string> mapsInCampaign;
 	int currentMapIndex = 0;
 };

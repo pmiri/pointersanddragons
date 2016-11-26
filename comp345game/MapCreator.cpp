@@ -41,7 +41,8 @@ void MapCreator::runMenu()
 				std::cout << "The campaign's name is " << loadedCampaign.name << " and it has " << loadedCampaign.getSize() << " maps in it" << std::endl;
 				for (int i = 0; i < loadedCampaign.getSize(); i++)
 				{
-					std::cout << "Map number " << i << " has a height of " << loadedCampaign.getMapAt(i)->getHeight() << " tiles and a width of " << loadedCampaign.getMapAt(i)->getWidth() << "tiles.\n";
+					Map* create = loadedCampaign.buildMapFrom(i);
+					std::cout << "Map number " << i << " has a height of " << create->getHeight() << " tiles and a width of " << create->getWidth() << "tiles.\n";
 				}
 				Campaign editedCampaign = *MapCreator::editCampaign(loadedCampaign);
 				std::cout << "Would you like to save the edited campaign (y) or not (n)?" << std::endl;
@@ -94,7 +95,8 @@ void MapCreator::runMenu()
 				std::cout << "The campaign's name is " << customCampaign.name << " and it has " << customCampaign.getSize() << " maps in it" << std::endl;
 				for (int i = 0; i < customCampaign.getSize(); i++)
 				{
-					std::cout << "Map number " << i << " has a height of " << customCampaign.getMapAt(i)->getHeight() << " tiles and a width of " << customCampaign.getMapAt(i)->getWidth() << "tiles.\n";
+					Map* create = customCampaign.buildMapFrom(i);
+					std::cout << "Map number " << i << " has a height of " << create->getHeight() << " tiles and a width of " << create->getWidth() << "tiles.\n";
 				}
 				std::cout << "Would you like to save the campaign (y) or not (n)?" << std::endl;
 				std::cin >> userInput;
@@ -634,7 +636,8 @@ Campaign * MapCreator::editCampaign(Campaign campaignToEdit)
 				std::cout << "Please select a map to remove.\n";
 				for (int i = 0; i < campaignToEdit.getSize(); i++)
 				{
-					std::cout << "Map number " << i << " has a height of " << campaignToEdit.getMapAt(i)->getHeight() << " tiles and a width of " << campaignToEdit.getMapAt(i)->getWidth() << "tiles.\n";
+					Map* create = campaignToEdit.buildMapFrom(i);
+					std::cout << "Map number " << i << " has a height of " << create->getHeight() << " tiles and a width of " << create->getWidth() << "tiles.\n";
 				}
 				int index = MapCreator::getMapIndex(campaignToEdit.getSize());
 				campaignToEdit.removeMap(index);

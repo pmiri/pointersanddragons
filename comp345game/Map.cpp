@@ -134,14 +134,9 @@ bool Map::moveCharacter(char dir)
 		cout << endl << "You are at the Exit, would you like to go to the next map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			map[BeginPositionX][BeginPositionY].setCharacter(map[PlayerPositionX][PlayerPositionY].getCharacter());
-			map[PlayerPositionX][PlayerPositionY].setCharacter(nullptr);
-			Character *p = map[BeginPositionX][BeginPositionY].getCharacter();
+			Character *p = map[PlayerPositionX][PlayerPositionY].getCharacter();
 			Dice healthDice = Dice();
 			p->levelUp(healthDice.roll("1d10[+0"));
-			PlayerPositionX = BeginPositionX;
-			PlayerPositionY = BeginPositionY;
-			Notify();
 			cout << "Level up!" << endl;
 			Report("Exited current map");
 			
