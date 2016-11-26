@@ -289,8 +289,8 @@ bool Map::validatePath()
 	list<int> queue;
 
 	// Mark the current node as visited and queue it
-	visited[entry_location_x * MAP_LENGTH + entry_location_y] = true;
-	queue.push_back(entry_location_x * MAP_LENGTH + entry_location_y);
+	visited[entry_location_y * MAP_LENGTH + entry_location_x] = true;
+	queue.push_back(entry_location_y * MAP_LENGTH + entry_location_x);
 
 	int current;
 	int neighbours[4]; // up, down, left, right
@@ -301,15 +301,15 @@ bool Map::validatePath()
 		current = queue.front();
 
 		// calculate neighbours
-		neighbours[0] = ((int)(current / MAP_WIDTH) + 1) * MAP_WIDTH + current%MAP_WIDTH; // up
-		neighbours[1] = ((int)(current / MAP_WIDTH) - 1) * MAP_WIDTH + current%MAP_WIDTH; // down
-		neighbours[2] = (int)(current / MAP_WIDTH) * MAP_WIDTH + current%MAP_WIDTH - 1; // left
-		neighbours[3] = (int)(current / MAP_WIDTH) * MAP_WIDTH + current%MAP_WIDTH + 1; // right
+		neighbours[0] = current + MAP_WIDTH; // up
+		neighbours[1] = current - MAP_WIDTH; // down
+		neighbours[2] = current - 1; // left
+		neighbours[3] = current + 1; // right
 
 																						//edge cases
 		neighbours[0] = neighbours[0] > MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[0];
-		neighbours[1] = neighbours[1] < MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[1];
-		neighbours[2] = neighbours[2] < MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[2];
+		neighbours[1] = neighbours[1] < 0 ? -1 : neighbours[1];
+		neighbours[2] = neighbours[2] < 0 ? -1 : neighbours[2];
 		neighbours[3] = neighbours[3] > MAP_LENGTH * MAP_WIDTH ? -1 : neighbours[3];
 
 		// remove from queue
@@ -319,9 +319,9 @@ bool Map::validatePath()
 		for (int k = 0; k < 4; k++) {
 			//cout << neighbours[k] << endl;
 			//if can be reached, not already visited, and not wall
-			if (neighbours[k] != -1 && !visited[neighbours[k]] && (map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar != Map::WALL) {
+			if (neighbours[k] != -1 && !visited[neighbours[k]] && (map[neighbours[k] % MAP_WIDTH][(int)(neighbours[k] / MAP_WIDTH)]).wallOrOtherChar != Map::WALL) {
 				//if exit found, break out of for and leave while loop
-				if ((map[(int)(neighbours[k] / MAP_WIDTH)][neighbours[k] % MAP_WIDTH]).wallOrOtherChar == Map::END) {
+				if ((map[neighbours[k] % MAP_WIDTH][(int)(neighbours[k] / MAP_WIDTH)]).wallOrOtherChar == Map::END) {
 					delete[] visited;
 					return true;
 				}
@@ -463,17 +463,16 @@ void Map::setAllMonsters() {
 }
 
 //int main() {
-//	Map* map = new Map();
-//
-//	map->setEntrance(0, 0);
-//	map->setExit(1, 1);
-//
+//	Map* map = MapBuilder::buildFromFile("campaign1.txt");
+//	
 //	bool valid = map->validatePath();
 //
 //	if (valid) cout << "Path is valid!" << endl;
 //	else cout << "Path is invalid!" << endl;
 //
 //	delete map;
+//
+//	system("pause");
 //
 //	return 0;
 //}
