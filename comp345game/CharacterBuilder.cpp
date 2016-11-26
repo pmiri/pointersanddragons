@@ -33,7 +33,7 @@ std::vector<int> CharacterBuilder::rollStats()
 		std::vector<int> rolls;
 		for (int j = 0; j < 4; j++)
 		{
-			rolls.push_back(abilityDice.roll("1d6"));
+			rolls.push_back(abilityDice.roll("1d6[+0]"));
 		}
 		stats.push_back(0);
 		for (int k = 0; k < 3; k++)

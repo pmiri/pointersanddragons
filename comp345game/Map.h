@@ -35,6 +35,7 @@ public:
 	int getNextMap();
 
 	MapObject getMapObjectAt(int x, int y);
+	void setMapObjectAt(int x, int y, MapObject* myo);
 
 	int PlayerPositionX;
 	int PlayerPositionY;

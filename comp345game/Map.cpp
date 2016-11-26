@@ -394,6 +394,11 @@ MapObject Map::getMapObjectAt(int x, int y)
 	return map[x][y];
 }
 
+void Map::setMapObjectAt(int x, int y, MapObject* myo)
+{
+	map[x][y] = *myo;
+}
+
 int Map::getHeight()
 {
 	return MAP_LENGTH;

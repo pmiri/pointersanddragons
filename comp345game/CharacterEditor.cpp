@@ -7,26 +7,55 @@
 
 Character *CharacterEditor::createCharacter() {//(int str, int dex, int con, int intel, int wis, int cha, char isP)
 	bool valid = false;
-	int str, dex, con, intel, wis, cha;
+	int str, dex, con, intel, wis, cha, level;
+	char input = ' ';
+	Character *ch;
 	while (!valid) {
-		cout << "Enter character strength:" << endl;
-		cin >> str;
-		cout << "Enter character dexterity:" << endl;
-		cin >> dex;
-		cout << "Enter character constitution:" << endl;
-		cin >> con;
-		cout << "Enter character intelligence:" << endl;
-		cin >> intel;
-		cout << "Enter character wisdom:" << endl;
-		cin >> wis;
-		cout << "Enter character charisma:" << endl;
-		cin >> cha;
-
-		//only possible character type is fighter
-		char isP = 'P';//changed from F
-		Character *ch = new Fighter(str, dex, con, intel, wis, cha, isP);
+		cout << "Enter character level:" << endl;
+		cin >> level;
+		cout << "Would you like to be a Bully (b), Nimble (n), Tank (t), or custom (any other key)?" << endl;
+		cin >> input;
+		if (tolower(input) == 'b')
+		{
+			CharacterCreator charCreator = CharacterCreator();
+			BullyBuilder* bulBuilder = new BullyBuilder();
+			charCreator.setCharacterBuilder(bulBuilder);
+			charCreator.createCharacter(level);
+			ch = charCreator.getCharacter();
+			delete bulBuilder;
+		}
+		else if (tolower(input) == 'n')
+		{
+			CharacterCreator charCreator = CharacterCreator();
+			NimbleBuilder* nimBuilder = new NimbleBuilder();
+			charCreator.setCharacterBuilder(nimBuilder);
+			charCreator.createCharacter(level);
+			ch = charCreator.getCharacter();
+			delete nimBuilder;
+		}
+		else if (tolower(input) == 't')
+		{
+			CharacterCreator charCreator = CharacterCreator();
+			TankBuilder* tankBuilder = new TankBuilder();
+			charCreator.setCharacterBuilder(tankBuilder);
+			charCreator.createCharacter(level);
+			ch = charCreator.getCharacter();
+			delete tankBuilder;
+		}
+		else
+		{
+			BullyBuilder statBuilder = BullyBuilder();
+			std::vector<int> *stats = new std::vector<int>();
+			*stats = statBuilder.rollStats();
+			str = pickStats(stats, "strength");
+			dex = pickStats(stats, "dexterity");
+			con = pickStats(stats, "constitution");
+			intel = pickStats(stats, "intelligence");
+			wis = pickStats(stats, "wisdom");
+			cha = pickStats(stats, "charisma");
+			ch = new Fighter(str, dex, con, intel, wis, cha, 'P', level);
+		}
 		valid = ch->validateNewCharacter();
-
 		if (!valid) {
 			cout << "Please enter valid modifiers (2 < x < 19)." << endl;
 		}
@@ -139,4 +168,30 @@ void CharacterEditor::saveCharacterToFile(string path, Character ch) {
 	myfile << abilityScores[4] << endl;
 	myfile << abilityScores[5] << endl;
 	myfile.close();
+}
+
+int CharacterEditor::pickStats(std::vector<int> *stats, string stat)
+{
+	int chosenRoll;
+	bool valid = false;
+	while (!valid)
+	{
+		cout << "Please pick a roll to allocate to " << stat << endl;
+		cout << "Available rolls are: " << endl;
+		for (int i = 0; i < stats->size(); i++)
+		{
+			cout << "#" << i << ": " << stats->at(i) << endl;
+		}
+		cin >> chosenRoll;
+		if (chosenRoll >= 0 && chosenRoll < stats->size())
+		{
+			int temp = stats->at(chosenRoll);
+			stats->erase(stats->begin() + chosenRoll);
+			chosenRoll = temp;
+			valid = true;
+		}
+		else
+			cout << chosenRoll << " is out of range!" << endl;
+	}
+	return chosenRoll;
 }

@@ -47,12 +47,15 @@ void MapUI::PrintMap() {
 				Character* monster = _subject->getMapObjectAt(w, h).getCharacter();
 				if (monster->getHitPoints() <= 0) {
 					//check if monster has items
-					if (monster->carriedItems->getItems().size() > 0) {
+					if (monster->carriedItems != NULL && monster->carriedItems->getItems().size() > 0) {
 						ItemContainer droppedTreasure = ItemContainer(monster->carriedItems->getItems());
+						_subject->setMapObjectAt(w, h, new MapObject);
 						_subject->getMapObjectAt(w, h).setItem(droppedTreasure.getItems());
-						_subject->getMapObjectAt(w, h).setCharacter(NULL);//there might be a problem here
+						_subject->getMapObjectAt(w, h).setCharacter(nullptr);//there might be a problem here
 						mapString += "T";
+						continue;
 					}
+					_subject->setMapObjectAt(w, h, new MapObject);
 					mapString += " ";
 				}
 				else {
