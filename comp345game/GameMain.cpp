@@ -36,7 +36,6 @@ string mapSelection() {
 	list<string> maps;
 	DIR *dir;
 	struct dirent *ent;
-	campaign = new Campaign(3);
 	if ((dir = opendir(MAPS_PATH.c_str())) != NULL) {
 		/* print all the files and directories within directory */
 		int i = -2;
@@ -192,7 +191,7 @@ int main() {
 
 		//Selecting a map and a character from a list of saved ones
 		cout << "Load a Map:" << endl;
-		map = MapBuilder::buildFromFile(MAPS_PATH + mapSelection());
+		map = MapBuilder::buildFromFile(mapSelection());
 		MapUI mapView = MapUI::MapUI(map);
 		system("CLS");
 
@@ -266,7 +265,8 @@ int main() {
 					cout << "You are at the start" << endl;
 					continue;
 				}
-				map = MapBuilder::buildFromFile(MAPS_PATH + nextMapPath);
+				map = MapBuilder::buildFromFile(nextMapPath);
+				mapView = MapUI::MapUI(map);
 				map->Notify();
 				continue;
 			}
