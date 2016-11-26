@@ -8,6 +8,7 @@
 #include <conio.h>
 #include "CharacterCreator.h"
 #include "MonsterBuilder.h"
+#include "AggressorStrategy.h"
 
 using namespace std;
 
@@ -449,7 +450,7 @@ void Map::setAllMonsters() {
 
 	int playerLevel = getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter()->getLevel();
 	CharacterCreator charBuilder;
-	MonsterBuilder* monBuilder = new MonsterBuilder;
+	MonsterBuilder* monBuilder = new MonsterBuilder();
 	charBuilder.setCharacterBuilder(monBuilder);
 
 	//search for every goddamn monster on the planet
@@ -460,7 +461,9 @@ void Map::setAllMonsters() {
 				charBuilder.createCharacter(playerLevel);
 				Character* monsterCharacter = charBuilder.getCharacter();
 				monsterCharacter->isPlayer = 'M';
-				getMapObjectAt(i, j).setCharacter(monsterCharacter);
+				monsterCharacter->strategy = new AggressorStrategy;
+				(map[i][j]).setCharacter(monsterCharacter);
+				//getMapObjectAt(i, j).setCharacter(monsterCharacter);
 			}
 		}
 	}
