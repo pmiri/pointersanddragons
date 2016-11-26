@@ -22,6 +22,7 @@ inline char characterKeyPress() {
 Character::Character()
 {
 	isPlayer = 'P';
+	hasAttacked = false;
 	//seed random number generator
 	srand(time(0));
 
@@ -62,6 +63,7 @@ Character::Character()
 Character::Character(int str, int dex, int con, int intel, int wis, int cha, char isP)
 {
 	isPlayer = isP;
+	hasAttacked = false;
 	abilityScores[0] = str;
 	abilityScores[1] = dex;
 	abilityScores[2] = con;
@@ -84,6 +86,7 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 Character::Character(int str, int dex, int con, int intel, int wis, int cha, char isP, int lvl)
 {
 	isPlayer = isP;
+	hasAttacked = false;
 	abilityScores[0] = str;
 	abilityScores[1] = dex;
 	abilityScores[2] = con;
@@ -113,6 +116,7 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 Character::Character(int str, int dex, int con, int intel, int wis, int cha, int lvl)
 {
 	isPlayer = 'P';
+	hasAttacked = false;
 	abilityScores[0] = str;
 	abilityScores[1] = dex;
 	abilityScores[2] = con;
@@ -143,6 +147,7 @@ Character::Character(int lvl) {
 	//for creating monsters
 	Character();
 	isPlayer = 'M';
+	hasAttacked = false;
 	Dice lvlDice = Dice();
 	for (int l = 0; l < lvl; l++) {
 		levelUp(lvlDice.roll("1d6[+0]"));
@@ -391,6 +396,7 @@ void Character::fight(Character* opponent)
 		//probably a method of map that will remove it
 	}
 
+	hasAttacked = true;
 	cout << "FIGHT OVER!" << endl << "Press any key to continue";
 	characterKeyPress();
 

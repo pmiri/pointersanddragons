@@ -192,6 +192,12 @@ int main() {
 		//Selecting a map and a character from a list of saved ones
 		cout << "Load a Map:" << endl;
 		map = MapBuilder::buildFromFile(mapSelection());
+		while (!map->validatePath()) {
+			system("CLS");
+			cout << map->path + " is an invalid map, please select another:" << endl;
+			cout << "Load a Map:" << endl;
+			map = MapBuilder::buildFromFile(mapSelection());
+		}
 		MapUI mapView = MapUI::MapUI(map);
 		system("CLS");
 
@@ -237,7 +243,8 @@ int main() {
 			int nextOrPrev = 0;
 
 			*turnCount = 6;
-			while (*turnCount > 0) {
+			playerCharacter->hasAttacked = false;
+			while (*turnCount > 0 && !playerCharacter->hasAttacked) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
 				cout << *turnCount << " player turns left";
 				switch (map->mapSwitch) {
@@ -271,13 +278,21 @@ int main() {
 				continue;
 			}
 
+			//Monster turn
 			*turnCount = 6;
+			gameMonsterList = list<MapObject>();
+			gameMonsterList = map->getListOfMonsterObjs();
+			for each (MapObject monObj in gameMonsterList)
+			{
+				monObj.getCharacter()->hasAttacked = false;//reset at start of monster turn
+			}
 			while (*turnCount > 0) {
 				gameMonsterList = list<MapObject>();
 				gameMonsterList = map->getListOfMonsterObjs();
 				for each (MapObject monObj in gameMonsterList)
 				{
-					monObj.getCharacter()->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, &monObj);
+					if (!monObj.getCharacter()->hasAttacked)//only continue if it hasn't already attacked
+						monObj.getCharacter()->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, &monObj);
 					//check if player is dead and end game
 					if (playerCharacter->getHitPoints() <= 0) {
 						gameFinished = true;
@@ -309,8 +324,6 @@ int main() {
 
 
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
-
-	//TODO: 	Ending the game by having the character stepping on the exit point and going up a level
 
 	logger->Log("Log Over");
 	system("pause");

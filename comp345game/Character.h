@@ -17,6 +17,7 @@ class Character: public Observable, public Loggable
 {
 public:
 	char isPlayer;
+	bool hasAttacked;
 	Inventory* wornItems;
 	Backpack* carriedItems;
 	ItemUI* itemManager;
