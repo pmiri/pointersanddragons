@@ -7,16 +7,7 @@
     <ClCompile Include="Campaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CampaignEditor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Character.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterEditor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterObserver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dice.cpp">
@@ -37,9 +28,6 @@
     <ClCompile Include="Item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ItemBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ItemContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -49,13 +37,7 @@
     <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MapBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MapCreator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MapEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MapObject.cpp">
@@ -64,50 +46,68 @@
     <ClCompile Include="MapUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Observable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Observer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameLogger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Loggable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AggressorStrategy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HumanPlayerStrategy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterStrategy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BullyBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NimbleBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TankBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonsterBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FileLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BullyBuilder.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterBuilder.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBuilder.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="MapBuilder.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterBuilder.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="NimbleBuilder.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="TankBuilder.cpp">
+      <Filter>Source Files\Builders</Filter>
+    </ClCompile>
+    <ClCompile Include="CampaignEditor.cpp">
+      <Filter>Source Files\Editors</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterEditor.cpp">
+      <Filter>Source Files\Editors</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEditor.cpp">
+      <Filter>Source Files\Editors</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterObserver.cpp">
+      <Filter>Source Files\Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="Observer.cpp">
+      <Filter>Source Files\Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="Observable.cpp">
+      <Filter>Source Files\Observers</Filter>
+    </ClCompile>
     <ClCompile Include="Subject.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="Loggable.cpp">
+      <Filter>Source Files\Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files\Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLogger.cpp">
+      <Filter>Source Files\Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="AggressorStrategy.cpp">
+      <Filter>Source Files\Strategies</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterStrategy.cpp">
+      <Filter>Source Files\Strategies</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanPlayerStrategy.cpp">
+      <Filter>Source Files\Strategies</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +223,18 @@
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{7eaa3714-6eab-429b-a997-42cd85af50d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Builders">
+      <UniqueIdentifier>{0e107c3b-bebb-4add-b427-763db268aca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Editors">
+      <UniqueIdentifier>{fab1786d-33d3-46af-8cde-22050ea391f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Observers">
+      <UniqueIdentifier>{1110bad0-4e34-424e-919f-0cbd78fa383d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Strategies">
+      <UniqueIdentifier>{943f4a71-f3ec-47d9-a635-837e897a4663}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -144,7 +144,8 @@ bool Map::moveCharacter(char dir)
 			Notify();
 			cout << "Level up!" << endl;
 			Report("Exited current map");
-			//nextMap = 1;
+			
+			mapFinished = true;
 		}
 		else
 			cout << "You have not proceeded" << endl;

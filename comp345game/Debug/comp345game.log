@@ -1,62 +1,6 @@
-﻿  TankBuilder.cpp
-  Subject.cpp
-  Observable.cpp
-  NimbleBuilder.cpp
-  MonsterBuilder.cpp
-  MapUI.cpp
-  MapCreator.cpp
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(240): warning C4101: 'e': unreferenced local variable
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(329): warning C4101: 'e': unreferenced local variable
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(467): warning C4101: 'e': unreferenced local variable
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(555): warning C4101: 'e': unreferenced local variable
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(676): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(700): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(724): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-  Map.cpp
-  Logger.cpp
-  Loggable.cpp
-  Inventory.cpp
-c:\users\pmiri\code\comp345game\comp345game\inventory.cpp(37): warning C4018: '<': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\inventory.cpp(51): warning C4018: '<': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\inventory.cpp(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\inventory.cpp(57): warning C4018: '<': signed/unsigned mismatch
-  HumanPlayerStrategy.cpp
-c:\users\pmiri\code\comp345game\comp345game\humanplayerstrategy.cpp(25): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-  GameMain.cpp
-  GameLogger.cpp
-  FileLoader.cpp
-  Dice.cpp
-  CharacterBuilder.cpp
-  Character.cpp
-c:\users\pmiri\code\comp345game\comp345game\character.cpp(26): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\pmiri\code\comp345game\comp345game\character.cpp(227): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  BullyBuilder.cpp
-  Generating Code...
-c:\users\pmiri\code\comp345game\comp345game\character.cpp(201): warning C4172: returning address of local variable or temporary: tempScores
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(403): warning C4172: returning address of local variable or temporary: mapToEdit
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(663): warning C4172: returning address of local variable or temporary: campaignToEdit
-c:\users\pmiri\code\comp345game\comp345game\mapcreator.cpp(855): warning C4715: 'MapCreator::getTile': not all control paths return a value
-  Compiling...
-  MapObject.cpp
-  MapEditor.cpp
-c:\users\pmiri\code\comp345game\comp345game\mapeditor.cpp(45): warning C4018: '>': signed/unsigned mismatch
-c:\users\pmiri\code\comp345game\comp345game\mapeditor.cpp(69): warning C4018: '<': signed/unsigned mismatch
-  MapBuilder.cpp
-  CharacterStrategy.cpp
-  CharacterObserver.cpp
-  CharacterEditor.cpp
-  CampaignEditor.cpp
-  Campaign.cpp
+﻿  Campaign.cpp
 c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(36): warning C4018: '<': signed/unsigned mismatch
 c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(44): warning C4018: '<': signed/unsigned mismatch
-  AggressorStrategy.cpp
-  Generating Code...
 c:\users\pmiri\code\comp345game\comp345game\campaign.cpp(46): warning C4715: 'Campaign::getMapAt': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\charactereditor.cpp(38): warning C4715: 'CharacterEditor::createCharacter': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\charactereditor.cpp(77): warning C4715: 'CharacterEditor::editCharacter': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\mapbuilder.cpp(74): warning C4715: 'MapBuilder::buildFromFile': not all control paths return a value
-c:\users\pmiri\code\comp345game\comp345game\mapobject.cpp(65): warning C4715: 'MapObject::canMove': not all control paths return a value
-  Skipping... (no relevant changes detected)
-  Fighter.cpp
   comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.exe
   comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.pdb (Partial PDB)

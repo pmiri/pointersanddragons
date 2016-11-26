@@ -181,7 +181,7 @@ int main() {
 		system("CLS");
 
 		Character *character;
-		character->Connect(logger);
+		
 
 		do {
 			cout << "Character - Load(1) or Create(2):" << endl;
@@ -189,9 +189,12 @@ int main() {
 			if (in == '1') {
 				cout << "Please pick a file:" << endl;
 				character = CharacterEditor::loadCharacter(CHARACTERS_PATH + characterSelection());
+				character->Connect(logger);
 			}
-			else if (in == '2')
+			else if (in == '2') {
 				character = CharacterEditor::createCharacter();
+				character->Connect(logger);
+			}
 			else
 				cout << "Please select the right value";
 		} while (in != '1' && in != '2');
@@ -231,13 +234,23 @@ int main() {
 
 		int* turnCount = new int;
 		list<MapObject> gameMonsterList;
+		bool newMap = false;
 		while (!gameFinished) {
-			
+			newMap = false;
 			*turnCount = 6;
 			while (*turnCount > 0) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
+				if (map->mapFinished) {
+					map = &(campaign->nextMap());
+					newMap = true;
+					break;
+				}
 				cout << *turnCount << " player turns left";
 			}
+
+			if (newMap)
+				continue;
+
 			//TODO monster turn
 			*turnCount = 6;
 			while (*turnCount > 0) {

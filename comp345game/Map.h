@@ -50,6 +50,8 @@ public:
 	MapObject **map;
 	int nextMap;
 
+	bool mapFinished = false;
+
 	bool moveCharacter(char dir);
 	list<MapObject> getListOfMonsterObjs();
 	void moveMonster(MapObject monsterMapObject);
