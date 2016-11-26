@@ -6,6 +6,8 @@
 #include <iostream>
 #include <algorithm>
 #include <conio.h>
+#include "CharacterCreator.h"
+#include "MonsterBuilder.h"
 
 using namespace std;
 
@@ -441,6 +443,28 @@ bool Map::isOccupied(int x, int y)
 int Map::getNextMap()
 {
 	return nextMap;
+}
+
+void Map::setAllMonsters() {
+
+	int playerLevel = getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter()->getLevel();
+	CharacterCreator charBuilder;
+	MonsterBuilder* monBuilder = new MonsterBuilder;
+	charBuilder.setCharacterBuilder(monBuilder);
+
+	//search for every goddamn monster on the planet
+	for (int i = 0; i < MAP_LENGTH; i++) {
+		for (int j = 0; j < MAP_WIDTH; j++) {
+			if (map[i][j].getDisplayChar() == 'M') {
+				//set the monster
+				charBuilder.createCharacter(playerLevel);
+				Character* monsterCharacter = charBuilder.getCharacter();
+				monsterCharacter->isPlayer = 'M';
+				getMapObjectAt(i, j).setCharacter(monsterCharacter);
+			}
+		}
+	}
+	delete monBuilder;
 }
 
 //int main() {

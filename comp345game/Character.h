@@ -25,6 +25,7 @@ public:
 	Character(int, int, int, int, int, int, char);
 	Character(int, int, int, int, int, int, char, int);
 	Character(int, int, int, int, int, int, int);
+	Character(int);
 	bool validateNewCharacter();
 	void hit(int);
 

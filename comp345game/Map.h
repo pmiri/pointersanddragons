@@ -33,6 +33,7 @@ public:
 	void setExit(int x, int y);
 	char getCell(int x, int y);
 	int getNextMap();
+	void setAllMonsters();
 
 	MapObject getMapObjectAt(int x, int y);
 	void setMapObjectAt(int x, int y, MapObject* myo);

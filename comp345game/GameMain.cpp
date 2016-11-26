@@ -199,6 +199,7 @@ int main() {
 		playerCharacter->Connect(logger);
 		//(map->getMapObjectAt(map->BeginPositionX, map->BeginPositionY)).setCharacter(playerCharacter);
 		map->PlacePlayer(playerCharacter);
+		map->setAllMonsters();
 		Inventory* playerInventory = new Inventory();
 		vector<Enhancement> testEnhancement;
 		Enhancement testArmorClassEnhancement = Enhancement("Armor Class", 4);

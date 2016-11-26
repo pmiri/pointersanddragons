@@ -78,6 +78,7 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 	currentHitPoints = maxHitPoints;
 	baseAttackBonus = 1;
 	level = 1;
+	attacks = 1;
 }
 
 Character::Character(int str, int dex, int con, int intel, int wis, int cha, char isP, int lvl)
@@ -99,6 +100,7 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, cha
 	baseAttackBonus = 1;
 	level = 1;
 	int levelsToGo = lvl - level;
+	attacks = 1;
 	while (levelsToGo > 0)
 	{
 		Dice hitDice = Dice();
@@ -127,6 +129,7 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, int
 	baseAttackBonus = 1;
 	level = 1;
 	int levelsToGo = lvl - level;
+	attacks = 1;
 	while (levelsToGo > 0)
 	{
 		Dice hitDice = Dice();
@@ -135,6 +138,17 @@ Character::Character(int str, int dex, int con, int intel, int wis, int cha, int
 		levelsToGo--;
 	}
 }
+
+Character::Character(int lvl) {
+	//for creating monsters
+	Character();
+	isPlayer = 'M';
+	Dice lvlDice = Dice();
+	for (int l = 0; l < lvl; l++) {
+		levelUp(lvlDice.roll("1d6[+0]"));
+	}
+}
+
 
 //! Implementation of the verification of a newly created Character
 //! @return bool value, true of the character is valid (stats should be in the 3-18 range for a new character), false if invalid. 
@@ -338,6 +352,7 @@ void Character::displayStats() {
 
 void Character::fight(Character* opponent)
 {
+	level;
 	//HANDLES ALL FIGHT LOGIC
 	int damageOnOpponent = 0;
 	//mutliply by number of attacks

@@ -40,8 +40,8 @@ Map *MapBuilder::buildFromFile(string path) {
 					map->fillCell(y, currentHeight, characterMapObject);
 				}
 				if (line_array[2 * y] == 'M') {
-					//create a character who is a player
-					Character* monsterCharacter = new Character;//TODO pull monster character info from map somehow?
+					//create a character who is a monster
+					Character* monsterCharacter = new Character;
 					monsterCharacter->isPlayer = 'M';
 					monsterCharacter->strategy = new AggressorStrategy;
 					MapObject characterMapObject = MapObject(y, currentHeight, line_array[2 * y]);
