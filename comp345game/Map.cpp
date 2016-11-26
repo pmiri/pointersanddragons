@@ -27,8 +27,6 @@ int MAP_WIDTH = 2;
 
 
 Map::Map() {
-	//delete[] map;
-	nextMap = 0;
 	map = new MapObject*[MAP_LENGTH];
 	for (int i = 0; i < MAP_LENGTH; i++) {
 		map[i] = new MapObject[MAP_WIDTH];
@@ -40,7 +38,6 @@ Map::Map() {
 }
 
 Map::Map(int width, int height) {
-	nextMap = 0;
 	//clear exisiting thing
 	delete[] map;
 	MAP_LENGTH = height;
@@ -147,7 +144,7 @@ bool Map::moveCharacter(char dir)
 			Notify();
 			cout << "Level up!" << endl;
 			Report("Exited current map");
-			//nextMap = 1;
+			mapSwitch = 1;
 		}
 		else
 			cout << "You have not proceeded" << endl;
@@ -159,7 +156,7 @@ bool Map::moveCharacter(char dir)
 		cout << endl << "You are at the Beginning, would you like to go to the previous map? (Y)" << endl;
 		char in = mapKeyPress();
 		if (toupper(in) == 'Y') {
-			nextMap = -1;
+			mapSwitch = -1;
 		}
 		else
 			cout << "You have not gone back" << endl;
@@ -439,11 +436,6 @@ bool Map::isOccupied(int x, int y)
 		return true;
 	}
 	return false;
-}
-
-int Map::getNextMap()
-{
-	return nextMap;
 }
 
 void Map::setAllMonsters() {

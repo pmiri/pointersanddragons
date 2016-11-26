@@ -15,6 +15,10 @@ Map *MapBuilder::buildFromFile(string path) {
 	myfile.open(MAPS_PATH + path);
 	if (myfile.is_open())
 	{
+		string prev, next;
+		getline(myfile, prev);
+		getline(myfile, next);
+
 		//get width
 		if (getline(myfile, line))
 			width = atoi(line.c_str());
@@ -25,6 +29,8 @@ Map *MapBuilder::buildFromFile(string path) {
 		else return nullptr;
 
 		Map *map = new Map(width, height);
+		map->prev = prev;
+		map->next = next;
 
 		int currentHeight = 0;
 		const char *line_array;

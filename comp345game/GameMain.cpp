@@ -28,7 +28,7 @@ inline char keyPress() {
 	int i = _getche();
 	char input = static_cast<char>(i);
 	cout << endl;
-	return input;
+	return tolower(input);
 }
 
 //Reads all possible files available
@@ -48,9 +48,6 @@ string mapSelection() {
 			printf("[%d] %s\n", i, ent->d_name);
 			maps.push_back(ent->d_name);
 			string name = ent->d_name;
-			if (name.find("campaign") != std::string::npos) {
-				campaign->addMap(*MapBuilder::buildFromFile(MAPS_PATH + ent->d_name));
-			}
 			i++;
 		}
 		closedir(dir);
@@ -236,13 +233,43 @@ int main() {
 
 		int* turnCount = new int;
 		list<MapObject> gameMonsterList;
+		bool newMap = false;
+
+		//GAME MAIN
 		while (!gameFinished) {
+			newMap = false;
+			string nextMapPath;
 
 			*turnCount = 6;
 			while (*turnCount > 0) {
 				playerCharacter->strategy->doStrategy(map, &mapView, itemView, playerCharacter, turnCount, nullptr);
 				cout << *turnCount << " player turns left";
+				switch (map->mapSwitch) {
+				case 1:
+					newMap = true;
+					nextMapPath = map->next;
+					break;
+				case -1:
+					newMap = true;
+					nextMapPath = map->prev;
+					break;
+				default:
+					break;
+				}
 			}
+
+			if (newMap) {
+				system("CLS");
+				if (nextMapPath == "") {
+					cout << "YOU WIN" << endl;
+					gameFinished = true;
+					continue;
+				}
+				map = MapBuilder::buildFromFile(MAPS_PATH + nextMapPath);
+				map->Notify();
+				continue;
+			}
+
 			//TODO monster turn
 			*turnCount = 6;
 			while (*turnCount > 0) {

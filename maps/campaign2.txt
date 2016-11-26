@@ -1,3 +1,5 @@
+campaign1.txt
+campaign3.txt
 13
 8
 W W W W W W W W W W W W W

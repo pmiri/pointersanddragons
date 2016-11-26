@@ -32,7 +32,6 @@ public:
 	void setEntrance(int x, int y);
 	void setExit(int x, int y);
 	char getCell(int x, int y);
-	int getNextMap();
 	void setAllMonsters();
 
 	MapObject getMapObjectAt(int x, int y);
@@ -50,7 +49,11 @@ public:
 	Map();
 	Map(int width, int height);
 	MapObject **map;
-	int nextMap;
+
+	int mapSwitch = 0;
+	string path;
+	string next;
+	string prev;
 
 	bool moveCharacter(char dir);
 	list<MapObject> getListOfMonsterObjs();
