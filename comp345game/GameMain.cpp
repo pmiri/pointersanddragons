@@ -250,7 +250,6 @@ int main() {
 		while (!gameFinished) {
 			newMap = false;
 			string nextMapPath = map->path;
-			int nextOrPrev = 0;
 
 			*turnCount = 6;
 			playerCharacter->hasAttacked = false;
@@ -314,7 +313,7 @@ int main() {
 					if (viewingP || viewingI)
 						break;
 					playerCharacter->strategy->doStrategy(i, map, turnCount, nullptr);
-					cout << *turnCount << " player turns left";
+					cout << *turnCount << " player turns left" << endl;
 					break;
 				}
 
@@ -322,17 +321,18 @@ int main() {
 				if (abs(map->mapSwitch) == 1) {
 					newMap = true;
 					nextMapPath = map->mapSwitch == 1? map->next: map->prev;
+					break;
 				}
 			}
 
 			if (newMap) {
 				//Moving forward and no maps left
-				if (nextMapPath == "" && nextOrPrev == 1) {
+				if (nextMapPath == "" && map->mapSwitch == 1) {
 					cout << "YOU WIN" << endl;
 					gameFinished = true;
 					continue;
 				}
-				else if (nextMapPath == "" && nextOrPrev == -1) {
+				else if (nextMapPath == "" && map->mapSwitch == -1) {
 					cout << "You are at the start" << endl;
 					continue;
 				}
@@ -364,7 +364,7 @@ int main() {
 					}
 				}
 				*turnCount = *turnCount - 1;
-				cout << *turnCount << " monster turns left";
+				cout << *turnCount << " monster turns left" << endl;
 			}
 
 			//TODO NPC turn
