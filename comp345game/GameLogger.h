@@ -10,6 +10,8 @@ public:
 	GameLogger(string path = "");
 	GameLogger(Loggable* loggable, string path = "");
 	void Log(string s);
+	
+	void toggle();
 	void activate();
 	void deactivate();
 

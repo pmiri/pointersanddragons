@@ -168,8 +168,16 @@ int main() {
 	Backpack* playerPack;
 	ItemUI* itemView;
 
-	GameLogger* logger = new GameLogger();
-	logger->Log("Log created");
+	GameLogger* eventLogger = new GameLogger();
+	eventLogger->Log("Log created");
+
+	//To be assigned subjects when the subjects are made
+	GameLogger* mapLogger = new GameLogger(eventLogger->getPath());
+	GameLogger* characterLogger = new GameLogger(eventLogger->getPath());
+
+	// TODO -@pmiri
+	//GameLogger* diceLogger = new GameLogger( where dice?, eventLogger->getPath());
+
 
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
@@ -177,17 +185,16 @@ int main() {
 	char in;
 	switch (keyPress()) {
 	case 'i':
-		logger->Log("Item Menu opened.");
+		eventLogger->Log("Item Menu opened.");
 		ItemMenu();
 		break;
 	case 'm':
-		logger->Log("Map Creator opened.");
+		eventLogger->Log("Map Creator opened.");
 		MapCreator::runMenu();
 		break;
 	default:
 		system("CLS");
 		cout << "Welcome to our game!" << endl;
-		system("pause");
 
 		//Selecting a map and a character from a list of saved ones
 		cout << "Load a Map:" << endl;
@@ -198,6 +205,7 @@ int main() {
 			cout << "Load a Map:" << endl;
 			map = MapBuilder::buildFromFile(mapSelection());
 		}
+		map->Connect(mapLogger);
 		MapUI mapView = MapUI::MapUI(map);
 		system("CLS");
 
@@ -208,7 +216,9 @@ int main() {
 
 		//adds the built player to the map
 		playerCharacter = character;
-		playerCharacter->Connect(logger);
+		playerCharacter->Connect(characterLogger);
+
+
 		map->PlacePlayer(playerCharacter);
 		map->setAllMonsters();
 
@@ -257,6 +267,18 @@ int main() {
 				//switch for all possible key presses
 				//if non-movement, execute and skip rest
 				switch (i) {
+				case 'z':
+					cout << "Event Logger toggled.";
+					eventLogger->toggle();
+					break;
+				case 'x':
+					cout << "Map Logger toggled.";
+					mapLogger->toggle();
+					break;
+				case 'c':
+					cout << "Character Logger toggled.";
+					characterLogger->toggle();
+					break;
 				case 'i':
 					if (!viewingI) {
 						viewingP = false;
@@ -364,13 +386,11 @@ int main() {
 		break;
 	}
 
-
 	//TODO: 	Toggling a view of character information(player or opponents) and chest content during play.
 
-	logger->Log("Log Over");
+	eventLogger->Log("Log Over");
 	system("pause");
 
-	delete logger;
+	delete eventLogger;
 	return 0;
 }
-

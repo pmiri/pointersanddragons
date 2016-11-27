@@ -62,6 +62,10 @@ void GameLogger::Log(string s) {
 	file.close();
 }
 
+void GameLogger::toggle() {
+	activated = !activated;
+}
+
 void GameLogger::activate() {
 	activated = true;
 }
