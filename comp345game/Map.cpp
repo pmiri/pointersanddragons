@@ -364,14 +364,12 @@ void Map::fillCell(int x, int y, MapObject obj)
 }
 
 void Map::PlacePlayer(Character* player) {
-	bool found = false;
 	for (int i = 0; i < getWidth(); i++) {
 		for (int j = 0; j < getHeight(); j++) {
 			if (map[i][j].getDisplayChar() == 'B') {
 				map[i][j].setCharacter(player);
 				PlayerPositionX = i;
 				PlayerPositionY = j;
-				found = true;
 				break;
 			}
 		}

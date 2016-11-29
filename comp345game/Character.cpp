@@ -11,13 +11,6 @@
 
 class MapObject;//forward declaration to help compilation
 
-inline char characterKeyPress() {
-	int i = _getche();
-	char input = static_cast<char>(i);
-	cout << endl;
-	return input;
-}
-
 //! Constructor: creates character with random ability scores 
 Character::Character()
 {
@@ -397,7 +390,7 @@ void Character::fight(Character* opponent)
 	}
 
 	hasAttacked = true;
-	cout << "FIGHT OVER!" << endl << "Press any key to continue";
-	characterKeyPress();
+	cout << "FIGHT OVER!" << endl;
+	system("pause");
 
 }
