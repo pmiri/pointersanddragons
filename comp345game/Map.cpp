@@ -214,7 +214,7 @@ bool Map::moveCharacter(char dir)
 		while (openingChest)
 		{
 			system("cls");
-			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->printChestInventory(map[PlayerPositionX][PlayerPositionY].getItems());
+			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->printNPCInventory(map[PlayerPositionX][PlayerPositionY].getItems());
 			cout << "Use 0-9 to take any item, c to exit." << endl;
 			in = mapKeyPress();
 			if (in == 'c')

@@ -17,6 +17,7 @@ public:
 	bool unequip(char dir);
 	bool equipFromBackpack(char dir);
 	void printChestInventory(std::vector<Item> chest);
+	void printNPCInventory(std::vector<Item> chest);
 	void grabFromChest(std::vector<Item> chest, char dir);
 private:
 	Inventory *inv;
