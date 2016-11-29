@@ -389,7 +389,12 @@ int main() {
 		delete playerInventory;
 		delete playerPack;
 		delete itemView;
+		delete mapView;
 		delete campaign;
+		delete map;
+
+		delete mapLogger;
+		delete characterLogger;
 
 		break;
 	}

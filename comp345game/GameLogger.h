@@ -24,5 +24,6 @@ private:
 	Loggable *_subject;
 	ofstream file;
 	string file_path;
+	string FOLDER_PATH = "../gamelogs/";
 };
 
