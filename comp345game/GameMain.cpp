@@ -206,6 +206,8 @@ int main() {
 			map = MapBuilder::buildFromFile(mapSelection());
 		}
 		map->Connect(mapLogger);
+		mapLogger->Log("Map loaded: " + map->path);
+
 		MapUI* mapView = new MapUI(map);
 		system("CLS");
 

@@ -102,11 +102,11 @@ bool Map::moveCharacter(char dir)
 	targetCellContent = getCell(newXPosition, newYPosition);
 	if (targetCellContent == 'W' || targetOutOfBounds) {
 		Notify();
-		Report("Invalid move");
+		report = "Invalid move";
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
 		return false;
 	}
-	Report(report);
+	(getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter())->Report(report);
 
 	if (targetCellContent == 'M') {
 		Notify();
