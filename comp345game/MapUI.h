@@ -11,6 +11,7 @@ class MapUI : public Observer
 public:
 	MapUI();
 	MapUI(Map* m);
+	~MapUI();
 	void PrintMap();
 	void Update();
 	string getMapString();

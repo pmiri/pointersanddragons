@@ -206,7 +206,7 @@ int main() {
 			map = MapBuilder::buildFromFile(mapSelection());
 		}
 		map->Connect(mapLogger);
-		MapUI mapView = MapUI::MapUI(map);
+		MapUI* mapView = new MapUI(map);
 		system("CLS");
 
 		Character *character = new Character;
@@ -334,8 +334,17 @@ int main() {
 					cout << "You are at the start" << endl;
 				}
 				else {
+					delete mapView;
+					delete map;
 					map = MapBuilder::buildFromFile(nextMapPath);
-					mapView = MapUI::MapUI(map);
+					mapView = new MapUI(map);
+					
+					map->Connect(mapLogger);
+					map->PlacePlayer(playerCharacter);
+
+					map->setAllMonsters();
+					
+					system("CLS");
 					map->Notify();
 					continue;
 				}
