@@ -175,13 +175,13 @@ Item::Item(string type_name, string itemName, int characterLvl)//generates an it
 	influence = monsterItemEnhancements;
 }
 
-int randomIntRange(int min, int max) {
+int Item::randomIntRange(int min, int max) {
 	int random = (rand() % (int)(max - min + 1));
 	int randomInt = min + random;
 	return randomInt;
 }
 
-void setBonuses(int charLvl, vector<Enhancement>* vecEn) {
+void Item::setBonuses(int charLvl, vector<Enhancement>* vecEn) {
 	int totalBonus = 0;
 	while (totalBonus < charLvl) {
 		int totalBonus = 0;

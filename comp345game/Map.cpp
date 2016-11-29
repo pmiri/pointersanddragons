@@ -510,7 +510,7 @@ void Map::setAllMonsters() {
 	delete monBuilder;
 }
 
-int randomIntRange(int min, int max) {
+int Map::randomIntRange(int min, int max) {
 	int random = (rand() % (int)(max - min + 1));
 	int randomInt = min + random;
 	return randomInt;

@@ -45,6 +45,7 @@ public:
 
 	int getHeight();
 	int getWidth();
+	int Map::randomIntRange(int min, int max);
 
 	Map();
 	Map(int width, int height);
