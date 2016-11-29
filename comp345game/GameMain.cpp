@@ -201,7 +201,7 @@ int main() {
 		map = MapBuilder::buildFromFile(mapSelection());
 		while (!map->validatePath()) {
 			system("CLS");
-			cout << map->path + " is an invalid map, please select another:" << endl;
+			cout << map->path + " is an invalid map, please select another:" << endl << endl;
 			cout << "Load a Map:" << endl;
 			map = MapBuilder::buildFromFile(mapSelection());
 		}
@@ -217,7 +217,6 @@ int main() {
 		//adds the built player to the map
 		playerCharacter = character;
 		playerCharacter->Connect(characterLogger);
-
 
 		map->PlacePlayer(playerCharacter);
 		map->setAllMonsters();
@@ -255,7 +254,6 @@ int main() {
 			playerCharacter->hasAttacked = false;
 			bool viewingI = false;
 			bool viewingP = false;
-
 
 			while (*turnCount > 0 && !playerCharacter->hasAttacked) {
 				bool svalidEquip = false;
@@ -320,7 +318,7 @@ int main() {
 				//If some change in map is necessary
 				if (abs(map->mapSwitch) == 1) {
 					newMap = true;
-					nextMapPath = map->mapSwitch == 1? map->next: map->prev;
+					nextMapPath = map->mapSwitch == 1 ? map->next : map->prev;
 					break;
 				}
 			}
@@ -334,12 +332,13 @@ int main() {
 				}
 				else if (nextMapPath == "" && map->mapSwitch == -1) {
 					cout << "You are at the start" << endl;
+				}
+				else {
+					map = MapBuilder::buildFromFile(nextMapPath);
+					mapView = MapUI::MapUI(map);
+					map->Notify();
 					continue;
 				}
-				map = MapBuilder::buildFromFile(nextMapPath);
-				mapView = MapUI::MapUI(map);
-				map->Notify();
-				continue;
 			}
 
 			//Monster turn

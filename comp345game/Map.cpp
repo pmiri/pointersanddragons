@@ -376,8 +376,6 @@ void Map::PlacePlayer(Character* player) {
 			}
 		}
 	}
-	if (found)
-		cout << "found!";
 }
 
 //! Implementation of get cell, returns cell at given location
