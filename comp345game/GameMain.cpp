@@ -162,9 +162,7 @@ int main() {
 	Inventory* playerInventory;
 	vector<Enhancement> testEnhancement;
 	Enhancement testArmorClassEnhancement;
-	Item testHelm;
 	Enhancement testStrengthEnhancement;
-	Item testBelt;
 	Backpack* playerPack;
 	ItemUI* itemView;
 
@@ -174,10 +172,6 @@ int main() {
 	//To be assigned subjects when the subjects are made
 	GameLogger* mapLogger = new GameLogger(eventLogger->getPath());
 	GameLogger* characterLogger = new GameLogger(eventLogger->getPath());
-
-	// TODO -@pmiri
-	//GameLogger* diceLogger = new GameLogger( where dice?, eventLogger->getPath());
-
 
 	cout << "COMP C++ TEAM PROJECT: ONSLAUGHT" << endl;
 	cout << endl;
