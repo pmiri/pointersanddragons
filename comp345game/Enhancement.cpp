@@ -36,3 +36,8 @@ int Enhancement::getBonus()
 {
 	return bonus;
 }
+
+void Enhancement::setBonus(int setBonus)
+{
+	bonus = setBonus;
+}
