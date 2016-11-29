@@ -196,6 +196,41 @@ bool Map::moveCharacter(char dir)
 		}
 		return true;
 	}
+
+	if (targetCellContent == 'F') {
+		Notify();
+		bool openingChest;
+		cout << endl << "Have you heard of the high elves? (Y)" << endl;
+		char in = mapKeyPress();
+		if (toupper(in) == 'Y') {
+			cout << "Have some items adventurer." << endl;
+			openingChest = true;
+		}
+		else
+		{
+			openingChest = false;
+			cout << "Be gone scoundrel." << endl;
+		}
+		while (openingChest)
+		{
+			system("cls");
+			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->printChestInventory(map[PlayerPositionX][PlayerPositionY].getItems());
+			cout << "Use 0-9 to take any item, c to exit." << endl;
+			in = mapKeyPress();
+			if (in == 'c')
+			{
+				Notify();
+				cout << "Good luck traveler." << endl;
+				openingChest = false;
+			}
+			else
+			{
+				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
+			}
+		}
+		return true;
+	}
+
 	return true;
 }
 

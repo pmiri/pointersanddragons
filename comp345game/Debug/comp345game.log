@@ -1,4 +1,4 @@
-﻿  GameMain.cpp
-c:\users\pmiri\code\comp345game\comp345game\gamemain.cpp(185): warning C4101: 'in': unreferenced local variable
-  comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.exe
-  comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.pdb (Partial PDB)
+﻿  MapObject.cpp
+c:\users\jacob\documents\github\comp345game\comp345game\mapobject.cpp(71): warning C4715: 'MapObject::canMove': not all control paths return a value
+  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.exe
+  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.pdb (Partial PDB)
