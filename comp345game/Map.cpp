@@ -9,6 +9,7 @@
 #include "CharacterCreator.h"
 #include "MonsterBuilder.h"
 #include "AggressorStrategy.h"
+#include <stdlib.h> //for rand
 
 using namespace std;
 
@@ -454,12 +455,72 @@ void Map::setAllMonsters() {
 				Character* monsterCharacter = charBuilder.getCharacter();
 				monsterCharacter->isPlayer = 'M';
 				monsterCharacter->strategy = new AggressorStrategy;
+				//give monster some items so that a chest can be dropped
+				//random chance that a monster has any of these items
+				//enhancements are always between 0 and 5 for items in the ItemBuilder
+				int chance = 0, bonus = 0;
+
+				//Helmet
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Helmet", "Monster Helm", monsterCharacter->getLevel());
+					monsterCharacter->carriedItems->addItem(monsterHelm);
+				}
+
+				//Armor
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Armor", "Monster Armor", monsterCharacter->getLevel());
+					monsterCharacter->carriedItems->addItem(monsterHelm);
+				}
+
+				//Shield
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Shield", "Monster Shield", monsterCharacter->getLevel());
+					monsterCharacter->carriedItems->addItem(monsterHelm);
+				}
+
+				//Ring
+				chance = randomIntRange(0, 10);
+				if (chance < 2) {
+					Item monsterHelm = Item("Ring", "Monster Wedding Ring", monsterCharacter->getLevel());
+					monsterCharacter->carriedItems->addItem(monsterHelm);
+				}
+
+				//Belt
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Belt", "Monster Belt", monsterCharacter->getLevel());
+					monsterCharacter->carriedItems->addItem(monsterHelm);
+				}
+
+				//Boots
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Boots", "Monster Footwear", monsterCharacter->getLevel());
+					monsterCharacter->carriedItems->addItem(monsterHelm);
+				}
+
+				//Weapon
+				chance = randomIntRange(0, 10);
+				if (chance < 6) {
+					Item monsterHelm = Item("Weapon", "Monster Sword", monsterCharacter->getLevel());
+					monsterCharacter->carriedItems->addItem(monsterHelm);
+				}
+
 				(map[i][j]).setCharacter(monsterCharacter);
 				//getMapObjectAt(i, j).setCharacter(monsterCharacter);
 			}
 		}
 	}
 	delete monBuilder;
+}
+
+int randomIntRange(int min, int max) {
+	int random = (rand() % (int)(max - min + 1));
+	int randomInt = min + random;
+	return randomInt;
 }
 
 //int main() {

@@ -24,6 +24,7 @@ public:
 	string getType();
 	// method to get the bonus of the type
 	int getBonus();
+	void setBonus(int setBonus);
 private:
 	string type;
 	int bonus;
