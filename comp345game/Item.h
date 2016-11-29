@@ -22,7 +22,8 @@ public:
 	// Constructor
 	Item(string type, vector<Enhancement> influences);
 	Item(string type, vector<Enhancement> influences, string name);
-	Item::Item(string type_name, string itemName, int characterLvl);//random item
+	Item(Item* otherItem);
+	Item(string type_name, string itemName, int characterLvl);//random item
 	// method to get the type of the item
 	string getType();
 	// method to get the influences of the item
@@ -35,6 +36,7 @@ public:
 	static bool validateEnhancementType(string itemType, string enhanceType);
 	int randomIntRange(int min, int max);
 	void setBonuses(int charLvl, vector<Enhancement>* vecEn);
+	void Copy(Item otherItem);
 private:
 	string name;
 	string type;

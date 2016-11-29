@@ -354,6 +354,11 @@ void Character::fight(Character* opponent)
 	if(opponent->isPlayer == 'P')
 		opString = "PLAYER";
 
+	for each (Item it in wornItems->getItems())
+	{
+		cout << it.getName() << endl;
+	}
+
 	//HANDLES ALL FIGHT LOGIC
 	int damageOnOpponent = 0;
 	//mutliply by number of attacks
