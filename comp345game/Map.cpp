@@ -357,9 +357,6 @@ void Map::fillCell(int x, int y, MapObject obj)
 	MapObject* omo = &map[x][y];
 	*omo = obj;
 
-	//char* oc = new char;
-	//oc = &map[x][y];
-	//*oc = obj;
 	Notify();
 }
 
@@ -442,8 +439,8 @@ void Map::setAllMonsters() {
 	charBuilder.setCharacterBuilder(monBuilder);
 
 	//search for every goddamn monster on the planet
-	for (int i = 0; i < MAP_LENGTH; i++) {
-		for (int j = 0; j < MAP_WIDTH; j++) {
+	for (int i = 0; i < MAP_WIDTH; i++) {
+		for (int j = 0; j < MAP_LENGTH; j++) {
 			if (map[i][j].getDisplayChar() == 'M') {
 				//set the monster
 				charBuilder.createCharacter(playerLevel);
