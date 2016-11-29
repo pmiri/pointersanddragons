@@ -52,12 +52,29 @@ void MapUI::PrintMap() {
 				Character* monster = _subject->getMapObjectAt(w, h).getCharacter();
 				if (monster->getHitPoints() <= 0) {
 					//check if monster has items
-					if (monster->carriedItems != NULL && monster->carriedItems->getItems().size() > 0) {
-						ItemContainer droppedTreasure = ItemContainer(monster->carriedItems->getItems());
-						_subject->setMapObjectAt(w, h, new MapObject);
-						_subject->getMapObjectAt(w, h).setItem(droppedTreasure.getItems());
-						_subject->getMapObjectAt(w, h).setCharacter(nullptr);//there might be a problem here
-						mapString += "T";
+					vector<Item> allMonsterItems = monster->wornItems->getItems();
+					vector<Item> validMonsterItems = vector<Item>();
+					for each (Item itm in allMonsterItems)
+					{
+						if (itm.getType() != "")
+							validMonsterItems.push_back(itm);
+					}
+					if (monster->wornItems != NULL && validMonsterItems.size() > 0) {
+						//ItemContainer droppedTreasure = ItemContainer(monster->wornItems->getItems());
+						_subject->getMapObjectAt(w, h).replaceMonsterWithTreasure();
+
+						MapObject* nmo = new MapObject;
+						nmo->setItem(validMonsterItems);
+						_subject->setMapObjectAt(w, h, nmo);
+
+						//_subject->getMapObjectAt(w, h).setItem(monsterItems);
+						//_subject->getMapObjectAt(w, h).setCharacter(nullptr);
+
+						//_subject->setMapObjectAt(w, h, new MapObject);
+						//_subject->getMapObjectAt(w, h).setItem(droppedTreasure.getItems());
+						//_subject->getMapObjectAt(w, h).setCharacter(nullptr);//there might be a problem here
+						//mapString += "T";
+						w--;
 						continue;
 					}
 					_subject->setMapObjectAt(w, h, new MapObject);

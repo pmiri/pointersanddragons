@@ -25,6 +25,7 @@ void MapObject::setCharacter(Character * c)
 	if (c == nullptr) {
 		thisCharacter = new Character;//changes the pointer
 		thisCharacter = NULL;
+		return;
 	}
 	thisCharacter = c;
 	if (wallOrOtherChar != 'F' && wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
@@ -89,4 +90,12 @@ MapObject::MapObject(int xCoord, int yCoord, char c)
 	wallOrOtherChar = c;
 	x = xCoord;
 	y = yCoord;
+}
+
+void MapObject::replaceMonsterWithTreasure() {
+	vector<Item> monsterItems = getCharacter()->wornItems->getItems();
+	setItem(monsterItems);
+	setCharacter(nullptr);
+	thisCharacter = NULL;
+	delete thisCharacter;
 }
