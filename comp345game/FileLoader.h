@@ -16,6 +16,7 @@ class FileLoader
 public:
 	static string mapSelection();
 	static string characterSelection();
+	static string campaignSelection();
 private:
 	static inline char keyPress() {
 		int i = _getche();
@@ -23,4 +24,5 @@ private:
 		cout << endl;
 		return input;
 	};
+	static bool isCampaign(string filepath);
 };

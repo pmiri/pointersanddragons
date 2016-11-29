@@ -13,6 +13,11 @@ MapUI::MapUI(Map* m) {
 	_subject = m;
 	_subject->Attach(this);
 };
+
+MapUI::~MapUI() {
+	_subject->Detach(this);
+}
+
 void MapUI::Update() {
 	PrintMap();
 }

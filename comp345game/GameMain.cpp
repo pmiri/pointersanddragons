@@ -201,12 +201,14 @@ int main() {
 		map = MapBuilder::buildFromFile(mapSelection());
 		while (!map->validatePath()) {
 			system("CLS");
-			cout << map->path + " is an invalid map, please select another:" << endl;
+			cout << map->path + " is an invalid map, please select another:" << endl << endl;
 			cout << "Load a Map:" << endl;
 			map = MapBuilder::buildFromFile(mapSelection());
 		}
 		map->Connect(mapLogger);
-		MapUI mapView = MapUI::MapUI(map);
+		mapLogger->Log("Map loaded: " + map->path);
+
+		MapUI* mapView = new MapUI(map);
 		system("CLS");
 
 		Character *character = new Character;
@@ -217,7 +219,6 @@ int main() {
 		//adds the built player to the map
 		playerCharacter = character;
 		playerCharacter->Connect(characterLogger);
-
 
 		map->PlacePlayer(playerCharacter);
 		map->setAllMonsters();
@@ -255,7 +256,6 @@ int main() {
 			playerCharacter->hasAttacked = false;
 			bool viewingI = false;
 			bool viewingP = false;
-
 
 			while (*turnCount > 0 && !playerCharacter->hasAttacked) {
 				bool svalidEquip = false;
@@ -320,7 +320,7 @@ int main() {
 				//If some change in map is necessary
 				if (abs(map->mapSwitch) == 1) {
 					newMap = true;
-					nextMapPath = map->mapSwitch == 1? map->next: map->prev;
+					nextMapPath = map->mapSwitch == 1 ? map->next : map->prev;
 					break;
 				}
 			}
@@ -334,12 +334,22 @@ int main() {
 				}
 				else if (nextMapPath == "" && map->mapSwitch == -1) {
 					cout << "You are at the start" << endl;
+				}
+				else {
+					delete mapView;
+					delete map;
+					map = MapBuilder::buildFromFile(nextMapPath);
+					mapView = new MapUI(map);
+					
+					map->Connect(mapLogger);
+					map->PlacePlayer(playerCharacter);
+
+					map->setAllMonsters();
+					
+					system("CLS");
+					map->Notify();
 					continue;
 				}
-				map = MapBuilder::buildFromFile(nextMapPath);
-				mapView = MapUI::MapUI(map);
-				map->Notify();
-				continue;
 			}
 
 			//Monster turn
@@ -381,7 +391,12 @@ int main() {
 		delete playerInventory;
 		delete playerPack;
 		delete itemView;
+		delete mapView;
 		delete campaign;
+		delete map;
+
+		delete mapLogger;
+		delete characterLogger;
 
 		break;
 	}
