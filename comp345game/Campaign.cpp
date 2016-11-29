@@ -60,14 +60,8 @@ int Campaign::getSize()
 	return mapsInCampaign.size();
 }
 
-Campaign::Campaign(std::string campaignName)
+Campaign::Campaign(std::vector<Map> maps)
 {
-	name = campaignName;
-}
-
-Campaign::Campaign(std::vector<Map> maps, std::string campaignName)
-{
-	name = campaignName;
 	mapsInCampaign = maps;
 }
 

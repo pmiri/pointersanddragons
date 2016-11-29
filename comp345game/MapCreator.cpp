@@ -36,19 +36,20 @@ void MapCreator::runMenu()
 			else if (userInput == "(c)" || userInput == "c" || userInput == "C" || userInput == "(C)")
 			{
 				std::cout << "Please select a saved campaign." << std::endl;
-				Campaign loadedCampaign = *MapCreator::loadCampaign();
+				Campaign *loadedCampaign = MapCreator::loadCampaign(FileLoader::campaignSelection());
 				std::cout << "Here is the loaded campaign!" << std::endl;
-				std::cout << "The campaign's name is " << loadedCampaign.name << " and it has " << loadedCampaign.getSize() << " maps in it" << std::endl;
-				for (int i = 0; i < loadedCampaign.getSize(); i++)
+				std::cout << "The campaign has " << loadedCampaign->getSize() << " maps in it" << std::endl;
+				for (int i = 0; i < loadedCampaign->getSize(); i++)
 				{
-					std::cout << "Map number " << i << " has a height of " << loadedCampaign.getMapAt(i).getHeight() << " tiles and a width of " << loadedCampaign.getMapAt(i).getWidth() << "tiles.\n";
+					std::cout << "Map number " << i << ": ";
+					printMapDetails(loadedCampaign->getMapAt(i));
 				}
-				Campaign editedCampaign = *MapCreator::editCampaign(loadedCampaign);
+				MapCreator::editCampaign(loadedCampaign);
 				std::cout << "Would you like to save the edited campaign (y) or not (n)?" << std::endl;
 				std::cin >> userInput;
 				if (userInput == "(y)" || userInput == "y" || userInput == "Y" || userInput == "(Y)")
 				{
-					MapCreator::saveCampaign(editedCampaign);
+					MapCreator::saveCampaign(loadedCampaign);
 				}
 				else
 				{
@@ -84,17 +85,15 @@ void MapCreator::runMenu()
 			}
 			else if (userInput == "(c)" || userInput == "c" || userInput == "C" || userInput == "(C)")
 			{
-				std::cout << "What would you like the campaign's name to be?" << std::endl;
-				std::string name;
 				int numberOfMaps;
-				std::cin >> name;
 				numberOfMaps = MapCreator::getNumberOfMaps();
-				Campaign customCampaign = *MapCreator::buildCampaign(numberOfMaps, name);
+				Campaign *customCampaign = MapCreator::buildCampaign(numberOfMaps);
 				std::cout << "Here is the finished campaign!" << std::endl;
-				std::cout << "The campaign's name is " << customCampaign.name << " and it has " << customCampaign.getSize() << " maps in it" << std::endl;
-				for (int i = 0; i < customCampaign.getSize(); i++)
+				std::cout << "The campaign has " << customCampaign->getSize() << " maps in it" << std::endl;
+				for (int i = 0; i < customCampaign->getSize(); i++)
 				{
-					std::cout << "Map number " << i << " has a height of " << customCampaign.getMapAt(i).getHeight() << " tiles and a width of " << customCampaign.getMapAt(i).getWidth() << "tiles.\n";
+					std::cout << "Map number " << i << ": ";
+					printMapDetails(customCampaign->getMapAt(i));
 				}
 				std::cout << "Would you like to save the campaign (y) or not (n)?" << std::endl;
 				std::cin >> userInput;
@@ -161,18 +160,18 @@ Map * MapCreator::buildMap(int length, int width)
 	return customMap;
 }
 
-Campaign *MapCreator::buildCampaign(Map maps[], int numberOfMaps, std::string name)
+Campaign *MapCreator::buildCampaign(Map maps[], int numberOfMaps)
 {
 	std::vector<Map> campaignMaps;
 	for (int i = 0; i < numberOfMaps; i++)
 	{
 		campaignMaps.push_back(maps[i]);
 	}
-	Campaign* newCampaign = new Campaign(campaignMaps, name);
+	Campaign* newCampaign = new Campaign(campaignMaps);
 	return newCampaign;
 }
 
-Campaign * MapCreator::buildCampaign(int numberOfMaps, std::string name)
+Campaign *MapCreator::buildCampaign(int numberOfMaps)
 {
 	std::vector<Map> campaignMaps;
 	for (int i = 0; i < numberOfMaps; i++)
@@ -180,7 +179,7 @@ Campaign * MapCreator::buildCampaign(int numberOfMaps, std::string name)
 		Map tempMap = *MapCreator::loadMap();
 		campaignMaps.push_back(tempMap);
 	}
-	Campaign* newCampaign = new Campaign(campaignMaps, name);
+	Campaign* newCampaign = new Campaign(campaignMaps);
 	return newCampaign;
 }
 
@@ -404,12 +403,12 @@ Map *MapCreator::editMap(Map* mapToEdit)
 	return mapToEdit;
 }
 
-void MapCreator::saveCampaign(Campaign campaignToSave, std::string filepaths[])
+void MapCreator::saveCampaign(Campaign *campaignToSave, std::string filepaths[])
 {
 	bool allMapsValid = true;
-	for (int i = 0; i < campaignToSave.getSize(); i++)
+	for (int i = 0; i < campaignToSave->getSize(); i++)
 	{
-		if (!campaignToSave.getMapAt(i).validatePath())
+		if (!campaignToSave->getMapAt(i).validatePath())
 		{
 			std::cout << "Map # " << i << " is invalid! Aborting save.\n";
 			allMapsValid = false;
@@ -418,32 +417,19 @@ void MapCreator::saveCampaign(Campaign campaignToSave, std::string filepaths[])
 	if (allMapsValid)
 	{
 		std::string currentLine = "";
-		std::ofstream fileToWrite;
-		fileToWrite.open(filepaths[0], std::ifstream::out | std::ifstream::trunc);
-		if (fileToWrite.is_open())
-		{
-			fileToWrite << campaignToSave.name << std::endl;
-			int numberOfMaps = campaignToSave.getSize();
-			fileToWrite << numberOfMaps << std::endl;
-			for (int i = 0; i < numberOfMaps; i++)
-			{
-				fileToWrite << filepaths[i + 1] << std::endl;
-				saveMap(campaignToSave.getMapAt(i), filepaths[i + 1]);
-			}
-			fileToWrite.close();
-			std::cout << "Campaign Saved!\n";
+		for (int i = 0; i < campaignToSave->getSize(); i++){
+				saveMap(campaignToSave->getMapAt(i), filepaths[i]);
 		}
-		else
-			std::cout << "Error in opening file \n";
+			std::cout << "Campaign Saved!\n";
 	}
 }
 
-void MapCreator::saveCampaign(Campaign campaignToSave)
+void MapCreator::saveCampaign(Campaign *campaignToSave)
 {
 	bool allMapsValid = true;
-	for (int i = 0; i < campaignToSave.getSize(); i++)
+	for (int i = 0; i < campaignToSave->getSize(); i++)
 	{
-		if (!campaignToSave.getMapAt(i).validatePath())
+		if (!campaignToSave->getMapAt(i).validatePath())
 		{
 			std::cout << "Map # " << i << " is invalid! Aborting save.\n";
 			allMapsValid = false;
@@ -451,153 +437,61 @@ void MapCreator::saveCampaign(Campaign campaignToSave)
 	}
 	if (allMapsValid)
 	{
-		char blankSpace = ' ';
-		std::string filePath;
-		std::ofstream fileToWrite;
-		fileToWrite.exceptions(std::ofstream::failbit | std::ofstream::badbit);
-		bool invalidInput = false;
-		do
-		{
-			std::cout << "Where would you like the file saved?" << std::endl;
-			std::cin >> filePath;
-			try {
-				fileToWrite.open(filePath, std::ifstream::out | std::ifstream::trunc);
-				fileToWrite.clear();
-				invalidInput = false;
-			}
-			catch (const std::ofstream::failure& e) {
-				std::cout << "Could not open file\n";
-				invalidInput = true;
-			}
-		} while (invalidInput);
-		if (fileToWrite.is_open())
-		{
-			fileToWrite << campaignToSave.name << std::endl;
-			int numberOfMaps = campaignToSave.getSize();
-			fileToWrite << numberOfMaps << std::endl;
-			for (int i = 0; i < numberOfMaps; i++)
+		for (int i = 0; i < campaignToSave->getSize(); i++)
 			{
+				string filePath = "";
 				std::cout << "Please enter the filename you wish to use for map #" << (i + 1) << std::endl;
 				std::cin >> filePath;
-				fileToWrite << filePath << std::endl;
-				saveMap(campaignToSave.getMapAt(i), filePath);
+				saveMap(campaignToSave->getMapAt(i), filePath);
 			}
-			fileToWrite.close();
 			std::cout << "Campaign Saved!\n";
-		}
-		else
-			std::cout << "Error in opening file \n";
 	}
 }
 
 Campaign* MapCreator::loadCampaign(std::string filepath)
 {
-	std::string currentLine = "";
-	std::ifstream fileToLoad;
-	fileToLoad.open(filepath);
-	if (fileToLoad.is_open())
+	bool hasNext = true;
+	string currentPath = filepath;
+	Campaign *loadedCampaign = new Campaign();;
+	vector<Map> maps;
+	int i = 0;
+	while (hasNext)
 	{
-		if (!getline(fileToLoad, currentLine))
-			return nullptr;
+		maps.push_back(*loadMap(currentPath));
+		currentPath = maps.at(i).next;
+		if (currentPath == "")
+			hasNext = false;
 		else
-		{
-			Campaign* campaignFromFile = new Campaign(currentLine);
-			if (!getline(fileToLoad, currentLine))
-				return nullptr;
-			else
-			{
-				int numberOfMaps = atoi(currentLine.c_str());
-				for (int i = 0; i < numberOfMaps; i++)
-				{
-					if (getline(fileToLoad, currentLine))
-					{
-						Map tempMap = *loadMap(currentLine);
-						campaignFromFile->addMap(tempMap);
-					}
-					else
-						return nullptr;
-				}
-			}
-			fileToLoad.close();
-			bool allMapsValid = true;
-			for (int i = 0; i < campaignFromFile->getSize(); i++)
-			{
-				if (!campaignFromFile->getMapAt(i).validatePath())
-				{
-					std::cout << "Map # " << i << " is invalid! Aborting save.\n";
-					allMapsValid = false;
-				}
-			}
-			if (allMapsValid)
-			{
-				return campaignFromFile;
-			}
-		}
+			i++;
 	}
-	else
-		std::cout << "Error in opening file \n";
-	return nullptr;
+	*loadedCampaign = Campaign(maps);
+	return loadedCampaign;
 }
 
-Campaign * MapCreator::loadCampaign()
+Campaign *MapCreator::loadCampaign()
 {
-	std::string currentLine = "";
-	std::ifstream fileToLoad;
-	std::string filePath = "";
 	bool invalidInput = false;
-	do
+	string currentPath;
+	std::cout << "Which file would you like to load?" << std::endl;
+	std::cin >> currentPath;
+	bool hasNext = true;
+	Campaign *loadedCampaign = new Campaign();
+	vector<Map> maps;
+	int i = 0;
+	while (hasNext)
 	{
-		std::cout << "Which file would you like to load?" << std::endl;
-		std::cin >> filePath;
-		try {
-			fileToLoad.open(filePath);
-			invalidInput = false;
-		}
-		catch (const std::ofstream::failure& e) {
-			std::cout << "Could not open file\n";
-			invalidInput = true;
-		}
-	} while (invalidInput);
-	if (fileToLoad.is_open())
-	{
-		Campaign* campaignFromFile = new Campaign(currentLine);
-		if (!getline(fileToLoad, currentLine))
-			return nullptr;
+		maps.push_back(*loadMap(currentPath));
+		currentPath = maps.at(i).next;
+		if (currentPath == "")
+			hasNext = false;
 		else
-		{
-			int numberOfMaps = atoi(currentLine.c_str());
-			for (int i = 0; i < numberOfMaps; i++)
-			{
-				if (getline(fileToLoad, currentLine))
-				{
-					Map tempMap = *loadMap(currentLine);
-					campaignFromFile->addMap(tempMap);
-				}
-				else
-					return nullptr;
-			}
-		}
-		fileToLoad.close();
-		bool allMapsValid = true;
-		for (int i = 0; i < campaignFromFile->getSize(); i++)
-		{
-			if (!campaignFromFile->getMapAt(i).validatePath())
-			{
-				std::cout << "Map # " << i << " is invalid! Aborting save.\n";
-				allMapsValid = false;
-			}
-		}
-		if (allMapsValid)
-		{
-			return campaignFromFile;
-		}
+			i++;
 	}
-	else
-		std::cout << "Error in opening file \n";
-	return nullptr;
+	*loadedCampaign = Campaign(maps);
+	return loadedCampaign;
 }
 
-Campaign * MapCreator::editCampaign(Campaign campaignToEdit)
+Campaign *MapCreator::editCampaign(Campaign *campaignToEdit)
 {
 	bool running = true;
 	std::string userInput;
@@ -607,37 +501,31 @@ Campaign * MapCreator::editCampaign(Campaign campaignToEdit)
 		std::cin >> userInput;
 		if (userInput == "(c)" || userInput == "(C)" || userInput == "c" || userInput == "C")
 		{
-			std::cout << "Would you like to edit the name (n), add a map (a), view a map (v), or remove a map (r)?\n";
+			std::cout << "Would you like to add a map (a), view a map (v), or remove a map (r)?\n";
 			std::cin >> userInput;
-			if (userInput == "(n)" || userInput == "(N)" || userInput == "n" || userInput == "N")
-			{
-				std::cout << "Please inpute the desire name.\nThe current name is : " << campaignToEdit.name << ".\n";
-				std::cin >> userInput;
-				campaignToEdit.name = userInput;
-				std::cout << "The campaign name is now " << campaignToEdit.name << ".\n";
-			}
-			else if (userInput == "(a)" || userInput == "(A)" || userInput == "a" || userInput == "A")
+			if (userInput == "(a)" || userInput == "(A)" || userInput == "a" || userInput == "A")
 			{
 				std::cout << "Please select a map to load.\n";
-				campaignToEdit.addMap(*MapCreator::loadMap());
-				std::cout << "Map added! Current campaign size is now " << campaignToEdit.getSize() << ".\n";
+				campaignToEdit->addMap(*MapCreator::loadMap());
+				std::cout << "Map added! Current campaign size is now " << campaignToEdit->getSize() << ".\n";
 			}
 			else if (userInput == "(v)" || userInput == "(V)" || userInput == "v" || userInput == "V")
 			{
 				std::cout << "Please select a map to view.\n";
-				int index = MapCreator::getMapIndex(campaignToEdit.getSize());
+				int index = MapCreator::getMapIndex(campaignToEdit->getSize());
 				std::cout << "Here is map #" << index << "!\n";
-				MapCreator::viewMap(&campaignToEdit.getMapAt(index));
+				MapCreator::viewMap(&campaignToEdit->getMapAt(index));
 			}
 			else if (userInput == "(r)" || userInput == "(R)" || userInput == "r" || userInput == "R")
 			{
 				std::cout << "Please select a map to remove.\n";
-				for (int i = 0; i < campaignToEdit.getSize(); i++)
+				for (int i = 0; i < campaignToEdit->getSize(); i++)
 				{
-					std::cout << "Map number " << i << " has a height of " << campaignToEdit.getMapAt(i).getHeight() << " tiles and a width of " << campaignToEdit.getMapAt(i).getWidth() << "tiles.\n";
+					std::cout << "Map number " << i << ": ";
+					printMapDetails(campaignToEdit->getMapAt(i));
 				}
-				int index = MapCreator::getMapIndex(campaignToEdit.getSize());
-				campaignToEdit.removeMap(index);
+				int index = MapCreator::getMapIndex(campaignToEdit->getSize());
+				campaignToEdit->removeMap(index);
 			}
 			else
 			{
@@ -646,8 +534,8 @@ Campaign * MapCreator::editCampaign(Campaign campaignToEdit)
 		}
 		else if (userInput == "(m)" || userInput == "(M)" || userInput == "m" || userInput == "M")
 		{
-			int index = MapCreator::getMapIndex(campaignToEdit.getSize());
-			campaignToEdit.editMap(*MapCreator::editMap(&campaignToEdit.getMapAt(index)), index);
+			int index = MapCreator::getMapIndex(campaignToEdit->getSize());
+			campaignToEdit->editMap(*MapCreator::editMap(&campaignToEdit->getMapAt(index)), index);
 		}
 		else
 		{
@@ -661,7 +549,7 @@ Campaign * MapCreator::editCampaign(Campaign campaignToEdit)
 			running = false;
 		}
 	}
-	return &campaignToEdit;
+	return campaignToEdit;
 }
 
 int MapCreator::getHeight()
@@ -874,4 +762,9 @@ void MapCreator::viewMap(Map *map)
 		std::cout << j << " ";
 	}
 	std::cout << std::endl;
+}
+
+void MapCreator::printMapDetails(Map map)
+{
+	std::cout << map.path << " has a height of " << map.getHeight() << " tiles and a width of " << map.getWidth() << "tiles.\n";
 }

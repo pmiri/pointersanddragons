@@ -1,6 +1,6 @@
 //! @file 
 //! @brief Implementation file for the Campaign class  
-//! The Campaign class contains th order inwhich mapsare traversed
+//! The Campaign class contains the order in which maps are traversed
 //!
 #pragma once
 
@@ -14,7 +14,6 @@ public:
 	Campaign();
 	Campaign(int);
 	void addMap(Map);
-	string name;
 	void addNewMap(Map);
 	void addNewMap(Map, int);
 	Map getMapAt(int);
@@ -23,9 +22,7 @@ public:
 	void removeMap(int);
 	void editMap(Map, int);
 	int getSize();
-
-	Campaign(string);
-	Campaign(vector<Map>, string);
+	Campaign(vector<Map>);
 private:
 	Map* mapList;
 	vector<Map> mapsInCampaign;
