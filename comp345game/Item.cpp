@@ -121,6 +121,87 @@ bool Item::validateItem()
 	return true;
 }
 
+Item::Item(string type_name, string itemName, int characterLvl)//generates an item with enhancements that match the player's level
+{
+	type = type_name;
+	name = itemName;
+	vector<Enhancement> monsterItemEnhancements = vector<Enhancement>();
+	int bonus;
+
+	if (type_name == "Helmet") {
+		monsterItemEnhancements.push_back(Enhancement("Intelligence", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Wisdom", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
+		int totalBonus = 0;
+		setBonuses(characterLvl, &monsterItemEnhancements);
+	}
+	else if (type_name == "Armor") {
+		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
+		int totalBonus = 0;
+		setBonuses(characterLvl, &monsterItemEnhancements);
+	}
+	else if (type_name == "Shield") {
+		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
+		int totalBonus = 0;
+		setBonuses(characterLvl, &monsterItemEnhancements);
+	}
+	else if (type_name == "Ring") {
+		monsterItemEnhancements.push_back(Enhancement("Strength", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Wisdom", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Charisma", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Constitution", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
+		int totalBonus = 0;
+		setBonuses(characterLvl, &monsterItemEnhancements);
+	}
+	else if (type_name == "Belt") {
+		monsterItemEnhancements.push_back(Enhancement("Strength", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Constitution", randomIntRange(0, 5)));
+		int totalBonus = 0;
+		setBonuses(characterLvl, &monsterItemEnhancements);
+	}
+	else if (type_name == "Boots") {
+		monsterItemEnhancements.push_back(Enhancement("Dexterity", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
+		int totalBonus = 0;
+		setBonuses(characterLvl, &monsterItemEnhancements);
+	}
+	else if (type_name == "Weapon") {
+		monsterItemEnhancements.push_back(Enhancement("Attack", randomIntRange(0, 5)));
+		monsterItemEnhancements.push_back(Enhancement("Damage", randomIntRange(0, 5)));
+		int totalBonus = 0;
+		setBonuses(characterLvl, &monsterItemEnhancements);
+	}
+	influence = monsterItemEnhancements;
+}
+
+int randomIntRange(int min, int max) {
+	int random = (rand() % (int)(max - min + 1));
+	int randomInt = min + random;
+	return randomInt;
+}
+
+void setBonuses(int charLvl, vector<Enhancement>* vecEn) {
+	int totalBonus = 0;
+	while (totalBonus < charLvl) {
+		int totalBonus = 0;
+		for each (Enhancement enc in *vecEn)
+		{
+			totalBonus += enc.getBonus();
+		}
+		if (totalBonus >= charLvl)
+			break;
+		else {
+			for each (Enhancement enc in *vecEn)
+			{
+				if (enc.getBonus() >= 5)
+					return;//if any of their equipment is maxed out, stop leveling up enhancements
+				enc.setBonus(enc.getBonus() + 1);
+			}
+		}
+	}
+}
+
 string Item::getName()
 {
 	return name;
