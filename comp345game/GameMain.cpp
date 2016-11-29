@@ -151,7 +151,7 @@ Character* CharacterSelect() {
 			return CharacterEditor::createCharacter();
 			break;
 		default:
-			cout << "Please select the right value";
+			cout << "Please select the right value" << endl;
 			break;
 		}
 	} while (true);
@@ -241,10 +241,16 @@ int main() {
 		list<MapObject> gameMonsterList;
 		bool newMap = false;
 
+		gameMonsterList = list<MapObject>();
+
+		Character* displayChar;
+
 		//GAME MAIN
 		while (!gameFinished) {
 			newMap = false;
 			string nextMapPath = map->path;
+			gameMonsterList = map->getListOfMonsterObjs();
+			list<MapObject>::iterator it = gameMonsterList.begin();
 
 			*turnCount = 6;
 			playerCharacter->hasAttacked = false;
@@ -260,6 +266,22 @@ int main() {
 				//switch for all possible key presses
 				//if non-movement, execute and skip rest
 				switch (i) {
+				case '\t':
+					if (viewingP) {
+						system("cls");
+						if (it == gameMonsterList.end()) {
+							displayChar = playerCharacter;
+							it = gameMonsterList.begin();
+						}
+						else {
+							displayChar = (*it).getCharacter();
+							++it;
+						}
+						
+						displayChar->displayStats();
+						cout << "\nPress Tab to cycle between player and enemies." << endl;
+					}
+					break;
 				case 'z':
 					cout << "Event Logger toggled.";
 					eventLogger->toggle();
@@ -293,8 +315,10 @@ int main() {
 						viewingI = false;
 						system("cls");
 						playerCharacter->displayStats();
+						cout << "\nPress Tab to also see enemies." << endl;
 					}
 					else {
+						it = gameMonsterList.begin();
 						system("cls");
 						map->Notify();
 					}
@@ -348,8 +372,6 @@ int main() {
 
 			//Monster turn
 			*turnCount = 6;
-			gameMonsterList = list<MapObject>();
-			gameMonsterList = map->getListOfMonsterObjs();
 			for each (MapObject monObj in gameMonsterList)
 			{
 				monObj.getCharacter()->hasAttacked = false;//reset at start of monster turn
