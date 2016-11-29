@@ -1,4 +1,6 @@
-﻿  MapObject.cpp
-c:\users\pmiri\code\comp345game\comp345game\mapobject.cpp(65): warning C4715: 'MapObject::canMove': not all control paths return a value
-  comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.exe
-  comp345game.vcxproj -> C:\Users\pmiri\code\comp345game\Debug\comp345game.pdb (Partial PDB)
+﻿  ItemUI.cpp
+c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(108): warning C4018: '>': signed/unsigned mismatch
+c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(163): warning C4018: '>': signed/unsigned mismatch
+c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(191): warning C4715: 'ItemUI::addToPack': not all control paths return a value
+  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.exe
+  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.pdb (Partial PDB)
