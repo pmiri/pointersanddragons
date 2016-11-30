@@ -136,6 +136,54 @@ Item Inventory::replaceItem(Item anItem)
 		return anItem;
 }
 
+void Inventory::replaceItemForMonsters(Item anItem)
+{
+	string itemType = anItem.getType();
+	if (itemType == "Helmet")
+	{
+		helmet = Item(anItem);
+		Items.erase(Items.begin() + 0);
+		Items.insert(Items.begin() + 0, helmet);
+	}
+	else if (itemType == "Armor")
+	{
+		armor = Item(anItem);
+		Items.erase(Items.begin() + 1);
+		Items.insert(Items.begin() + 1, armor);
+	}
+	else if (itemType == "Shield")
+	{
+		shield= Item(anItem);
+		Items.erase(Items.begin() + 2);
+		Items.insert(Items.begin() + 2, shield);
+	}
+	else if (itemType == "Ring")
+	{
+		ring = Item(anItem);
+		Items.erase(Items.begin() + 3);
+		Items.insert(Items.begin() + 3, ring);
+	}
+	else if (itemType == "Belt")
+	{
+		belt = Item(anItem);
+		Items.erase(Items.begin() + 4);
+		Items.insert(Items.begin() + 4, belt);
+	}
+	else if (itemType == "Boots")
+	{
+		boots = Item(anItem);
+		Items.erase(Items.begin() + 5);
+		Items.insert(Items.begin() + 5, boots);
+	}
+	else if (itemType == "Weapon")
+	{
+		weapon = Item(anItem);
+		Items.erase(Items.begin() + 6);
+		Items.insert(Items.begin() + 6, weapon);
+	}
+}
+
+
 Item Inventory::unequip(std::string itemType)
 {
 	if (itemType == "Helmet")

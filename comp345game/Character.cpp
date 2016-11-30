@@ -153,7 +153,7 @@ Character::Character(int lvl) {
 bool Character::validateNewCharacter()
 {
 	for (int i = 0; i <= 5; i++)
-		if (abilityScores[i]<3 || abilityScores[i]>18)
+		if (abilityScores[i] < 3 || abilityScores[i]>18)
 			return false;
 	return true;
 }
@@ -328,7 +328,7 @@ std::vector<int> Character::toHit()
 	Dice attackRoll = Dice();
 	for (int i = 0; i < attacks; i++)
 	{
-		attackResults.push_back(attackRoll.roll("1d20[+0]") + abilityModifiers[0] + baseAttackBonus + attackBonus- (i * 5));
+		attackResults.push_back(attackRoll.roll("1d20[+0]") + abilityModifiers[0] + baseAttackBonus + attackBonus - (i * 5));
 	}
 	return attackResults;
 }
@@ -336,22 +336,23 @@ std::vector<int> Character::toHit()
 void Character::displayStats() {
 	string abilityNames[] = { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" };
 
+	printf("-----%s-----\n", isPlayer == 'P' ? "PLAYER" : "MONSTER");
 	printf("Level %d Fighter\n", getLevel());// , getClassName());
 	printf("HP: %d/%d\n\n", getHitPoints(), getMaxHitPoints());
-	
+
 	printf("AC: %d (+%d)\n", getArmorClass(), armorClassBonus);
 	printf("Attack Bonus: %d (+%d)\n", toHit(0), attackBonus);
 	printf("Damage Bonus: %d (+%d)\n\n", attack(0), damageBonus);
 
 	for (int i = 0; i < 6; i++) {
 		printf("%s: %d [+%d] (+%d)\n", abilityNames[i].c_str(), (abilityScores[i] + abilityBonuses[i]), abilityModifiers[i], abilityBonuses[i]);
-	}	
+	}
 }
 
 void Character::fight(Character* opponent)
 {
 	string opString = "MONSTER";
-	if(opponent->isPlayer == 'P')
+	if (opponent->isPlayer == 'P')
 		opString = "PLAYER";
 
 	//HANDLES ALL FIGHT LOGIC

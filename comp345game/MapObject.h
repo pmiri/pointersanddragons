@@ -24,6 +24,7 @@ public:
 	MapObject();
 	MapObject(int xCoord, int yCoord);
 	MapObject(int xCoord, int yCoord, char c);
+	void replaceMonsterWithTreasure();
 
 private:
 	Character* thisCharacter;

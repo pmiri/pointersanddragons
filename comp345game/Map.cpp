@@ -108,11 +108,11 @@ bool Map::moveCharacter(char dir)
 	targetCellContent = getCell(newXPosition, newYPosition);
 	if (targetCellContent == 'W' || targetOutOfBounds) {
 		Notify();
-		Report("Invalid move");
+		report = "Invalid move";
 		cout << endl << "That move is invalid!" << endl;//the move is invalid
 		return false;
 	}
-	Report(report);
+	(getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter())->Report(report);
 
 	if (targetCellContent == 'M') {
 		Notify();
@@ -203,6 +203,41 @@ bool Map::moveCharacter(char dir)
 		}
 		return true;
 	}
+
+	if (targetCellContent == 'F') {
+		Notify();
+		bool openingChest;
+		cout << endl << "Have you heard of the high elves? (Y)" << endl;
+		char in = mapKeyPress();
+		if (toupper(in) == 'Y') {
+			cout << "Have some items adventurer." << endl;
+			openingChest = true;
+		}
+		else
+		{
+			openingChest = false;
+			cout << "Be gone scoundrel." << endl;
+		}
+		while (openingChest)
+		{
+			system("cls");
+			map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->printNPCInventory(map[PlayerPositionX][PlayerPositionY].getItems());
+			cout << "Use 0-9 to take any item, c to exit." << endl;
+			in = mapKeyPress();
+			if (in == 'c')
+			{
+				Notify();
+				cout << "Good luck traveler." << endl;
+				openingChest = false;
+			}
+			else
+			{
+				map[PlayerPositionX][PlayerPositionY].getCharacter()->itemManager->grabFromChest(map[PlayerPositionX][PlayerPositionY].getItems(), in);
+			}
+		}
+		return true;
+	}
+
 	return true;
 }
 
@@ -454,59 +489,60 @@ void Map::setAllMonsters() {
 				Character* monsterCharacter = charBuilder.getCharacter();
 				monsterCharacter->isPlayer = 'M';
 				monsterCharacter->strategy = new AggressorStrategy;
+				monsterCharacter->wornItems = new Inventory();
 				//give monster some items so that a chest can be dropped
 				//random chance that a monster has any of these items
 				//enhancements are always between 0 and 5 for items in the ItemBuilder
 				int chance = 0, bonus = 0;
 
-				////Helmet
-				//chance = randomIntRange(0, 10);
-				//if (chance < 4) {
-				//	Item monsterHelm = Item("Helmet", "Monster Helm", monsterCharacter->getLevel());
-				//	monsterCharacter->carriedItems->addItem(monsterHelm);
-				//}
+				//Helmet
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Helmet", "Monster Helm", monsterCharacter->getLevel());
+					monsterCharacter->wornItems->replaceItemForMonsters(monsterHelm);
+				}
 
-				////Armor
-				//chance = randomIntRange(0, 10);
-				//if (chance < 4) {
-				//	Item monsterHelm = Item("Armor", "Monster Armor", monsterCharacter->getLevel());
-				//	monsterCharacter->carriedItems->addItem(monsterHelm);
-				//}
+				//Armor
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Armor", "Monster Armor", monsterCharacter->getLevel());
+					monsterCharacter->wornItems->replaceItemForMonsters(monsterHelm);
+				}
 
-				////Shield
-				//chance = randomIntRange(0, 10);
-				//if (chance < 4) {
-				//	Item monsterHelm = Item("Shield", "Monster Shield", monsterCharacter->getLevel());
-				//	monsterCharacter->carriedItems->addItem(monsterHelm);
-				//}
+				//Shield
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Shield", "Monster Shield", monsterCharacter->getLevel());
+					monsterCharacter->wornItems->replaceItemForMonsters(monsterHelm);
+				}
 
-				////Ring
-				//chance = randomIntRange(0, 10);
-				//if (chance < 2) {
-				//	Item monsterHelm = Item("Ring", "Monster Wedding Ring", monsterCharacter->getLevel());
-				//	monsterCharacter->carriedItems->addItem(monsterHelm);
-				//}
+				//Ring
+				chance = randomIntRange(0, 10);
+				if (chance < 2) {
+					Item monsterHelm = Item("Ring", "Monster Wedding Ring", monsterCharacter->getLevel());
+					monsterCharacter->wornItems->replaceItemForMonsters(monsterHelm);
+				}
 
-				////Belt
-				//chance = randomIntRange(0, 10);
-				//if (chance < 4) {
-				//	Item monsterHelm = Item("Belt", "Monster Belt", monsterCharacter->getLevel());
-				//	monsterCharacter->carriedItems->addItem(monsterHelm);
-				//}
+				//Belt
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Belt", "Monster Belt", monsterCharacter->getLevel());
+					monsterCharacter->wornItems->replaceItemForMonsters(monsterHelm);
+				}
 
-				////Boots
-				//chance = randomIntRange(0, 10);
-				//if (chance < 4) {
-				//	Item monsterHelm = Item("Boots", "Monster Footwear", monsterCharacter->getLevel());
-				//	monsterCharacter->carriedItems->addItem(monsterHelm);
-				//}
+				//Boots
+				chance = randomIntRange(0, 10);
+				if (chance < 4) {
+					Item monsterHelm = Item("Boots", "Monster Footwear", monsterCharacter->getLevel());
+					monsterCharacter->wornItems->replaceItemForMonsters(monsterHelm);
+				}
 
-				////Weapon
-				//chance = randomIntRange(0, 10);
-				//if (chance < 6) {
-				//	Item monsterHelm = Item("Weapon", "Monster Sword", monsterCharacter->getLevel());
-				//	monsterCharacter->carriedItems->addItem(monsterHelm);
-				//}
+				//Weapon
+				chance = randomIntRange(0, 10);
+				if (chance < 6) {
+					Item monsterHelm = Item("Weapon", "Monster Sword", monsterCharacter->getLevel());
+					monsterCharacter->wornItems->replaceItemForMonsters(monsterHelm);
+				}
 
 				(map[i][j]).setCharacter(monsterCharacter);
 				//getMapObjectAt(i, j).setCharacter(monsterCharacter);

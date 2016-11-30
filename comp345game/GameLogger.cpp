@@ -3,9 +3,6 @@
 #include <sstream>
 #include <ctime>
 
-// For main
-#include "Dice.h"
-
 using namespace std;
 
 GameLogger::GameLogger(string path)
@@ -57,7 +54,7 @@ void GameLogger::Log(string s) {
 		return;
 
 	//Either write or append
-	file.open(file_path, std::ofstream::out | std::ofstream::app);
+	file.open(FOLDER_PATH + file_path, std::ofstream::out | std::ofstream::app);
 	file << s << endl;
 	file.close();
 }

@@ -2,9 +2,15 @@
 
 char MapObject::getDisplayChar()
 {
+	if (x == 5 && y == 16) {
+		char xd = wallOrOtherChar;
+	}
 	if (thisCharacter != nullptr)
 	{
 		return thisCharacter->isPlayer;
+	}
+	else if (wallOrOtherChar == 70) {
+		return wallOrOtherChar;
 	}
 	else if (thisItem.size() >= 1)
 	{
@@ -19,9 +25,10 @@ void MapObject::setCharacter(Character * c)
 	if (c == nullptr) {
 		thisCharacter = new Character;//changes the pointer
 		thisCharacter = NULL;
+		return;
 	}
 	thisCharacter = c;
-	if (wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
+	if (wallOrOtherChar != 'F' && wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
 		wallOrOtherChar = NULL;
 }
 
@@ -33,7 +40,7 @@ void MapObject::setWallOrOtherChar(char ch)
 void MapObject::setItem(std::vector<Item> i)
 {
 	thisItem = i;
-	if (wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
+	if (wallOrOtherChar != 'F' && wallOrOtherChar != 'E' && wallOrOtherChar != 'B')
 		wallOrOtherChar = NULL;
 }
 
@@ -83,4 +90,12 @@ MapObject::MapObject(int xCoord, int yCoord, char c)
 	wallOrOtherChar = c;
 	x = xCoord;
 	y = yCoord;
+}
+
+void MapObject::replaceMonsterWithTreasure() {
+	vector<Item> monsterItems = getCharacter()->wornItems->getItems();
+	setItem(monsterItems);
+	setCharacter(nullptr);
+	thisCharacter = NULL;
+	delete thisCharacter;
 }

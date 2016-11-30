@@ -63,6 +63,14 @@ Map *MapBuilder::buildFromFile(string path) {
 					itemMapObject.setItem(items->getItems());
 					map->fillCell(y, currentHeight, itemMapObject);
 				}
+				else if (line_array[2 * y] == 'F') {
+					//create a character who is a player
+					ItemContainer* backpack = new ItemContainer;
+					backpack->addItem(Item());//TODO pull item info from map somehow?
+					MapObject npcMapObject = MapObject(y, currentHeight, line_array[2 * y]);
+					npcMapObject.setItem(backpack->getItems());
+					map->fillCell(y, currentHeight, npcMapObject);
+				}
 				else {
 					map->fillCell(y, currentHeight, MapObject(y, currentHeight, line_array[2 * y]));
 				}

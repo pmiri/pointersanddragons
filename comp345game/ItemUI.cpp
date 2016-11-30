@@ -138,19 +138,38 @@ void ItemUI::printChestInventory(std::vector<Item> chest)
 	std::cout << backString;
 }
 
-void ItemUI::grabFromChest(std::vector<Item> chest, char dir)
+void ItemUI::printNPCInventory(std::vector<Item> chest)
+{
+	int numberOfItems = chest.size();
+	if (numberOfItems > 0)
+	{
+		std::ostringstream oss;
+		oss << "Have some items for your journey.\n";
+		oss << "NPC Items:\n";
+		for (int i = 0; i < numberOfItems; i++)
+		{
+			oss << "Item #" << i << ": " << chest.at(i).getName() << "\n";
+		}
+		backString = oss.str();
+	}
+	else
+		backString = "NPC has no items\n";
+	std::cout << backString;
+}
+
+void ItemUI::grabFromChest(std::vector<Item> npc, char dir)
 {
 	int index = (int)dir - '0';
-	if (index > chest.size() || index < 0)
+	if (index > npc.size() || index < 0)
 		std::cout << "No item in slot " << dir << "\n";
 	else
 	{
-		Item temp = chest.at(index);
-		chest.erase(chest.begin() + index);
+		Item temp = npc.at(index);
+		npc.erase(npc.begin() + index);
 		bool goodAdd = addToPack(temp);
 		if(!goodAdd)
 			if (temp.validateItem())
-				chest.push_back(temp);
+				npc.push_back(temp);
 	}
 }
 

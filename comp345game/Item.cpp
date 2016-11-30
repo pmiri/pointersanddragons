@@ -11,6 +11,7 @@ Item::Item()
 {
 	type = "";
 	name = "";
+	influence = vector<Enhancement>();
 	valid = true;
 }
 
@@ -133,17 +134,17 @@ Item::Item(string type_name, string itemName, int characterLvl)//generates an it
 		monsterItemEnhancements.push_back(Enhancement("Wisdom", randomIntRange(0, 5)));
 		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
 		int totalBonus = 0;
-		setBonuses(characterLvl, &monsterItemEnhancements);
+		//setBonuses(characterLvl, &monsterItemEnhancements);
 	}
 	else if (type_name == "Armor") {
 		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
 		int totalBonus = 0;
-		setBonuses(characterLvl, &monsterItemEnhancements);
+		//setBonuses(characterLvl, &monsterItemEnhancements);
 	}
 	else if (type_name == "Shield") {
 		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
 		int totalBonus = 0;
-		setBonuses(characterLvl, &monsterItemEnhancements);
+		//setBonuses(characterLvl, &monsterItemEnhancements);
 	}
 	else if (type_name == "Ring") {
 		monsterItemEnhancements.push_back(Enhancement("Strength", randomIntRange(0, 5)));
@@ -152,25 +153,25 @@ Item::Item(string type_name, string itemName, int characterLvl)//generates an it
 		monsterItemEnhancements.push_back(Enhancement("Constitution", randomIntRange(0, 5)));
 		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
 		int totalBonus = 0;
-		setBonuses(characterLvl, &monsterItemEnhancements);
+		//setBonuses(characterLvl, &monsterItemEnhancements);
 	}
 	else if (type_name == "Belt") {
 		monsterItemEnhancements.push_back(Enhancement("Strength", randomIntRange(0, 5)));
 		monsterItemEnhancements.push_back(Enhancement("Constitution", randomIntRange(0, 5)));
 		int totalBonus = 0;
-		setBonuses(characterLvl, &monsterItemEnhancements);
+		//setBonuses(characterLvl, &monsterItemEnhancements);
 	}
 	else if (type_name == "Boots") {
 		monsterItemEnhancements.push_back(Enhancement("Dexterity", randomIntRange(0, 5)));
 		monsterItemEnhancements.push_back(Enhancement("Armor Class", randomIntRange(0, 5)));
 		int totalBonus = 0;
-		setBonuses(characterLvl, &monsterItemEnhancements);
+		//setBonuses(characterLvl, &monsterItemEnhancements);
 	}
 	else if (type_name == "Weapon") {
 		monsterItemEnhancements.push_back(Enhancement("Attack", randomIntRange(0, 5)));
 		monsterItemEnhancements.push_back(Enhancement("Damage", randomIntRange(0, 5)));
 		int totalBonus = 0;
-		setBonuses(characterLvl, &monsterItemEnhancements);
+		//setBonuses(characterLvl, &monsterItemEnhancements);
 	}
 	influence = monsterItemEnhancements;
 }
@@ -200,6 +201,20 @@ void Item::setBonuses(int charLvl, vector<Enhancement>* vecEn) {
 			}
 		}
 	}
+}
+
+void Item::Copy(Item otherItem) {
+	name = otherItem.getName();
+	type = otherItem.getType();
+	influence = otherItem.getInfluences();
+	valid = true;
+}
+
+Item::Item(Item* otherItem) {
+	name = otherItem->getName();
+	type = otherItem->getType();
+	influence = otherItem->getInfluences();
+	valid = true;
 }
 
 string Item::getName()

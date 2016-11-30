@@ -1,15 +1,6 @@
-﻿  MapCreator.cpp
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(208): warning C4101: 'e': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(300): warning C4101: 'e': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(551): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(575): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(599): warning C4554: '|': check operator precedence for possible error; use parentheses to clarify precedence
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(809): warning C4101: 'mapHeight': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(809): warning C4101: 'mapWidth': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(820): warning C4101: 'e': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(833): warning C4101: 'mapHeight': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(833): warning C4101: 'mapWidth': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(844): warning C4101: 'e': unreferenced local variable
-c:\users\disva\source\repos\comp345game\comp345game\mapcreator.cpp(730): warning C4715: 'MapCreator::getTile': not all control paths return a value
-  comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.exe
-  comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.pdb (Partial PDB)
+﻿  ItemUI.cpp
+c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(108): warning C4018: '>': signed/unsigned mismatch
+c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(163): warning C4018: '>': signed/unsigned mismatch
+c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(191): warning C4715: 'ItemUI::addToPack': not all control paths return a value
+  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.exe
+  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.pdb (Partial PDB)
