@@ -55,7 +55,6 @@ public:
 	string path;
 	string next;
 	string prev;
-
 	bool moveCharacter(char dir);
 	list<MapObject> getListOfMonsterObjs();
 	void moveMonster(MapObject monsterMapObject);

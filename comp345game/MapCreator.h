@@ -25,6 +25,7 @@ public:
 	static Map* editMap(Map* maptoEdit);
 	static void saveCampaign(Campaign *campaignToSave, std::string filepaths[]);
 	static void saveCampaign(Campaign *campaignToSave);
+	static void loadCampaign(std::string filepath, Campaign *campaignToEdit);
 	static Campaign* loadCampaign(std::string filepath);
 	static Campaign* loadCampaign();
 	static Campaign* editCampaign(Campaign *campaignToEdit);
@@ -36,6 +37,8 @@ public:
 	static int getMapIndex(int maxIndex);
 	static char getTile();
 	static void viewMap(Map *map);
-	static void printMapDetails(Map map);
+	static void printMapDetails(Map *map);
+	static void setNext(Map *maptoEdit);
+	static void setPrev(Map *maptoEdit);
 	MapCreator() {};
 };

@@ -9,6 +9,7 @@ using namespace std;
 Campaign::Campaign()
 {
 	mapCount = 0;
+	mapsInCampaign = vector<Map>();
 }
 
 Campaign::Campaign(int campaignSize)
@@ -62,7 +63,12 @@ int Campaign::getSize()
 
 Campaign::Campaign(std::vector<Map> maps)
 {
-	mapsInCampaign = maps;
+	mapsInCampaign = vector<Map>(maps.size());
+	for (int i = 0; i < maps.size(); i++)
+	{
+		mapsInCampaign.push_back(maps.at(i));
+	}
+	mapCount = maps.size();
 }
 
 Map Campaign::nextMap() {

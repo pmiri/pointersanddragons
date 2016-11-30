@@ -49,12 +49,12 @@ string FileLoader::campaignSelection()
 				i++;
 				continue;
 			}
-			if (isCampaign(ent->d_name));
+			if (isCampaign(ent->d_name))
 			{
 				printf("[%d] %s\n", i, ent->d_name);
 				campaigns.push_back(ent->d_name);
 				i++;
-			}			
+			}
 		}
 		closedir(dir);
 	}
@@ -75,15 +75,16 @@ string FileLoader::campaignSelection()
 
 bool FileLoader::isCampaign(string filepath)
 {
+	const string MAPS_PATH = "../maps/";
 	std::string currentLine = "";
 	std::ifstream fileToLoad;
-	fileToLoad.open(filepath);
+	fileToLoad.open(MAPS_PATH + filepath);
 	if (fileToLoad.is_open())
 	{
 		if (!getline(fileToLoad, currentLine))
 		{
-			return false;
 			std::cout << "Error in reading file \n";
+			return false;
 		}
 		else
 		{
@@ -91,8 +92,8 @@ bool FileLoader::isCampaign(string filepath)
 			{
 				if (!getline(fileToLoad, currentLine))
 				{
-					return false;
 					std::cout << "Error in reading file \n";
+					return false;
 				}
 				else
 				{
@@ -110,8 +111,8 @@ bool FileLoader::isCampaign(string filepath)
 	}
 	else
 	{
-		return false;
 		std::cout << "Error in opening file \n";
+		return false;
 	}
 }
 

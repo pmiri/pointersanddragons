@@ -36,6 +36,9 @@ Map::Map() {
 			map[i][j].setWallOrOtherChar(' ');
 		}
 	}
+	prev = "";
+	next = "";
+	path = "";
 }
 
 Map::Map(int width, int height) {
@@ -47,6 +50,9 @@ Map::Map(int width, int height) {
 	map = new MapObject*[width];//new char*[height];
 	for (int i = 0; i < width; i++)
 		map[i] = new MapObject[height];//new char[width];
+	prev = "";
+	next = "";
+	path = "";
 }
 
 bool Map::moveCharacter(char dir)
