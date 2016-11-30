@@ -1,6 +1,6 @@
-﻿  ItemUI.cpp
-c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(108): warning C4018: '>': signed/unsigned mismatch
-c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(163): warning C4018: '>': signed/unsigned mismatch
-c:\users\jacob\documents\github\comp345game\comp345game\itemui.cpp(191): warning C4715: 'ItemUI::addToPack': not all control paths return a value
-  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.exe
-  comp345game.vcxproj -> C:\Users\jacob\Documents\GitHub\comp345game\Debug\comp345game.pdb (Partial PDB)
+﻿  ItemBuilder.cpp
+c:\users\disva\source\repos\comp345game\comp345game\itembuilder.cpp(168): warning C4390: ';': empty controlled statement found; is this the intent?
+c:\users\disva\source\repos\comp345game\comp345game\itembuilder.cpp(247): warning C4018: '>': signed/unsigned mismatch
+c:\users\disva\source\repos\comp345game\comp345game\itembuilder.cpp(271): warning C4018: '>': signed/unsigned mismatch
+  comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.exe
+  comp345game.vcxproj -> C:\Users\Disva\Source\Repos\comp345game\Debug\comp345game.pdb (Partial PDB)

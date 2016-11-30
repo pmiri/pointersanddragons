@@ -56,6 +56,11 @@ vector<Enhancement> Item::getInfluences()
 	return influence;
 }
 
+void Item::setInfluences(vector<Enhancement> newInfluences)
+{
+	influence = newInfluences;
+}
+
 //! method to validate an item, e.g. verify that an new item of a certain type only enhances a character statistic valid for this item type
 //! @return : true if the enhancement list is valid according to the rules, false if not
 //! Specific item types can only have enhancements of specific kinds, and never below 0 or above 5

@@ -17,6 +17,7 @@ public:
 	static string mapSelection();
 	static string characterSelection();
 	static string campaignSelection();
+	static string itemSelection();
 private:
 	static inline char keyPress() {
 		int i = _getche();

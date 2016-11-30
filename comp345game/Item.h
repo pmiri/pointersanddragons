@@ -28,6 +28,7 @@ public:
 	string getType();
 	// method to get the influences of the item
 	vector<Enhancement> getInfluences();
+	void setInfluences(vector<Enhancement> newInfluences);
 	//method to validate an item
 	bool validateItem();
 	string getName();

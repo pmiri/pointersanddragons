@@ -73,6 +73,41 @@ string FileLoader::campaignSelection()
 	return campaigns.front();
 }
 
+string FileLoader::itemSelection()
+{
+	const string ITEMS_PATH = "../items/";
+	list<string> items;
+	DIR *dir;
+	struct dirent *ent;
+	if ((dir = opendir(ITEMS_PATH.c_str())) != NULL) {
+		/* print all the files and directories within directory */
+		int i = -2;
+		while ((ent = readdir(dir)) != NULL) {
+			if (i < 0) {
+				i++;
+				continue;
+			}
+			printf("[%d] %s\n", i, ent->d_name);
+			items.push_back(ent->d_name);
+			i++;
+		}
+		closedir(dir);
+	}
+	else {
+		/* could not open directory */
+		perror("Could not find items directory.");
+		return "" + EXIT_FAILURE;
+	}
+
+	char c = keyPress();
+	int index = c - 48;
+
+	for (int i = 0; i < index; i++) {
+		items.pop_front();
+	}
+	return items.front();
+}
+
 bool FileLoader::isCampaign(string filepath)
 {
 	const string MAPS_PATH = "../maps/";

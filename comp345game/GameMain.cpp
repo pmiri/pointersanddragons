@@ -105,38 +105,46 @@ void changeMap(bool next) {
 }
 
 void ItemMenu() {
-	cout << "Welcome to the Item Editor Program! Would you like to create an item, or load an item?" << endl;
-	cout << "Press c to create, l to load." << endl;
+	bool running = true;
+	while (running)
+	{
+		cout << "Welcome to the Item Editor Program! Would you like to create an item, or load an item?" << endl;
+		cout << "Press c to create, l to load, or q to quit." << endl;
 
-	Item item;
-	string filePath;
-	switch (keyPress()) {
-	case 'c':
-		item = ItemBuilder::buildItem();
-		cout << "Would you like to save? (y)" << endl;
-		if (keyPress() == 'y')
-		{
-			cout << "What is the filename you would like to save to?" << endl;
-			cin >> filePath;
-			ItemBuilder::saveItem(filePath, item);
+		Item item;
+		string filePath;
+		switch (keyPress()) {
+		case 'c':
+			item = ItemBuilder::buildItem();
+			cout << "Would you like to save? (y)" << endl;
+			if (keyPress() == 'y')
+			{
+				cout << "What is the filename you would like to save to?" << endl;
+				cin >> filePath;
+				ItemBuilder::saveItem(filePath, item);
+			}
+			break;
+		case 'l':
+			cout << "Which item do you want to load?" << endl;
+			filePath = FileLoader::itemSelection();
+			item = ItemBuilder::loadItem(filePath);
+			item = ItemBuilder::editItem(item);
+			cout << "Would you like to save?" << endl;
+			if (keyPress() == 'y')
+			{
+				cout << "What is the filename you would like to save to?" << endl;
+				cin >> filePath;
+				ItemBuilder::saveItem(filePath, item);
+			}
+			break;
+		case 'q':
+			cout << "Goodbye!" << endl;
+			running = false;
+			break;
+		default:
+			break;
 		}
-		break;
-	case 'l':
-		cout << "What is the filename of the item you want to load?" << endl;
-		cin >> filePath;
-		item = ItemBuilder::loadItem(filePath);
-		item = ItemBuilder::editItem(item);
-		cout << "Would you like to save?" << endl;
-		if (keyPress() == 'y')
-		{
-			cout << "What is the filename you would like to save to?" << endl;
-			cin >> filePath;
-			ItemBuilder::saveItem(filePath, item);
-		}
-		break;
-	default:
-		break;
-	}
+	}	
 }
 
 Character* CharacterSelect() {
