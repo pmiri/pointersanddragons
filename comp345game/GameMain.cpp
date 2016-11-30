@@ -224,6 +224,8 @@ int main() {
 
 		map->PlacePlayer(playerCharacter);
 		map->setAllMonsters();
+		map->setAllTreasures();
+		map->setAllNPCs();
 
 		playerInventory = new Inventory();
 
@@ -369,8 +371,9 @@ int main() {
 					
 					map->Connect(mapLogger);
 					map->PlacePlayer(playerCharacter);
-
 					map->setAllMonsters();
+					map->setAllTreasures();
+					map->setAllNPCs();
 					
 					system("CLS");
 					map->Notify();

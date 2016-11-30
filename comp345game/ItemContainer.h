@@ -20,12 +20,14 @@ public:
 	ItemContainer();
 	// Constructor
 	ItemContainer(vector<Item> items);
+	ItemContainer(int lvl, string desc);//generates random items
 	// method to get the items of the container
 	vector<Item> getItems();
 	// method to add an item to the item container
 	void addItem(Item anitem);
 	// method to get an item from the item container
 	Item getItem(string itemType);
+	int ItemContainer::randomIntRange(int min, int max);
 protected:
 	vector<Item> Items;
 };

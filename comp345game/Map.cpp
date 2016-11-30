@@ -552,6 +552,33 @@ void Map::setAllMonsters() {
 	delete monBuilder;
 }
 
+void Map::setAllTreasures() {
+
+	int playerLevel = getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter()->getLevel();
+	//search for every goddamn monster on the planet
+	for (int i = 0; i < MAP_WIDTH; i++) {
+		for (int j = 0; j < MAP_LENGTH; j++) {
+			if (map[i][j].getDisplayChar() == 'T') {
+				map[i][j].setItem(ItemContainer(playerLevel, "Treasure").getItems());
+			}
+		}
+	}
+}
+
+void Map::setAllNPCs() {
+
+	int playerLevel = getMapObjectAt(PlayerPositionX, PlayerPositionY).getCharacter()->getLevel();
+	//search for every goddamn monster on the planet
+	for (int i = 0; i < MAP_WIDTH; i++) {
+		for (int j = 0; j < MAP_LENGTH; j++) {
+			if (map[i][j].getDisplayChar() == 'F') {
+				map[i][j].setItem(ItemContainer(playerLevel, "Friendly").getItems());
+			}
+		}
+	}
+}
+
+
 int Map::randomIntRange(int min, int max) {
 	int random = (rand() % (int)(max - min + 1));
 	int randomInt = min + random;

@@ -33,6 +33,8 @@ public:
 	void setExit(int x, int y);
 	char getCell(int x, int y);
 	void setAllMonsters();
+	void setAllTreasures();
+	void setAllNPCs();
 
 	MapObject getMapObjectAt(int x, int y);
 	void setMapObjectAt(int x, int y, MapObject* myo);
