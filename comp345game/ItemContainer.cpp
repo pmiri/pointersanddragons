@@ -19,6 +19,59 @@ ItemContainer::ItemContainer(vector<Item> containeritems)
 	Items = containeritems;
 }
 
+ItemContainer::ItemContainer(int lvl, string desc) {
+	int chance = 0, bonus = 0;
+
+	//Helmet
+	chance = randomIntRange(0, 10);
+	if (chance < 4) {
+		Item treasureitem = Item("Helmet", desc + " Helm", lvl);
+		Items.push_back(treasureitem);
+	}
+
+	//Armor
+	chance = randomIntRange(0, 10);
+	if (chance < 4) {
+		Item treasureitem = Item("Armor", desc + " Armor", lvl);
+		Items.push_back(treasureitem);
+	}
+
+	//Shield
+	chance = randomIntRange(0, 10);
+	if (chance < 4) {
+		Item treasureitem = Item("Shield", desc + " Shield", lvl);
+		Items.push_back(treasureitem);
+	}
+
+	//Ring
+	chance = randomIntRange(0, 10);
+	if (chance < 4) {
+		Item treasureitem = Item("Ring", desc + " Wedding Ring", lvl);
+		Items.push_back(treasureitem);
+	}
+
+	//Belt
+	chance = randomIntRange(0, 10);
+	if (chance < 4) {
+		Item treasureitem = Item("Belt", desc + " Belt", lvl);
+		Items.push_back(treasureitem);
+	}
+
+	//Boots
+	chance = randomIntRange(0, 10);
+	if (chance < 4) {
+		Item monsterHelm = Item("Boots", desc + " Footwear", lvl);
+		Items.push_back(monsterHelm);
+	}
+
+	//Weapon
+	chance = randomIntRange(0, 10);
+	if (chance < 6) {
+		Item treasureitem = Item("Weapon", desc + " Sword", lvl);
+		Items.push_back(treasureitem);
+	}
+}
+
 //! method to get the items of the container
 //! @return : return the vector of items contained in the ItemContainer
 vector<Item> ItemContainer::getItems()
@@ -43,4 +96,10 @@ Item ItemContainer::getItem(string itemType)
 		if (Items[i].getType() == itemType)
 			return Items[i];
 	return Item();
+}
+
+int ItemContainer::randomIntRange(int min, int max) {
+	int random = (rand() % (int)(max - min + 1));
+	int randomInt = min + random;
+	return randomInt;
 }
