@@ -1,0 +1,24 @@
+mountainsOfMadness.txt
+alienRuins.txt
+20
+20
+W W W W W W W W W W W W W W W W W W W W
+W   F                     W     T     W
+W   B                     W         M W
+W                         W           W
+W                         W           W
+W             W W W   W W W           W
+W             W   M       W   M       W
+W    T        W           W           W 
+W             W         M W           W
+W             W   M       W           W
+W             W     T     W           W
+W         W W W W   W W W W         M W
+W         W         W                 W
+W         W         W                 W
+W W W W W W         W                 W
+W             W W W W                 W
+W             W           W   W W W W W
+W     M       W           W           W
+W                         W         E W
+W W W W W W W W W W W W W W W W W W W W

@@ -1,7 +1,0 @@
-
-campaign1.txt
-20
-3
-W W W W W W W W W W W W W W W W W W W W
-B                                     E
-W W W W W W W W W W W W W W W W W W W W

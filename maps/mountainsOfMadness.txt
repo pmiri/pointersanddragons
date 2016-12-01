@@ -1,0 +1,24 @@
+
+lengPlateau.txt
+20
+20
+W W W W W W W W W W W W W W W W W W W W
+W                                     W
+W     T                 M             W
+W                                     W
+W                                     W
+W             W W W W W W W           W
+W             W           W           W
+W             W M       E W           W 
+W             W           W           W
+W             W   W W W W W           W
+W             W           W           W
+W             W W W W W   W   M       W
+W             W           W           W
+W             W           W           W
+W             W           W           W
+W             W           W           W
+W             W           W   W W W   W
+W     B F     W   M               W   W
+W             W                   W   W
+W W W W W W W W W W W W W W W W W W W W
