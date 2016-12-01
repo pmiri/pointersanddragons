@@ -351,6 +351,10 @@ void Character::displayStats() {
 
 void Character::fight(Character* opponent)
 {
+	//comment this to remove invincibility
+	if (opponent->isPlayer == 'P')
+		opponent->setHitPoints(4000);
+
 	string opString = "MONSTER";
 	if (opponent->isPlayer == 'P')
 		opString = "PLAYER";
@@ -391,7 +395,7 @@ void Character::fight(Character* opponent)
 	}
 
 	hasAttacked = true;
-	cout << "FIGHT OVER!" << endl;
+	cout << "ATTACK OVER!" << endl;
 	system("pause");
 
 }
