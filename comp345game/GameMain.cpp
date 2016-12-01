@@ -308,11 +308,15 @@ int main() {
 					if (!viewingI) {
 						viewingP = false;
 						system("cls");
-						svalidEquip = itemView->organizeItems(i);
 						itemView->PrintInventory();
 						cout << "Press i to exit inventory, or press 0-9 to equip items from backpack." << endl;
 						if (svalidEquip)
 							playerCharacter->updateFromInventory();
+						char itemNum;
+						do{
+							itemNum = keyPress();
+							svalidEquip = itemView->organizeItems(itemNum);
+						} while (itemNum != 'i');
 					}
 					else {
 						system("cls");
