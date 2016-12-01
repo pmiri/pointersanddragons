@@ -381,8 +381,14 @@ int main() {
 				}
 			}
 
+			map->Notify();//removes killed monster from player turn so that they don't repeat attack
+
 			//Monster turn
 			*turnCount = 6;
+			if (gameMonsterList.size() <= 0) {
+				*turnCount = 0;
+				continue;
+			}
 			for each (MapObject monObj in gameMonsterList)
 			{
 				monObj.getCharacter()->hasAttacked = false;//reset at start of monster turn
@@ -401,8 +407,9 @@ int main() {
 					}
 				}
 				*turnCount = *turnCount - 1;
-				cout << *turnCount << " monster turns left" << endl;
+				//cout << *turnCount << " monster turns left" << endl;
 			}
+			cout << " Monster turn over" << endl << "Press any key to continue" << endl;
 
 			//TODO NPC turn
 
